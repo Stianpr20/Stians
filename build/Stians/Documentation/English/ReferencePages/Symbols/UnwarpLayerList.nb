@@ -1,0 +1,1136 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     40071,       1127]
+NotebookOptionsPosition[     33502,        985]
+NotebookOutlinePosition[     35637,       1041]
+CellTagsIndexPosition[     35551,       1036]
+WindowTitle->UnwarpLayerList
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["XRAY SYMBOL", "PacletNameCell"], Cell[TextData[Cell[BoxData[
+     ActionMenuBox[
+      FrameBox[
+       InterpretationBox[Cell[TextData[{
+         "URL",
+         StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+          StripOnInput->False]
+        }]],
+        TextCell[
+         Row[{"URL", 
+           Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+       StripOnInput->False], {"\<\"Xray/ref/UnwarpLayerList\"\>":>
+      None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+      Module[{DocumentationSearch`Private`nb$}, 
+       DocumentationSearch`Private`nb$ = NotebookPut[
+          Notebook[{
+            Cell["Xray/ref/UnwarpLayerList"]}, Visible -> False]]; 
+       SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+       FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+       NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+      Delimiter, "\<\"Copy web URL\"\>":>
+      Module[{DocumentationSearch`Private`nb$}, 
+       DocumentationSearch`Private`nb$ = NotebookPut[
+          Notebook[{
+            Cell[
+             BoxData[
+              MakeBoxes[
+               Hyperlink[
+               "http://reference.wolfram.com/language/Xray/ref/\
+UnwarpLayerList.html"], StandardForm]], "Input", TextClipboardType -> 
+             "PlainText"]}, Visible -> False]]; 
+       SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+       FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+       NotebookClose[DocumentationSearch`Private`nb$]; 
+       Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+        NotebookLocate[{
+          URL[
+           StringJoin[
+            If[
+             TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$24804], 
+             "http://reference.wolfram.com/system-modeler/", 
+             "http://reference.wolfram.com/language/"], 
+            "Xray/ref/UnwarpLayerList", ".html"]], None}]}]},
+      Appearance->None,
+      MenuAppearance->Automatic,
+      MenuStyle->"URLMenu"]],
+     LineSpacing->{1.4, 0}]], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1],
+
+Cell[TextData[{
+ Cell["UnwarpLayerList", "ObjectName"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{Cell[
+          TextData["UnwarpLayerList"]],"paclet:Xray/ref/UnwarpLayerList"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", 
+       RowBox[{
+        StyleBox["prefix", "TI"], ",", 
+        SubscriptBox[
+         StyleBox["L", "TI"], 
+         StyleBox["1", "TR"]], ",", 
+        SubscriptBox[
+         StyleBox["L", "TI"], 
+         StyleBox["2", "TR"]], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          StyleBox["dir", "TI"], ",", 
+          StyleBox["start", "TI"], ",", 
+          StyleBox["end", "TI"], ",", 
+          StyleBox["steps", "TI"]}], "}"}], ",", 
+        StyleBox["res", "TI"]}], "]"}]], "InlineFormula"],
+     " \[LineSeparator]generates a layer list for the Unwarp module in ",
+     StyleBox["CrysAlis",
+      FontSlant->"Italic"],
+     ". See details for syntax meaning."
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}}},
+ CellID->982511436],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    TemplateBox[{6},
+     "Spacer1"]]],
+   "Details"
+  }], "NotesFrameText"],
+  Appearance->{Automatic, None, "Normal", Automatic},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->"Preemptive"]]]], "NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[TextData[{
+ "The ",
+ Cell[BoxData[
+  StyleBox["prefix", "TI"]], "InlineFormula"],
+ " states the base name of all images."
+}], "Notes",
+ CellID->1067943069],
+
+Cell[TextData[{
+ "If ",
+ Cell[BoxData[
+  StyleBox["steps", "TI"]], "InlineFormula"],
+ " is equal to 1 or smaller, it is interpreted as a ",
+ StyleBox["step size",
+  FontSlant->"Italic"],
+ "."
+}], "Notes",
+ CellID->993908863],
+
+Cell[TextData[{
+ " ",
+ Cell[BoxData[
+  SubscriptBox[
+   StyleBox["L", "TI"], 
+   StyleBox["1", "TR"]]], "InlineFormula"],
+ " and ",
+ Cell[BoxData[
+  SubscriptBox[
+   StyleBox["L", "TI"], 
+   StyleBox["2", "TR"]]], "InlineFormula"],
+ " are the two reciprocal vectors defining the layer plane. They need to be \
+input as three dimensional lists (vectors) that are linearly independent."
+}], "Notes",
+ CellID->1535733922],
+
+Cell[TextData[{
+ Cell[BoxData[
+  StyleBox["dir", "TI"]], "InlineFormula"],
+ " gives the direction in which the successive frames are moving in \
+reciprocal space, beginning in ",
+ Cell[BoxData[
+  StyleBox["start", "TI"]], "InlineFormula"],
+ " and finishing in ",
+ Cell[BoxData[
+  StyleBox["end", "TI"]], "InlineFormula"],
+ ", in the desired amount of ",
+ Cell[BoxData[
+  StyleBox["steps", "TI"]], "InlineFormula"],
+ ". It must be three-dimensional and numeric."
+}], "Notes",
+ CellID->2015739878],
+
+Cell[TextData[{
+ Cell[BoxData[
+  StyleBox["res", "TI"]], "InlineFormula"],
+ " denotes the resolution of the images; a higher value correspond to \
+\[OpenCurlyDoubleQuote]zooming in\[CloseCurlyDoubleQuote] the picture. Values \
+should be on the order of unity."
+}], "Notes",
+ CellID->1301551201],
+
+Cell["\<\
+The directory of the output file may be customised with an option setting:\
+\>", "Notes",
+ CellID->1277510341],
+
+Cell[BoxData[GridBox[{
+   {Cell["      ", "TableRowIcon"], "ExportDirectory", Cell[
+    "file path of the output directory", "TableText"]}
+  }]], "2ColumnTableMod",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}},
+ GridBoxDividers->{"Rows" -> {{True, True}}}},
+ CellID->1323169790],
+
+Cell[TextData[{
+ "The default export directory is set to be: ",
+ Cell[BoxData[
+  RowBox[{"FileNameJoin", "[", 
+   RowBox[{"{", 
+    RowBox[{"$HomeDirectory", ",", "\"\<Desktop\>\""}], "}"}], "]"}]], "Input",
+  InitializationCell->True],
+ "."
+}], "Notes",
+ CellID->813112122]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(4)", "ExampleCount"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->1],
+
+Cell[TextData[{
+ "A simple example \[Dash] Using ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox[
+    StyleBox["a",
+     FontWeight->"Bold",
+     FontSlant->"Plain"], "*"], TraditionalForm]], "InlineMath"],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox[
+    StyleBox["b",
+     FontWeight->"Bold",
+     FontSlant->"Plain"], "*"], TraditionalForm]], "InlineMath"],
+ " as layer vectors and moving from 0 to 4 in the ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox[
+    StyleBox["c",
+     FontWeight->"Bold",
+     FontSlant->"Plain"], "*"], TraditionalForm]], "InlineMath"],
+ " direction, in 11 steps:"
+}], "ExampleText",
+ CellID->730265297],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"UnwarpLayerList", "[", 
+   RowBox[{"\"\<unwarp_hk0\>\"", ",", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0", ",", "1"}], "}"}], ",", "0", ",", "4", ",", 
+      "11"}], "}"}], ",", "2"}], "]"}], ";"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->59134466],
+
+Cell[TextData[{
+ "We can also use ",
+ StyleBox["step size",
+  FontSlant->"Italic"],
+ " instead of the total number of steps:"
+}], "ExampleText",
+ CellID->456662425],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"UnwarpLayerList", "[", 
+   RowBox[{"\"\<unwarp_hk0\>\"", ",", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0", ",", "1"}], "}"}], ",", "0", ",", "4", ",", 
+      "0.4"}], "}"}], ",", "2"}], "]"}], ";"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->1501213764],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->14731548],
+
+Cell["Another example with different parameters:", "ExampleText",
+ CellID->632507831],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"UnwarpLayerList", "[", 
+   RowBox[{"\"\<longrun\>\"", ",", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0", ",", "1"}], "}"}], ",", "0", ",", "4", ",", 
+      "0.01"}], "}"}], ",", "2"}], "]"}], ";"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->280815198]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Options",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(3)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->2061341341],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "\"AppendToExisting\"",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSubsection", "ExampleSubsection",
+ WholeCellGroupOpener->True,
+ CellID->1654965325],
+
+Cell[TextData[{
+ "This feature enables the user to store multiple \[LeftGuillemet]unwarp \
+commands\[RightGuillemet] of various directions in the same ",
+ StyleBox[".dcunwarp", "Program"],
+ " file. If there are multiple files, the alphabetically first will be chosen."
+}], "ExampleText",
+ CellID->1374355442],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"UnwarpLayerList", "[", 
+   RowBox[{"\"\<FirstPart\>\"", ",", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "0", ",", "1"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+      RowBox[{"-", "5"}], ",", "5", ",", "0.25"}], "}"}], ",", "2"}], "]"}], 
+  ";"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1617484909],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"UnwarpLayerList", "[", 
+   RowBox[{"\"\<SecondPart\>\"", ",", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0", ",", "1"}], "}"}], ",", 
+      RowBox[{"-", "2"}], ",", "2", ",", "0.1"}], "}"}], ",", "2.5", ",", 
+    RowBox[{"\"\<AppendToExisting\>\"", "\[Rule]", "True"}]}], "]"}], 
+  ";"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->468872664],
+
+Cell[BoxData[
+ TemplateBox[{
+  "UnwarpLayerList","extended",
+   "\"\[LeftGuillemet]\\!\\(\\*RowBox[{\\\"\\\\\\\"FirstPart.dcunwarp\\\\\\\"\
+\\\"}]\\)\[RightGuillemet] has been extended.\"",2,2,3,26284405294634438133,
+   "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellLabel->"During evaluation of In[2]:=",
+ CellID->1125423300]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "\"ExportDirectory\"",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSubsection", "ExampleSubsection",
+ WholeCellGroupOpener->True,
+ CellID->1757724783],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"UnwarpLayerList", "[", 
+   RowBox[{"\"\<UnwarpName\>\"", ",", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "0", ",", "1"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+      RowBox[{"-", "1"}], ",", "1", ",", "101"}], "}"}], ",", "1", ",", 
+    RowBox[{"\"\<ExportDirectory\>\"", "\[Rule]", "$XrayExamples"}]}], "]"}], 
+  ";"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1414300316]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "\"SeparationCommas\"",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSubsection", "ExampleSubsection",
+ WholeCellGroupOpener->True,
+ CellID->1787552279],
+
+Cell[TextData[{
+ "Setting this option to ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["False"]],"paclet:ref/False"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ " will remove the commas separating the Miller indices."
+}], "ExampleText",
+ CellID->1361481282],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"UnwarpLayerList", "[", 
+   RowBox[{"\"\<unwarp_NoComma\>\"", ",", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+      RowBox[{"-", "5"}], ",", "7", ",", "1"}], "}"}], ",", "2", ",", 
+    RowBox[{"\"\<SeparationCommas\>\"", "\[Rule]", "False"}]}], "]"}], 
+  ";"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->929006526]
+}, Closed]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " code",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->2100923971],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"UnwarpLayerList", "::", "dir"}], "=", 
+   "\"\<The direction vector must be three-dimensional and numeric.\>\""}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"UnwarpLayerList", "::", "dep"}], "=", 
+   "\"\<The layer vectors are not linearly independent.\>\""}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"UnwarpLayerList", "::", "dim"}], "=", 
+   "\"\<One or both of the layer vectors are not three dimensional.\>\""}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"UnwarpLayerList", "::", "extended"}], "=", 
+   "\"\<\[LeftGuillemet]`1`\[RightGuillemet] has been extended.\>\""}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"UnwarpLayerList", "::", "jobs"}], "=", 
+   "\"\<Some unwarping jobs are identical. Try increasing the range or step \
+size.\>\""}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"UnwarpLayerList", "::", "steps"}], "=", 
+   "\"\<\!\(\*StyleBox[\"CrysAlis\",FontSlant->\"Italic\"]\) will only queue \
+500 jobs at a time.\>\""}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"UnwarpLayerList", "::", "small"}], "=", 
+   "\"\<Some values are smaller than \!\(\*SuperscriptBox[\(10\), \
+\(-6\)]\).\>\""}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"UnwarpLayerList", "::", "path"}], "=", 
+   "\"\<\[LeftGuillemet]`1`\[RightGuillemet] is an invalid path.\>\""}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"UnwarpLayerList", "::", "notfound"}], "=", 
+    "\"\<No existing \!\(\*StyleBox[\".\", \
+\"Program\"]\)\!\(\*StyleBox[\"dcunwarp\", \"Program\"]\) file was found in \
+the export directory.\>\""}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Options", "[", "UnwarpLayerList", "]"}], "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"\"\<ExportDirectory\>\"", "\[Rule]", 
+      RowBox[{"FileNameJoin", "[", 
+       RowBox[{"{", 
+        RowBox[{"$HomeDirectory", ",", "\"\<Desktop\>\""}], "}"}], "]"}]}], 
+     ",", 
+     RowBox[{"\"\<AppendToExisting\>\"", "\[Rule]", "False"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"\"\<SeparationCommas\>\"", "\[Rule]", "True"}]}], "}"}]}], 
+  ";"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1673477652],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"UnwarpLayerList", "[", "\[IndentingNewLine]", 
+   RowBox[{
+   "prefix_String", ",", "L1_List", ",", "L2_List", ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{"dir_List", ",", "start_", ",", "end_", ",", 
+      RowBox[{"stepinput_", "?", "NumericQ"}]}], "}"}], ",", 
+    "\[IndentingNewLine]", "Res_", ",", 
+    RowBox[{"OptionsPattern", "[", "UnwarpLayerList", "]"}]}], "]"}], ":=", 
+  RowBox[{"Module", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+     "steps", ",", "path", ",", "output", ",", "\[IndentingNewLine]", "len", 
+      ",", "replacerule", ",", "\[Delta]", ",", "\[IndentingNewLine]", 
+      "MakeValue", ",", "OriginVector", ",", "\[IndentingNewLine]", "const", 
+      ",", "MakeName", ",", "\[IndentingNewLine]", "newL1", ",", "newL2", ",",
+       "res", ",", "line", ",", "original", ",", "old", ",", "new", ",", "j", 
+      ",", "valuestest", ",", "\[IndentingNewLine]", "temp"}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"(*", " ", 
+     RowBox[{"Checking", " ", "input", " ", "vectors"}], " ", "*)"}], 
+    "\[IndentingNewLine]", "\t", 
+    RowBox[{
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Length", "/@", 
+         RowBox[{"Flatten", "/@", 
+          RowBox[{"{", 
+           RowBox[{"L1", ",", "L2"}], "}"}]}]}], "\[NotEqual]", 
+        RowBox[{"{", 
+         RowBox[{"3", ",", "3"}], "}"}]}], ",", 
+       RowBox[{
+        RowBox[{"Message", "[", 
+         RowBox[{"UnwarpLayerList", "::", "dim"}], "]"}], ";", 
+        RowBox[{"Abort", "[", "]"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Ascertaining", " ", "steps", " ", "or", " ", "stepsize"}], " ",
+       "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"stepinput", ">", "1"}], ",", "\[IndentingNewLine]", "\t", 
+       RowBox[{"steps", "=", "stepinput"}], ",", "\[IndentingNewLine]", "\t", 
+       
+       RowBox[{"steps", "=", 
+        RowBox[{"Round", "[", 
+         RowBox[{
+          FractionBox[
+           RowBox[{"Abs", "[", 
+            RowBox[{"end", "-", "start"}], "]"}], "stepinput"], "+", "1"}], 
+         "]"}]}]}], "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     
+     RowBox[{"(*", " ", 
+      RowBox[{
+      "Check", " ", "resolution", " ", "of", " ", "the", " ", "range"}], " ", 
+      "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"Abs", "[", 
+          RowBox[{"end", "-", "start"}], "]"}], "/", "steps"}], "<", 
+        RowBox[{
+         SuperscriptBox["10", 
+          RowBox[{"-", "6"}]], "-", 
+         SuperscriptBox["10", 
+          RowBox[{"-", "12"}]]}]}], ",", 
+       RowBox[{"Message", "[", 
+        RowBox[{"UnwarpLayerList", "::", "jobs"}], "]"}]}], "]"}], ";", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"steps", ">", "500"}], ",", 
+       RowBox[{"Message", "[", 
+        RowBox[{"UnwarpLayerList", "::", "steps"}], "]"}]}], "]"}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Path", " ", "check", " ", "and", " ", "setup"}], " ", "*)"}], 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"path", "=", 
+      RowBox[{"OptionValue", "[", "\"\<ExportDirectory\>\"", "]"}]}], ";", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"!", 
+        RowBox[{"DirectoryQ", "@", "path"}]}], ",", 
+       RowBox[{
+        RowBox[{"Message", "[", 
+         RowBox[{
+          RowBox[{"UnwarpLayerList", "::", "path"}], ",", "path"}], "]"}], 
+        ";", 
+        RowBox[{"Abort", "[", "]"}], ";"}]}], "]"}], ";", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"output", "=", 
+      RowBox[{"FileNameJoin", "[", 
+       RowBox[{"{", 
+        RowBox[{"path", ",", 
+         RowBox[{"prefix", "<>", "\"\<.dcunwarp\>\""}]}], "}"}], "]"}]}], ";",
+      "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Useful", " ", "variables"}], " ", "*)"}], 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"len", "=", 
+      RowBox[{"StringLength", "@", 
+       RowBox[{"ToString", "@", "steps"}]}]}], ";", "\[IndentingNewLine]", 
+     "\t", 
+     RowBox[{"replacerule", "=", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"\"\<,\>\"", "\[Rule]", "\"\<  \>\""}], ",", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\"\<{\>\"", ",", "\"\<}\>\""}], "}"}], "\[Rule]", 
+         "\"\<\>\""}]}], "}"}]}], ";", "\[IndentingNewLine]", "\t", 
+     RowBox[{"\[Delta]", "=", 
+      RowBox[{"Min", "[", 
+       RowBox[{"6", ",", 
+        RowBox[{
+         RowBox[{"StringLength", "@", 
+          RowBox[{"ToString", "@", 
+           RowBox[{"N", "[", 
+            FractionBox[
+             RowBox[{"end", "-", "start"}], 
+             RowBox[{"steps", "-", "1"}]], "]"}]}]}], "-", "2"}]}], "]"}]}], 
+     ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+      "Check", " ", "if", " ", "vectors", " ", "are", " ", "linearly", " ", 
+       "independent"}], " ", "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Det", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"L1", ".", "L1"}], ",", 
+             RowBox[{"L1", ".", "L2"}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"L2", ".", "L1"}], ",", 
+             RowBox[{"L2", ".", "L2"}]}], "}"}]}], "}"}], "]"}], "\[Equal]", 
+        "0"}], ",", "\[IndentingNewLine]", "\t", 
+       RowBox[{
+        RowBox[{"Message", "[", 
+         RowBox[{"UnwarpLayerList", "::", "dep"}], "]"}], ";", 
+        RowBox[{"Abort", "[", "]"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{"*", " ", "Making", " ", "the", " ", "origin", " ", "vectors"}],
+       " ", "**)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Check", " ", "input", " ", "form"}], " ", "*)"}], 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"!", 
+        RowBox[{"MatchQ", "[", 
+         RowBox[{"dir", ",", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"_", "?", "NumericQ"}], ",", 
+            RowBox[{"_", "?", "NumericQ"}], ",", 
+            RowBox[{"_", "?", "NumericQ"}]}], "}"}]}], "]"}]}], ",", 
+       "\[IndentingNewLine]", "\t", 
+       RowBox[{
+        RowBox[{"Message", "[", 
+         RowBox[{"UnwarpLayerList", "::", "dir"}], "]"}], 
+        RowBox[{"Abort", "[", "]"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{
+      RowBox[{"MakeValue", "[", "i_", "]"}], ":=", 
+      RowBox[{"start", "+", 
+       RowBox[{
+        FractionBox[
+         RowBox[{"end", "-", "start"}], 
+         RowBox[{"steps", "-", "1"}]], "*", 
+        RowBox[{"(", 
+         RowBox[{"i", "-", "1"}], ")"}]}]}]}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{
+      RowBox[{"OriginVector", "[", "i_", "]"}], ":=", 
+      RowBox[{"(", "\[IndentingNewLine]", "\t", 
+       RowBox[{
+        RowBox[{"temp", "=", 
+         RowBox[{"dir", "*", 
+          RowBox[{"MakeValue", "[", "i", "]"}]}]}], ";", 
+        "\[IndentingNewLine]", "\t", 
+        RowBox[{"temp", "=", 
+         RowBox[{"AccountingForm", "@", 
+          RowBox[{"NumberForm", "[", 
+           RowBox[{
+            RowBox[{"N", "[", "temp", "]"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"Infinity", ",", "6"}], "}"}]}], "]"}]}]}], ";", 
+        "\[IndentingNewLine]", "\t", 
+        RowBox[{"temp", "=", 
+         RowBox[{"StringReplace", "[", 
+          RowBox[{
+           RowBox[{"ToString", "@", "temp"}], ",", "replacerule"}], "]"}]}]}],
+        "\[IndentingNewLine]", "\t", ")"}]}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+      "Check", " ", "for", " ", "duplicates", " ", "and", " ", "values", " ", 
+       "smaller", " ", "than", " ", 
+       SuperscriptBox["10", 
+        RowBox[{"-", "6"}]]}], " ", "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{"valuestest", "=", 
+      RowBox[{"ToString", "/@", 
+       RowBox[{"Table", "[", 
+        RowBox[{
+         RowBox[{"MakeValue", "[", "j", "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"j", ",", "steps"}], "}"}]}], "]"}]}]}], ";", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"!", 
+        RowBox[{"DuplicateFreeQ", "@", "valuestest"}]}], ",", 
+       RowBox[{"Message", "[", 
+        RowBox[{"UnwarpLayerList", "::", "small"}], "]"}]}], "]"}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{"*", " ", "Generating", " ", "names"}], " ", "**)"}], 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Integer", " ", "Miller", " ", "indices"}], " ", "*)"}], 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"const", "=", 
+      RowBox[{
+       RowBox[{"dir", "+", 
+        RowBox[{"{", 
+         RowBox[{"\"\<h\>\"", ",", "\"\<k\>\"", ",", "\"\<l\>\""}], "}"}]}], "/.", 
+       RowBox[{
+        RowBox[{"a_", "+", "b_"}], "\[Rule]", "0"}]}]}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", "\t", 
+     RowBox[{"(*", " ", "Procedure", " ", "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{
+      RowBox[{"MakeName", "[", "i_", "]"}], ":=", 
+      RowBox[{"(", "\[IndentingNewLine]", "\t", 
+       RowBox[{
+        RowBox[{"temp", "=", 
+         RowBox[{"ToExpression", "@", 
+          RowBox[{"StringSplit", "@", 
+           RowBox[{"OriginVector", "[", "i", "]"}]}]}]}], ";", 
+        "\[IndentingNewLine]", "\t", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"\[Delta]", "\[Equal]", "0"}], ",", 
+          RowBox[{"(*", " ", 
+           RowBox[{"Integers", " ", 
+            RowBox[{"only", "?"}]}], " ", "*)"}], "\[IndentingNewLine]", "\t", 
+          RowBox[{"temp", "=", 
+           RowBox[{"Rationalize", "@", "temp"}]}], ",", "\[IndentingNewLine]",
+           "\t", 
+          RowBox[{"temp", "=", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"NumberForm", "[", "\[IndentingNewLine]", "\t", 
+              RowBox[{"#", ",", 
+               RowBox[{"{", 
+                RowBox[{"Infinity", ",", "\[Delta]"}], "}"}], ",", 
+               "\[IndentingNewLine]", "\t", 
+               RowBox[{"ExponentFunction", "\[Rule]", 
+                RowBox[{"(", 
+                 RowBox[{"Null", "&"}], ")"}]}]}], "]"}], "&"}], "/@", 
+            "temp"}]}]}], "]"}], ";", "\[IndentingNewLine]", "\t", 
+        RowBox[{"temp", "=", 
+         RowBox[{
+          RowBox[{"const", "+", "temp"}], "/.", 
+          RowBox[{
+           RowBox[{"x_String", "+", "y_"}], "\[RuleDelayed]", "x"}]}]}], ";", 
+        "\[IndentingNewLine]", "\t", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"OptionValue", "[", "\"\<SeparationCommas\>\"", "]"}], ",", 
+          "\[IndentingNewLine]", "\t", 
+          RowBox[{"(*", " ", 
+           RowBox[{"Remove", " ", "separating", " ", 
+            RowBox[{"commas", "?"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+          "\t", 
+          RowBox[{"temp", "=", 
+           RowBox[{"StringRiffle", "[", 
+            RowBox[{
+             RowBox[{"ToString", "/@", "temp"}], ",", "\"\<,\>\""}], "]"}]}], 
+          ",", "\[IndentingNewLine]", "\t", 
+          RowBox[{"temp", "=", 
+           RowBox[{"ToString", "/@", "temp"}]}]}], "]"}], ";", 
+        "\[IndentingNewLine]", "\t", 
+        RowBox[{"StringJoin", "[", 
+         RowBox[{
+         "\"\<\\\"\>\"", ",", "prefix", ",", "\"\<_(\>\"", ",", "temp", ",", 
+          "\"\<)\\\"\>\""}], "]"}]}], "\[IndentingNewLine]", "\t", ")"}]}], 
+     ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"The", " ", "L1", " ", "and", " ", "L2", " ", "vectors"}], " ", 
+      "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{"newL1", "=", 
+      RowBox[{"StringReplace", "[", 
+       RowBox[{
+        RowBox[{"ToString", "@", 
+         RowBox[{"NumberForm", "[", 
+          RowBox[{"L1", ",", 
+           RowBox[{"{", 
+            RowBox[{"Infinity", ",", "6"}], "}"}]}], "]"}]}], ",", 
+        "replacerule"}], "]"}]}], ";", "\[IndentingNewLine]", "\t", 
+     RowBox[{"newL2", "=", 
+      RowBox[{"StringReplace", "[", 
+       RowBox[{
+        RowBox[{"ToString", "@", 
+         RowBox[{"NumberForm", "[", 
+          RowBox[{"L2", ",", 
+           RowBox[{"{", 
+            RowBox[{"Infinity", ",", "6"}], "}"}]}], "]"}]}], ",", 
+        "replacerule"}], "]"}]}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"The", " ", "resolution"}], " ", "*)"}], "\[IndentingNewLine]", 
+     "\t", 
+     RowBox[{"res", "=", 
+      RowBox[{"ToString", "@", 
+       RowBox[{"NumberForm", "[", 
+        RowBox[{"Res", ",", 
+         RowBox[{"{", 
+          RowBox[{"Infinity", ",", "6"}], "}"}]}], "]"}]}]}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+      "Function", " ", "that", " ", "writes", " ", "a", " ", "single", " ", 
+       "line"}], " ", "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{
+      RowBox[{"line", "[", "i_", "]"}], ":=", 
+      RowBox[{"StringJoin", "[", 
+       RowBox[{
+        RowBox[{"MakeName", "[", "i", "]"}], ",", "\"\<   \>\"", ",", 
+        RowBox[{"OriginVector", "[", "i", "]"}], ",", "\"\<     \>\"", ",", 
+        "newL1", ",", "\"\<     \>\"", ",", "newL2", ",", "\"\<        \>\"", 
+        ",", "res", ",", "\"\<       \>\"", ",", "\"\<0\>\"", ",", 
+        "\"\<       \>\"", ",", "\"\<0\>\""}], "]"}]}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Generating", " ", "and", " ", "exporting", " ", "table"}], " ",
+       "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"OptionValue", "[", "\"\<AppendToExisting\>\"", "]"}], ",", 
+       "\[IndentingNewLine]", "\t", 
+       RowBox[{
+        RowBox[{"original", "=", 
+         RowBox[{"FileNames", "[", 
+          RowBox[{
+           RowBox[{"OptionValue", "[", "\"\<ExportDirectory\>\"", "]"}], 
+           "<>", "\"\</*.dcunwarp\>\""}], "]"}]}], ";", "\[IndentingNewLine]",
+         "\t", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"original", "\[Equal]", 
+           RowBox[{"{", "}"}]}], ",", 
+          RowBox[{
+           RowBox[{"Message", "[", 
+            RowBox[{"UnwarpLayerList", "::", "notfound"}], "]"}], ";", 
+           RowBox[{"Abort", "[", "]"}]}]}], "]"}], ";", "\[IndentingNewLine]",
+         "\t", 
+        RowBox[{"old", "=", 
+         RowBox[{"Import", "[", 
+          RowBox[{
+           RowBox[{"First", "@", "original"}], ",", "\"\<String\>\""}], 
+          "]"}]}], ";", "\[IndentingNewLine]", "\t", 
+        RowBox[{"new", "=", 
+         RowBox[{"Table", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"line", "[", "i", "]"}], "<>", 
+            RowBox[{"If", "[", 
+             RowBox[{
+              RowBox[{"i", "<", "steps"}], ",", "\"\<\\n\>\"", ",", 
+              "\"\<\>\""}], "]"}]}], ",", 
+           RowBox[{"{", 
+            RowBox[{"i", ",", "steps"}], "}"}]}], "]"}]}], ";", 
+        "\[IndentingNewLine]", "\t", 
+        RowBox[{"Export", "[", 
+         RowBox[{"original", ",", 
+          RowBox[{"old", "<>", 
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"StringTake", "[", 
+               RowBox[{"old", ",", 
+                RowBox[{"-", "1"}]}], "]"}], "\[Equal]", "\"\<0\>\""}], ",", 
+             "\"\<\\n\>\"", ",", "\"\<\>\""}], "]"}], "<>", "new"}], ",", 
+          "\"\<String\>\""}], "]"}], ";", "\[IndentingNewLine]", "\t", 
+        RowBox[{"Message", "[", 
+         RowBox[{
+          RowBox[{"UnwarpLayerList", "::", "extended"}], ",", 
+          RowBox[{"FileNameTake", "@", 
+           RowBox[{"First", "@", "original"}]}]}], "]"}]}], ",", "\t", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", "\t", 
+       RowBox[{"Export", "[", 
+        RowBox[{"output", ",", 
+         RowBox[{"Table", "[", 
+          RowBox[{
+           RowBox[{"line", "[", "i", "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"i", ",", "steps"}], "}"}]}], "]"}], ",", 
+         "\"\<Table\>\""}], "]"}]}], "]"}]}]}], "\[IndentingNewLine]", 
+   "]"}]}]], "Input",
+ Background->RGBColor[0.94, 0.91, 0.88],
+ CellLabel->"In[2]:=",
+ CellID->545572405]
+}, Closed]]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"UnwarpLayerList",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "Wolfram Language", ButtonData -> "paclet:guide/WolframRoot", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "ExampleCounter" -> 1, "NeedPlatMsgIn" -> None, "RootCaptions" -> 
+  "", "Metadata" -> {
+   "built" -> "{2019, 3, 16, 9, 29, 14.089865}", 
+    "history" -> {"0.0", "", "", ""}, "context" -> "Xray`", "keywords" -> {}, 
+    "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> True,
+     "label" -> "Xray Symbol", "language" -> "en", "paclet" -> "Xray", 
+    "status" -> "None", "summary" -> 
+    "UnwarpLayerList[prefix, L1, L2, {dir, start, end, steps}, res] generates \
+a layer list for the Unwarp module in CrysAlis. See details for syntax \
+meaning.", "synonyms" -> {}, "tabletags" -> {}, "title" -> "UnwarpLayerList", 
+    "titlemodifier" -> "", "windowtitle" -> "UnwarpLayerList", "type" -> 
+    "Symbol", "uri" -> "Xray/ref/UnwarpLayerList"}},
+CellContext->"Global`",
+FrontEndVersion->"11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
+2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> 
+  "11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, 2018)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[7239, 235, 259, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"4e5fad8a-556f-4728-b6f4-c3f1eb9b0ea0",
+   CellTags->"PrimaryExamplesSection",
+   CellID->1]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 35361, 1029}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[587, 21, 2280, 53, 70, "AnchorBarGrid",ExpressionUUID->"02d3186a-fcaa-46c2-b484-1e9ff6be46b6",
+ CellID->1],
+Cell[2870, 76, 172, 6, 70, "ObjectNameGrid",ExpressionUUID->"ade4d1ff-becf-46f3-87df-f11d7d399a42"],
+Cell[3045, 84, 1100, 33, 70, "Usage",ExpressionUUID->"3f374a55-cb23-4b35-95b9-50e77c096ace",
+ CellID->982511436],
+Cell[CellGroupData[{
+Cell[4170, 121, 621, 19, 70, "NotesSection",ExpressionUUID->"c1442a7a-ae95-4e98-a7b2-c6067cf94f17",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1],
+Cell[4794, 142, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"6f819325-b0cd-438f-8e8b-0ac4ed529003"],
+Cell[4828, 144, 160, 6, 70, "Notes",ExpressionUUID->"90c0602f-fbda-4155-979c-d9dded23148a",
+ CellID->1067943069],
+Cell[4991, 152, 224, 9, 70, "Notes",ExpressionUUID->"138555ea-13ec-4c75-a64a-02df7bbe9e4b",
+ CellID->993908863],
+Cell[5218, 163, 418, 14, 70, "Notes",ExpressionUUID->"9af75011-d701-46bc-84b3-1466d10b5d94",
+ CellID->1535733922],
+Cell[5639, 179, 495, 15, 70, "Notes",ExpressionUUID->"e0239f38-8338-4517-a820-cc0e63175114",
+ CellID->2015739878],
+Cell[6137, 196, 294, 7, 70, "Notes",ExpressionUUID->"7edada2f-379d-473b-8b2e-6fed895eadcc",
+ CellID->1301551201],
+Cell[6434, 205, 120, 3, 70, "Notes",ExpressionUUID->"a61d0cb0-8aca-4c25-a9f6-ad59876ee2a4",
+ CellID->1277510341],
+Cell[6557, 210, 368, 9, 70, "2ColumnTableMod",ExpressionUUID->"2478ccde-a5dd-462d-bcbb-95d420e2d61c",
+ CellID->1323169790],
+Cell[6928, 221, 274, 9, 70, "Notes",ExpressionUUID->"27a1a857-08e0-4632-921b-030ccc6e5959",
+ CellID->813112122]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[7239, 235, 259, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"4e5fad8a-556f-4728-b6f4-c3f1eb9b0ea0",
+ CellTags->"PrimaryExamplesSection",
+ CellID->1],
+Cell[7501, 247, 643, 24, 70, "ExampleText",ExpressionUUID->"ee501cad-50a3-403b-9e9d-74c369fc6085",
+ CellID->730265297],
+Cell[8147, 273, 465, 14, 70, "Input",ExpressionUUID->"be59d78e-14dc-4e8e-bc83-103d8c09eb5e",
+ CellID->59134466],
+Cell[8615, 289, 164, 6, 70, "ExampleText",ExpressionUUID->"d2535901-02e6-49ad-9f33-f2ab1d47b0a4",
+ CellID->456662425],
+Cell[8782, 297, 468, 14, 70, "Input",ExpressionUUID->"3e3a6bda-d84d-4225-b1cc-875c8350cefa",
+ CellID->1501213764],
+Cell[CellGroupData[{
+Cell[9275, 315, 124, 3, 70, "ExampleDelimiter",ExpressionUUID->"7ac98258-cf73-466a-93b9-f59f79b5bc78",
+ CellID->14731548],
+Cell[9402, 320, 85, 1, 70, "ExampleText",ExpressionUUID->"d04602a3-4976-4b8b-92a3-5db99cf33ab3",
+ CellID->632507831],
+Cell[9490, 323, 465, 14, 70, "Input",ExpressionUUID->"f9f3bbbf-02d1-4aa8-ad24-60883e128026",
+ CellID->280815198]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9992, 342, 189, 6, 70, "ExampleSection",ExpressionUUID->"c9c103fc-e6cf-4146-8b22-76eb6ad16d30",
+ CellID->2061341341],
+Cell[CellGroupData[{
+Cell[10206, 352, 208, 6, 70, "ExampleSubsection",ExpressionUUID->"554808d2-e6ae-44b5-8d69-74bdfd568ad3",
+ CellID->1654965325],
+Cell[10417, 360, 308, 6, 70, "ExampleText",ExpressionUUID->"d70807e2-c929-43ae-b385-8f135d35c878",
+ CellID->1374355442],
+Cell[10728, 368, 486, 15, 70, "Input",ExpressionUUID->"a03a4f10-616d-4c8d-966b-a3f5fa2d3662",
+ CellID->1617484909],
+Cell[CellGroupData[{
+Cell[11239, 387, 554, 16, 70, "Input",ExpressionUUID->"57d61382-e013-4395-a61b-6f3f6ebe8e7b",
+ CellID->468872664],
+Cell[11796, 405, 335, 8, 70, "Message",ExpressionUUID->"5b60ec8f-5197-4873-8d33-83e966839567",
+ CellID->1125423300]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[12180, 419, 207, 6, 70, "ExampleSubsection",ExpressionUUID->"61c24362-bac3-42f1-a520-398fbd8db858",
+ CellID->1757724783],
+Cell[12390, 427, 561, 16, 70, "Input",ExpressionUUID->"799ce0cb-9201-4a00-8284-35b353f3cdaa",
+ CellID->1414300316]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[12988, 448, 208, 6, 70, "ExampleSubsection",ExpressionUUID->"71a05e9d-3af9-4123-9236-877745f0aefe",
+ CellID->1787552279],
+Cell[13199, 456, 289, 9, 70, "ExampleText",ExpressionUUID->"39b2ef88-5571-47f8-b8e4-cbe5c1013be3",
+ CellID->1361481282],
+Cell[13491, 467, 555, 16, 70, "Input",ExpressionUUID->"b176a83c-73d3-4701-bf74-c82beff625e3",
+ CellID->929006526]
+}, Closed]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[14095, 489, 236, 8, 70, "ExampleSection",ExpressionUUID->"48b2eded-e013-4f38-8df0-32935fa2f180",
+ CellID->2100923971],
+Cell[14334, 499, 2356, 64, 70, "Input",ExpressionUUID->"773f18ac-6b1a-4420-afbf-eea3a9d79ee1",
+ CellID->1673477652],
+Cell[16693, 565, 16755, 414, 70, "Input",ExpressionUUID->"389f182b-885f-4d78-bba4-204ca13add35",
+ CellID->545572405]
+}, Closed]]
+}, Open  ]],
+Cell[33475, 983, 23, 0, 70, "FooterCell",ExpressionUUID->"5f571ee0-c192-41ba-91b9-21c5ed0c665a"]
+}
+]
+*)
+
+(* End of internal cache information *)

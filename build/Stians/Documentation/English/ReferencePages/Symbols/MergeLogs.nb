@@ -1,0 +1,837 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     28507,        828]
+NotebookOptionsPosition[     22295,        689]
+NotebookOutlinePosition[     24489,        746]
+CellTagsIndexPosition[     24404,        741]
+WindowTitle->MergeLogs
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["XRAY SYMBOL", "PacletNameCell"], Cell[TextData[Cell[BoxData[
+     ActionMenuBox[
+      FrameBox[
+       InterpretationBox[Cell[TextData[{
+         "URL",
+         StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+          StripOnInput->False]
+        }]],
+        TextCell[
+         Row[{"URL", 
+           Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+       StripOnInput->False], {"\<\"Xray/ref/MergeLogs\"\>":>
+      None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+      Module[{DocumentationSearch`Private`nb$}, 
+       DocumentationSearch`Private`nb$ = NotebookPut[
+          Notebook[{
+            Cell["Xray/ref/MergeLogs"]}, Visible -> False]]; 
+       SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+       FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+       NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+      Delimiter, "\<\"Copy web URL\"\>":>
+      Module[{DocumentationSearch`Private`nb$}, 
+       DocumentationSearch`Private`nb$ = NotebookPut[
+          Notebook[{
+            Cell[
+             BoxData[
+              MakeBoxes[
+               Hyperlink[
+               "http://reference.wolfram.com/language/Xray/ref/MergeLogs.\
+html"], StandardForm]], "Input", TextClipboardType -> "PlainText"]}, Visible -> 
+           False]]; SelectionMove[
+        DocumentationSearch`Private`nb$, All, Notebook]; 
+       FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+       NotebookClose[DocumentationSearch`Private`nb$]; 
+       Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+        NotebookLocate[{
+          URL[
+           StringJoin[
+            If[
+             TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$17012], 
+             "http://reference.wolfram.com/system-modeler/", 
+             "http://reference.wolfram.com/language/"], "Xray/ref/MergeLogs", 
+            ".html"]], None}]}]},
+      Appearance->None,
+      MenuAppearance->Automatic,
+      MenuStyle->"URLMenu"]],
+     LineSpacing->{1.4, 0}]], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell["MergeLogs", "ObjectName"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{Cell[
+          TextData["MergeLogs"]],"paclet:Xray/ref/MergeLogs"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", 
+       StyleBox["input", "TI"], "]"}]], "InlineFormula"],
+     " \[LineSeparator]merges all the log files located in ",
+     Cell[BoxData[
+      StyleBox["dir", "TI"]], "InlineFormula"],
+     "."
+    }]]},
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{Cell[
+          TextData["MergeLogs"]],"paclet:Xray/ref/MergeLogs"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", 
+       RowBox[{
+        SubscriptBox[
+         StyleBox["dir", "TI"], 
+         StyleBox["1", "TR"]], ",", 
+        SubscriptBox[
+         StyleBox["dir", "TI"], 
+         StyleBox["2", "TR"]]}], "]"}]], "InlineFormula"],
+     "\[LineSeparator]merges all the log files located in ",
+     Cell[BoxData[
+      SubscriptBox[
+       StyleBox["dir", "TI"], 
+       StyleBox["1", "TR"]]], "InlineFormula"],
+     " and exports them to ",
+     Cell[BoxData[
+      SubscriptBox[
+       StyleBox["dir", "TI"], 
+       StyleBox["2", "TR"]]], "InlineFormula"],
+     "."
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {None, {None}}, 
+   "RowsIndexed" -> {}}},
+ CellID->982511436]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    TemplateBox[{6},
+     "Spacer1"]]],
+   "Details"
+  }], "NotesFrameText"],
+  Appearance->{Automatic, None, "Normal", Automatic},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->"Preemptive"]]]], "NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1955313975],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[TextData[{
+ "Any log files found will be sorted chronologically (by applying ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["UnixTime"]],"paclet:ref/UnixTime"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ ")."
+}], "Notes",
+ CellID->1067943069],
+
+Cell[TextData[{
+ Cell[BoxData[
+  StyleBox["input", "TI"]], "InlineFormula"],
+ " may be the file path of a single log file, a list of paths to log files or \
+the directory of a ",
+ StyleBox["CrysAlis",
+  FontSlant->"Italic"],
+ " project or log directory."
+}], "Notes",
+ CellID->411109700],
+
+Cell[TextData[{
+ "If the log files are exported to the output directory, ",
+ Cell[BoxData[
+  SubscriptBox[
+   StyleBox["dir", "TI"], 
+   StyleBox["2", "TR"]]], "InlineFormula"],
+ ", the name of the merged log file will be \[LeftGuillemet]",
+ StyleBox["_log.txt", "InlineCode"],
+ "\[RightGuillemet] appended to the name of the directory two levels up from ",
+ Cell[BoxData[
+  SubscriptBox[
+   StyleBox["dir", "TI"], 
+   StyleBox["1", "TR"]]], "InlineFormula"],
+ "."
+}], "Notes",
+ CellID->1892247291],
+
+Cell[TextData[{
+ "Both ",
+ Cell[BoxData[
+  SubscriptBox[
+   StyleBox["dir", "TI"], 
+   StyleBox["1", "TR"]]], "InlineFormula"],
+ " and ",
+ Cell[BoxData[
+  SubscriptBox[
+   StyleBox["dir", "TI"], 
+   StyleBox["2", "TR"]]], "InlineFormula"],
+ " need to be valid directories. If not, the function will just return the \
+merged log."
+}], "Notes",
+ CellID->165440842],
+
+Cell[TextData[{
+ "If ",
+ Cell[BoxData[
+  StyleBox["input", "TI"]], "InlineFormula"],
+ " is a directory, the function will search for file names beginning with \
+\[LeftGuillemet]",
+ StyleBox["crysalispro_red", "InlineCode"],
+ "\[RightGuillemet] up to three levels down from ",
+ Cell[BoxData[
+  StyleBox["input", "TI"]], "InlineFormula"],
+ "."
+}], "Notes",
+ CellID->1201890340]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(4)", "ExampleCount"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->19727784],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->852384050],
+
+Cell["Setting up a directory that contains log files:", "ExampleText",
+ CellID->1479662841],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"dir", "=", 
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", 
+     RowBox[{"$XrayExamples", ",", "\"\<Logs\>\""}], "}"}], "]"}]}], 
+  ";"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1542182412],
+
+Cell["\<\
+Applying the function to this directory will simply return the merged log \
+files:\
+\>", "ExampleText",
+ CellID->1799149058],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"MergeLogs", "@", "dir"}], "//", "Short"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->238537219],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"\<\"Your current setup file is: D:\\\\Gr\"\>", 
+   "\[Ellipsis]", "\<\"WriteKM4PeakTableAndPrintTABBIN)!\"\>"}],
+  Short]], "Output",
+ ImageSize->{494, 16},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[2]//Short=",
+ CellID->188358178]
+}, Open  ]],
+
+Cell[TextData[{
+ "By including another directory path as a second argument, the merged log \
+files will be exported to a new text file in the specified directory (here: \
+to ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["$XrayExamples"]],"paclet:Xray/ref/$XrayExamples"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ "):"
+}], "ExampleText",
+ CellID->51010464],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"logfile", "=", 
+   RowBox[{"MergeLogs", "[", 
+    RowBox[{"dir", ",", "$XrayExamples"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Import", "[", 
+   RowBox[{"logfile", ",", "\"\<Data\>\""}], "]"}], "//", 
+  "Shallow"}]}], "Input",
+ CellLabel->"In[3]:=",
+ CellID->1360947430],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"Your current setup file is: \
+D:\\\\Grenoble2015_ThioureaFerrocene\\\\Data\\\\Crystal_1\\\\Crystal_1_(05)_\
+165K\\\\Crystal_1_(05)_165K.par\"\>", ",", "\<\" \"\>", 
+   ",", "\<\"GENERATOR INFO: Generator setting values adjusted to fit limits \
+- kV: 55.00 ->  50.00; mA: 45.00 ->  45.00\"\>", 
+   ",", "\<\"Goniometer type: KM4 (km4gonio.xdll)\"\>", 
+   ",", "\<\"SETUP INFO: Unreasonable value for ROTATION DETECTORORIENTATION \
+xorigininpix: 30.270000 -> check, please\"\>", 
+   ",", "\<\"Ignored SHAPE option VIDEOGRABBER due to unknown frame grabber: \
+VFW assumed!\"\>", 
+   ",", "\<\"Your current setup file is: D:\\\\Grenoble2015_ThioureaFerrocene\
+\\\\Data\\\\Crystal_1\\\\Crystal_1_(05)_165K\\\\Crystal_1_(05)_165K.par\"\>", 
+   ",", "\<\"\"\>", 
+   ",", "\<\"WINDOWS INFORMATION: (38.41 (release 15-09-2015))\"\>", 
+   ",", "\<\"System version:Windows8, (Build 9200)\"\>", ",", 
+   RowBox[{"\[LeftSkeleton]", "3985", "\[RightSkeleton]"}]}], "}"}]], "Output",\
+
+ ImageSize->{562, 204},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[3]//Shallow=",
+ CellID->345001968]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Possible Issues",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(2)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->1305812373],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"MergeLogs", "[", "$BaseDirectory", "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1051547023],
+
+Cell[BoxData[
+ TemplateBox[{
+  "MergeLogs","failed",
+   "\"Failed to interpret input. No log files with the prefix \
+\[LeftGuillemet]crysalispro_red\[RightGuillemet] were found in \
+\[LeftGuillemet]\\!\\(\\*RowBox[{\\\"\\\\\\\"/Library/Mathematica\\\\\\\"\\\"}\
+]\\)\[RightGuillemet].\"",2,1,18,26322883597032886538,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellLabel->"During evaluation of In[1]:=",
+ CellID->275785137],
+
+Cell[BoxData["$Aborted"], "Output",
+ ImageSize->{62, 16},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->851087333]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->1439684046],
+
+Cell[TextData[{
+ "If ",
+ Cell[BoxData[
+  SubscriptBox[
+   StyleBox["dir", "TI"], 
+   StyleBox["2", "TR"]]], "InlineFormula"],
+ " is not a valid directory, the function will ignore the second argument."
+}], "ExampleText",
+ CellID->1034868506],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"dir", "=", 
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", 
+     RowBox[{
+     "$XrayPath", ",", "\"\<ExampleFiles\>\"", ",", "\"\<CrysAlis\>\""}], 
+     "}"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"MergeLogs", "[", 
+   RowBox[{"dir", ",", "\"\<Not a real path\>\""}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Short", "@", "%"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1071510373],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"\<\"Your current setup file is: D:\\\\\"\>", 
+   "\[Ellipsis]", "\<\"riteKM4PeakTableAndPrintTABBIN)!\"\>"}],
+  Short]], "Output",
+ ImageSize->{473, 16},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]//Short=",
+ CellID->1171355826]
+}, Open  ]]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " code",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->2044602604],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"MergeLogs", "::", "failed"}], "=", 
+   "\"\<Failed to interpret input. No log files with the prefix \
+\[LeftGuillemet]crysalispro_red\[RightGuillemet] were found in \
+\[LeftGuillemet]`1`\[RightGuillemet].\>\""}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"MergeLogs", "::", "files"}], "=", 
+   "\"\<One or more log files were missing.\>\""}], ";"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1468094725],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"MergeLogs", "[", 
+   RowBox[{
+    RowBox[{"input_", "?", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"StringQ", "[", "#", "]"}], "||", 
+        RowBox[{"AllTrue", "[", 
+         RowBox[{"#", ",", "StringQ"}], "]"}]}], "&"}], ")"}]}], ",", 
+    RowBox[{"out_:", "\"\< \>\""}]}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+     "logs", ",", "sorted", ",", "imported", ",", "joined", ",", "output", 
+      ",", "name", ",", "file"}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"(*", 
+     RowBox[{
+      RowBox[{"--", "-"}], "*", " ", "Processing", " ", "input", " ", "*", 
+      RowBox[{"--", "-"}]}], "*)"}], "\[IndentingNewLine]", 
+    RowBox[{"(*", " ", 
+     RowBox[{
+      RowBox[{"A", ".", " ", "Already"}], " ", "merged", " ", "log", " ", 
+      "given"}], " ", "*)"}], "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"Quiet", "@", 
+      RowBox[{"If", "[", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"StringTake", "[", 
+          RowBox[{"input", ",", "27"}], "]"}], "\[Equal]", 
+         "\"\<Your current setup file is:\>\""}], ",", "\[IndentingNewLine]", 
+        
+        RowBox[{"Return", "@", "input"}]}], "]"}]}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+       RowBox[{"B", ".", " ", "Project"}], " ", "or", " ", "log", " ", 
+       "directory", " ", "given"}], " ", "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"Quiet", "@", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"DirectoryQ", "@", "input"}], ",", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"logs", "=", 
+          RowBox[{"FileNames", "[", 
+           RowBox[{"\"\<crysalispro_red*\>\"", ",", "input", ",", "3"}], 
+           "]"}]}], ";", "\[IndentingNewLine]", 
+         RowBox[{"Goto", "[", "\"\<InputCheck\>\"", "]"}]}]}], "]"}]}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+       RowBox[{"C", ".", " ", "Single"}], " ", "log", " ", "file", " ", 
+       "given"}], " ", "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"TrueQ", "[", 
+        RowBox[{
+         RowBox[{"FileFormat", "[", "input", "]"}], "\[Equal]", 
+         "\"\<Text\>\""}], "]"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"Return", "@", 
+        RowBox[{"Import", "[", 
+         RowBox[{"input", ",", "\"\<String\>\""}], "]"}]}]}], "]"}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+       RowBox[{"D", ".", " ", "Log"}], " ", "files", " ", "given", " ", "as", 
+       " ", "a", " ", "list", " ", "of", " ", "paths"}], " ", "*)"}], 
+     "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"ListQ", "@", "input"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"(*", " ", 
+        RowBox[{"Check", " ", "file", " ", "existence"}], " ", "*)"}], 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"!", 
+           RowBox[{"AllTrue", "[", 
+            RowBox[{"input", ",", "FileExistsQ"}], "]"}]}], ",", 
+          "\[IndentingNewLine]", "\t", 
+          RowBox[{
+           RowBox[{"Message", "[", 
+            RowBox[{"MergeLogs", "::", "files"}], "]"}], ";", 
+           RowBox[{"Abort", "[", "]"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+        RowBox[{"logs", "=", "input"}]}]}], "]"}], ";", "\[IndentingNewLine]",
+      "\[IndentingNewLine]", "\t", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Check", " ", "input"}], " ", "*)"}], "\[IndentingNewLine]", 
+     "\t", 
+     RowBox[{"Label", "[", "\"\<InputCheck\>\"", "]"}], ";", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"logs", "\[Equal]", 
+         RowBox[{"{", "}"}]}], "||", 
+        RowBox[{"!", 
+         RowBox[{"ValueQ", "@", "logs"}]}]}], ",", "\[IndentingNewLine]", 
+       "\t", 
+       RowBox[{
+        RowBox[{"Message", "[", 
+         RowBox[{
+          RowBox[{"MergeLogs", "::", "failed"}], ",", "input"}], "]"}], ";", 
+        RowBox[{"Abort", "[", "]"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Special", " ", 
+       RowBox[{"case", ":", " ", 
+        RowBox[{
+        "Only", " ", "one", " ", "matching", " ", "log", " ", "file"}]}]}], 
+      " ", "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Length", "[", "logs", "]"}], "\[Equal]", "1"}], ",", 
+       "\[IndentingNewLine]", "\t\t", 
+       RowBox[{
+        RowBox[{"joined", "=", 
+         RowBox[{"Import", "[", 
+          RowBox[{
+           RowBox[{"First", "@", "logs"}], ",", "\"\<Data\>\""}], "]"}]}], 
+        ";", "\[IndentingNewLine]", "\t\t", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Depth", "[", "joined", "]"}], ">", "2"}], ",", 
+          RowBox[{"joined", "=", 
+           RowBox[{"Flatten", "@", "joined"}]}]}], "]"}], ";", 
+        "\[IndentingNewLine]", "\t\t", 
+        RowBox[{"Goto", "[", "\"\<MergingDone\>\"", "]"}]}]}], 
+      "\[IndentingNewLine]", "\t", "]"}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{
+       RowBox[{"--", "-"}], "*", " ", "Sorting", " ", "chronologically", " ", 
+       "and", " ", "merging", " ", "*", 
+       RowBox[{"--", "-"}]}], "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{"sorted", "=", 
+      RowBox[{"SortBy", "[", 
+       RowBox[{"logs", ",", 
+        RowBox[{
+         RowBox[{"UnixTime", "@", 
+          RowBox[{"FileDate", "[", "#", "]"}]}], "&"}]}], "]"}]}], ";", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"imported", "=", 
+      RowBox[{"Map", "[", 
+       RowBox[{"Flatten", ",", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"Import", "[", 
+           RowBox[{"#", ",", "\"\<Data\>\""}], "]"}], "&"}], "/@", 
+         "sorted"}]}], "]"}]}], ";", "\[IndentingNewLine]", "\t", 
+     RowBox[{"joined", "=", 
+      RowBox[{"imported", "/.", 
+       RowBox[{
+        RowBox[{"x_", "/;", 
+         RowBox[{
+          RowBox[{"Depth", "[", "x", "]"}], ">", "2"}]}], "\[RuleDelayed]", 
+        RowBox[{"Flatten", "[", "x", "]"}]}]}]}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{
+       RowBox[{"--", "-"}], "*", " ", "Returning", " ", "merged", " ", "log", 
+       " ", "*", 
+       RowBox[{"--", "-"}]}], "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{"Label", "[", "\"\<MergingDone\>\"", "]"}], ";", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"Which", "[", "\[IndentingNewLine]", "\t", 
+      RowBox[{"(*", " ", 
+       RowBox[{
+        RowBox[{"A", ".", " ", "Exporting"}], " ", "to", " ", "output", " ", 
+        "directory"}], " ", "*)"}], "\[IndentingNewLine]", "\t", 
+      RowBox[{
+       RowBox[{"Quiet", "@", 
+        RowBox[{"AllTrue", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"input", ",", 
+            RowBox[{"ToString", "@", "out"}]}], "}"}], ",", "DirectoryQ"}], 
+         "]"}]}], ",", "\[IndentingNewLine]", "\t\t", 
+       RowBox[{
+        RowBox[{"name", "=", 
+         RowBox[{
+          RowBox[{"FileNameTake", "[", 
+           RowBox[{"input", ",", 
+            RowBox[{"{", 
+             RowBox[{"-", "2"}], "}"}]}], "]"}], "<>", "\"\<_log.txt\>\""}]}],
+         ";", "\[IndentingNewLine]", "\t\t", 
+        RowBox[{"Export", "[", 
+         RowBox[{
+          RowBox[{"FileNameJoin", "[", 
+           RowBox[{"{", 
+            RowBox[{"out", ",", "name"}], "}"}], "]"}], ",", "joined"}], 
+         "]"}]}], ",", "\[IndentingNewLine]", "\[IndentingNewLine]", "\t", 
+       RowBox[{"(*", " ", 
+        RowBox[{
+         RowBox[{"B", ".", " ", "Returning"}], " ", "merged", " ", "log"}], 
+        " ", "*)"}], "\[IndentingNewLine]", "\t", "True", ",", 
+       "\[IndentingNewLine]", "\t\t", 
+       RowBox[{
+        RowBox[{"output", "=", 
+         RowBox[{"ToString", "/@", "joined"}]}], ";", "\[IndentingNewLine]", 
+        "\t\t", 
+        RowBox[{"(*", " ", 
+         RowBox[{
+         "Export", " ", "and", " ", "import", " ", "for", " ", "correct", " ",
+           "formatting"}], " ", "*)"}], "\[IndentingNewLine]", "\t\t", 
+        RowBox[{"file", "=", 
+         RowBox[{"FileNameJoin", "[", 
+          RowBox[{"{", 
+           RowBox[{"$TemporaryDirectory", ",", "\"\<temp.txt\>\""}], "}"}], 
+          "]"}]}], ";", "\[IndentingNewLine]", "\t\t", 
+        RowBox[{"Export", "[", 
+         RowBox[{"file", ",", "output"}], "]"}], ";", "\[IndentingNewLine]", 
+        "\t\t", 
+        RowBox[{"Import", "[", 
+         RowBox[{"file", ",", "\"\<String\>\""}], "]"}]}]}], 
+      "\[IndentingNewLine]", "\t", "]"}]}]}], "\[IndentingNewLine]", 
+   "]"}]}]], "Input",
+ Background->RGBColor[0.94, 0.91, 0.88],
+ CellLabel->"In[2]:=",
+ CellID->1956679521]
+}, Closed]]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"MergeLogs",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "Wolfram Language", ButtonData -> "paclet:guide/WolframRoot", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "ExampleCounter" -> 1, "NeedPlatMsgIn" -> None, "RootCaptions" -> 
+  "", "Metadata" -> {
+   "built" -> "{2019, 3, 16, 9, 28, 40.996786}", 
+    "history" -> {"0.2", "", "", ""}, "context" -> "Xray`", "keywords" -> {}, 
+    "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> True,
+     "label" -> "Xray Symbol", "language" -> "en", "paclet" -> "Xray", 
+    "status" -> "None", "summary" -> 
+    "MergeLogs[input] merges all the log files located in dir. \
+MergeLogs[dir1, dir2] merges all the log files located in dir1 and exports \
+them to dir2.", "synonyms" -> {}, "tabletags" -> {}, "title" -> "MergeLogs", 
+    "titlemodifier" -> "", "windowtitle" -> "MergeLogs", "type" -> "Symbol", 
+    "uri" -> "Xray/ref/MergeLogs", "WorkflowDockedCell" -> ""}, 
+  "SearchTextTranslated" -> "", "NewStyles" -> False},
+CellContext->"Global`",
+FrontEndVersion->"11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
+2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> 
+  "11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, 2018)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[6979, 231, 266, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"213e484e-e14b-40ef-ae87-134bcb35659f",
+   CellTags->"PrimaryExamplesSection",
+   CellID->19727784]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 24207, 734}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[581, 21, 2255, 53, 70, "AnchorBarGrid",ExpressionUUID->"a2625f00-731b-40cc-ac23-61a6231da425",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[2861, 78, 166, 6, 70, "ObjectNameGrid",ExpressionUUID->"bf061c0a-d76b-457d-ba6b-ff834b8c54ae"],
+Cell[3030, 86, 1396, 45, 70, "Usage",ExpressionUUID->"99fa4187-017f-4a8d-ab43-46edc7495651",
+ CellID->982511436]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4463, 136, 630, 19, 70, "NotesSection",ExpressionUUID->"5e21e8e3-7837-483f-bc61-2d96091d51cd",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1955313975],
+Cell[5096, 157, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"2e94a58c-eb85-4e21-a8d5-92d78634234e"],
+Cell[5130, 159, 278, 9, 70, "Notes",ExpressionUUID->"b88335c2-c1ab-4bb5-a7b7-4d654df04da3",
+ CellID->1067943069],
+Cell[5411, 170, 287, 9, 70, "Notes",ExpressionUUID->"9d7e627b-0b96-467d-ba71-4b7fb459c860",
+ CellID->411109700],
+Cell[5701, 181, 498, 15, 70, "Notes",ExpressionUUID->"399acbab-933b-4f26-bb01-dc479505585a",
+ CellID->1892247291],
+Cell[6202, 198, 362, 14, 70, "Notes",ExpressionUUID->"39adb548-a950-4fac-9df0-c91963cef33c",
+ CellID->165440842],
+Cell[6567, 214, 375, 12, 70, "Notes",ExpressionUUID->"ab44a885-a151-4d15-bd1f-60cb266bad59",
+ CellID->1201890340]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[6979, 231, 266, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"213e484e-e14b-40ef-ae87-134bcb35659f",
+ CellTags->"PrimaryExamplesSection",
+ CellID->19727784],
+Cell[CellGroupData[{
+Cell[7270, 245, 195, 6, 70, "ExampleSection",ExpressionUUID->"aee8989b-9a66-41f0-90a2-3f9e63b8004c",
+ CellID->852384050],
+Cell[7468, 253, 91, 1, 70, "ExampleText",ExpressionUUID->"ca82fb07-de6a-4bbe-bc82-702ef7c80da3",
+ CellID->1479662841],
+Cell[7562, 256, 230, 8, 70, "Input",ExpressionUUID->"05daaeb1-7ea7-4df6-b698-cb4a24d807b1",
+ CellID->1542182412],
+Cell[7795, 266, 134, 4, 70, "ExampleText",ExpressionUUID->"a4528933-aa22-4a19-b66e-71e2b2732c94",
+ CellID->1799149058],
+Cell[CellGroupData[{
+Cell[7954, 274, 130, 4, 70, "Input",ExpressionUUID->"445a707a-9524-459b-a72a-ea6181ac2c0c",
+ CellID->238537219],
+Cell[8087, 280, 305, 9, 70, "Output",ExpressionUUID->"7bf1bd25-ecda-4392-826f-1e367db3f725",
+ CellID->188358178]
+}, Open  ]],
+Cell[8407, 292, 389, 11, 70, "ExampleText",ExpressionUUID->"894eadfc-8ad4-4727-8dd1-9622babaf123",
+ CellID->51010464],
+Cell[CellGroupData[{
+Cell[8821, 307, 332, 11, 70, "Input",ExpressionUUID->"da69a4ed-967f-42db-9be0-bcfa57d35ed6",
+ CellID->1360947430],
+Cell[9156, 320, 1155, 23, 70, "Output",ExpressionUUID->"aa1ed8cc-5ce9-4408-8e7d-77580dd28545",
+ CellID->345001968]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10360, 349, 197, 6, 70, "ExampleSection",ExpressionUUID->"b92cecb2-a8b5-47ec-a27b-776204ec9c9b",
+ CellID->1305812373],
+Cell[CellGroupData[{
+Cell[10582, 359, 119, 3, 70, "Input",ExpressionUUID->"abbae168-44e0-4200-8ebb-9211b5744765",
+ CellID->1051547023],
+Cell[10704, 364, 430, 9, 70, "Message",ExpressionUUID->"a3b34be4-9491-4d25-9897-740bb086a2f7",
+ CellID->275785137],
+Cell[11137, 375, 165, 5, 70, "Output",ExpressionUUID->"484d849d-36fd-4053-afcf-dcb610d696e0",
+ CellID->851087333]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11339, 385, 126, 3, 70, "ExampleDelimiter",ExpressionUUID->"f1d35121-f833-4f84-9cd1-5f16cf25032b",
+ CellID->1439684046],
+Cell[11468, 390, 241, 8, 70, "ExampleText",ExpressionUUID->"b645a1e2-0b62-4e50-ae2b-4f7b1b4c9124",
+ CellID->1034868506],
+Cell[CellGroupData[{
+Cell[11734, 402, 456, 14, 70, "Input",ExpressionUUID->"d6314a81-f533-415f-9606-19c1d2a1aec3",
+ CellID->1071510373],
+Cell[12193, 418, 303, 9, 70, "Output",ExpressionUUID->"ea91664e-8435-402d-9b48-7c79cba91eaa",
+ CellID->1171355826]
+}, Open  ]]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[12557, 434, 236, 8, 70, "ExampleSection",ExpressionUUID->"47b66ee6-1bc7-4f05-9b3f-a8507ab2dd85",
+ CellID->2044602604],
+Cell[12796, 444, 473, 12, 70, "Input",ExpressionUUID->"a2b4b20c-f5e1-4b54-8c5c-ac22169a288f",
+ CellID->1468094725],
+Cell[13272, 458, 8969, 225, 70, "Input",ExpressionUUID->"6b0bcddf-8092-4176-ad0e-37a05a258b21",
+ CellID->1956679521]
+}, Closed]]
+}, Open  ]],
+Cell[22268, 687, 23, 0, 70, "FooterCell",ExpressionUUID->"4904aa40-ebbe-45d5-a581-2318d8567bb4"]
+}
+]
+*)
+
+(* End of internal cache information *)

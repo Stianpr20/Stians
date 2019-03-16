@@ -1,0 +1,19 @@
+\XY{Ba} & \nam{5.02} &
+\XY{Ar} & \nam{5.26} (\SI{4.2}{\kelvin}) &
+\XY{Be} & \nam{2.29} & \nam{3.58} & \nam{1.56} &
+\XY{AgI} & \nam{6.47}
+\\
+\XY{Cr} & \nam{2.88} &
+\XY{Ag} & \nam{4.09} &
+\XY{Cd} & \nam{2.98} & \nam{5.62} & \nam{1.89} &
+\XY{AlAs} & \nam{5.62}
+\\
+\XY{Cs} & \nam{6.05} (\SI{78}{\kelvin}) &
+\XY{Al} & \nam{4.05} &
+\XY{Ce} & \nam{3.65} & \nam{5.96} & \nam{1.63} &
+\XY{AlP} & \nam{5.45}
+\\
+\XY{Fe} & \nam{2.87} &
+\XY{Au} & \nam{4.08} &
+$\alpha$-\XY{Co} & \nam{2.51} & \nam{4.07} & \nam{1.62} &
+\XY{AlSb} & \nam{6.13}

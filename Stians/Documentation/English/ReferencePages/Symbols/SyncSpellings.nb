@@ -1,0 +1,484 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     11884,        474]
+NotebookOptionsPosition[      7875,        332]
+NotebookOutlinePosition[      8508,        357]
+CellTagsIndexPosition[      8430,        352]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "New in: ",
+ Cell["0.0", "HistoryData",
+  CellTags->"New"],
+ " | Modified in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Modified"],
+ " | Obsolete in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Obsolete"],
+ " | Excised in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Excised"]
+}], "History",
+ CellID->1247902091],
+
+Cell[CellGroupData[{
+
+Cell["Categorization", "CategorizationSection",
+ CellID->1122911449],
+
+Cell["Symbol", "Categorization",
+ CellLabel->"Entity Type",
+ CellID->686433507],
+
+Cell["Stians", "Categorization",
+ CellLabel->"Paclet Name",
+ CellID->605800465],
+
+Cell["Stians`", "Categorization",
+ CellLabel->"Context",
+ CellID->468444828],
+
+Cell["Stians/ref/SyncSpellings", "Categorization",
+ CellLabel->"URI"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Keywords", "KeywordsSection",
+ CellID->477174294],
+
+Cell["XXXX", "Keywords",
+ CellID->1164421360]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Syntax Templates", "TemplatesSection",
+ CellID->1872225408],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Additional Function Template",
+ CellID->1562036412],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Arguments Pattern",
+ CellID->158391909],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Local Variables",
+ CellID->1360575930],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Color Equal Signs",
+ CellID->793782254]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Details", "DetailsSection",
+ CellID->307771771],
+
+Cell["XXXX", "Details",
+ CellLabel->"Lead",
+ CellID->670882175],
+
+Cell["XXXX", "Details",
+ CellLabel->"Developers",
+ CellID->350963985],
+
+Cell["XXXX", "Details",
+ CellLabel->"Authors",
+ CellID->8391405],
+
+Cell["XXXX", "Details",
+ CellLabel->"Feature Name",
+ CellID->3610269],
+
+Cell["XXXX", "Details",
+ CellLabel->"QA",
+ CellID->401364205],
+
+Cell["XXXX", "Details",
+ CellLabel->"DA",
+ CellID->350204745],
+
+Cell["XXXX", "Details",
+ CellLabel->"Docs",
+ CellID->732958810],
+
+Cell["XXXX", "Details",
+ CellLabel->"Features Page Notes",
+ CellID->222905350],
+
+Cell["XXXX", "Details",
+ CellLabel->"Comments",
+ CellID->240026365]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["SyncSpellings", "ObjectName",
+ CellID->1224892054],
+
+Cell[TextData[{
+ Cell["   ", "ModInfo"],
+ Cell[BoxData[
+  RowBox[{
+   ButtonBox["SyncSpellings",
+    BaseStyle->"Link",
+    ButtonData->"paclet:Stians/ref/SyncSpellings"], "[", 
+   RowBox[{
+    SubscriptBox[
+     StyleBox["path", "TI"], 
+     StyleBox["1", "TR"]], ",", 
+    SubscriptBox[
+     StyleBox["path", "TI"], 
+     StyleBox["2", "TR"]], ",", 
+    StyleBox["\[Ellipsis]", "TR"]}], "]"}]], "InlineFormula"],
+ " \[LineSeparator]gathers dictionaries from ",
+ Cell[BoxData[
+  SubscriptBox[
+   StyleBox["path", "TI"], 
+   StyleBox["i", "TI"]]], "InlineFormula"],
+ " and synchronises them.\n",
+ Cell["      ", "ModInfo"],
+ Cell[BoxData[
+  RowBox[{
+   ButtonBox["SyncSpellings",
+    BaseStyle->"Link",
+    ButtonData->"paclet:Stians/ref/SyncSpellings"], "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      SubscriptBox[
+       StyleBox["path", "TI"], 
+       StyleBox["x1", "TI"]], ",", 
+      SubscriptBox[
+       StyleBox["path", "TI"], 
+       StyleBox["x2", "TI"]], ",", 
+      StyleBox["\[Ellipsis]", "TR"]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      SubscriptBox[
+       StyleBox["path", "TI"], 
+       StyleBox["y1", "TI"]], ",", 
+      SubscriptBox[
+       StyleBox["path", "TI"], 
+       StyleBox["y2", "TI"]], ",", 
+      StyleBox["\[Ellipsis]", "TR"]}], "}"}], ",", 
+    StyleBox["\[Ellipsis]", "TR"]}], "]"}]], "InlineFormula"],
+ "\[LineSeparator]gathers dictionaries from ",
+ Cell[BoxData[
+  SubscriptBox[
+   StyleBox["path", "TI"], 
+   StyleBox["\[Alpha]i", "TI"]]], "InlineFormula"],
+ ", belonging to language ",
+ Cell[BoxData[
+  StyleBox["\[Alpha]", "TR"]], "InlineFormula"],
+ "."
+}], "Usage",
+ CellChangeTimes->{{3.6758354540485764`*^9, 3.6758355494257*^9}, {
+  3.675836337206299*^9, 3.6758363644942827`*^9}, {3.6758365127078667`*^9, 
+  3.67583665862149*^9}, {3.6758367914912367`*^9, 3.675836799122036*^9}, {
+  3.675836854672875*^9, 3.6758369948392363`*^9}, {3.6758371528353567`*^9, 
+  3.675837179498741*^9}, {3.67583721687392*^9, 3.675837223369671*^9}, {
+  3.675837290930735*^9, 3.6758373528324966`*^9}},
+ CellID->982511436],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["SyncSpellings",
+   BaseStyle->"Link",
+   ButtonData->"paclet:Stians/ref/SyncSpellings"]], "InlineFormula",
+  FormatType->"StandardForm"],
+ " gathers dictionaries from the specified paths, merges them and replaces \
+the old versions with a single new version."
+}], "Notes",
+ CellChangeTimes->{{3.6758373651255627`*^9, 3.6758374268753643`*^9}},
+ CellID->1067943069]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Tutorials", "TutorialsSection",
+ CellID->250839057],
+
+Cell["XXXX", "Tutorials",
+ CellID->341631938]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Related Demonstrations", "RelatedDemonstrationsSection",
+ CellID->1268215905],
+
+Cell["XXXX", "RelatedDemonstrations",
+ CellID->1129518860]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Related Links", "RelatedLinksSection",
+ CellID->1584193535],
+
+Cell["XXXX", "RelatedLinks",
+ CellChangeTimes->{3.675836571937986*^9},
+ CellID->1038487239]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["See Also", "SeeAlsoSection",
+ CellID->1255426704],
+
+Cell["XXXX", "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["More About", "MoreAboutSection",
+ CellID->38303248],
+
+Cell["XXXX", "MoreAbout",
+ CellID->1665078683]
+}, Open  ]],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {
+     StyleBox["Examples", "PrimaryExamplesSection"], 
+     ButtonBox[
+      RowBox[{
+       RowBox[{"More", " ", "Examples"}], " ", "\[RightTriangle]"}],
+      BaseStyle->"ExtendedExamplesLink",
+      ButtonData:>"ExtendedExamples"]}
+   }],
+  $Line = 0; Null]], "PrimaryExamplesSection",
+ CellID->880084151],
+
+Cell[CellGroupData[{
+
+Cell["More Examples", "ExtendedExamplesSection",
+ CellTags->"ExtendedExamples",
+ CellID->1854448968],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Scope", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1293636265],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Generalizations & Extensions", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1020263627],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["Options", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->2061341341],
+
+Cell[BoxData[
+ InterpretationBox[Cell["XXXX", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection",
+ CellID->1757724783],
+
+Cell[BoxData[
+ InterpretationBox[Cell["XXXX", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection",
+ CellID->1295379749]
+}, Closed]],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Applications", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->258228157],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Properties & Relations", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->2123667759],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Possible Issues", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1305812373],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Interactive Examples", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1653164318],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Neat Examples", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->589267740]
+}, Open  ]]
+},
+WindowSize->{700, 770},
+WindowMargins->{{729, Automatic}, {Automatic, 91}},
+CellContext->"Global`",
+FrontEndVersion->"10.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (December 10, \
+2015)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "FunctionPageStyles.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "ExtendedExamples"->{
+  Cell[6355, 274, 100, 2, 55, "ExtendedExamplesSection",
+   CellTags->"ExtendedExamples",
+   CellID->1854448968]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"ExtendedExamples", 8292, 345}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 325, 14, 24, "History",
+ CellID->1247902091],
+Cell[CellGroupData[{
+Cell[908, 38, 68, 1, 29, "CategorizationSection",
+ CellID->1122911449],
+Cell[979, 41, 79, 2, 70, "Categorization",
+ CellID->686433507],
+Cell[1061, 45, 79, 2, 70, "Categorization",
+ CellID->605800465],
+Cell[1143, 49, 76, 2, 70, "Categorization",
+ CellID->468444828],
+Cell[1222, 53, 69, 1, 70, "Categorization"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1328, 59, 55, 1, 19, "KeywordsSection",
+ CellID->477174294],
+Cell[1386, 62, 45, 1, 70, "Keywords",
+ CellID->1164421360]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1468, 68, 65, 1, 19, "TemplatesSection",
+ CellID->1872225408],
+Cell[1536, 71, 94, 2, 70, "Template",
+ CellID->1562036412],
+Cell[1633, 75, 82, 2, 70, "Template",
+ CellID->158391909],
+Cell[1718, 79, 81, 2, 70, "Template",
+ CellID->1360575930],
+Cell[1802, 83, 82, 2, 70, "Template",
+ CellID->793782254]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1921, 90, 53, 1, 19, "DetailsSection",
+ CellID->307771771],
+Cell[1977, 93, 63, 2, 70, "Details",
+ CellID->670882175],
+Cell[2043, 97, 69, 2, 70, "Details",
+ CellID->350963985],
+Cell[2115, 101, 64, 2, 70, "Details",
+ CellID->8391405],
+Cell[2182, 105, 69, 2, 70, "Details",
+ CellID->3610269],
+Cell[2254, 109, 61, 2, 70, "Details",
+ CellID->401364205],
+Cell[2318, 113, 61, 2, 70, "Details",
+ CellID->350204745],
+Cell[2382, 117, 63, 2, 70, "Details",
+ CellID->732958810],
+Cell[2448, 121, 78, 2, 70, "Details",
+ CellID->222905350],
+Cell[2529, 125, 67, 2, 70, "Details",
+ CellID->240026365]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[2633, 132, 56, 1, 63, "ObjectName",
+ CellID->1224892054],
+Cell[2692, 135, 2057, 63, 121, "Usage",
+ CellID->982511436],
+Cell[4752, 200, 407, 10, 42, "Notes",
+ CellID->1067943069]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5196, 215, 57, 1, 43, "TutorialsSection",
+ CellID->250839057],
+Cell[5256, 218, 45, 1, 16, "Tutorials",
+ CellID->341631938]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5338, 224, 83, 1, 30, "RelatedDemonstrationsSection",
+ CellID->1268215905],
+Cell[5424, 227, 58, 1, 16, "RelatedDemonstrations",
+ CellID->1129518860]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5519, 233, 65, 1, 30, "RelatedLinksSection",
+ CellID->1584193535],
+Cell[5587, 236, 91, 2, 16, "RelatedLinks",
+ CellID->1038487239]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5715, 243, 55, 1, 30, "SeeAlsoSection",
+ CellID->1255426704],
+Cell[5773, 246, 43, 1, 16, "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5853, 252, 57, 1, 30, "MoreAboutSection",
+ CellID->38303248],
+Cell[5913, 255, 46, 1, 16, "MoreAbout",
+ CellID->1665078683]
+}, Open  ]],
+Cell[5974, 259, 356, 11, 69, "PrimaryExamplesSection",
+ CellID->880084151],
+Cell[CellGroupData[{
+Cell[6355, 274, 100, 2, 55, "ExtendedExamplesSection",
+ CellTags->"ExtendedExamples",
+ CellID->1854448968],
+Cell[6458, 278, 125, 3, 33, "ExampleSection",
+ CellID->1293636265],
+Cell[6586, 283, 148, 3, 21, "ExampleSection",
+ CellID->1020263627],
+Cell[CellGroupData[{
+Cell[6759, 290, 127, 3, 21, "ExampleSection",
+ CellID->2061341341],
+Cell[6889, 295, 130, 3, 70, "ExampleSubsection",
+ CellID->1757724783],
+Cell[7022, 300, 130, 3, 70, "ExampleSubsection",
+ CellID->1295379749]
+}, Closed]],
+Cell[7167, 306, 131, 3, 21, "ExampleSection",
+ CellID->258228157],
+Cell[7301, 311, 142, 3, 21, "ExampleSection",
+ CellID->2123667759],
+Cell[7446, 316, 135, 3, 21, "ExampleSection",
+ CellID->1305812373],
+Cell[7584, 321, 140, 3, 21, "ExampleSection",
+ CellID->1653164318],
+Cell[7727, 326, 132, 3, 21, "ExampleSection",
+ CellID->589267740]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

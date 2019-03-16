@@ -1,0 +1,1395 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     46668,       1387]
+NotebookOptionsPosition[     40802,       1181]
+NotebookOutlinePosition[     41439,       1206]
+CellTagsIndexPosition[     41359,       1201]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "New in: ",
+ Cell["0.0", "HistoryData",
+  CellTags->"New"],
+ " | Modified in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Modified"],
+ " | Obsolete in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Obsolete"],
+ " | Excised in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Excised"]
+}], "History",
+ CellID->1247902091],
+
+Cell[CellGroupData[{
+
+Cell["Categorization", "CategorizationSection",
+ CellID->1122911449],
+
+Cell["Symbol", "Categorization",
+ CellLabel->"Entity Type",
+ CellID->686433507],
+
+Cell["Xray", "Categorization",
+ CellLabel->"Paclet Name",
+ CellID->605800465],
+
+Cell["Xray`", "Categorization",
+ CellLabel->"Context",
+ CellID->468444828],
+
+Cell["Xray/ref/UnwarpLayerList", "Categorization",
+ CellLabel->"URI"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Keywords", "KeywordsSection",
+ CellID->477174294],
+
+Cell["XXXX", "Keywords",
+ CellID->1164421360]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Syntax Templates", "TemplatesSection",
+ CellID->1872225408],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Additional Function Template",
+ CellID->1562036412],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Arguments Pattern",
+ CellID->158391909],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Local Variables",
+ CellID->1360575930],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Color Equal Signs",
+ CellID->793782254]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Details", "DetailsSection",
+ CellID->307771771],
+
+Cell["XXXX", "Details",
+ CellLabel->"Lead",
+ CellID->670882175],
+
+Cell["XXXX", "Details",
+ CellLabel->"Developers",
+ CellID->350963985],
+
+Cell["XXXX", "Details",
+ CellLabel->"Authors",
+ CellID->8391405],
+
+Cell["XXXX", "Details",
+ CellLabel->"Feature Name",
+ CellID->3610269],
+
+Cell["XXXX", "Details",
+ CellLabel->"QA",
+ CellID->401364205],
+
+Cell["XXXX", "Details",
+ CellLabel->"DA",
+ CellID->350204745],
+
+Cell["XXXX", "Details",
+ CellLabel->"Docs",
+ CellID->732958810],
+
+Cell["XXXX", "Details",
+ CellLabel->"Features Page Notes",
+ CellID->222905350],
+
+Cell["XXXX", "Details",
+ CellLabel->"Comments",
+ CellID->240026365]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["UnwarpLayerList", "ObjectName",
+ CellID->1224892054],
+
+Cell[TextData[{
+ Cell["   ", "ModInfo"],
+ Cell[BoxData[
+  RowBox[{
+   ButtonBox["UnwarpLayerList",
+    BaseStyle->"Link",
+    ButtonData->"paclet:Xray/ref/UnwarpLayerList"], "[", 
+   RowBox[{
+    StyleBox["prefix", "TI"], ",", 
+    SubscriptBox[
+     StyleBox["L", "TI"], 
+     StyleBox["1", "TR"]], ",", 
+    SubscriptBox[
+     StyleBox["L", "TI"], 
+     StyleBox["2", "TR"]], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      StyleBox["dir", "TI"], ",", 
+      StyleBox["start", "TI"], ",", 
+      StyleBox["end", "TI"], ",", 
+      StyleBox["steps", "TI"]}], "}"}], ",", 
+    StyleBox["res", "TI"]}], "]"}]], "InlineFormula"],
+ " \[LineSeparator]generates a layer list for the Unwarp module in ",
+ StyleBox["CrysAlis",
+  FontSlant->"Italic"],
+ ". See details for syntax meaning."
+}], "Usage",
+ CellChangeTimes->{{3.65900679772873*^9, 3.659006848897561*^9}, {
+   3.659006892920587*^9, 3.6590069124319973`*^9}, {3.659007021988544*^9, 
+   3.659007021988565*^9}, {3.659007055743477*^9, 3.6590071044353657`*^9}, 
+   3.659007580097962*^9, {3.6590076128613358`*^9, 3.659007624907855*^9}, {
+   3.65900773057047*^9, 3.65900775836054*^9}, {3.6590078227110863`*^9, 
+   3.659007823622994*^9}, {3.6590087207927847`*^9, 3.6590087911730003`*^9}, {
+   3.6590089260587177`*^9, 3.6590089270663023`*^9}, {3.659009626986742*^9, 
+   3.659009690838485*^9}, {3.659009778780699*^9, 3.659009779292375*^9}, {
+   3.678789099743325*^9, 3.678789109423379*^9}},
+ CellID->982511436],
+
+Cell[TextData[{
+ "The ",
+ Cell[BoxData[
+  StyleBox["prefix", "TI"]], "InlineFormula"],
+ " states the base name of all images."
+}], "Notes",
+ CellChangeTimes->{{3.659008933877016*^9, 3.659008935299347*^9}},
+ CellID->1067943069],
+
+Cell[TextData[{
+ "If ",
+ Cell[BoxData[
+  StyleBox["steps", "TI"]], "InlineFormula"],
+ " is equal to 1 or smaller, it is interpreted as a ",
+ StyleBox["step size",
+  FontSlant->"Italic"],
+ "."
+}], "Notes",
+ CellChangeTimes->{{3.6797366459769077`*^9, 3.6797366687452383`*^9}, {
+   3.679736726073739*^9, 3.679736753296665*^9}, {3.712568135709159*^9, 
+   3.7125681670817823`*^9}, 3.71380241795149*^9},
+ CellID->993908863],
+
+Cell[TextData[{
+ " ",
+ Cell[BoxData[
+  SubscriptBox[
+   StyleBox["L", "TI"], 
+   StyleBox["1", "TR"]]], "InlineFormula"],
+ " and ",
+ Cell[BoxData[
+  SubscriptBox[
+   StyleBox["L", "TI"], 
+   StyleBox["2", "TR"]]], "InlineFormula"],
+ " are the two reciprocal vectors defining the layer plane. They need to be \
+input as three dimensional lists (vectors) that are linearly independent."
+}], "Notes",
+ CellChangeTimes->{{3.6590089402110567`*^9, 3.659009015248074*^9}, {
+  3.659015164676763*^9, 3.659015170218161*^9}, {3.7125679419964657`*^9, 
+  3.712567965947288*^9}, {3.713802431657262*^9, 3.713802434716851*^9}},
+ CellID->1535733922],
+
+Cell[TextData[{
+ Cell[BoxData[
+  StyleBox["dir", "TI"]], "InlineFormula"],
+ " gives the direction in which the successive frames are moving in \
+reciprocal space, beginning in ",
+ Cell[BoxData[
+  StyleBox["start", "TI"]], "InlineFormula"],
+ " and finishing in ",
+ Cell[BoxData[
+  StyleBox["end", "TI"]], "InlineFormula"],
+ ", in the desired amount of ",
+ Cell[BoxData[
+  StyleBox["steps", "TI"]], "InlineFormula"],
+ ". It must be three-dimensional and numeric."
+}], "Notes",
+ CellChangeTimes->{{3.659009021872016*^9, 3.659009136940764*^9}, {
+   3.659009252382572*^9, 3.659009295291484*^9}, {3.679736779510867*^9, 
+   3.679736794766519*^9}, 3.713802439296227*^9},
+ CellID->2015739878],
+
+Cell[TextData[{
+ Cell[BoxData[
+  StyleBox["res", "TI"]], "InlineFormula"],
+ " denotes the resolution of the images; a higher value correspond to \
+\[OpenCurlyDoubleQuote]zooming in\[CloseCurlyDoubleQuote] the picture. Values \
+should be on the order of unity."
+}], "Notes",
+ CellChangeTimes->{{3.659009300681774*^9, 3.659009432301195*^9}, {
+  3.712568209326048*^9, 3.712568236959437*^9}},
+ CellID->1301551201],
+
+Cell["\<\
+The directory of the output file may be customised with an option setting:\
+\>", "Notes",
+ CellChangeTimes->{{3.6590143118554163`*^9, 3.659014346229765*^9}},
+ CellID->1277510341],
+
+Cell[BoxData[GridBox[{
+   {Cell["      ", "ModInfo"], "ExportDirectory", Cell[
+    "file path of the output directory", "TableText"]}
+  }]], "2ColumnTableMod",
+ CellChangeTimes->{{3.659014405030251*^9, 3.659014435053809*^9}},
+ CellID->1323169790],
+
+Cell[TextData[{
+ "The default export directory is set to be: ",
+ Cell[BoxData[
+  RowBox[{"FileNameJoin", "[", 
+   RowBox[{"{", 
+    RowBox[{"$HomeDirectory", ",", "\"\<Desktop\>\""}], "}"}], "]"}]], "Input",
+  InitializationCell->True,
+  CellChangeTimes->{
+   3.667811591227736*^9, 3.667818661555488*^9, {3.678788832925145*^9, 
+    3.678788853508518*^9}}],
+ "."
+}], "Notes",
+ CellChangeTimes->{{3.679481242642069*^9, 3.679481290371859*^9}, {
+  3.679481341211967*^9, 3.679481346083207*^9}},
+ CellID->813112122]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Tutorials", "TutorialsSection",
+ CellID->250839057],
+
+Cell["XXXX", "Tutorials",
+ CellID->341631938]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Related Demonstrations", "RelatedDemonstrationsSection",
+ CellID->1268215905],
+
+Cell["XXXX", "RelatedDemonstrations",
+ CellID->1129518860]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Related Links", "RelatedLinksSection",
+ CellID->1584193535],
+
+Cell["XXXX", "RelatedLinks",
+ CellID->1038487239]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["See Also", "SeeAlsoSection",
+ CellID->1255426704],
+
+Cell["XXXX", "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["More About", "MoreAboutSection",
+ CellID->38303248],
+
+Cell["XXXX", "MoreAbout",
+ CellID->1665078683]
+}, Open  ]],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {
+     StyleBox["Examples", "PrimaryExamplesSection"], 
+     ButtonBox[
+      RowBox[{
+       RowBox[{"More", " ", "Examples"}], " ", "\[RightTriangle]"}],
+      BaseStyle->"ExtendedExamplesLink",
+      ButtonData:>"ExtendedExamples"]}
+   }],
+  $Line = 0; Null]], "PrimaryExamplesSection",
+ CellID->880084151],
+
+Cell[CellGroupData[{
+
+Cell["More Examples", "ExtendedExamplesSection",
+ CellTags->"ExtendedExamples",
+ CellID->1854448968],
+
+Cell[TextData[{
+ "A simple example \[Dash] Using ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox[
+    StyleBox["a",
+     FontWeight->"Bold",
+     FontSlant->"Plain"], "*"], TraditionalForm]], "InlineMath"],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox[
+    StyleBox["b",
+     FontWeight->"Bold",
+     FontSlant->"Plain"], "*"], TraditionalForm]], "InlineMath"],
+ " as layer vectors and moving from 0 to 4 in the ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox[
+    StyleBox["c",
+     FontWeight->"Bold",
+     FontSlant->"Plain"], "*"], TraditionalForm]], "InlineMath"],
+ " direction, in 11 steps:"
+}], "ExampleText",
+ CellChangeTimes->{{3.659015055334688*^9, 3.659015058195764*^9}, {
+  3.6797368736389847`*^9, 3.679736921451475*^9}, {3.679740846840423*^9, 
+  3.679740954116345*^9}},
+ CellID->730265297],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"UnwarpLayerList", "[", 
+   RowBox[{"\"\<unwarp_hk0\>\"", ",", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0", ",", "1"}], "}"}], ",", "0", ",", "4", ",", 
+      "11"}], "}"}], ",", "2"}], "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.658782604393585*^9, 3.658782634264085*^9}, {
+   3.658782738086866*^9, 3.6587827480863523`*^9}, {3.65878344272565*^9, 
+   3.6587834628612537`*^9}, {3.658908776659112*^9, 3.6589087767615433`*^9}, {
+   3.6590150682208643`*^9, 3.659015069907675*^9}, 3.659015146891321*^9, 
+   3.660726320825912*^9, {3.679737025649644*^9, 3.679737027169526*^9}},
+ CellLabel->"In[1]:=",
+ CellID->59134466],
+
+Cell[TextData[{
+ "We can also use ",
+ StyleBox["step size",
+  FontSlant->"Italic"],
+ " instead of the total number of steps:"
+}], "ExampleText",
+ CellChangeTimes->{{3.679736943453012*^9, 3.6797369757542562`*^9}},
+ CellID->456662425],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"UnwarpLayerList", "[", 
+   RowBox[{"\"\<unwarp_hk0\>\"", ",", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0", ",", "1"}], "}"}], ",", "0", ",", "4", ",", 
+      "0.4"}], "}"}], ",", "2"}], "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.679737004419319*^9, 3.67973700476182*^9}, {
+  3.679737082657477*^9, 3.679737084024198*^9}},
+ CellLabel->"In[2]:=",
+ CellID->1501213764],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->14731548],
+
+Cell["Another example with different parameters:", "ExampleText",
+ CellChangeTimes->{{3.659015092932403*^9, 3.659015100355109*^9}},
+ CellID->632507831],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"UnwarpLayerList", "[", 
+   RowBox[{"\"\<longrun\>\"", ",", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0", ",", "1"}], "}"}], ",", "0", ",", "4", ",", 
+      "0.01"}], "}"}], ",", "2"}], "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.658782604393585*^9, 3.658782634264085*^9}, {
+   3.658782738086866*^9, 3.6587827480863523`*^9}, {3.65878344272565*^9, 
+   3.6587834628612537`*^9}, {3.658908776659112*^9, 3.6589087767615433`*^9}, {
+   3.658909480293613*^9, 3.658909583944901*^9}, {3.659015110908412*^9, 
+   3.659015121082959*^9}, 3.660726332450665*^9, {3.679737101913254*^9, 
+   3.6797371199113083`*^9}},
+ CellLabel->"In[1]:=",
+ CellID->280815198]
+}, Open  ]],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Scope", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1293636265],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Generalizations & Extensions", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1020263627],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["Options", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->2061341341],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\"AppendToExisting\"", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection",
+ CellChangeTimes->{{3.679742024139477*^9, 3.679742028081769*^9}, {
+  3.67974243901859*^9, 3.67974243944212*^9}},
+ CellID->1654965325],
+
+Cell[TextData[{
+ "This feature enables the user to store multiple \[LeftGuillemet]unwarp \
+commands\[RightGuillemet] of various directions in the same ",
+ StyleBox[".dcunwarp", "Program"],
+ " file. If there are multiple files, the alphabetically first will be chosen."
+}], "ExampleText",
+ CellChangeTimes->{{3.679742045873498*^9, 3.679742167078122*^9}, {
+  3.6797452469797087`*^9, 3.6797452991453457`*^9}, {3.7138024454224977`*^9, 
+  3.7138024652841473`*^9}},
+ CellID->1374355442],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"UnwarpLayerList", "[", 
+   RowBox[{"\"\<FirstPart\>\"", ",", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "0", ",", "1"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+      RowBox[{"-", "5"}], ",", "5", ",", "0.25"}], "}"}], ",", "2"}], "]"}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.679742203997198*^9, 3.6797422819721823`*^9}, {
+  3.679742345538898*^9, 3.679742357090975*^9}},
+ CellLabel->"In[1]:=",
+ CellID->1617484909],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"UnwarpLayerList", "[", 
+   RowBox[{"\"\<SecondPart\>\"", ",", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0", ",", "1"}], "}"}], ",", 
+      RowBox[{"-", "2"}], ",", "2", ",", "0.1"}], "}"}], ",", "2.5", ",", 
+    RowBox[{"\"\<AppendToExisting\>\"", "\[Rule]", "True"}]}], "]"}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.679742203997198*^9, 3.6797422819721823`*^9}, {
+  3.679742345538898*^9, 3.679742449648656*^9}},
+ CellLabel->"In[2]:=",
+ CellID->468872664],
+
+Cell[BoxData[
+ TemplateBox[{
+  "UnwarpLayerList","extended",
+   "\"\[LeftGuillemet]\\!\\(\\*RowBox[{\\\"\\\\\\\"FirstPart.dcunwarp\\\\\\\"\
+\\\"}]\\)\[RightGuillemet] has been extended.\"",2,2,3,26284405294634438133,
+   "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{{3.679742432004725*^9, 3.679742456005953*^9}, 
+   3.712568307568367*^9},
+ CellLabel->"During evaluation of In[2]:=",
+ CellID->1125423300]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\"ExportDirectory\"", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection",
+ CellChangeTimes->{{3.659014530853565*^9, 3.659014534492388*^9}, {
+  3.679742001955783*^9, 3.679742003418593*^9}},
+ CellID->1757724783],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"UnwarpLayerList", "[", 
+   RowBox[{"\"\<UnwarpName\>\"", ",", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "0", ",", "1"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+      RowBox[{"-", "1"}], ",", "1", ",", "101"}], "}"}], ",", "1", ",", 
+    RowBox[{"\"\<ExportDirectory\>\"", "\[Rule]", "$XrayExamples"}]}], "]"}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.6588384176139917`*^9, 3.658838424628933*^9}, 
+   3.6589094555946302`*^9, {3.658934699182345*^9, 3.658934728083808*^9}, 
+   3.658934833011979*^9, 3.658934993101183*^9, {3.658935069506667*^9, 
+   3.6589350697693863`*^9}, {3.6589922632835903`*^9, 3.65899228034734*^9}, {
+   3.658993399119463*^9, 3.65899340105512*^9}, {3.6590139682321177`*^9, 
+   3.6590139903663893`*^9}, {3.659014070210264*^9, 3.659014105193377*^9}, {
+   3.65901414339283*^9, 3.659014174770019*^9}, {3.6590145719161663`*^9, 
+   3.659014605330449*^9}, {3.660726365473817*^9, 3.66072638933631*^9}, {
+   3.6797371462963037`*^9, 3.679737147590657*^9}},
+ CellLabel->"In[1]:=",
+ CellID->1414300316]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\"SeparationCommas\"", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection",
+ CellChangeTimes->{{3.679742004547058*^9, 3.679742009098823*^9}},
+ CellID->1787552279],
+
+Cell[TextData[{
+ "Setting this option to ",
+ Cell[BoxData[
+  ButtonBox["False",
+   BaseStyle->"Link",
+   ButtonData->"paclet:ref/False"]], "InlineFormula"],
+ " will remove the commas separating the Miller indices."
+}], "ExampleText",
+ CellChangeTimes->{{3.679742494425273*^9, 3.679742528729542*^9}},
+ CellID->1361481282],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"UnwarpLayerList", "[", 
+   RowBox[{"\"\<unwarp_NoComma\>\"", ",", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+      RowBox[{"-", "5"}], ",", "7", ",", "1"}], "}"}], ",", "2", ",", 
+    RowBox[{"\"\<SeparationCommas\>\"", "\[Rule]", "False"}]}], "]"}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.6797409850672197`*^9, 3.679740986873929*^9}, {
+   3.6797410430972424`*^9, 3.6797411382716503`*^9}, {3.6797419643708572`*^9, 
+   3.6797419649135447`*^9}, 3.6797425379037046`*^9},
+ CellLabel->"In[1]:=",
+ CellID->929006526]
+}, Open  ]],
+
+Cell[BoxData[
+ InterpretationBox[Cell["XXXX", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection",
+ CellID->1295379749]
+}, Open  ]],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Applications", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->258228157],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Properties & Relations", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->2123667759],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Possible Issues", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1305812373],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Interactive Examples", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1653164318],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Neat Examples", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->589267740],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[TextData[{
+   StyleBox["Mathematica",
+    FontSlant->"Italic"],
+   " code"
+  }], "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellChangeTimes->{{3.712568579212571*^9, 3.712568582451097*^9}},
+ CellID->2100923971],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"UnwarpLayerList", "::", "dir"}], "=", 
+   "\"\<The direction vector must be three-dimensional and numeric.\>\""}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"UnwarpLayerList", "::", "dep"}], "=", 
+   "\"\<The layer vectors are not linearly independent.\>\""}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"UnwarpLayerList", "::", "dim"}], "=", 
+   "\"\<One or both of the layer vectors are not three dimensional.\>\""}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"UnwarpLayerList", "::", "extended"}], "=", 
+   "\"\<\[LeftGuillemet]`1`\[RightGuillemet] has been extended.\>\""}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"UnwarpLayerList", "::", "jobs"}], "=", 
+   "\"\<Some unwarping jobs are identical. Try increasing the range or step \
+size.\>\""}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"UnwarpLayerList", "::", "steps"}], "=", "\"\<\!\(\*
+StyleBox[\"CrysAlis\",
+FontSlant->\"Italic\"]\) will only queue 500 jobs at a time.\>\""}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"UnwarpLayerList", "::", "small"}], "=", 
+   "\"\<Some values are smaller than \!\(\*SuperscriptBox[\(10\), \
+\(-6\)]\).\>\""}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"UnwarpLayerList", "::", "path"}], "=", 
+   "\"\<\[LeftGuillemet]`1`\[RightGuillemet] is an invalid path.\>\""}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"UnwarpLayerList", "::", "notfound"}], "=", "\"\<No existing \!\(\*
+StyleBox[\".\", \"Program\"]\)\!\(\*
+StyleBox[\"dcunwarp\", \"Program\"]\) file was found in the export directory.\
+\>\""}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Options", "[", "UnwarpLayerList", "]"}], "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"\"\<ExportDirectory\>\"", "\[Rule]", 
+      RowBox[{"FileNameJoin", "[", 
+       RowBox[{"{", 
+        RowBox[{"$HomeDirectory", ",", "\"\<Desktop\>\""}], "}"}], "]"}]}], 
+     ",", 
+     RowBox[{"\"\<AppendToExisting\>\"", "\[Rule]", "False"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"\"\<SeparationCommas\>\"", "\[Rule]", "True"}]}], "}"}]}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{
+  3.667811591227736*^9, 3.667818661555488*^9, {3.678788832925145*^9, 
+   3.678788853508518*^9}, {3.679730176345752*^9, 3.6797301899949493`*^9}, {
+   3.6797309670395813`*^9, 3.679731002636737*^9}, {3.679733372295627*^9, 
+   3.6797334331570044`*^9}, {3.679734006976156*^9, 3.6797340119269238`*^9}, {
+   3.679734046104413*^9, 3.6797340490782003`*^9}, {3.6797342428439207`*^9, 
+   3.679734243889909*^9}, {3.679736548422727*^9, 3.67973655803654*^9}, 
+   3.679736675868291*^9},
+ CellID->1673477652],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"UnwarpLayerList", "[", "\[IndentingNewLine]", 
+   RowBox[{
+   "prefix_String", ",", "L1_List", ",", "L2_List", ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{"dir_List", ",", "start_", ",", "end_", ",", 
+      RowBox[{"stepinput_", "?", "NumericQ"}]}], "}"}], ",", 
+    "\[IndentingNewLine]", "Res_", ",", 
+    RowBox[{"OptionsPattern", "[", "UnwarpLayerList", "]"}]}], "]"}], ":=", 
+  RowBox[{"Module", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+     "steps", ",", "path", ",", "output", ",", "\[IndentingNewLine]", "len", 
+      ",", "replacerule", ",", "\[Delta]", ",", "\[IndentingNewLine]", 
+      "MakeValue", ",", "OriginVector", ",", "\[IndentingNewLine]", "const", 
+      ",", "MakeName", ",", "\[IndentingNewLine]", "newL1", ",", "newL2", ",",
+       "res", ",", "line", ",", "original", ",", "old", ",", "new", ",", "j", 
+      ",", "valuestest", ",", "\[IndentingNewLine]", "temp"}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"(*", " ", 
+     RowBox[{"Checking", " ", "input", " ", "vectors"}], " ", "*)"}], 
+    "\[IndentingNewLine]", "\t", 
+    RowBox[{
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Length", "/@", 
+         RowBox[{"Flatten", "/@", 
+          RowBox[{"{", 
+           RowBox[{"L1", ",", "L2"}], "}"}]}]}], "\[NotEqual]", 
+        RowBox[{"{", 
+         RowBox[{"3", ",", "3"}], "}"}]}], ",", 
+       RowBox[{
+        RowBox[{"Message", "[", 
+         RowBox[{"UnwarpLayerList", "::", "dim"}], "]"}], ";", 
+        RowBox[{"Abort", "[", "]"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Ascertaining", " ", "steps", " ", "or", " ", "stepsize"}], " ",
+       "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"stepinput", ">", "1"}], ",", "\[IndentingNewLine]", "\t", 
+       RowBox[{"steps", "=", "stepinput"}], ",", "\[IndentingNewLine]", "\t", 
+       
+       RowBox[{"steps", "=", 
+        RowBox[{"Round", "[", 
+         RowBox[{
+          FractionBox[
+           RowBox[{"Abs", "[", 
+            RowBox[{"end", "-", "start"}], "]"}], "stepinput"], "+", "1"}], 
+         "]"}]}]}], "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     
+     RowBox[{"(*", " ", 
+      RowBox[{
+      "Check", " ", "resolution", " ", "of", " ", "the", " ", "range"}], " ", 
+      "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"Abs", "[", 
+          RowBox[{"end", "-", "start"}], "]"}], "/", "steps"}], "<", 
+        RowBox[{
+         SuperscriptBox["10", 
+          RowBox[{"-", "6"}]], "-", 
+         SuperscriptBox["10", 
+          RowBox[{"-", "12"}]]}]}], ",", 
+       RowBox[{"Message", "[", 
+        RowBox[{"UnwarpLayerList", "::", "jobs"}], "]"}]}], "]"}], ";", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"steps", ">", "500"}], ",", 
+       RowBox[{"Message", "[", 
+        RowBox[{"UnwarpLayerList", "::", "steps"}], "]"}]}], "]"}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Path", " ", "check", " ", "and", " ", "setup"}], " ", "*)"}], 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"path", "=", 
+      RowBox[{"OptionValue", "[", "\"\<ExportDirectory\>\"", "]"}]}], ";", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"!", 
+        RowBox[{"DirectoryQ", "@", "path"}]}], ",", 
+       RowBox[{
+        RowBox[{"Message", "[", 
+         RowBox[{
+          RowBox[{"UnwarpLayerList", "::", "path"}], ",", "path"}], "]"}], 
+        ";", 
+        RowBox[{"Abort", "[", "]"}], ";"}]}], "]"}], ";", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"output", "=", 
+      RowBox[{"FileNameJoin", "[", 
+       RowBox[{"{", 
+        RowBox[{"path", ",", 
+         RowBox[{"prefix", "<>", "\"\<.dcunwarp\>\""}]}], "}"}], "]"}]}], ";",
+      "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Useful", " ", "variables"}], " ", "*)"}], 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"len", "=", 
+      RowBox[{"StringLength", "@", 
+       RowBox[{"ToString", "@", "steps"}]}]}], ";", "\[IndentingNewLine]", 
+     "\t", 
+     RowBox[{"replacerule", "=", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"\"\<,\>\"", "\[Rule]", "\"\<  \>\""}], ",", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\"\<{\>\"", ",", "\"\<}\>\""}], "}"}], "\[Rule]", 
+         "\"\<\>\""}]}], "}"}]}], ";", "\[IndentingNewLine]", "\t", 
+     RowBox[{"\[Delta]", "=", 
+      RowBox[{"Min", "[", 
+       RowBox[{"6", ",", 
+        RowBox[{
+         RowBox[{"StringLength", "@", 
+          RowBox[{"ToString", "@", 
+           RowBox[{"N", "[", 
+            FractionBox[
+             RowBox[{"end", "-", "start"}], 
+             RowBox[{"steps", "-", "1"}]], "]"}]}]}], "-", "2"}]}], "]"}]}], 
+     ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+      "Check", " ", "if", " ", "vectors", " ", "are", " ", "linearly", " ", 
+       "independent"}], " ", "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Det", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"L1", ".", "L1"}], ",", 
+             RowBox[{"L1", ".", "L2"}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"L2", ".", "L1"}], ",", 
+             RowBox[{"L2", ".", "L2"}]}], "}"}]}], "}"}], "]"}], "\[Equal]", 
+        "0"}], ",", "\[IndentingNewLine]", "\t", 
+       RowBox[{
+        RowBox[{"Message", "[", 
+         RowBox[{"UnwarpLayerList", "::", "dep"}], "]"}], ";", 
+        RowBox[{"Abort", "[", "]"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{"*", " ", "Making", " ", "the", " ", "origin", " ", "vectors"}],
+       " ", "**)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Check", " ", "input", " ", "form"}], " ", "*)"}], 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"!", 
+        RowBox[{"MatchQ", "[", 
+         RowBox[{"dir", ",", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"_", "?", "NumericQ"}], ",", 
+            RowBox[{"_", "?", "NumericQ"}], ",", 
+            RowBox[{"_", "?", "NumericQ"}]}], "}"}]}], "]"}]}], ",", 
+       "\[IndentingNewLine]", "\t", 
+       RowBox[{
+        RowBox[{"Message", "[", 
+         RowBox[{"UnwarpLayerList", "::", "dir"}], "]"}], 
+        RowBox[{"Abort", "[", "]"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{
+      RowBox[{"MakeValue", "[", "i_", "]"}], ":=", 
+      RowBox[{"start", "+", 
+       RowBox[{
+        FractionBox[
+         RowBox[{"end", "-", "start"}], 
+         RowBox[{"steps", "-", "1"}]], "*", 
+        RowBox[{"(", 
+         RowBox[{"i", "-", "1"}], ")"}]}]}]}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{
+      RowBox[{"OriginVector", "[", "i_", "]"}], ":=", 
+      RowBox[{"(", "\[IndentingNewLine]", "\t", 
+       RowBox[{
+        RowBox[{"temp", "=", 
+         RowBox[{"dir", "*", 
+          RowBox[{"MakeValue", "[", "i", "]"}]}]}], ";", 
+        "\[IndentingNewLine]", "\t", 
+        RowBox[{"temp", "=", 
+         RowBox[{"AccountingForm", "@", 
+          RowBox[{"NumberForm", "[", 
+           RowBox[{
+            RowBox[{"N", "[", "temp", "]"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"Infinity", ",", "6"}], "}"}]}], "]"}]}]}], ";", 
+        "\[IndentingNewLine]", "\t", 
+        RowBox[{"temp", "=", 
+         RowBox[{"StringReplace", "[", 
+          RowBox[{
+           RowBox[{"ToString", "@", "temp"}], ",", "replacerule"}], "]"}]}]}],
+        "\[IndentingNewLine]", "\t", ")"}]}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+      "Check", " ", "for", " ", "duplicates", " ", "and", " ", "values", " ", 
+       "smaller", " ", "than", " ", 
+       SuperscriptBox["10", 
+        RowBox[{"-", "6"}]]}], " ", "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{"valuestest", "=", 
+      RowBox[{"ToString", "/@", 
+       RowBox[{"Table", "[", 
+        RowBox[{
+         RowBox[{"MakeValue", "[", "j", "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"j", ",", "steps"}], "}"}]}], "]"}]}]}], ";", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"!", 
+        RowBox[{"DuplicateFreeQ", "@", "valuestest"}]}], ",", 
+       RowBox[{"Message", "[", 
+        RowBox[{"UnwarpLayerList", "::", "small"}], "]"}]}], "]"}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{"*", " ", "Generating", " ", "names"}], " ", "**)"}], 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Integer", " ", "Miller", " ", "indices"}], " ", "*)"}], 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"const", "=", 
+      RowBox[{
+       RowBox[{"dir", "+", 
+        RowBox[{"{", 
+         RowBox[{"\"\<h\>\"", ",", "\"\<k\>\"", ",", "\"\<l\>\""}], "}"}]}], "/.", 
+       RowBox[{
+        RowBox[{"a_", "+", "b_"}], "\[Rule]", "0"}]}]}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", "\t", 
+     RowBox[{"(*", " ", "Procedure", " ", "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{
+      RowBox[{"MakeName", "[", "i_", "]"}], ":=", 
+      RowBox[{"(", "\[IndentingNewLine]", "\t", 
+       RowBox[{
+        RowBox[{"temp", "=", 
+         RowBox[{"ToExpression", "@", 
+          RowBox[{"StringSplit", "@", 
+           RowBox[{"OriginVector", "[", "i", "]"}]}]}]}], ";", 
+        "\[IndentingNewLine]", "\t", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"\[Delta]", "\[Equal]", "0"}], ",", 
+          RowBox[{"(*", " ", 
+           RowBox[{"Integers", " ", 
+            RowBox[{"only", "?"}]}], " ", "*)"}], "\[IndentingNewLine]", "\t", 
+          RowBox[{"temp", "=", 
+           RowBox[{"Rationalize", "@", "temp"}]}], ",", "\[IndentingNewLine]",
+           "\t", 
+          RowBox[{"temp", "=", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"NumberForm", "[", "\[IndentingNewLine]", "\t", 
+              RowBox[{"#", ",", 
+               RowBox[{"{", 
+                RowBox[{"Infinity", ",", "\[Delta]"}], "}"}], ",", 
+               "\[IndentingNewLine]", "\t", 
+               RowBox[{"ExponentFunction", "\[Rule]", 
+                RowBox[{"(", 
+                 RowBox[{"Null", "&"}], ")"}]}]}], "]"}], "&"}], "/@", 
+            "temp"}]}]}], "]"}], ";", "\[IndentingNewLine]", "\t", 
+        RowBox[{"temp", "=", 
+         RowBox[{
+          RowBox[{"const", "+", "temp"}], "/.", 
+          RowBox[{
+           RowBox[{"x_String", "+", "y_"}], "\[RuleDelayed]", "x"}]}]}], ";", 
+        "\[IndentingNewLine]", "\t", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"OptionValue", "[", "\"\<SeparationCommas\>\"", "]"}], ",", 
+          "\[IndentingNewLine]", "\t", 
+          RowBox[{"(*", " ", 
+           RowBox[{"Remove", " ", "separating", " ", 
+            RowBox[{"commas", "?"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+          "\t", 
+          RowBox[{"temp", "=", 
+           RowBox[{"StringRiffle", "[", 
+            RowBox[{
+             RowBox[{"ToString", "/@", "temp"}], ",", "\"\<,\>\""}], "]"}]}], 
+          ",", "\[IndentingNewLine]", "\t", 
+          RowBox[{"temp", "=", 
+           RowBox[{"ToString", "/@", "temp"}]}]}], "]"}], ";", 
+        "\[IndentingNewLine]", "\t", 
+        RowBox[{"StringJoin", "[", 
+         RowBox[{
+         "\"\<\\\"\>\"", ",", "prefix", ",", "\"\<_(\>\"", ",", "temp", ",", 
+          "\"\<)\\\"\>\""}], "]"}]}], "\[IndentingNewLine]", "\t", ")"}]}], 
+     ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"The", " ", "L1", " ", "and", " ", "L2", " ", "vectors"}], " ", 
+      "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{"newL1", "=", 
+      RowBox[{"StringReplace", "[", 
+       RowBox[{
+        RowBox[{"ToString", "@", 
+         RowBox[{"NumberForm", "[", 
+          RowBox[{"L1", ",", 
+           RowBox[{"{", 
+            RowBox[{"Infinity", ",", "6"}], "}"}]}], "]"}]}], ",", 
+        "replacerule"}], "]"}]}], ";", "\[IndentingNewLine]", "\t", 
+     RowBox[{"newL2", "=", 
+      RowBox[{"StringReplace", "[", 
+       RowBox[{
+        RowBox[{"ToString", "@", 
+         RowBox[{"NumberForm", "[", 
+          RowBox[{"L2", ",", 
+           RowBox[{"{", 
+            RowBox[{"Infinity", ",", "6"}], "}"}]}], "]"}]}], ",", 
+        "replacerule"}], "]"}]}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"The", " ", "resolution"}], " ", "*)"}], "\[IndentingNewLine]", 
+     "\t", 
+     RowBox[{"res", "=", 
+      RowBox[{"ToString", "@", 
+       RowBox[{"NumberForm", "[", 
+        RowBox[{"Res", ",", 
+         RowBox[{"{", 
+          RowBox[{"Infinity", ",", "6"}], "}"}]}], "]"}]}]}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+      "Function", " ", "that", " ", "writes", " ", "a", " ", "single", " ", 
+       "line"}], " ", "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{
+      RowBox[{"line", "[", "i_", "]"}], ":=", 
+      RowBox[{"StringJoin", "[", 
+       RowBox[{
+        RowBox[{"MakeName", "[", "i", "]"}], ",", "\"\<   \>\"", ",", 
+        RowBox[{"OriginVector", "[", "i", "]"}], ",", "\"\<     \>\"", ",", 
+        "newL1", ",", "\"\<     \>\"", ",", "newL2", ",", "\"\<        \>\"", 
+        ",", "res", ",", "\"\<       \>\"", ",", "\"\<0\>\"", ",", 
+        "\"\<       \>\"", ",", "\"\<0\>\""}], "]"}]}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Generating", " ", "and", " ", "exporting", " ", "table"}], " ",
+       "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"OptionValue", "[", "\"\<AppendToExisting\>\"", "]"}], ",", 
+       "\[IndentingNewLine]", "\t", 
+       RowBox[{
+        RowBox[{"original", "=", 
+         RowBox[{"FileNames", "[", 
+          RowBox[{
+           RowBox[{"OptionValue", "[", "\"\<ExportDirectory\>\"", "]"}], 
+           "<>", "\"\</*.dcunwarp\>\""}], "]"}]}], ";", "\[IndentingNewLine]",
+         "\t", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"original", "\[Equal]", 
+           RowBox[{"{", "}"}]}], ",", 
+          RowBox[{
+           RowBox[{"Message", "[", 
+            RowBox[{"UnwarpLayerList", "::", "notfound"}], "]"}], ";", 
+           RowBox[{"Abort", "[", "]"}]}]}], "]"}], ";", "\[IndentingNewLine]",
+         "\t", 
+        RowBox[{"old", "=", 
+         RowBox[{"Import", "[", 
+          RowBox[{
+           RowBox[{"First", "@", "original"}], ",", "\"\<String\>\""}], 
+          "]"}]}], ";", "\[IndentingNewLine]", "\t", 
+        RowBox[{"new", "=", 
+         RowBox[{"Table", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"line", "[", "i", "]"}], "<>", 
+            RowBox[{"If", "[", 
+             RowBox[{
+              RowBox[{"i", "<", "steps"}], ",", "\"\<\\n\>\"", ",", 
+              "\"\<\>\""}], "]"}]}], ",", 
+           RowBox[{"{", 
+            RowBox[{"i", ",", "steps"}], "}"}]}], "]"}]}], ";", 
+        "\[IndentingNewLine]", "\t", 
+        RowBox[{"Export", "[", 
+         RowBox[{"original", ",", 
+          RowBox[{"old", "<>", 
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"StringTake", "[", 
+               RowBox[{"old", ",", 
+                RowBox[{"-", "1"}]}], "]"}], "\[Equal]", "\"\<0\>\""}], ",", 
+             "\"\<\\n\>\"", ",", "\"\<\>\""}], "]"}], "<>", "new"}], ",", 
+          "\"\<String\>\""}], "]"}], ";", "\[IndentingNewLine]", "\t", 
+        RowBox[{"Message", "[", 
+         RowBox[{
+          RowBox[{"UnwarpLayerList", "::", "extended"}], ",", 
+          RowBox[{"FileNameTake", "@", 
+           RowBox[{"First", "@", "original"}]}]}], "]"}]}], ",", "\t", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", "\t", 
+       RowBox[{"Export", "[", 
+        RowBox[{"output", ",", 
+         RowBox[{"Table", "[", 
+          RowBox[{
+           RowBox[{"line", "[", "i", "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"i", ",", "steps"}], "}"}]}], "]"}], ",", 
+         "\"\<Table\>\""}], "]"}]}], "]"}]}]}], "\[IndentingNewLine]", 
+   "]"}]}]], "Input",
+ CellChangeTimes->{
+  3.6678115931321983`*^9, 3.667818655261512*^9, {3.67871002711523*^9, 
+   3.678710082589615*^9}, {3.678710121181778*^9, 3.678710167699074*^9}, {
+   3.678780241040431*^9, 3.678780276115664*^9}, {3.678788865190544*^9, 
+   3.678788977540194*^9}, {3.6794823589229097`*^9, 3.679482378956861*^9}, {
+   3.679482449116295*^9, 3.679482484210161*^9}, {3.6795535894308023`*^9, 
+   3.679553594985097*^9}, {3.679730372990347*^9, 3.679730423732448*^9}, {
+   3.679730469374566*^9, 3.679730566706032*^9}, {3.6797306009613237`*^9, 
+   3.679730601472571*^9}, {3.6797316212190742`*^9, 3.679731659793439*^9}, {
+   3.679731705602343*^9, 3.679731790317072*^9}, {3.679731847596982*^9, 
+   3.6797318936910458`*^9}, {3.679731928852064*^9, 3.67973197783316*^9}, {
+   3.679732253608233*^9, 3.679732257891107*^9}, {3.679732364864867*^9, 
+   3.679732417504838*^9}, {3.67973299821957*^9, 3.6797330047850933`*^9}, {
+   3.679733068591881*^9, 3.679733118223279*^9}, {3.679733347697291*^9, 
+   3.679733367746338*^9}, 3.679733469912014*^9, {3.679733528839448*^9, 
+   3.679733547949156*^9}, {3.679733685049611*^9, 3.6797336861133947`*^9}, {
+   3.6797343002127247`*^9, 3.679734450408527*^9}, {3.6797345134559307`*^9, 
+   3.679734558253223*^9}, {3.679734596654254*^9, 3.679734624339402*^9}, {
+   3.679734659344974*^9, 3.6797346683065023`*^9}, {3.679734698787793*^9, 
+   3.67973470587523*^9}, {3.679734748466054*^9, 3.679734811726412*^9}, 
+   3.679734847175488*^9, {3.679734996460588*^9, 3.6797351021860027`*^9}, 
+   3.6797351461141567`*^9, {3.6797353083576937`*^9, 3.679735324548381*^9}, {
+   3.679735377692288*^9, 3.679735421274282*^9}, {3.679735573991074*^9, 
+   3.67973561279739*^9}, {3.6797356502862177`*^9, 3.6797356546767893`*^9}, {
+   3.679736345501027*^9, 3.6797363539167967`*^9}, 3.6797412343747263`*^9, {
+   3.6797412788750467`*^9, 3.6797412863519373`*^9}, {3.679741724170665*^9, 
+   3.6797417422643557`*^9}, {3.679744898512738*^9, 3.679744904462715*^9}},
+ Background->RGBColor[0.94, 0.91, 0.88],
+ CellID->545572405]
+}, Closed]]
+}, Open  ]]
+},
+WindowSize->{700, 770},
+WindowMargins->{{Automatic, 514}, {Automatic, 124}},
+CellContext->"Global`",
+FrontEndVersion->"11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (September \
+21, 2016)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "FunctionPageStyles.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "ExtendedExamples"->{
+  Cell[8626, 336, 100, 2, 55, "ExtendedExamplesSection",
+   CellTags->"ExtendedExamples",
+   CellID->1854448968]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"ExtendedExamples", 41221, 1194}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 325, 14, 24, "History",
+ CellID->1247902091],
+Cell[CellGroupData[{
+Cell[908, 38, 68, 1, 29, "CategorizationSection",
+ CellID->1122911449],
+Cell[979, 41, 79, 2, 70, "Categorization",
+ CellID->686433507],
+Cell[1061, 45, 77, 2, 70, "Categorization",
+ CellID->605800465],
+Cell[1141, 49, 74, 2, 70, "Categorization",
+ CellID->468444828],
+Cell[1218, 53, 69, 1, 70, "Categorization"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1324, 59, 55, 1, 19, "KeywordsSection",
+ CellID->477174294],
+Cell[1382, 62, 45, 1, 70, "Keywords",
+ CellID->1164421360]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1464, 68, 65, 1, 19, "TemplatesSection",
+ CellID->1872225408],
+Cell[1532, 71, 94, 2, 70, "Template",
+ CellID->1562036412],
+Cell[1629, 75, 82, 2, 70, "Template",
+ CellID->158391909],
+Cell[1714, 79, 81, 2, 70, "Template",
+ CellID->1360575930],
+Cell[1798, 83, 82, 2, 70, "Template",
+ CellID->793782254]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1917, 90, 53, 1, 19, "DetailsSection",
+ CellID->307771771],
+Cell[1973, 93, 63, 2, 70, "Details",
+ CellID->670882175],
+Cell[2039, 97, 69, 2, 70, "Details",
+ CellID->350963985],
+Cell[2111, 101, 64, 2, 70, "Details",
+ CellID->8391405],
+Cell[2178, 105, 69, 2, 70, "Details",
+ CellID->3610269],
+Cell[2250, 109, 61, 2, 70, "Details",
+ CellID->401364205],
+Cell[2314, 113, 61, 2, 70, "Details",
+ CellID->350204745],
+Cell[2378, 117, 63, 2, 70, "Details",
+ CellID->732958810],
+Cell[2444, 121, 78, 2, 70, "Details",
+ CellID->222905350],
+Cell[2525, 125, 67, 2, 70, "Details",
+ CellID->240026365]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[2629, 132, 58, 1, 63, "ObjectName",
+ CellID->1224892054],
+Cell[2690, 135, 1448, 36, 76, "Usage",
+ CellID->982511436],
+Cell[4141, 173, 226, 7, 25, "Notes",
+ CellID->1067943069],
+Cell[4370, 182, 417, 12, 25, "Notes",
+ CellID->993908863],
+Cell[4790, 196, 632, 17, 42, "Notes",
+ CellID->1535733922],
+Cell[5425, 215, 683, 18, 41, "Notes",
+ CellID->2015739878],
+Cell[6111, 235, 409, 9, 41, "Notes",
+ CellID->1301551201],
+Cell[6523, 246, 188, 4, 25, "Notes",
+ CellID->1277510341],
+Cell[6714, 252, 246, 5, 23, "2ColumnTableMod",
+ CellID->1323169790],
+Cell[6963, 259, 509, 14, 28, "Notes",
+ CellID->813112122]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7509, 278, 57, 1, 43, "TutorialsSection",
+ CellID->250839057],
+Cell[7569, 281, 45, 1, 16, "Tutorials",
+ CellID->341631938]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7651, 287, 83, 1, 30, "RelatedDemonstrationsSection",
+ CellID->1268215905],
+Cell[7737, 290, 58, 1, 16, "RelatedDemonstrations",
+ CellID->1129518860]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7832, 296, 65, 1, 30, "RelatedLinksSection",
+ CellID->1584193535],
+Cell[7900, 299, 49, 1, 16, "RelatedLinks",
+ CellID->1038487239]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7986, 305, 55, 1, 30, "SeeAlsoSection",
+ CellID->1255426704],
+Cell[8044, 308, 43, 1, 16, "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8124, 314, 57, 1, 30, "MoreAboutSection",
+ CellID->38303248],
+Cell[8184, 317, 46, 1, 16, "MoreAbout",
+ CellID->1665078683]
+}, Open  ]],
+Cell[8245, 321, 356, 11, 69, "PrimaryExamplesSection",
+ CellID->880084151],
+Cell[CellGroupData[{
+Cell[8626, 336, 100, 2, 55, "ExtendedExamplesSection",
+ CellTags->"ExtendedExamples",
+ CellID->1854448968],
+Cell[8729, 340, 809, 27, 38, "ExampleText",
+ CellID->730265297],
+Cell[9541, 369, 828, 19, 27, "Input",
+ CellID->59134466],
+Cell[10372, 390, 232, 7, 22, "ExampleText",
+ CellID->456662425],
+Cell[10607, 399, 582, 16, 27, "Input",
+ CellID->1501213764],
+Cell[CellGroupData[{
+Cell[11214, 419, 124, 3, 17, "ExampleDelimiter",
+ CellID->14731548],
+Cell[11341, 424, 151, 2, 22, "ExampleText",
+ CellID->632507831],
+Cell[11495, 428, 856, 20, 27, "Input",
+ CellID->280815198]
+}, Open  ]],
+Cell[12366, 451, 125, 3, 33, "ExampleSection",
+ CellID->1293636265],
+Cell[12494, 456, 148, 3, 21, "ExampleSection",
+ CellID->1020263627],
+Cell[CellGroupData[{
+Cell[12667, 463, 127, 3, 21, "ExampleSection",
+ CellID->2061341341],
+Cell[CellGroupData[{
+Cell[12819, 470, 259, 5, 24, "ExampleSubsection",
+ CellID->1654965325],
+Cell[13081, 477, 480, 9, 40, "ExampleText",
+ CellID->1374355442],
+Cell[13564, 488, 603, 17, 47, "Input",
+ CellID->1617484909],
+Cell[CellGroupData[{
+Cell[14192, 509, 671, 18, 47, "Input",
+ CellID->468872664],
+Cell[14866, 529, 427, 10, 22, "Message",
+ CellID->1125423300]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15342, 545, 260, 5, 24, "ExampleSubsection",
+ CellID->1757724783],
+Cell[15605, 552, 1197, 25, 47, "Input",
+ CellID->1414300316]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16839, 582, 212, 4, 24, "ExampleSubsection",
+ CellID->1787552279],
+Cell[17054, 588, 320, 9, 26, "ExampleText",
+ CellID->1361481282],
+Cell[17377, 599, 755, 19, 47, "Input",
+ CellID->929006526]
+}, Open  ]],
+Cell[18147, 621, 130, 3, 24, "ExampleSubsection",
+ CellID->1295379749]
+}, Open  ]],
+Cell[18292, 627, 131, 3, 33, "ExampleSection",
+ CellID->258228157],
+Cell[18426, 632, 142, 3, 21, "ExampleSection",
+ CellID->2123667759],
+Cell[18571, 637, 135, 3, 21, "ExampleSection",
+ CellID->1305812373],
+Cell[18709, 642, 140, 3, 21, "ExampleSection",
+ CellID->1653164318],
+Cell[18852, 647, 132, 3, 21, "ExampleSection",
+ CellID->589267740],
+Cell[CellGroupData[{
+Cell[19009, 654, 263, 8, 21, "ExampleSection",
+ CellID->2100923971],
+Cell[19275, 664, 2816, 71, 371, "Input",
+ CellID->1673477652],
+Cell[22094, 737, 18680, 440, 2169, "Input",
+ CellID->545572405]
+}, Closed]]
+}, Open  ]]
+}
+]
+*)
+

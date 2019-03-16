@@ -1,0 +1,956 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     27629,        947]
+NotebookOptionsPosition[     22013,        745]
+NotebookOutlinePosition[     22649,        770]
+CellTagsIndexPosition[     22570,        765]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "New in: ",
+ Cell["0.7", "HistoryData",
+  CellTags->"New"],
+ " | Modified in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Modified"],
+ " | Obsolete in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Obsolete"],
+ " | Excised in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Excised"]
+}], "History",
+ CellID->1247902091],
+
+Cell[CellGroupData[{
+
+Cell["Categorization", "CategorizationSection",
+ CellID->1122911449],
+
+Cell["Symbol", "Categorization",
+ CellLabel->"Entity Type",
+ CellID->686433507],
+
+Cell["Xray", "Categorization",
+ CellLabel->"Paclet Name",
+ CellID->605800465],
+
+Cell["Xray`", "Categorization",
+ CellLabel->"Context",
+ CellID->468444828],
+
+Cell["Xray/ref/WeightedMean", "Categorization",
+ CellLabel->"URI"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Keywords", "KeywordsSection",
+ CellID->477174294],
+
+Cell["XXXX", "Keywords",
+ CellID->1164421360]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Syntax Templates", "TemplatesSection",
+ CellID->1872225408],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Additional Function Template",
+ CellID->1562036412],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Arguments Pattern",
+ CellID->158391909],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Local Variables",
+ CellID->1360575930],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Color Equal Signs",
+ CellID->793782254]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Details", "DetailsSection",
+ CellID->307771771],
+
+Cell["XXXX", "Details",
+ CellLabel->"Lead",
+ CellID->670882175],
+
+Cell["XXXX", "Details",
+ CellLabel->"Developers",
+ CellID->350963985],
+
+Cell["XXXX", "Details",
+ CellLabel->"Authors",
+ CellID->8391405],
+
+Cell["XXXX", "Details",
+ CellLabel->"Feature Name",
+ CellID->3610269],
+
+Cell["XXXX", "Details",
+ CellLabel->"QA",
+ CellID->401364205],
+
+Cell["XXXX", "Details",
+ CellLabel->"DA",
+ CellID->350204745],
+
+Cell["XXXX", "Details",
+ CellLabel->"Docs",
+ CellID->732958810],
+
+Cell["XXXX", "Details",
+ CellLabel->"Features Page Notes",
+ CellID->222905350],
+
+Cell["XXXX", "Details",
+ CellLabel->"Comments",
+ CellID->240026365]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["WeightedMean", "ObjectName",
+ CellID->1224892054],
+
+Cell[TextData[{
+ Cell["   ", "ModInfo"],
+ Cell[BoxData[
+  RowBox[{
+   ButtonBox["WeightedMean",
+    BaseStyle->"Link",
+    ButtonData->"paclet:Xray/ref/WeightedMean"], "[", 
+   RowBox[{"{", 
+    RowBox[{
+     SubscriptBox[
+      StyleBox["x", "TI"], 
+      StyleBox["1", "TR"]], ",", 
+     SubscriptBox[
+      StyleBox["x", "TI"], 
+      StyleBox["2", "TR"]], ",", 
+     StyleBox["\[Ellipsis]", "TR"], ",", 
+     SubscriptBox[
+      StyleBox["x", "TI"], 
+      StyleBox["n", "TI"]]}], "}"}], "]"}]], "InlineFormula"],
+ " \[LineSeparator]returns the mean, the standard deviation and the standard \
+deviation of the mean.\n",
+ Cell["      ", "ModInfo"],
+ Cell[BoxData[
+  RowBox[{
+   ButtonBox["WeightedMean",
+    BaseStyle->"Link",
+    ButtonData->"paclet:Xray/ref/WeightedMean"], "[", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       SubscriptBox[
+        StyleBox["x", "TI"], 
+        StyleBox["1", "TR"]], ",", 
+       SubscriptBox[
+        StyleBox["\[Sigma]", "TR"], 
+        StyleBox["1", "TR"]]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       SubscriptBox[
+        StyleBox["x", "TI"], 
+        StyleBox["2", "TR"]], ",", 
+       SubscriptBox[
+        StyleBox["\[Sigma]", "TR"], 
+        StyleBox["2", "TR"]]}], "}"}], ",", 
+     StyleBox["\[Ellipsis]", "TR"], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       SubscriptBox[
+        StyleBox["x", "TI"], 
+        StyleBox["n", "TI"]], ",", 
+       SubscriptBox[
+        StyleBox["\[Sigma]", "TR"], 
+        StyleBox["n", "TI"]]}], "}"}]}], "}"}], "]"}]], "InlineFormula"],
+ "\[LineSeparator]returns the weighted mean and the internal and external \
+standard deviations."
+}], "Usage",
+ CellChangeTimes->{{3.684691619271352*^9, 3.684691766009631*^9}},
+ CellID->982511436],
+
+Cell["All input data need to be numeric.", "Notes",
+ CellChangeTimes->{{3.684691840670607*^9, 3.684691854489004*^9}},
+ CellID->1067943069],
+
+Cell[TextData[{
+ Cell[BoxData[
+  RowBox[{
+   ButtonBox["WeightedMean",
+    BaseStyle->"Link",
+    ButtonData->"paclet:Xray/ref/WeightedMean"], "[", 
+   RowBox[{"{", 
+    StyleBox["x", "TI"], "}"}], "]"}]], "InlineFormula",
+  FormatType->"StandardForm"],
+ " will return ",
+ Cell[BoxData[
+  RowBox[{"{", 
+   RowBox[{
+    StyleBox["x", "TI"], ",", 
+    ButtonBox["Indeterminate",
+     BaseStyle->"Link",
+     ButtonData->"paclet:ref/Indeterminate"], ",", 
+    ButtonBox["Indeterminate",
+     BaseStyle->"Link",
+     ButtonData->"paclet:ref/Indeterminate"]}], "}"}]], "InlineFormula"],
+ "."
+}], "Notes",
+ CellChangeTimes->{{3.684693156262648*^9, 3.684693208235466*^9}, {
+  3.684693260222125*^9, 3.684693261722747*^9}, {3.6846933377769327`*^9, 
+  3.684693343976912*^9}, {3.684693386490025*^9, 3.6846934046351337`*^9}, {
+  3.68469352123811*^9, 3.6846935235807734`*^9}, {3.684693665314493*^9, 
+  3.684693667536834*^9}},
+ CellID->494748628],
+
+Cell[TextData[{
+ Cell[BoxData[
+  RowBox[{
+   ButtonBox["WeightedMean",
+    BaseStyle->"Link",
+    ButtonData->"paclet:Xray/ref/WeightedMean"], "[", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{
+      StyleBox["x", "TI"], ",", 
+      StyleBox["\[Sigma]", "TR"]}], "}"}], "}"}], "]"}]], "InlineFormula"],
+ " will return ",
+ Cell[BoxData[
+  RowBox[{"{", 
+   RowBox[{
+    StyleBox["x", "TI"], ",", 
+    ButtonBox["Indeterminate",
+     BaseStyle->"Link",
+     ButtonData->"paclet:ref/Indeterminate"], ",", 
+    StyleBox["\[Sigma]", "TR"]}], "}"}]], "InlineFormula"],
+ "."
+}], "Notes",
+ CellChangeTimes->{{3.684691840670607*^9, 3.6846919381140623`*^9}, {
+  3.684693284551001*^9, 3.684693373301161*^9}},
+ CellID->1500189465]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Tutorials", "TutorialsSection",
+ CellID->250839057],
+
+Cell["XXXX", "Tutorials",
+ CellID->341631938]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Related Demonstrations", "RelatedDemonstrationsSection",
+ CellID->1268215905],
+
+Cell["XXXX", "RelatedDemonstrations",
+ CellID->1129518860]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Related Links", "RelatedLinksSection",
+ CellID->1584193535],
+
+Cell["XXXX", "RelatedLinks",
+ CellID->1038487239]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["See Also", "SeeAlsoSection",
+ CellID->1255426704],
+
+Cell["XXXX", "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["More About", "MoreAboutSection",
+ CellID->38303248],
+
+Cell["XXXX", "MoreAbout",
+ CellID->1665078683]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {
+     StyleBox["Examples", "PrimaryExamplesSection"], 
+     ButtonBox[
+      RowBox[{
+       RowBox[{"More", " ", "Examples"}], " ", "\[RightTriangle]"}],
+      BaseStyle->"ExtendedExamplesLink",
+      ButtonData:>"ExtendedExamples"]}
+   }],
+  $Line = 0; Null]], "PrimaryExamplesSection",
+ CellID->880084151],
+
+Cell["Generate hundred random numbers between 29 and 64:", "ExampleText",
+ CellChangeTimes->{{3.6846919704358387`*^9, 3.6846920104171*^9}},
+ CellID->1659510262],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"data", "=", 
+   RowBox[{"RandomReal", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"29", ",", "64"}], "}"}], ",", "100"}], "]"}]}], ";"}]], "Input",\
+
+ CellChangeTimes->{{3.684691323157086*^9, 3.68469134712143*^9}, {
+  3.684691987201805*^9, 3.6846920119294167`*^9}},
+ CellLabel->"In[1]:=",
+ CellID->520135536],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"WeightedMean", "@", "data"}]], "Input",
+ CellChangeTimes->{{3.6846920243027287`*^9, 3.684692026272787*^9}, {
+  3.684692076679566*^9, 3.684692077039345*^9}},
+ CellLabel->"In[2]:=",
+ CellID->84087151],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "45.11308577719206`", ",", "10.679860130811866`", ",", 
+   "1.0679860130811867`"}], "}"}]], "Output",
+ CellChangeTimes->{3.6846920772456017`*^9},
+ CellLabel->"Out[2]=",
+ CellID->1547884977]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->685908681],
+
+Cell["\<\
+Generate 50 pairs of random numbers between 25 and 30 with \
+\[OpenCurlyDoubleQuote]uncertainties\[CloseCurlyDoubleQuote] between 0.1 and \
+2.9:\
+\>", "ExampleText",
+ CellChangeTimes->{{3.6846921052804337`*^9, 3.6846921447189827`*^9}},
+ CellID->1646983799],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ddata", "=", 
+   RowBox[{"Transpose", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"RandomReal", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"25", ",", "30"}], "}"}], ",", "#"}], "]"}], ",", 
+        RowBox[{"RandomReal", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"0.1", ",", "2.9"}], "}"}], ",", "#"}], "]"}]}], "}"}], 
+      "&"}], "[", "50", "]"}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.6846811952099247`*^9, 3.684681213926989*^9}, {
+   3.684689946547967*^9, 3.6846900325938797`*^9}, {3.684691304475876*^9, 
+   3.684691317066169*^9}, 3.684692157973755*^9},
+ CellLabel->"In[1]:=",
+ CellID->374984471],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"WeightedMean", "@", "ddata"}]], "Input",
+ CellChangeTimes->{{3.68469216336248*^9, 3.684692166749372*^9}},
+ CellLabel->"In[2]:=",
+ CellID->1521905130],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "26.576814256503656`", ",", "0.10672823008694853`", ",", 
+   "0.1733233537161556`"}], "}"}]], "Output",
+ CellChangeTimes->{3.6846921671035137`*^9},
+ CellLabel->"Out[2]=",
+ CellID->223174938]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["More Examples", "ExtendedExamplesSection",
+ CellTags->"ExtendedExamples",
+ CellID->1854448968],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Scope", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1293636265],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Generalizations & Extensions", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1020263627],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["Options", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->2061341341],
+
+Cell[BoxData[
+ InterpretationBox[Cell["XXXX", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection",
+ CellID->1757724783],
+
+Cell[BoxData[
+ InterpretationBox[Cell["XXXX", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection",
+ CellID->1295379749]
+}, Closed]],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Applications", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->258228157],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Properties & Relations", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->2123667759],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["Possible Issues", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1305812373],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"WeightedMean", "[", 
+  RowBox[{"{", 
+   RowBox[{"1", ",", "2", ",", "3", ",", "\"\<4\>\"", ",", "5", ",", "6"}], 
+   "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.684691424985278*^9, 3.6846914538948097`*^9}, {
+  3.684691532918652*^9, 3.684691540564601*^9}},
+ CellLabel->"In[1]:=",
+ CellID->1394735304],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"WeightedMean", "::", "numeric"}], "MessageName"], 
+  RowBox[{":", " "}], "\<\"Numeric input only.\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.684692186024233*^9},
+ CellLabel->"During evaluation of In[1]:=",
+ CellID->382020475],
+
+Cell[BoxData["$Aborted"], "Output",
+ CellChangeTimes->{3.684692186029635*^9},
+ CellLabel->"Out[1]=",
+ CellID->1789502442]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->659066459],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"WeightedMean", "[", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"1", ",", "2", ",", "3"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"4", ",", "5", ",", "6"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"7", ",", "8", ",", "9"}], "}"}]}], "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.684691396951981*^9, 3.684691413527849*^9}},
+ CellLabel->"In[1]:=",
+ CellID->209325187],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"WeightedMean", "::", "invalid"}], "MessageName"], 
+  RowBox[{":", " "}], "\<\"Invalid input form.\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.684692194108679*^9, 3.68469219689475*^9}},
+ CellLabel->"During evaluation of In[1]:=",
+ CellID->185629647],
+
+Cell[BoxData["$Aborted"], "Output",
+ CellChangeTimes->{{3.6846921941144753`*^9, 3.684692196901866*^9}},
+ CellLabel->"Out[1]=",
+ CellID->1731221685]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Interactive Examples", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1653164318],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Neat Examples", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->589267740],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[TextData[{
+   StyleBox["Mathematica",
+    FontSlant->"Italic"],
+   " code"
+  }], "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellChangeTimes->{{3.684692034195725*^9, 3.684692037122197*^9}},
+ CellID->208507131],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"WeightedMean", "::", "numeric"}], "=", 
+   "\"\<Numeric input only.\>\""}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"WeightedMean", "::", "invalid"}], "=", 
+   "\"\<Invalid input form.\>\""}], ";"}]}], "Input",
+ CellChangeTimes->{{3.684681427747033*^9, 3.68468144428977*^9}, {
+  3.684681710622183*^9, 3.6846817431468554`*^9}},
+ Background->GrayLevel[0.85],
+ CellLabel->"In[1]:=",
+ CellID->211964181],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"WeightedMean", "[", "data_List", "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{
+     "n", ",", "sum", ",", "x", ",", "d", ",", "\[Sigma]", ",", "m", ",", 
+      "\[IndentingNewLine]", "w", ",", "sumw", ",", "sumxw", ",", "wx", ",", 
+      "sumxn", ",", ",", "\[Sigma]i", ",", "\[Sigma]e"}], "}"}], ",", 
+    "\[IndentingNewLine]", "\[IndentingNewLine]", 
+    RowBox[{"(*", 
+     RowBox[{"*", " ", "Check", " ", "input"}], " ", "**)"}], 
+    "\[IndentingNewLine]", "\t", 
+    RowBox[{
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"!", 
+        RowBox[{"AllTrue", "[", 
+         RowBox[{
+          RowBox[{"Flatten", "@", "data"}], ",", "NumericQ"}], "]"}]}], ",", 
+       "\[IndentingNewLine]", "\t", 
+       RowBox[{
+        RowBox[{"Message", "[", 
+         RowBox[{"WeightedMean", "::", "numeric"}], "]"}], ";", 
+        RowBox[{"Abort", "[", "]"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"Which", "[", "\[IndentingNewLine]", "\t", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Depth", "[", "data", "]"}], "\[Equal]", "2"}], ",", 
+       RowBox[{"Goto", "[", "\"\<WithoutWeights\>\"", "]"}], ",", 
+       "\[IndentingNewLine]", "\t", 
+       RowBox[{"MatchQ", "[", 
+        RowBox[{
+         RowBox[{"Dimensions", "[", "data", "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"_", ",", "2"}], "}"}]}], "]"}], ",", 
+       RowBox[{"Goto", "[", "\"\<WithWeights\>\"", "]"}], ",", 
+       "\[IndentingNewLine]", "\t", "True", ",", 
+       RowBox[{
+        RowBox[{"Message", "[", 
+         RowBox[{"WeightedMean", "::", "invalid"}], "]"}], ";", 
+        RowBox[{"Abort", "[", "]"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{"*", " ", "Data", " ", "without", " ", "weights"}], " ", 
+      "**)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{"Label", "[", "\"\<WithoutWeights\>\"", "]"}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", "\t", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Useful", " ", "variables"}], " ", "*)"}], 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"n", "=", 
+      RowBox[{"Length", "@", "data"}]}], ";", "\[IndentingNewLine]", "\t", 
+     RowBox[{"sum", "=", 
+      RowBox[{"N", "@", 
+       RowBox[{"Total", "@", "data"}]}]}], ";", "\[IndentingNewLine]", "\t", 
+     RowBox[{"x", "=", 
+      RowBox[{"sum", "/", "n"}]}], ";", "\[IndentingNewLine]", "\t", 
+     RowBox[{"d", "=", 
+      RowBox[{"data", "-", "x"}]}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Standard", " ", "deviations"}], " ", "*)"}], 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"\[Sigma]", "=", 
+      RowBox[{"Sqrt", "[", 
+       RowBox[{
+        RowBox[{"Total", "[", 
+         RowBox[{"d", "^", "2"}], "]"}], "/", 
+        RowBox[{"(", 
+         RowBox[{"n", "-", "1"}], ")"}]}], "]"}]}], ";", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"m", "=", 
+      RowBox[{"\[Sigma]", "/", 
+       RowBox[{"Sqrt", "[", "n", "]"}]}]}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"Return", "[", 
+      RowBox[{"{", 
+       RowBox[{"x", ",", "\[Sigma]", ",", "m"}], "}"}], "]"}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{"*", " ", "Data", " ", "with", " ", "weights"}], " ", "**)"}], 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"Label", "[", "\"\<WithWeights\>\"", "]"}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", "\t", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Useful", " ", "variables"}], " ", "*)"}], 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"n", "=", 
+      RowBox[{"Length", "@", "data"}]}], ";", "\[IndentingNewLine]", "\t\t", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"n", "\[Equal]", "1"}], ",", 
+       RowBox[{"Return", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"data", "[", 
+             RowBox[{"[", 
+              RowBox[{"1", ",", "1"}], "]"}], "]"}], ",", "#", ",", "#"}], 
+           "}"}], "&"}], "@", 
+         RowBox[{"data", "[", 
+          RowBox[{"[", 
+           RowBox[{"1", ",", "2"}], "]"}], "]"}]}], "]"}]}], "]"}], ";", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"x", ",", "\[Sigma]"}], "}"}], "=", 
+      RowBox[{"N", "@", 
+       RowBox[{"Transpose", "@", "data"}]}]}], ";", "\[IndentingNewLine]", 
+     "\t", 
+     RowBox[{"w", "=", 
+      RowBox[{"1", "/", 
+       RowBox[{"\[Sigma]", "^", "2"}]}]}], ";", "\[IndentingNewLine]", "\t", 
+     RowBox[{"sumw", "=", 
+      RowBox[{"Total", "[", "w", "]"}]}], ";", "\[IndentingNewLine]", "\t", 
+     RowBox[{"sumxw", "=", 
+      RowBox[{"x", ".", "w"}]}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"wx", "=", 
+      RowBox[{"sumxw", "/", "sumw"}]}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Standard", " ", "deviation", " ", 
+       RowBox[{"(", "internal", ")"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+     "\t", 
+     RowBox[{"\[Sigma]i", "=", 
+      RowBox[{"1", "/", 
+       RowBox[{"Sqrt", "[", "sumw", "]"}]}]}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Standard", " ", "deviation", " ", 
+       RowBox[{"(", "external", ")"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+     "\t", 
+     RowBox[{"d", "=", 
+      RowBox[{"x", "-", "wx"}]}], ";", "\[IndentingNewLine]", "\t", 
+     RowBox[{"sumxn", "=", 
+      RowBox[{"w", ".", 
+       RowBox[{"d", "^", "2"}]}]}], ";", "\[IndentingNewLine]", "\t", 
+     RowBox[{"\[Sigma]e", "=", 
+      RowBox[{"Sqrt", "[", 
+       RowBox[{"sumxn", "/", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"n", "-", "1"}], ")"}], "*", "sumw"}], ")"}]}], "]"}]}], 
+     ";", "\[IndentingNewLine]", "\[IndentingNewLine]", "\t", 
+     RowBox[{"Return", "[", 
+      RowBox[{"{", 
+       RowBox[{"wx", ",", "\[Sigma]i", ",", "\[Sigma]e"}], "}"}], "]"}], 
+     ";"}]}], "\[IndentingNewLine]", "]"}]}]], "Input",
+ CellChangeTimes->{
+  3.6678115931321983`*^9, {3.684681126098569*^9, 3.68468113261707*^9}, {
+   3.684681314799778*^9, 3.684681395619067*^9}, {3.684681505457395*^9, 
+   3.684681556063126*^9}, {3.6846815878074408`*^9, 3.6846818093068333`*^9}, {
+   3.684685030178719*^9, 3.684685100167528*^9}, {3.68468520231924*^9, 
+   3.684685234012491*^9}, {3.684685281091477*^9, 3.684685439768339*^9}, {
+   3.684685587884272*^9, 3.684685671506892*^9}, {3.684685805889974*^9, 
+   3.684685908701192*^9}, {3.684685949581909*^9, 3.6846861238240957`*^9}, {
+   3.684688760297517*^9, 3.684688760975606*^9}, {3.6846888319429092`*^9, 
+   3.684688868964966*^9}, {3.684688936172331*^9, 3.6846889580267563`*^9}, {
+   3.684689140823488*^9, 3.6846892517314787`*^9}, {3.6846893353940983`*^9, 
+   3.684689347937306*^9}, {3.684689397904675*^9, 3.684689398176662*^9}, {
+   3.6846894450874567`*^9, 3.6846895630529423`*^9}, {3.68468959606793*^9, 
+   3.684689652778881*^9}, {3.684689724177442*^9, 3.684689740865003*^9}, 
+   3.684689840439896*^9, 3.6846898903814*^9, {3.684690123408786*^9, 
+   3.684690167350737*^9}, {3.684690205488257*^9, 3.6846902865736523`*^9}, {
+   3.684690376428082*^9, 3.684690409930132*^9}, {3.684690573246892*^9, 
+   3.6846905870395203`*^9}, {3.6846906279888163`*^9, 3.684690811367805*^9}, {
+   3.684690904830155*^9, 3.6846909228530283`*^9}, {3.684691045330447*^9, 
+   3.684691055954417*^9}, {3.6846910934271107`*^9, 3.6846911148174763`*^9}, {
+   3.6846911666652813`*^9, 3.68469121004055*^9}},
+ Background->RGBColor[0.94, 0.91, 0.88],
+ CellLabel->"In[3]:=",
+ CellID->1459437745]
+}, Closed]]
+}, Open  ]]
+},
+WindowSize->{700, 770},
+WindowMargins->{{848, Automatic}, {205, Automatic}},
+CellContext->"Global`",
+FrontEndVersion->"10.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (December 10, \
+2015)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "FunctionPageStyles.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "ExtendedExamples"->{
+  Cell[10050, 411, 100, 2, 55, "ExtendedExamplesSection",
+   CellTags->"ExtendedExamples",
+   CellID->1854448968]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"ExtendedExamples", 22431, 758}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 325, 14, 24, "History",
+ CellID->1247902091],
+Cell[CellGroupData[{
+Cell[908, 38, 68, 1, 29, "CategorizationSection",
+ CellID->1122911449],
+Cell[979, 41, 79, 2, 70, "Categorization",
+ CellID->686433507],
+Cell[1061, 45, 77, 2, 70, "Categorization",
+ CellID->605800465],
+Cell[1141, 49, 74, 2, 70, "Categorization",
+ CellID->468444828],
+Cell[1218, 53, 66, 1, 70, "Categorization"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1321, 59, 55, 1, 19, "KeywordsSection",
+ CellID->477174294],
+Cell[1379, 62, 45, 1, 70, "Keywords",
+ CellID->1164421360]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1461, 68, 65, 1, 19, "TemplatesSection",
+ CellID->1872225408],
+Cell[1529, 71, 94, 2, 70, "Template",
+ CellID->1562036412],
+Cell[1626, 75, 82, 2, 70, "Template",
+ CellID->158391909],
+Cell[1711, 79, 81, 2, 70, "Template",
+ CellID->1360575930],
+Cell[1795, 83, 82, 2, 70, "Template",
+ CellID->793782254]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1914, 90, 53, 1, 19, "DetailsSection",
+ CellID->307771771],
+Cell[1970, 93, 63, 2, 70, "Details",
+ CellID->670882175],
+Cell[2036, 97, 69, 2, 70, "Details",
+ CellID->350963985],
+Cell[2108, 101, 64, 2, 70, "Details",
+ CellID->8391405],
+Cell[2175, 105, 69, 2, 70, "Details",
+ CellID->3610269],
+Cell[2247, 109, 61, 2, 70, "Details",
+ CellID->401364205],
+Cell[2311, 113, 61, 2, 70, "Details",
+ CellID->350204745],
+Cell[2375, 117, 63, 2, 70, "Details",
+ CellID->732958810],
+Cell[2441, 121, 78, 2, 70, "Details",
+ CellID->222905350],
+Cell[2522, 125, 67, 2, 70, "Details",
+ CellID->240026365]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[2626, 132, 55, 1, 63, "ObjectName",
+ CellID->1224892054],
+Cell[2684, 135, 1754, 58, 111, "Usage",
+ CellID->982511436],
+Cell[4441, 195, 138, 2, 25, "Notes",
+ CellID->1067943069],
+Cell[4582, 199, 932, 27, 26, "Notes",
+ CellID->494748628],
+Cell[5517, 228, 721, 24, 26, "Notes",
+ CellID->1500189465]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6275, 257, 57, 1, 43, "TutorialsSection",
+ CellID->250839057],
+Cell[6335, 260, 45, 1, 16, "Tutorials",
+ CellID->341631938]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6417, 266, 83, 1, 30, "RelatedDemonstrationsSection",
+ CellID->1268215905],
+Cell[6503, 269, 58, 1, 16, "RelatedDemonstrations",
+ CellID->1129518860]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6598, 275, 65, 1, 30, "RelatedLinksSection",
+ CellID->1584193535],
+Cell[6666, 278, 49, 1, 16, "RelatedLinks",
+ CellID->1038487239]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6752, 284, 55, 1, 30, "SeeAlsoSection",
+ CellID->1255426704],
+Cell[6810, 287, 43, 1, 16, "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6890, 293, 57, 1, 30, "MoreAboutSection",
+ CellID->38303248],
+Cell[6950, 296, 46, 1, 16, "MoreAbout",
+ CellID->1665078683]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7033, 302, 356, 11, 69, "PrimaryExamplesSection",
+ CellID->880084151],
+Cell[7392, 315, 160, 2, 22, "ExampleText",
+ CellID->1659510262],
+Cell[7555, 319, 351, 11, 24, "Input",
+ CellID->520135536],
+Cell[CellGroupData[{
+Cell[7931, 334, 222, 5, 25, "Input",
+ CellID->84087151],
+Cell[8156, 341, 231, 7, 23, "Output",
+ CellID->1547884977]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8424, 353, 125, 3, 17, "ExampleDelimiter",
+ CellID->685908681],
+Cell[8552, 358, 266, 6, 22, "ExampleText",
+ CellID->1646983799],
+Cell[8821, 366, 735, 21, 41, "Input",
+ CellID->374984471],
+Cell[CellGroupData[{
+Cell[9581, 391, 173, 4, 25, "Input",
+ CellID->1521905130],
+Cell[9757, 397, 232, 7, 23, "Output",
+ CellID->223174938]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10050, 411, 100, 2, 55, "ExtendedExamplesSection",
+ CellTags->"ExtendedExamples",
+ CellID->1854448968],
+Cell[10153, 415, 125, 3, 33, "ExampleSection",
+ CellID->1293636265],
+Cell[10281, 420, 148, 3, 21, "ExampleSection",
+ CellID->1020263627],
+Cell[CellGroupData[{
+Cell[10454, 427, 127, 3, 21, "ExampleSection",
+ CellID->2061341341],
+Cell[10584, 432, 130, 3, 70, "ExampleSubsection",
+ CellID->1757724783],
+Cell[10717, 437, 130, 3, 70, "ExampleSubsection",
+ CellID->1295379749]
+}, Closed]],
+Cell[10862, 443, 131, 3, 21, "ExampleSection",
+ CellID->258228157],
+Cell[10996, 448, 142, 3, 21, "ExampleSection",
+ CellID->2123667759],
+Cell[CellGroupData[{
+Cell[11163, 455, 135, 3, 21, "ExampleSection",
+ CellID->1305812373],
+Cell[CellGroupData[{
+Cell[11323, 462, 325, 8, 25, "Input",
+ CellID->1394735304],
+Cell[11651, 472, 278, 7, 22, "Message",
+ CellID->382020475],
+Cell[11932, 481, 121, 3, 23, "Output",
+ CellID->1789502442]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12090, 489, 125, 3, 17, "ExampleDelimiter",
+ CellID->659066459],
+Cell[CellGroupData[{
+Cell[12240, 496, 414, 12, 25, "Input",
+ CellID->209325187],
+Cell[12657, 510, 301, 7, 22, "Message",
+ CellID->185629647],
+Cell[12961, 519, 147, 3, 23, "Output",
+ CellID->1731221685]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[13147, 527, 140, 3, 33, "ExampleSection",
+ CellID->1653164318],
+Cell[13290, 532, 132, 3, 21, "ExampleSection",
+ CellID->589267740],
+Cell[CellGroupData[{
+Cell[13447, 539, 262, 8, 21, "ExampleSection",
+ CellID->208507131],
+Cell[13712, 549, 470, 13, 57, "Input",
+ CellID->211964181],
+Cell[14185, 564, 7800, 177, 825, "Input",
+ CellID->1459437745]
+}, Closed]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

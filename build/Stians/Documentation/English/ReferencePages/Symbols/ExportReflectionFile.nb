@@ -1,0 +1,912 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     30112,        903]
+NotebookOptionsPosition[     24835,        783]
+NotebookOutlinePosition[     27005,        840]
+CellTagsIndexPosition[     26920,        835]
+WindowTitle->ExportReflectionFile
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["XRAY SYMBOL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"ImportReflectionFile\"\>":>
+       Documentation`HelpLookup[
+       "paclet:Xray/ref/ImportReflectionFile"], "\<\"RefinedValues\"\>":>
+       Documentation`HelpLookup[
+       "paclet:Xray/ref/RefinedValues"], "\<\"PeakTableHelper\"\>":>
+       Documentation`HelpLookup[
+       "paclet:Xray/ref/PeakTableHelper"], "\<\"ImgScript\"\>":>
+       Documentation`HelpLookup[
+       "paclet:Xray/ref/ImgScript"], "\<\"MergeLogs\"\>":>
+       Documentation`HelpLookup[
+       "paclet:Xray/ref/MergeLogs"], "\<\"UnwarpLayerList\"\>":>
+       Documentation`HelpLookup["paclet:Xray/ref/UnwarpLayerList"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"Xray/ref/ExportReflectionFile\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["Xray/ref/ExportReflectionFile"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/Xray/ref/\
+ExportReflectionFile.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$11503], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "Xray/ref/ExportReflectionFile", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell["ExportReflectionFile", "ObjectName"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{Cell[
+          TextData["ExportReflectionFile"]],
+         "paclet:Xray/ref/ExportReflectionFile"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", 
+       RowBox[{
+        StyleBox["file", "TI"], ",", 
+        StyleBox["data", "TI"]}], "]"}]], "InlineFormula"],
+     " \[LineSeparator]exports reflection ",
+     Cell[BoxData[
+      StyleBox["data", "TI"]], "InlineFormula"],
+     " to an ",
+     StyleBox[".hkl", "InlineCode"],
+     " ",
+     Cell[BoxData[
+      StyleBox["file", "TI"]], "InlineFormula"],
+     "."
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}}},
+ CellID->982511436]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(3)", "ExampleCount"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->1003788895],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(2)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->48427433],
+
+Cell[TextData[{
+ "Sample ",
+ StyleBox[".hkl", "InlineCode"],
+ " file:"
+}], "ExampleText",
+ CellID->858687879],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"reflectionFile1", "=", 
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", 
+     RowBox[{"$XrayExamples", ",", "\"\<hkl file 1.hkl\>\""}], "}"}], "]"}]}],
+   ";"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1396952255],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"hkl", "=", 
+   RowBox[{"ImportReflectionFile", "[", "reflectionFile1", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"hkl", "//", "Shallow"}]}], "Input",
+ CellLabel->"In[2]:=",
+ CellID->1118539792],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", 
+     RowBox[{"-", "1"}], ",", "1", ",", "188567.`", ",", "2156.71`", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "1"}], ",", "1", ",", "200329.`", ",", "2089.12`", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1", ",", 
+     RowBox[{"-", "1"}], ",", "189293.`", ",", "2022.25`", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", 
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "1"}], ",", "197073.`", ",", "2145.46`", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "1", ",", "1", ",", "222035.`", ",", "2275.46`",
+      ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "1"}], ",", "1", ",", "174190.`", ",", "1940.03`", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "1", ",", 
+     RowBox[{"-", "1"}], ",", "208160.`", ",", "2288.`", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "1", ",", "1", ",", "213846.`", ",", "2248.72`",
+      ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", 
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "1"}], ",", "211194.`", ",", "2254.58`", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "1", ",", 
+     RowBox[{"-", "1"}], ",", "193239.`", ",", "2171.95`", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"\[LeftSkeleton]", "386", "\[RightSkeleton]"}]}], "}"}]], "Output",\
+
+ ImageSize->{523, 85},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[2]//Shallow=",
+ CellID->236057302]
+}, Open  ]],
+
+Cell[TextData[{
+ "Let us only keep reflections with ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"h", "=", "5"}], TraditionalForm]], "InlineMath"],
+ ":"
+}], "ExampleText",
+ CellID->1369236402],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"updated", "=", 
+  RowBox[{"Cases", "[", 
+   RowBox[{"hkl", ",", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "h_", ",", "k_", ",", "l_", ",", "F_", ",", "\[Sigma]_", ",", "b_"}], 
+      "}"}], "/;", 
+     RowBox[{"h", "\[Equal]", "5"}]}]}], "]"}]}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->1329839244],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"5", ",", 
+     RowBox[{"-", "1"}], ",", "1", ",", "181532.`", ",", "3236.68`", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "5", ",", "1", ",", "1", ",", "181601.`", ",", "2940.11`", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "5", ",", "1", ",", "1", ",", "151641.`", ",", "2692.36`", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"5", ",", "1", ",", 
+     RowBox[{"-", "1"}], ",", "166211.`", ",", "3017.4`", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"5", ",", 
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "1"}], ",", "186078.`", ",", "3336.34`", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "5", ",", "1", ",", "3", ",", "187144.`", ",", "3061.99`", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "5", ",", "1", ",", "3", ",", "155813.`", ",", "2747.18`", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"5", ",", 
+     RowBox[{"-", "1"}], ",", "3", ",", "184628.`", ",", "3364.54`", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"5", ",", 
+     RowBox[{"-", "3"}], ",", "1", ",", "159673.`", ",", "3208.09`", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"5", ",", 
+     RowBox[{"-", "3"}], ",", 
+     RowBox[{"-", "1"}], ",", "152949.`", ",", "3157.19`", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"5", ",", 
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "3"}], ",", "183998.`", ",", "3421.74`", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"5", ",", "3", ",", 
+     RowBox[{"-", "1"}], ",", "165110.`", ",", "2898.88`", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"5", ",", "3", ",", 
+     RowBox[{"-", "1"}], ",", "169379.`", ",", "2905.75`", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"5", ",", 
+     RowBox[{"-", "3"}], ",", "3", ",", "147168.`", ",", "3106.65`", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"5", ",", 
+     RowBox[{"-", "3"}], ",", 
+     RowBox[{"-", "3"}], ",", "161832.`", ",", "3255.36`", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"5", ",", 
+     RowBox[{"-", "1"}], ",", "5", ",", "132359.`", ",", "2977.92`", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"5", ",", 
+     RowBox[{"-", "5"}], ",", 
+     RowBox[{"-", "1"}], ",", "123171.`", ",", "2837.75`", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"5", ",", 
+     RowBox[{"-", "5"}], ",", "1", ",", "126280.`", ",", "2875.31`", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"5", ",", 
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "5"}], ",", "132291.`", ",", "2958.05`", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"5", ",", "1", ",", 
+     RowBox[{"-", "5"}], ",", "140055.`", ",", "3038.87`", ",", "1"}], 
+    "}"}]}], "}"}]], "Output",
+ ImageSize->{454, 170},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[3]=",
+ CellID->1012778705]
+}, Open  ]],
+
+Cell["The result can be exported as a new reflection file:", "ExampleText",
+ CellID->1022890796],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"newfile", "=", 
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", 
+     RowBox[{
+     "$HomeDirectory", ",", "\"\<Desktop\>\"", ",", "\"\<newfile.hkl\>\""}], 
+     "}"}], "]"}]}], ";"}]], "Input",
+ CellLabel->"In[4]:=",
+ CellID->614505181],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ExportReflectionFile", "[", 
+   RowBox[{"newfile", ",", "updated"}], "]"}], ";"}]], "Input",
+ CellLabel->"In[5]:=",
+ CellID->1034902445],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->816308813],
+
+Cell[TextData[{
+ "Alternative way of filtering lists of reflection; Let us select only those \
+reflections with structure factor squared (the fourth element of each entry) \
+larger than ",
+ StyleBox["200,000",
+  Deletable->True],
+ ":"
+}], "ExampleText",
+ CellID->1576683055],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"reflectionFile2", "=", 
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", 
+     RowBox[{"$XrayExamples", ",", "\"\<hkl file 2.hkl\>\""}], "}"}], "]"}]}],
+   ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"hkl", "=", 
+   RowBox[{"ImportReflectionFile", "[", "reflectionFile2", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"updated", "=", 
+  RowBox[{"Select", "[", 
+   RowBox[{"hkl", ",", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"#", "[", 
+       RowBox[{"[", "4", "]"}], "]"}], ">", "200000"}], "&"}]}], 
+   "]"}]}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1617808542],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", "2", ",", "0", ",", "214045.`", ",", "1990.18`",
+      ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", 
+     RowBox[{"-", "2"}], ",", "2", ",", "205161.`", ",", "2042.67`", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "2", ",", 
+     RowBox[{"-", "2"}], ",", "212816.`", ",", "2080.98`", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "2", ",", "0", ",", "2", ",", "208079.`", ",", "1981.3`", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "2", ",", "2", ",", "0", ",", "268210.`", ",", "2072.32`", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", "0", ",", "2", ",", "211081.`", ",", "2013.63`",
+      ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", 
+     RowBox[{"-", "2"}], ",", "0", ",", "200667.`", ",", "1915.61`", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "0", ",", 
+     RowBox[{"-", "2"}], ",", "253085.`", ",", "2133.03`", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0", ",", "4", ",", "0", ",", "241272.`", ",", "2082.17`", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "4", ",", "0", ",", "0", ",", "203929.`", ",", "2217.35`", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0", ",", "0", ",", "4", ",", "206555.`", ",", "2138.39`", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", 
+     RowBox[{"-", "4"}], ",", "233005.`", ",", "2244.84`", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", 
+     RowBox[{"-", "4"}], ",", "0", ",", "213721.`", ",", "2016.82`", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", 
+     RowBox[{"-", "2"}], ",", 
+     RowBox[{"-", "4"}], ",", "261449.`", ",", "2209.2`", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", 
+     RowBox[{"-", "4"}], ",", "2", ",", "201965.`", ",", "2248.4`", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", 
+     RowBox[{"-", "2"}], ",", "4", ",", "209123.`", ",", "2317.19`", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "4", ",", "2", ",", "2", ",", "206188.`", ",", "2186.17`", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"4", ",", 
+     RowBox[{"-", "2"}], ",", 
+     RowBox[{"-", "2"}], ",", "209666.`", ",", "2248.18`", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "2", ",", "4", ",", "2", ",", "266898.`", ",", "1798.9`", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", "2", ",", 
+     RowBox[{"-", "4"}], ",", "254607.`", ",", "2444.95`", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "4", ",", 
+     RowBox[{"-", "2"}], ",", "262881.`", ",", "2483.69`", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", "2", ",", "4", ",", "209901.`", ",", "2079.96`",
+      ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "4", ",", 
+     RowBox[{"-", "4"}], ",", "213235.`", ",", "2338.52`", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "4", ",", "4", ",", "0", ",", "244286.`", ",", "2389.8`", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"4", ",", "0", ",", 
+     RowBox[{"-", "4"}], ",", "211799.`", ",", "2305.05`", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "0", ",", 
+     RowBox[{"-", "6"}], ",", "202458.`", ",", "2187.01`", ",", "1"}], 
+    "}"}]}], "}"}]], "Output",
+ ImageSize->{454, 221},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->884105846]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " code",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->317101126],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ExportReflectionFile", "[", 
+   RowBox[{"output_String", ",", "hkl_List"}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+     "dir", ",", "list", ",", "spacing", ",", "input", ",", "temp1", ",", 
+      "temp2", ",", "temp3", ",", "temp4"}], "}"}], ",", 
+    "\[IndentingNewLine]", "\[IndentingNewLine]", 
+    RowBox[{"(*", " ", 
+     RowBox[{"Checking", " ", "input"}], " ", "*)"}], "\[IndentingNewLine]", 
+    "\t", 
+    RowBox[{
+     RowBox[{"dir", "=", 
+      RowBox[{"DirectoryName", "@", "output"}]}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"dir", "\[Equal]", "\"\<\>\""}], "||", 
+        RowBox[{"dir", "\[Equal]", "\"\</\>\""}]}], ",", 
+       "\[IndentingNewLine]", "\t", 
+       RowBox[{
+        RowBox[{"Message", "[", 
+         RowBox[{"ExportReflectionFile", "::", "dir"}], "]"}], ";", 
+        RowBox[{"Abort", "[", "]"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"!", 
+        RowBox[{"DirectoryQ", "@", "dir"}]}], ",", "\[IndentingNewLine]", 
+       "\t", 
+       RowBox[{
+        RowBox[{"Message", "[", 
+         RowBox[{"ExportReflectionFile", "::", "dir"}], "]"}], ";", 
+        RowBox[{"Abort", "[", "]"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"!", 
+        RowBox[{
+         RowBox[{"StringTake", "[", 
+          RowBox[{"output", ",", 
+           RowBox[{"-", "3"}]}], "]"}], "\[Equal]", "\"\<hkl\>\""}]}], ",", 
+       "\[IndentingNewLine]", "\t", 
+       RowBox[{
+        RowBox[{"Message", "[", 
+         RowBox[{"ExportReflectionFile", "::", "hkl"}], "]"}], ";", 
+        RowBox[{"Abort", "[", "]"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"If", "[", "\[IndentingNewLine]", "\t", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"!", 
+         RowBox[{
+          RowBox[{"Depth", "@", "hkl"}], "\[Equal]", "3"}]}], 
+        "\[IndentingNewLine]", "\t", "&&", 
+        RowBox[{"!", 
+         RowBox[{"MemberQ", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"5", ",", "6"}], "}"}], ",", 
+           RowBox[{"Length", "@", 
+            RowBox[{"RandomChoice", "@", "hkl"}]}]}], "]"}]}]}], ",", 
+       "\[IndentingNewLine]", "\t", 
+       RowBox[{
+        RowBox[{"Message", "[", 
+         RowBox[{"ExportReflectionFile", "::", "format"}], "]"}], ";", 
+        RowBox[{"Abort", "[", "]"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+      "Handling", " ", "the", " ", "format", " ", "of", " ", "each", " ", 
+       "reflection"}], " ", "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{"list", "=", 
+      RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", "\t", 
+     RowBox[{"spacing", "=", 
+      RowBox[{"{", 
+       RowBox[{"4", ",", "4", ",", "4", ",", "8", ",", "8", ",", "4"}], 
+       "}"}]}], ";", "\[IndentingNewLine]", "\t\t", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Length", "@", 
+         RowBox[{"First", "@", "hkl"}]}], "\[Equal]", "5"}], ",", 
+       "\[IndentingNewLine]", "\t\t", 
+       RowBox[{"spacing", "=", 
+        RowBox[{"spacing", "[", 
+         RowBox[{"[", 
+          RowBox[{";;", "5"}], "]"}], "]"}]}]}], "]"}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+      "Adjusting", " ", "spacing", " ", "for", " ", "each", " ", "line"}], 
+      " ", "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{"input", "=", 
+      RowBox[{"Map", "[", 
+       RowBox[{"ToString", ",", "hkl", ",", 
+        RowBox[{"{", "2", "}"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"Do", "[", "\[IndentingNewLine]", "\t", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"temp1", "=", 
+         RowBox[{"input", "[", 
+          RowBox[{"[", "i", "]"}], "]"}]}], ";", "\[IndentingNewLine]", "\t", 
+        
+        RowBox[{"temp2", "=", 
+         RowBox[{"spacing", "-", 
+          RowBox[{"StringLength", "/@", "temp1"}]}]}], ";", 
+        "\[IndentingNewLine]", "\t", 
+        RowBox[{"temp3", "=", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"StringJoin", "@", 
+            RowBox[{"ConstantArray", "[", 
+             RowBox[{"\"\< \>\"", ",", "#"}], "]"}]}], "&"}], "/@", 
+          "temp2"}]}], ";", "\[IndentingNewLine]", "\t", 
+        RowBox[{"temp4", "=", 
+         RowBox[{"StringJoin", "@", 
+          RowBox[{"Riffle", "[", 
+           RowBox[{"temp3", ",", "temp1"}], "]"}]}]}], ";", 
+        "\[IndentingNewLine]", "\t", 
+        RowBox[{"AppendTo", "[", 
+         RowBox[{"list", ",", "temp4"}], "]"}]}], ",", "\[IndentingNewLine]", 
+       "\t\t", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", 
+         RowBox[{"Length", "@", "input"}]}], "}"}]}], "\[IndentingNewLine]", 
+      "\t", "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", "\t", 
+     RowBox[{"Export", "[", 
+      RowBox[{"output", ",", "list", ",", "\"\<Table\>\""}], "]"}]}]}], 
+   "\[IndentingNewLine]", "]"}]}]], "Input",
+ Background->RGBColor[0.94, 0.91, 0.88],
+ CellLabel->"In[1]:=",
+ CellID->1888299950]
+}, Closed]],
+
+Cell["", "SectionFooterSpacer"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["ImportReflectionFile"]],"paclet:Xray/ref/ImportReflectionFile"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["RefinedValues"]],"paclet:Xray/ref/RefinedValues"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["PeakTableHelper"]],"paclet:Xray/ref/PeakTableHelper"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["ImgScript"]],"paclet:Xray/ref/ImgScript"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["MergeLogs"]],"paclet:Xray/ref/MergeLogs"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["UnwarpLayerList"]],"paclet:Xray/ref/UnwarpLayerList"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"]
+}], "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"ExportReflectionFile",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "Wolfram Language", ButtonData -> "paclet:guide/WolframRoot", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "ExampleCounter" -> 1, "NeedPlatMsgIn" -> None, "RootCaptions" -> 
+  "", "Metadata" -> {
+   "built" -> "{2019, 3, 16, 9, 28, 21.683378}", 
+    "history" -> {"0.7", "", "", ""}, "context" -> "Xray`", "keywords" -> {}, 
+    "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> True,
+     "label" -> "Xray Symbol", "language" -> "en", "paclet" -> "Xray", 
+    "status" -> "None", "summary" -> 
+    "ExportReflectionFile[file, data] exports reflection data to an .hkl \
+file.", "synonyms" -> {}, "tabletags" -> {}, "title" -> 
+    "ExportReflectionFile", "titlemodifier" -> "", "windowtitle" -> 
+    "ExportReflectionFile", "type" -> "Symbol", "uri" -> 
+    "Xray/ref/ExportReflectionFile", "WorkflowDockedCell" -> ""}, 
+  "SearchTextTranslated" -> "", "NewStyles" -> False},
+CellContext->"Global`",
+FrontEndVersion->"11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
+2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> 
+  "11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, 2018)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[5189, 149, 268, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"272a0a2a-59e9-45fd-8d51-a8a73fa7bfc9",
+   CellTags->"PrimaryExamplesSection",
+   CellID->1003788895]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 26721, 828}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[592, 21, 3541, 84, 70, "AnchorBarGrid",ExpressionUUID->"c280c004-c843-4575-9092-c44cca2c07b6",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[4158, 109, 177, 6, 70, "ObjectNameGrid",ExpressionUUID->"e7235b1c-e6f5-447b-9326-1fc28947e23c"],
+Cell[4338, 117, 814, 27, 70, "Usage",ExpressionUUID->"8f4399b6-8522-4c0b-901b-107c8443ef0b",
+ CellID->982511436]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5189, 149, 268, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"272a0a2a-59e9-45fd-8d51-a8a73fa7bfc9",
+ CellTags->"PrimaryExamplesSection",
+ CellID->1003788895],
+Cell[CellGroupData[{
+Cell[5482, 163, 194, 6, 70, "ExampleSection",ExpressionUUID->"f6c1c006-7bfa-44fe-b43c-e3ffcffd7378",
+ CellID->48427433],
+Cell[5679, 171, 109, 5, 70, "ExampleText",ExpressionUUID->"ce0f27ea-8ac5-4a25-ac5f-18f96499715f",
+ CellID->858687879],
+Cell[5791, 178, 252, 8, 70, "Input",ExpressionUUID->"b1675fcb-f2fb-4430-9254-c607ad873100",
+ CellID->1396952255],
+Cell[CellGroupData[{
+Cell[6068, 190, 239, 7, 70, "Input",ExpressionUUID->"4e35a0f5-05d4-41b5-a3c1-04e14b750d7a",
+ CellID->1118539792],
+Cell[6310, 199, 1774, 55, 70, "Output",ExpressionUUID->"b8574c54-245b-427c-b99f-c9aec83cc7c6",
+ CellID->236057302]
+}, Open  ]],
+Cell[8099, 257, 187, 7, 70, "ExampleText",ExpressionUUID->"91c3b24d-c633-439d-928b-908d1ccc1d3a",
+ CellID->1369236402],
+Cell[CellGroupData[{
+Cell[8311, 268, 336, 11, 70, "Input",ExpressionUUID->"3c050074-bfa2-4aa6-8baf-04ac3f1c9039",
+ CellID->1329839244],
+Cell[8650, 281, 3024, 93, 70, "Output",ExpressionUUID->"4966cac6-6637-4158-be95-ab4bed65e3f1",
+ CellID->1012778705]
+}, Open  ]],
+Cell[11689, 377, 96, 1, 70, "ExampleText",ExpressionUUID->"81b95103-c695-4333-b0d1-dcda4776df08",
+ CellID->1022890796],
+Cell[11788, 380, 274, 9, 70, "Input",ExpressionUUID->"dfe9dfbf-abe8-4734-bca7-26855ff9eb0d",
+ CellID->614505181],
+Cell[12065, 391, 171, 5, 70, "Input",ExpressionUUID->"32da5e90-c3f5-4d0c-bf46-ebc67ce00de4",
+ CellID->1034902445],
+Cell[CellGroupData[{
+Cell[12261, 400, 125, 3, 70, "ExampleDelimiter",ExpressionUUID->"766d51f9-9a0c-45e2-b476-d82a37d15d3b",
+ CellID->816308813],
+Cell[12389, 405, 274, 8, 70, "ExampleText",ExpressionUUID->"00d6b5d6-db41-4442-aa0f-a37536a49bb1",
+ CellID->1576683055],
+Cell[CellGroupData[{
+Cell[12688, 417, 619, 20, 70, "Input",ExpressionUUID->"000a7f38-8ed0-40db-bf53-77410f6f869c",
+ CellID->1617808542],
+Cell[13310, 439, 3770, 116, 70, "Output",ExpressionUUID->"0f0d8afc-4fc5-4a36-b1bb-2abd3f8752d8",
+ CellID->884105846]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17141, 562, 235, 8, 70, "ExampleSection",ExpressionUUID->"296c0605-95dc-4057-ba3a-56afce56e17c",
+ CellID->317101126],
+Cell[17379, 572, 5364, 137, 70, "Input",ExpressionUUID->"dc95250e-5b1e-4d0e-b634-ea2b452708a9",
+ CellID->1888299950]
+}, Closed]],
+Cell[22758, 712, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"5ac5d2ff-576d-4706-a9a4-e7bbba546f77"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22826, 717, 150, 7, 70, "SeeAlsoSection",ExpressionUUID->"84d37b3f-bf3f-410c-bfa2-a32d52960595",
+ CellID->1255426704],
+Cell[22979, 726, 1814, 52, 70, "SeeAlso",ExpressionUUID->"e2cd85cd-8262-4af9-b1f7-435840a88d47",
+ CellID->929782353]
+}, Open  ]],
+Cell[24808, 781, 23, 0, 70, "FooterCell",ExpressionUUID->"e5273436-eac8-4dd0-8f40-087c2c407113"]
+}
+]
+*)
+
+(* End of internal cache information *)

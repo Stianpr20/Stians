@@ -1,0 +1,1314 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     42544,       1306]
+NotebookOptionsPosition[     36137,       1078]
+NotebookOutlinePosition[     36772,       1103]
+CellTagsIndexPosition[     36692,       1098]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "New in: ",
+ Cell["0.0", "HistoryData",
+  CellTags->"New"],
+ " | Modified in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Modified"],
+ " | Obsolete in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Obsolete"],
+ " | Excised in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Excised"]
+}], "History",
+ CellID->1247902091],
+
+Cell[CellGroupData[{
+
+Cell["Categorization", "CategorizationSection",
+ CellID->1122911449],
+
+Cell["Symbol", "Categorization",
+ CellLabel->"Entity Type",
+ CellID->686433507],
+
+Cell["Xray", "Categorization",
+ CellLabel->"Paclet Name",
+ CellID->605800465],
+
+Cell["Xray`", "Categorization",
+ CellLabel->"Context",
+ CellID->468444828],
+
+Cell["Xray/ref/ImgScript", "Categorization",
+ CellChangeTimes->{3.681396506838505*^9},
+ CellLabel->"URI"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Keywords", "KeywordsSection",
+ CellID->477174294],
+
+Cell["XXXX", "Keywords",
+ CellID->1164421360]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Syntax Templates", "TemplatesSection",
+ CellID->1872225408],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Additional Function Template",
+ CellID->1562036412],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Arguments Pattern",
+ CellID->158391909],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Local Variables",
+ CellID->1360575930],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Color Equal Signs",
+ CellID->793782254]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Details", "DetailsSection",
+ CellID->307771771],
+
+Cell["XXXX", "Details",
+ CellLabel->"Lead",
+ CellID->670882175],
+
+Cell["XXXX", "Details",
+ CellLabel->"Developers",
+ CellID->350963985],
+
+Cell["XXXX", "Details",
+ CellLabel->"Authors",
+ CellID->8391405],
+
+Cell["XXXX", "Details",
+ CellLabel->"Feature Name",
+ CellID->3610269],
+
+Cell["XXXX", "Details",
+ CellLabel->"QA",
+ CellID->401364205],
+
+Cell["XXXX", "Details",
+ CellLabel->"DA",
+ CellID->350204745],
+
+Cell["XXXX", "Details",
+ CellLabel->"Docs",
+ CellID->732958810],
+
+Cell["XXXX", "Details",
+ CellLabel->"Features Page Notes",
+ CellID->222905350],
+
+Cell["XXXX", "Details",
+ CellLabel->"Comments",
+ CellID->240026365]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["ImgScript", "ObjectName",
+ CellChangeTimes->{{3.674076051816248*^9, 3.674076052349769*^9}},
+ CellID->1224892054],
+
+Cell[TextData[{
+ Cell["      ", "ModInfo"],
+ Cell[BoxData[
+  RowBox[{
+   ButtonBox["ImgScript",
+    BaseStyle->"Link",
+    ButtonData->"paclet:Xray/ref/ImgScript"], "[", 
+   StyleBox["dir", "TI"], "]"}]], "InlineFormula"],
+ "\[LineSeparator]generates a ",
+ StyleBox[".mac", "InlineCode"],
+ " script file for converting ",
+ StyleBox[".img", "InlineCode"],
+ " files in ",
+ Cell[BoxData[
+  StyleBox["dir", "TI"]], "InlineFormula"],
+ " to ",
+ StyleBox[".bmp", "InlineCode"],
+ " or ",
+ StyleBox[".jpg", "InlineCode"],
+ ".\n",
+ Cell["      ", "ModInfo"],
+ Cell[BoxData[
+  RowBox[{
+   ButtonBox["ImgScript",
+    BaseStyle->"Link",
+    ButtonData->"paclet:Xray/ref/ImgScript"], "[", 
+   RowBox[{
+    StyleBox["dir", "TI"], ",", 
+    StyleBox["m", "TI"]}], "]"}]], "InlineFormula"],
+ "\[LineSeparator]generates a ",
+ StyleBox[".mac", "InlineCode"],
+ " script file that also adjusts the brightness by a factor ",
+ Cell[BoxData[
+  StyleBox["m", "TI"]], "InlineFormula"],
+ "."
+}], "Usage",
+ CellChangeTimes->{{3.659015258220807*^9, 3.6590153659764147`*^9}, {
+  3.6607207595596724`*^9, 3.66072076247136*^9}, {3.674076120051487*^9, 
+  3.674076198482601*^9}, {3.681396214627973*^9, 3.681396330933305*^9}, {
+  3.713802650626809*^9, 3.7138026515038233`*^9}},
+ CellID->982511436],
+
+Cell[TextData[{
+ "In order to load the script in ",
+ StyleBox["CrysAlis",
+  FontSlant->"Italic"],
+ ", go to the command shell and enter ",
+ StyleBox["script", "InlineCode"],
+ ". Then locate the ",
+ StyleBox[".mac", "InlineCode"],
+ " file."
+}], "Notes",
+ CellChangeTimes->{{3.65901539263216*^9, 3.659015400182876*^9}, {
+  3.659015577101749*^9, 3.65901559138837*^9}, {3.6590157069785843`*^9, 
+  3.659015723786357*^9}},
+ CellID->1067943069],
+
+Cell[TextData[{
+ "The ",
+ StyleBox[".img", "InlineCode"],
+ " files may be converted to either ",
+ StyleBox[".jpg", "InlineCode"],
+ " or ",
+ StyleBox[".bmp", "InlineCode"],
+ ". The latter format is of higher quality, but reqires more space. Choose \
+the format with the ",
+ StyleBox["\"OutputFormat\"", "InlineCode"],
+ " option."
+}], "Notes",
+ CellChangeTimes->{{3.659015768163003*^9, 3.659015858312323*^9}},
+ CellID->89006898],
+
+Cell[BoxData[GridBox[{
+   {Cell["      ", "ModInfo"], "\"\<OutputFormat\>\"", Cell[TextData[{
+     StyleBox["\"bmp\"", "InlineCode"],
+     " (default) or ",
+     StyleBox["\"jpg\"", "InlineCode"]
+    }], "TableText"]},
+   {Cell["      ", "ModInfo"], "\"\<SelectAdjust\>\"", Cell[TextData[StyleBox[
+    "All", "InlineCode"]], "TableText"]},
+   {Cell["      ", "ModInfo"], "\"\<WriteDirectory\>\"", Cell[TextData[{
+     "same as input directory ",
+     Cell[BoxData[
+      StyleBox["dir", "TI"]], "InlineFormula"]
+    }], "TableText"]}
+  }]], "2ColumnTableMod",
+ TaggingRules->{"Alphabetized" -> True},
+ CellChangeTimes->{{3.659015912441142*^9, 3.659015918855657*^9}, {
+  3.659015956978094*^9, 3.659016004143889*^9}, {3.660720754618601*^9, 
+  3.660720757584684*^9}, {3.681395738918167*^9, 3.6813957462560873`*^9}, {
+  3.712639255584354*^9, 3.7126392736958942`*^9}},
+ CellID->245830450],
+
+Cell[TextData[{
+ "With ",
+ Cell[BoxData["\"\<SelectAdjust\>\""], "InlineFormula"],
+ ", the user may specify a subset of the ",
+ StyleBox[".img", "Program"],
+ " files to be affected by the brightness scaling factor ",
+ Cell[BoxData[
+  StyleBox["m", "TI"]], "InlineFormula"],
+ "."
+}], "Notes",
+ CellChangeTimes->{{3.712569570295849*^9, 3.712569587781625*^9}, {
+  3.7125697687496443`*^9, 3.712569811659278*^9}},
+ CellID->1628100034],
+
+Cell[TextData[{
+ "The produced ",
+ StyleBox[".mac", "Program"],
+ " file is placed in ",
+ Cell[BoxData[
+  StyleBox["dir", "TI"]], "InlineFormula"],
+ "."
+}], "Notes",
+ CellChangeTimes->{{3.6590161950050488`*^9, 3.659016222243245*^9}, {
+  3.713802781797985*^9, 3.713802783220459*^9}},
+ CellID->2070389413]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Tutorials", "TutorialsSection",
+ CellID->250839057],
+
+Cell["XXXX", "Tutorials",
+ CellID->341631938]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Related Demonstrations", "RelatedDemonstrationsSection",
+ CellID->1268215905],
+
+Cell["XXXX", "RelatedDemonstrations",
+ CellID->1129518860]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Related Links", "RelatedLinksSection",
+ CellID->1584193535],
+
+Cell["XXXX", "RelatedLinks",
+ CellID->1038487239]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["See Also", "SeeAlsoSection",
+ CellID->1255426704],
+
+Cell["XXXX", "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["More About", "MoreAboutSection",
+ CellID->38303248],
+
+Cell["XXXX", "MoreAbout",
+ CellID->1665078683]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {
+     StyleBox["Examples", "PrimaryExamplesSection"], 
+     ButtonBox[
+      RowBox[{
+       RowBox[{"More", " ", "Examples"}], " ", "\[RightTriangle]"}],
+      BaseStyle->"ExtendedExamplesLink",
+      ButtonData:>"ExtendedExamples"]}
+   }],
+  $Line = 0; Null]], "PrimaryExamplesSection",
+ CellID->880084151],
+
+Cell[TextData[{
+ "Setting up example files \[Dash] five ",
+ StyleBox[".img", "Program"],
+ " files."
+}], "ExampleText",
+ CellChangeTimes->{{3.712569192580504*^9, 3.712569194789896*^9}, {
+  3.71256925420304*^9, 3.712569300880807*^9}, {3.7125693317574997`*^9, 
+  3.7125693336585417`*^9}},
+ CellID->593897749],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"imglist", "=", 
+   RowBox[{"FileNames", "[", 
+    RowBox[{"\"\<*.img\>\"", ",", "$XrayExamples", ",", "Infinity"}], "]"}]}],
+   ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"imgdir", "=", 
+   RowBox[{"DirectoryName", "@", 
+    RowBox[{"First", "@", "imglist"}]}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.66884202508561*^9, 3.6688420360371323`*^9}, {
+   3.668846756338629*^9, 3.668846757057109*^9}, {3.71256918050535*^9, 
+   3.712569181859358*^9}, 3.7125693241384773`*^9},
+ CellLabel->"In[1]:=",
+ CellID->2082732808],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"ImgScript", "@", "imgdir"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"SystemOpen", "@", "%"}]}], "Input",
+ CellChangeTimes->{{3.660710759340798*^9, 3.660710771344461*^9}, {
+  3.660710825064836*^9, 3.660710825983035*^9}, {3.6607200570522957`*^9, 
+  3.660720076931078*^9}, {3.712569142831992*^9, 3.71256914403568*^9}, {
+  3.712569344112138*^9, 3.71256936897992*^9}},
+ CellLabel->"In[3]:=",
+ CellID->1732362538]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["More Examples", "ExtendedExamplesSection",
+ CellTags->"ExtendedExamples",
+ CellID->1854448968],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Scope", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1293636265],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Generalizations & Extensions", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1020263627],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["Options", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->2061341341],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\"WriteDirectory\"", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection",
+ CellChangeTimes->{{3.66072011481104*^9, 3.660720118553814*^9}},
+ CellID->1757724783],
+
+Cell["\<\
+This option is useful when the script is to be loaded on another system.\
+\>", "ExampleText",
+ CellChangeTimes->{{3.66072047848778*^9, 3.6607205009901257`*^9}, 
+   3.713802714345399*^9},
+ CellID->705099599],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"ImgScript", "[", 
+   RowBox[{"imgdir", ",", 
+    RowBox[{
+    "\"\<WriteDirectory\>\"", "\[Rule]", "\"\<D:/Other/System\>\""}]}], "]"}],
+   ";"}], "\[IndentingNewLine]", 
+ RowBox[{"SystemOpen", "@", "%"}]}], "Input",
+ CellChangeTimes->{{3.660710759340798*^9, 3.660710771344461*^9}, {
+  3.660710825064836*^9, 3.660710825983035*^9}, {3.6607200570522957`*^9, 
+  3.660720076931078*^9}, {3.660720625756048*^9, 3.660720705146215*^9}, {
+  3.674076249801792*^9, 3.6740762500976553`*^9}, {3.712569889621035*^9, 
+  3.712569917100711*^9}},
+ CellLabel->"In[1]:=",
+ CellID->1464548904]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\"OutputFormat\"", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection",
+ CellChangeTimes->{{3.660720121849662*^9, 3.660720124577696*^9}},
+ CellID->1295379749],
+
+Cell[TextData[{
+ "Choose between ",
+ StyleBox[".bmp", "Program"],
+ " (default) or ",
+ StyleBox[".jpg", "Program"],
+ " as output format."
+}], "ExampleText",
+ CellChangeTimes->{{3.660720822415182*^9, 3.660720838709117*^9}, {
+  3.713802719247571*^9, 3.7138027286056633`*^9}},
+ CellID->374222940],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"ImgScript", "[", 
+   RowBox[{"imgdir", ",", 
+    RowBox[{"\"\<OutputFormat\>\"", "\[Rule]", "\"\<jpg\>\""}]}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"SystemOpen", "@", "%"}]}], "Input",
+ CellChangeTimes->{{3.660710759340798*^9, 3.660710771344461*^9}, {
+   3.660710825064836*^9, 3.660710825983035*^9}, {3.6607200570522957`*^9, 
+   3.660720076931078*^9}, {3.660720625756048*^9, 3.660720705146215*^9}, {
+   3.660720870476789*^9, 3.660720887987977*^9}, 3.674076254275152*^9, {
+   3.712569954281198*^9, 3.712569957947565*^9}},
+ CellLabel->"In[1]:=",
+ CellID->144976596]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\"SelectAdjust\"", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection",
+ CellChangeTimes->{{3.660720121849662*^9, 3.660720124577696*^9}, {
+  3.681395814184111*^9, 3.681395817926235*^9}},
+ CellID->1061674934],
+
+Cell[TextData[{
+ "With this option, the user may choose a custom subset of the images files \
+to be adjusted by the brightness factor (here: ",
+ Cell[BoxData[
+  RowBox[{"m", "=", "3.14"}]], "InlineFormula",
+  FormatType->"StandardForm"],
+ ")."
+}], "ExampleText",
+ CellChangeTimes->{{3.660720822415182*^9, 3.660720838709117*^9}, {
+  3.681395847780183*^9, 3.681395862747549*^9}, {3.7125700192036457`*^9, 
+  3.712570027458606*^9}, {3.7125701575439243`*^9, 3.7125702035636663`*^9}},
+ CellID->128992815],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"ImgScript", "[", 
+   RowBox[{"imgdir", ",", "3.14", ",", 
+    RowBox[{"\"\<SelectAdjust\>\"", "\[Rule]", 
+     RowBox[{"2", ";;", "4"}]}]}], "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"SystemOpen", "@", "%"}]}], "Input",
+ CellChangeTimes->{{3.660710759340798*^9, 3.660710771344461*^9}, {
+   3.660710825064836*^9, 3.660710825983035*^9}, {3.6607200570522957`*^9, 
+   3.660720076931078*^9}, {3.660720625756048*^9, 3.660720705146215*^9}, {
+   3.660720870476789*^9, 3.660720887987977*^9}, 3.674076254275152*^9, {
+   3.681395827660841*^9, 3.68139584178001*^9}, 3.712569863825713*^9, {
+   3.712570056106938*^9, 3.7125701039765873`*^9}},
+ CellLabel->"In[12]:=",
+ CellID->1171241882]
+}, Open  ]]
+}, Open  ]],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Applications", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->258228157],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Properties & Relations", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->2123667759],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["Possible Issues", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1305812373],
+
+Cell[TextData[{
+ "The procedure aborts if the given directory does not contain any ",
+ StyleBox[".img", "Program"],
+ " files."
+}], "ExampleText",
+ CellChangeTimes->{{3.659016070582827*^9, 3.659016091125161*^9}, {
+  3.7138027391528187`*^9, 3.713802740509469*^9}},
+ CellID->1655160208],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ImgScript", "[", "$UserBaseDirectory", "]"}]], "Input",
+ CellChangeTimes->{{3.659016104569021*^9, 3.659016142309355*^9}, 
+   3.674076257827058*^9},
+ CellLabel->"In[1]:=",
+ CellID->1620076979],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ImgScript","None",
+   "\"No \\!\\(\\*\\nStyleBox[\\\".\\\", \
+\\\"Program\\\"]\\)\\!\\(\\*\\nStyleBox[\\\"img\\\", \\\"Program\\\"]\\) \
+files were found.\"",2,1,14,26284405294634438133,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{{3.65901611539017*^9, 3.659016151356612*^9}, 
+   3.712570324237564*^9},
+ CellLabel->"During evaluation of In[1]:=",
+ CellID->928380797],
+
+Cell[BoxData["$Aborted"], "Output",
+ CellChangeTimes->{{3.659016115394628*^9, 3.659016151362026*^9}, 
+   3.712570324264469*^9},
+ CellLabel->"Out[1]=",
+ CellID->1827359724]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->118534799],
+
+Cell["The selected range to be adjusted has to comply with input:", \
+"ExampleText",
+ CellChangeTimes->{{3.71257034096989*^9, 3.712570373795417*^9}},
+ CellID->41332601],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ImgScript", "[", 
+   RowBox[{"imgdir", ",", "2.5", ",", 
+    RowBox[{"\"\<SelectAdjust\>\"", "\[Rule]", 
+     RowBox[{"3", ";;", "42"}]}]}], "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.660710759340798*^9, 3.660710771344461*^9}, {
+   3.660710825064836*^9, 3.660710825983035*^9}, {3.6607200570522957`*^9, 
+   3.660720076931078*^9}, {3.660720625756048*^9, 3.660720705146215*^9}, {
+   3.660720870476789*^9, 3.660720887987977*^9}, 3.674076254275152*^9, {
+   3.681395827660841*^9, 3.68139584178001*^9}, 3.712569863825713*^9, {
+   3.712570056106938*^9, 3.7125701039765873`*^9}, 3.712570219322291*^9, {
+   3.712570256874592*^9, 3.712570278128977*^9}},
+ CellLabel->"In[1]:=",
+ CellID->145976740],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","take",
+   "\"Cannot take positions \\!\\(\\*RowBox[{\\\"3\\\"}]\\) through \
+\\!\\(\\*RowBox[{\\\"42\\\"}]\\) in \\!\\(\\*RowBox[{\\\"{\\\", RowBox[{\\\"1\
+\\\", \\\",\\\", \\\"2\\\", \\\",\\\", \\\"3\\\", \\\",\\\", \\\"4\\\", \\\",\
+\\\", \\\"5\\\"}], \\\"}\\\"}]\\).\"",2,1,15,26284405294634438133,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.7125702196473722`*^9, 3.712570267658718*^9, 
+  3.712570388470459*^9},
+ CellLabel->"During evaluation of In[1]:=",
+ CellID->1064442018]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->28773636],
+
+Cell[TextData[{
+ "If the script file doesn't work and you are presented with the following \
+error in ",
+ StyleBox["CrysAlis",
+  FontSlant->"Italic"],
+ ","
+}], "ExampleText",
+ CellChangeTimes->{{3.6590377853843107`*^9, 3.659037822452496*^9}, {
+  3.659037956555019*^9, 3.659037960011051*^9}},
+ CellID->414679677],
+
+Cell[TextData[StyleBox["? Use rd i to trigger proper image extension!\n? \
+CAN'T OPEN FILE ...", "InlineCode",
+ FontSize->12.600000381469727`,
+ FontWeight->"Plain",
+ FontColor->RGBColor[
+  0.8612344548714428, 0.12639047837033646`, 0.027817196917677575`]]], "Code",
+ Editable->False,
+ Enabled->False,
+ Evaluatable->False,
+ InitializationCell->False,
+ ShowCellLabel->False,
+ CellChangeTimes->{{3.659037836484427*^9, 3.659037838011426*^9}, {
+  3.659037919932073*^9, 3.659037942370776*^9}},
+ Background->None,
+ CellLabel->"In[11]:=",
+ CellID->1345905337],
+
+Cell[TextData[{
+ "perhaps you have used the ",
+ Cell[BoxData["\"\<WriteDirectory\>\""], "InlineFormula",
+  FormatType->"StandardForm"],
+ " option, and that directory is wrong."
+}], "ExampleText",
+ CellChangeTimes->{{3.6590379693162527`*^9, 3.65903797409875*^9}, {
+  3.659038066586536*^9, 3.65903808942621*^9}, {3.713802748262912*^9, 
+  3.7138027609779367`*^9}},
+ CellID->457957616]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->581268029],
+
+Cell[TextData[{
+ "If the output images do not have the same dimensions as the detetector, try \
+zooming out in ",
+ StyleBox["CrysAlis",
+  FontSlant->"Italic"],
+ " so that the whole image is seen. Then run the script again. (Remember to \
+delete all the old ",
+ StyleBox["bmp", "Program"],
+ "'s or ",
+ StyleBox["jpg", "Program"],
+ "'s first.)"
+}], "ExampleText",
+ CellChangeTimes->{{3.7161842548873367`*^9, 3.716184322585908*^9}, {
+  3.7161843831668987`*^9, 3.716184427602848*^9}},
+ CellID->468653200]
+}, Open  ]]
+}, Open  ]],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Interactive Examples", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1653164318],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Neat Examples", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->589267740],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[TextData[{
+   StyleBox["Mathematica",
+    FontSlant->"Italic"],
+   " code"
+  }], "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellChangeTimes->{{3.713802766536166*^9, 3.713802771494643*^9}},
+ CellID->135305859],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"ImgScript", "::", "None"}], "=", "\"\<No \!\(\*
+StyleBox[\".\", \"Program\"]\)\!\(\*
+StyleBox[\"img\", \"Program\"]\) files were found.\>\""}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"ImgScript", "::", "InvalidFormat"}], "=", 
+   "\"\<\[LeftGuillemet]`1`\[RightGuillemet] is not a valid output \
+format.\>\""}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"ImgScript", "::", "String"}], "=", "\"\<\!\(\*
+StyleBox[\".\", \"Program\"]\)\!\(\*
+StyleBox[\"img\", \"Program\"]\) file paths must be strings.\>\""}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"ImgScript", "::", "span"}], "=", 
+   "\"\<The setting of \\\"SelectAdjust\\\" must be a Span.\>\""}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"ImgScript", "::", "integers"}], "=", 
+   "\"\<The span in \\\"SelectAdjust\\\" must be comprised of \
+integers.\>\""}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"ImgScript", "::", "InvalidRange"}], "=", 
+   "\"\<Range for \\\"SelectAdjust\\\" is not compatible with the number of \
+\!\(\*
+StyleBox[\".\", \"Program\"]\)\!\(\*
+StyleBox[\"img\", \"Program\"]\) files.\>\""}], ";"}], "\[IndentingNewLine]", 
+
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"ImgScript", "::", "na"}], "=", 
+    "\"\<\\\"SelectAdjust\\\" cannot be used without a brightness \
+factor.\>\""}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Options", "[", "ImgScript", "]"}], "=", 
+   RowBox[{"{", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"\"\<WriteDirectory\>\"", "\[Rule]", "False"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"\"\<OutputFormat\>\"", "\[Rule]", "\"\<bmp\>\""}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"\"\<SelectAdjust\>\"", "\[Rule]", "All"}]}], "}"}]}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{
+  3.667811591227736*^9, 3.6678187237378197`*^9, {3.668848288618224*^9, 
+   3.668848322223003*^9}, {3.668848530395031*^9, 3.668848533381481*^9}, {
+   3.6688497155811567`*^9, 3.6688497270532312`*^9}, {3.668849885708955*^9, 
+   3.668849886505486*^9}, {3.6688503391546297`*^9, 3.6688503570195227`*^9}, 
+   3.674074162948956*^9, {3.712570751498494*^9, 3.712570784698996*^9}, {
+   3.712571222891932*^9, 3.712571251218502*^9}, {3.712571379979851*^9, 
+   3.712571405771557*^9}, {3.712571561879644*^9, 3.7125716370634108`*^9}, {
+   3.712571916757163*^9, 3.712571977918076*^9}},
+ CellID->883657455],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ImgScript", "[", 
+   RowBox[{"input_", ",", 
+    RowBox[{"Optional", "[", 
+     RowBox[{
+      RowBox[{"m_", "?", "NumericQ"}], ",", "1"}], "]"}], ",", 
+    RowBox[{"OptionsPattern", "@", "ImgScript"}]}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{
+     "type", ",", "outdir", ",", "\[IndentingNewLine]", "imgfiles", ",", 
+      "name", ",", "ext", ",", "end", ",", "i", ",", "writedir", ",", 
+      "adjust", ",", "\[IndentingNewLine]", "fcode", ",", "entry"}], "}"}], 
+    ",", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+    RowBox[{"(*", " ", 
+     RowBox[{"Analysing", " ", "input"}], " ", "*)"}], "\[IndentingNewLine]", 
+    "\t", 
+    RowBox[{
+     RowBox[{"type", "=", 
+      RowBox[{"ToString", "[", 
+       RowBox[{"Head", "@", "input"}], "]"}]}], ";", "\[IndentingNewLine]", 
+     "\t", 
+     RowBox[{"Which", "[", "\[IndentingNewLine]", "\t", 
+      RowBox[{
+       RowBox[{"type", "\[Equal]", "\"\<String\>\""}], ",", 
+       "\[IndentingNewLine]", "\t\t", 
+       RowBox[{"(*", " ", 
+        RowBox[{
+         RowBox[{"Finding", " ", ".", "img"}], " ", "files", " ", "in", " ", 
+         "the", " ", "given", " ", "directory"}], " ", "*)"}], 
+       "\[IndentingNewLine]", "\t\t", 
+       RowBox[{
+        RowBox[{"imgfiles", "=", 
+         RowBox[{"FileNames", "[", 
+          RowBox[{"\"\<*.img\>\"", ",", "input"}], "]"}]}], ";", 
+        "\[IndentingNewLine]", "\t\t", 
+        RowBox[{"outdir", "=", "input"}], ";", "\[IndentingNewLine]", "\t\t", 
+        
+        RowBox[{"(*", " ", "Check", " ", "*)"}], "\[IndentingNewLine]", 
+        "\t\t", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"imgfiles", "\[Equal]", 
+           RowBox[{"{", "}"}]}], ",", 
+          RowBox[{
+           RowBox[{"Message", "[", 
+            RowBox[{"ImgScript", "::", "None"}], "]"}], ";", 
+           RowBox[{"Abort", "[", "]"}]}]}], "]"}]}], ",", 
+       "\[IndentingNewLine]", "\t", 
+       RowBox[{"type", "\[Equal]", "\"\<List\>\""}], ",", 
+       "\[IndentingNewLine]", "\t\t", 
+       RowBox[{
+        RowBox[{"imgfiles", "=", "input"}], ";", "\[IndentingNewLine]", 
+        "\t\t", 
+        RowBox[{"outdir", "=", 
+         RowBox[{"DirectoryName", "@", 
+          RowBox[{"First", "@", "input"}]}]}], ";", "\[IndentingNewLine]", 
+        "\t\t", 
+        RowBox[{"(*", " ", 
+         RowBox[{"Check", " ", "if", " ", "empty"}], " ", "*)"}], 
+        "\[IndentingNewLine]", "\t\t", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"imgfiles", "\[Equal]", 
+           RowBox[{"{", "}"}]}], ",", 
+          RowBox[{
+           RowBox[{"Message", "[", 
+            RowBox[{"ImgScript", "::", "None"}], "]"}], ";", 
+           RowBox[{"Abort", "[", "]"}]}]}], "]"}], ";", "\[IndentingNewLine]",
+         "\t\t", 
+        RowBox[{"(*", " ", 
+         RowBox[{
+         "Check", " ", "if", " ", "list", " ", "contains", " ", "strings", 
+          " ", "only"}], " ", "*)"}], "\[IndentingNewLine]", "\t\t", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"!", 
+           RowBox[{"AllTrue", "[", 
+            RowBox[{"imgfiles", ",", "StringQ"}], "]"}]}], ",", 
+          RowBox[{
+           RowBox[{"Message", "[", 
+            RowBox[{"ImgScript", "::", "String"}], "]"}], ";", 
+           RowBox[{"Abort", "[", "]"}]}]}], "]"}]}]}], "\[IndentingNewLine]", 
+      "\t", "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+       RowBox[{"Determining", " ", ".", "mac"}], " ", "file", " ", "name"}], 
+      " ", "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"StringContainsQ", "[", 
+        RowBox[{
+         RowBox[{"FileNameTake", "@", 
+          RowBox[{"First", "@", "imgfiles"}]}], ",", "\"\<_\>\""}], "]"}], 
+       ",", "\[IndentingNewLine]", "\t", 
+       RowBox[{"(*", " ", 
+        RowBox[{"Truncated", " ", "name"}], " ", "*)"}], 
+       "\[IndentingNewLine]", "\t", 
+       RowBox[{"name", "=", 
+        RowBox[{"StringDrop", "[", 
+         RowBox[{
+          RowBox[{"First", "@", 
+           RowBox[{"StringCases", "[", 
+            RowBox[{
+             RowBox[{"FileNameTake", "@", 
+              RowBox[{"First", "@", "imgfiles"}]}], ",", 
+             RowBox[{"__", "~~", "\"\<_\>\""}]}], "]"}]}], ",", 
+          RowBox[{"-", "1"}]}], "]"}]}], ",", "\[IndentingNewLine]", "\t", 
+       RowBox[{"(*", " ", 
+        RowBox[{"Base", " ", "name"}], " ", "*)"}], "\[IndentingNewLine]", 
+       "\t", 
+       RowBox[{"name", "=", 
+        RowBox[{"StringDrop", "[", 
+         RowBox[{
+          RowBox[{"First", "@", 
+           RowBox[{"StringCases", "[", 
+            RowBox[{
+             RowBox[{"FileNameTake", "@", "\[IndentingNewLine]", 
+              RowBox[{"First", "@", "imgfiles"}]}], ",", 
+             RowBox[{"Shortest", "[", 
+              RowBox[{"__", "~~", "DigitCharacter"}], "]"}]}], "]"}]}], ",", 
+          RowBox[{"-", "1"}]}], "]"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+      "Function", " ", "that", " ", "sets", " ", "new", " ", "extension"}], 
+      " ", "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{"ext", "=", 
+      RowBox[{"OptionValue", "[", "\"\<OutputFormat\>\"", "]"}]}], ";", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{
+      RowBox[{"end", "[", "i_", "]"}], ":=", 
+      RowBox[{
+       RowBox[{"StringDrop", "[", 
+        RowBox[{
+         RowBox[{"imgfiles", "[", 
+          RowBox[{"[", "i", "]"}], "]"}], ",", 
+         RowBox[{"-", "3"}]}], "]"}], "<>", "ext"}]}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Optional", ":", " ", 
+       RowBox[{"Write", " ", "a", " ", "different", " ", "directory"}]}], " ",
+       "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{"writedir", "=", 
+      RowBox[{"OptionValue", "[", "\"\<WriteDirectory\>\"", "]"}]}], ";", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"StringQ", "@", "writedir"}], ",", "\[IndentingNewLine]", "\t", 
+       RowBox[{"imgfiles", "=", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"FileNameJoin", "[", 
+           RowBox[{"{", 
+            RowBox[{"writedir", ",", "#"}], "}"}], "]"}], "&"}], "/@", 
+         RowBox[{"(", 
+          RowBox[{"FileNameTake", "/@", "imgfiles"}], ")"}]}]}]}], "]"}], ";",
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Optional", ":", " ", 
+       RowBox[{"Output", " ", "format"}]}], " ", "*)"}], 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"Which", "[", "\[IndentingNewLine]", "\t", 
+      RowBox[{
+       RowBox[{"ext", "\[Equal]", "\"\<bmp\>\""}], ",", 
+       RowBox[{"fcode", "=", "\"\<bitmap \>\""}], ",", "\[IndentingNewLine]", 
+       "\t", 
+       RowBox[{"ext", "\[Equal]", "\"\<jpg\>\""}], ",", 
+       RowBox[{"fcode", "=", "\"\<jpgbmp \>\""}], ",", "\[IndentingNewLine]", 
+       "\t", "True", ",", 
+       RowBox[{
+        RowBox[{"Message", "[", 
+         RowBox[{
+          RowBox[{"ImgScript", "::", "InvalidFormat"}], ",", "ext"}], "]"}], 
+        ";", 
+        RowBox[{"Abort", "[", "]"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Optional", ":", " ", 
+       RowBox[{"Adjust", " ", "brightness"}]}], " ", "*)"}], 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"adjust", "=", 
+      RowBox[{"OptionValue", "[", "\"\<SelectAdjust\>\"", "]"}]}], ";", 
+     "\[IndentingNewLine]", "\t\t", 
+     RowBox[{"(*", " ", "Checks", " ", "*)"}], "\[IndentingNewLine]", "\t\t", 
+     
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"!", 
+        RowBox[{"(", 
+         RowBox[{"adjust", "===", "All"}], ")"}]}], ",", 
+       "\[IndentingNewLine]", "\t\t", 
+       RowBox[{
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"ToString", "@", 
+            RowBox[{"Head", "@", "adjust"}]}], "\[NotEqual]", 
+           "\"\<Span\>\""}], ",", "\[IndentingNewLine]", "\t\t", 
+          RowBox[{
+           RowBox[{"Message", "[", 
+            RowBox[{"ImgScript", "::", "span"}], "]"}], ";", 
+           RowBox[{"Abort", "[", "]"}]}]}], "]"}], ";", "\[IndentingNewLine]",
+         "\t\t", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"!", 
+           RowBox[{"AllTrue", "[", 
+            RowBox[{"adjust", ",", "IntegerQ"}], "]"}]}], ",", 
+          "\[IndentingNewLine]", "\t\t", 
+          RowBox[{
+           RowBox[{"Message", "[", 
+            RowBox[{"ImgScript", "::", "integers"}], "]"}], ";", 
+           RowBox[{"Abort", "[", "]"}]}]}], "]"}], ";", "\[IndentingNewLine]",
+         "\t\t", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"!", 
+            RowBox[{
+             RowBox[{"adjust", "[", 
+              RowBox[{"[", "1", "]"}], "]"}], "\[GreaterEqual]", "1"}]}], "||", 
+           RowBox[{
+            RowBox[{"adjust", "[", 
+             RowBox[{"[", "2", "]"}], "]"}], ">", 
+            RowBox[{"Length", "@", "imgfiles"}]}]}], ",", 
+          "\[IndentingNewLine]", "\t\t", 
+          RowBox[{
+           RowBox[{"Message", "[", 
+            RowBox[{"ImgScript", "::", "InvalidRange"}], "]"}], ";", 
+           RowBox[{"Abort", "[", "]"}]}]}], "]"}], ";", "\[IndentingNewLine]",
+         "\t\t", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"m", "\[Equal]", "1"}], ",", "\[IndentingNewLine]", "\t\t", 
+          
+          RowBox[{
+           RowBox[{"Message", "[", 
+            RowBox[{"ImgScript", "::", "na"}], "]"}], ";", 
+           RowBox[{"Abort", "[", "]"}]}]}], "]"}]}]}], "\[IndentingNewLine]", 
+      "\t\t", "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", "\t", 
+     
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"m", "\[NotEqual]", "1"}], ",", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"adjust", "\[Equal]", "All"}], ",", "\[IndentingNewLine]", 
+         "\t", 
+         RowBox[{"adjust", "=", 
+          RowBox[{"Range", "@", 
+           RowBox[{"Length", "@", "imgfiles"}]}]}], ",", "Null", ",", 
+         "\[IndentingNewLine]", "\t", 
+         RowBox[{"adjust", "=", 
+          RowBox[{"Part", "[", 
+           RowBox[{
+            RowBox[{"Range", "@", 
+             RowBox[{"Length", "@", "imgfiles"}]}], ",", "adjust"}], 
+           "]"}]}]}], "]"}]}], "]"}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+      "Function", " ", "that", " ", "writes", " ", "code", " ", "for", " ", 
+       "each", " ", "case"}], " ", "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{
+      RowBox[{"entry", "[", "i_", "]"}], ":=", "\[IndentingNewLine]", "\t", 
+      RowBox[{"\"\<rd i \\\"\>\"", "<>", 
+       RowBox[{"imgfiles", "[", 
+        RowBox[{"[", "i", "]"}], "]"}], "<>", "\"\<\\\"\\n\>\"", "<>", 
+       "\[IndentingNewLine]", "\t", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"MemberQ", "[", 
+          RowBox[{"adjust", ",", "i"}], "]"}], ",", "\[IndentingNewLine]", 
+         "\t", 
+         RowBox[{"\"\<ip multiplydouble i1 i1 \>\"", "<>", 
+          RowBox[{"ToString", "[", 
+           RowBox[{"N", "[", "m", "]"}], "]"}], "<>", "\"\<\\n\>\""}], ",", 
+         "\[IndentingNewLine]", "\t", "\"\<\>\""}], "]"}], "<>", 
+       "\[IndentingNewLine]", "\t", "\"\<wd \>\"", "<>", "fcode", "<>", 
+       "\"\<\\\"\>\"", "<>", 
+       RowBox[{"end", "[", "i", "]"}], "<>", "\"\<\\\"\>\""}]}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Generating", " ", "and", " ", "exporting", " ", "table"}], " ",
+       "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{"Export", "[", 
+      RowBox[{
+       RowBox[{"FileNameJoin", "[", 
+        RowBox[{"{", 
+         RowBox[{"outdir", ",", 
+          RowBox[{"name", "<>", "\"\<.mac\>\""}]}], "}"}], "]"}], ",", 
+       "\[IndentingNewLine]", "\t", 
+       RowBox[{"Table", "[", 
+        RowBox[{
+         RowBox[{"entry", "[", "i", "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", 
+           RowBox[{"Length", "@", "imgfiles"}]}], "}"}]}], "]"}], ",", 
+       "\"\<Table\>\""}], "]"}]}]}], "\[IndentingNewLine]", "]"}]}]], "Input",\
+
+ CellChangeTimes->{
+  3.6678115931321983`*^9, 3.667818718091518*^9, {3.668843227216737*^9, 
+   3.668843260623933*^9}, {3.668843800356245*^9, 3.668843859685425*^9}, {
+   3.6688485350589647`*^9, 3.668848542811091*^9}, 3.668848640505588*^9, {
+   3.6688487133639917`*^9, 3.668848741790744*^9}, {3.668848785584115*^9, 
+   3.66884878833679*^9}, {3.6688490369025507`*^9, 3.6688490408015003`*^9}, {
+   3.6688494283086033`*^9, 3.668849443936469*^9}, {3.668849502587039*^9, 
+   3.668849505233816*^9}, {3.668849602307579*^9, 3.6688496096107407`*^9}, {
+   3.6688496553249607`*^9, 3.668849684559898*^9}, {3.6688498057208433`*^9, 
+   3.668849816647071*^9}, {3.668849854052587*^9, 3.66884990391476*^9}, {
+   3.668849949676675*^9, 3.668849958799165*^9}, {3.6688499909252577`*^9, 
+   3.668850017824744*^9}, {3.668850064073255*^9, 3.668850194002316*^9}, {
+   3.668850226589102*^9, 3.668850322211541*^9}, 3.668850363896997*^9, {
+   3.6688504485662117`*^9, 3.668850480990592*^9}, {3.6688505147957897`*^9, 
+   3.668850553881968*^9}, {3.668850586916111*^9, 3.668850590223164*^9}, {
+   3.668850648044367*^9, 3.668850649675537*^9}, {3.668850705498735*^9, 
+   3.6688507289847927`*^9}, {3.668850766122506*^9, 3.668850840956725*^9}, {
+   3.668851068760067*^9, 3.6688510957854223`*^9}, 3.6740740543208313`*^9, {
+   3.674074168023467*^9, 3.674074175975074*^9}, {3.712570554671812*^9, 
+   3.7125705604817667`*^9}, {3.7125706716467*^9, 3.7125707289881287`*^9}, {
+   3.712570792351226*^9, 3.712570812097787*^9}, {3.7125708766421413`*^9, 
+   3.712570881238154*^9}, {3.712571203693883*^9, 3.71257121373002*^9}, {
+   3.712571259807963*^9, 3.712571368115559*^9}, 3.7125714133318653`*^9, {
+   3.712571674956291*^9, 3.712571675228469*^9}, {3.712571740063588*^9, 
+   3.71257177061097*^9}, {3.7125718800827417`*^9, 3.712571911708654*^9}, {
+   3.712571982422608*^9, 3.712572021855831*^9}, {3.7125720580663567`*^9, 
+   3.712572093677559*^9}, {3.712572148360096*^9, 3.712572151574245*^9}, {
+   3.712572204885757*^9, 3.712572329555284*^9}},
+ Background->RGBColor[0.94, 0.91, 0.88],
+ CellID->1781427180]
+}, Closed]]
+}, Open  ]]
+},
+WindowSize->{700, 770},
+WindowMargins->{{247, Automatic}, {Automatic, 0}},
+CellContext->"Global`",
+FrontEndVersion->"11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (September \
+21, 2016)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "FunctionPageStyles.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "ExtendedExamples"->{
+  Cell[9044, 357, 100, 2, 55, "ExtendedExamplesSection",
+   CellTags->"ExtendedExamples",
+   CellID->1854448968]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"ExtendedExamples", 36554, 1091}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 325, 14, 24, "History",
+ CellID->1247902091],
+Cell[CellGroupData[{
+Cell[908, 38, 68, 1, 29, "CategorizationSection",
+ CellID->1122911449],
+Cell[979, 41, 79, 2, 30, "Categorization",
+ CellID->686433507],
+Cell[1061, 45, 77, 2, 30, "Categorization",
+ CellID->605800465],
+Cell[1141, 49, 74, 2, 30, "Categorization",
+ CellID->468444828],
+Cell[1218, 53, 105, 2, 30, "Categorization"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1360, 60, 55, 1, 19, "KeywordsSection",
+ CellID->477174294],
+Cell[1418, 63, 45, 1, 19, "Keywords",
+ CellID->1164421360]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1500, 69, 65, 1, 19, "TemplatesSection",
+ CellID->1872225408],
+Cell[1568, 72, 94, 2, 26, "Template",
+ CellID->1562036412],
+Cell[1665, 76, 82, 2, 26, "Template",
+ CellID->158391909],
+Cell[1750, 80, 81, 2, 26, "Template",
+ CellID->1360575930],
+Cell[1834, 84, 82, 2, 26, "Template",
+ CellID->793782254]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1953, 91, 53, 1, 19, "DetailsSection",
+ CellID->307771771],
+Cell[2009, 94, 63, 2, 30, "Details",
+ CellID->670882175],
+Cell[2075, 98, 69, 2, 30, "Details",
+ CellID->350963985],
+Cell[2147, 102, 64, 2, 30, "Details",
+ CellID->8391405],
+Cell[2214, 106, 69, 2, 30, "Details",
+ CellID->3610269],
+Cell[2286, 110, 61, 2, 30, "Details",
+ CellID->401364205],
+Cell[2350, 114, 61, 2, 30, "Details",
+ CellID->350204745],
+Cell[2414, 118, 63, 2, 30, "Details",
+ CellID->732958810],
+Cell[2480, 122, 78, 2, 30, "Details",
+ CellID->222905350],
+Cell[2561, 126, 67, 2, 30, "Details",
+ CellID->240026365]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[2665, 133, 118, 2, 63, "ObjectName",
+ CellID->1224892054],
+Cell[2786, 137, 1261, 40, 114, "Usage",
+ CellID->982511436],
+Cell[4050, 179, 437, 13, 41, "Notes",
+ CellID->1067943069],
+Cell[4490, 194, 426, 13, 41, "Notes",
+ CellID->89006898],
+Cell[4919, 209, 883, 19, 57, "2ColumnTableMod",
+ CellID->245830450],
+Cell[5805, 230, 429, 12, 42, "Notes",
+ CellID->1628100034],
+Cell[6237, 244, 302, 10, 25, "Notes",
+ CellID->2070389413]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6576, 259, 57, 1, 43, "TutorialsSection",
+ CellID->250839057],
+Cell[6636, 262, 45, 1, 16, "Tutorials",
+ CellID->341631938]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6718, 268, 83, 1, 30, "RelatedDemonstrationsSection",
+ CellID->1268215905],
+Cell[6804, 271, 58, 1, 16, "RelatedDemonstrations",
+ CellID->1129518860]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6899, 277, 65, 1, 30, "RelatedLinksSection",
+ CellID->1584193535],
+Cell[6967, 280, 49, 1, 16, "RelatedLinks",
+ CellID->1038487239]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7053, 286, 55, 1, 30, "SeeAlsoSection",
+ CellID->1255426704],
+Cell[7111, 289, 43, 1, 16, "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7191, 295, 57, 1, 30, "MoreAboutSection",
+ CellID->38303248],
+Cell[7251, 298, 46, 1, 16, "MoreAbout",
+ CellID->1665078683]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7334, 304, 356, 11, 69, "PrimaryExamplesSection",
+ CellID->880084151],
+Cell[7693, 317, 305, 8, 22, "ExampleText",
+ CellID->593897749],
+Cell[8001, 327, 559, 14, 47, "Input",
+ CellID->2082732808],
+Cell[8563, 343, 444, 9, 47, "Input",
+ CellID->1732362538]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9044, 357, 100, 2, 55, "ExtendedExamplesSection",
+ CellTags->"ExtendedExamples",
+ CellID->1854448968],
+Cell[9147, 361, 125, 3, 33, "ExampleSection",
+ CellID->1293636265],
+Cell[9275, 366, 148, 3, 21, "ExampleSection",
+ CellID->1020263627],
+Cell[CellGroupData[{
+Cell[9448, 373, 127, 3, 21, "ExampleSection",
+ CellID->2061341341],
+Cell[CellGroupData[{
+Cell[9600, 380, 209, 4, 24, "ExampleSubsection",
+ CellID->1757724783],
+Cell[9812, 386, 216, 5, 22, "ExampleText",
+ CellID->705099599],
+Cell[10031, 393, 608, 14, 47, "Input",
+ CellID->1464548904]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10676, 412, 208, 4, 24, "ExampleSubsection",
+ CellID->1295379749],
+Cell[10887, 418, 292, 9, 22, "ExampleText",
+ CellID->374222940],
+Cell[11182, 429, 612, 13, 47, "Input",
+ CellID->144976596]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11831, 447, 257, 5, 24, "ExampleSubsection",
+ CellID->1061674934],
+Cell[12091, 454, 498, 11, 39, "ExampleText",
+ CellID->128992815],
+Cell[12592, 467, 714, 14, 47, "Input",
+ CellID->1171241882]
+}, Open  ]]
+}, Open  ]],
+Cell[13333, 485, 131, 3, 33, "ExampleSection",
+ CellID->258228157],
+Cell[13467, 490, 142, 3, 21, "ExampleSection",
+ CellID->2123667759],
+Cell[CellGroupData[{
+Cell[13634, 497, 135, 3, 21, "ExampleSection",
+ CellID->1305812373],
+Cell[13772, 502, 283, 7, 22, "ExampleText",
+ CellID->1655160208],
+Cell[CellGroupData[{
+Cell[14080, 513, 215, 5, 27, "Input",
+ CellID->1620076979],
+Cell[14298, 520, 423, 10, 22, "Message",
+ CellID->928380797],
+Cell[14724, 532, 171, 4, 26, "Output",
+ CellID->1827359724]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14932, 541, 125, 3, 17, "ExampleDelimiter",
+ CellID->118534799],
+Cell[15060, 546, 168, 3, 22, "ExampleText",
+ CellID->41332601],
+Cell[CellGroupData[{
+Cell[15253, 553, 723, 14, 27, "Input",
+ CellID->145976740],
+Cell[15979, 569, 546, 11, 22, "Message",
+ CellID->1064442018]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16574, 586, 124, 3, 17, "ExampleDelimiter",
+ CellID->28773636],
+Cell[16701, 591, 311, 9, 22, "ExampleText",
+ CellID->414679677],
+Cell[17015, 602, 550, 15, 44, "Code",
+ Evaluatable->False,
+ InitializationCell->False,
+ CellID->1345905337],
+Cell[17568, 619, 381, 9, 24, "ExampleText",
+ CellID->457957616]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17986, 633, 125, 3, 17, "ExampleDelimiter",
+ CellID->581268029],
+Cell[18114, 638, 500, 14, 55, "ExampleText",
+ CellID->468653200]
+}, Open  ]]
+}, Open  ]],
+Cell[18641, 656, 140, 3, 33, "ExampleSection",
+ CellID->1653164318],
+Cell[18784, 661, 132, 3, 21, "ExampleSection",
+ CellID->589267740],
+Cell[CellGroupData[{
+Cell[18941, 668, 262, 8, 21, "ExampleSection",
+ CellID->135305859],
+Cell[19206, 678, 2506, 62, 313, "Input",
+ CellID->883657455],
+Cell[21715, 742, 14394, 332, 1583, "Input",
+ CellID->1781427180]
+}, Closed]]
+}, Open  ]]
+}
+]
+*)
+

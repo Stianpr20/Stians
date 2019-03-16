@@ -1,0 +1,749 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     26448,        740]
+NotebookOptionsPosition[     21156,        622]
+NotebookOutlinePosition[     23581,        682]
+CellTagsIndexPosition[     23496,        677]
+WindowTitle->MonitorIni
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["XRAY SYMBOL", "PacletNameCell"], Cell[TextData[Cell[BoxData[
+     ActionMenuBox[
+      FrameBox[
+       InterpretationBox[Cell[TextData[{
+         "URL",
+         StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+          StripOnInput->False]
+        }]],
+        TextCell[
+         Row[{"URL", 
+           Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+       StripOnInput->False], {"\<\"Xray/ref/MonitorIni\"\>":>
+      None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+      Module[{DocumentationSearch`Private`nb$}, 
+       DocumentationSearch`Private`nb$ = NotebookPut[
+          Notebook[{
+            Cell["Xray/ref/MonitorIni"]}, Visible -> False]]; 
+       SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+       FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+       NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+      Delimiter, "\<\"Copy web URL\"\>":>
+      Module[{DocumentationSearch`Private`nb$}, 
+       DocumentationSearch`Private`nb$ = NotebookPut[
+          Notebook[{
+            Cell[
+             BoxData[
+              MakeBoxes[
+               Hyperlink[
+               "http://reference.wolfram.com/language/Xray/ref/MonitorIni.\
+html"], StandardForm]], "Input", TextClipboardType -> "PlainText"]}, Visible -> 
+           False]]; SelectionMove[
+        DocumentationSearch`Private`nb$, All, Notebook]; 
+       FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+       NotebookClose[DocumentationSearch`Private`nb$]; 
+       Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+        NotebookLocate[{
+          URL[
+           StringJoin[
+            If[
+             TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$17525], 
+             "http://reference.wolfram.com/system-modeler/", 
+             "http://reference.wolfram.com/language/"], "Xray/ref/MonitorIni",
+             ".html"]], None}]}]},
+      Appearance->None,
+      MenuAppearance->Automatic,
+      MenuStyle->"URLMenu"]],
+     LineSpacing->{1.4, 0}]], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell["MonitorIni", "ObjectName"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{Cell[
+          TextData["MonitorIni"]],"paclet:Xray/ref/MonitorIni"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", 
+       RowBox[{
+        StyleBox["file", "TI"], ",", 
+        StyleBox["input", "TI"]}], "]"}]], "InlineFormula"],
+     " \[LineSeparator]substitutes the monitor values in the ",
+     StyleBox[".ini", "Program"],
+     " ",
+     Cell[BoxData[
+      StyleBox["file", "TI"]], "InlineFormula"],
+     " with the values of ",
+     Cell[BoxData[
+      StyleBox["input", "TI"]], "InlineFormula"],
+     "."
+    }]]},
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{Cell[
+          TextData["MonitorIni"]],"paclet:Xray/ref/MonitorIni"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", 
+       RowBox[{
+        StyleBox["file", "TI"], ",", 
+        StyleBox["flux", "TI"]}], "]"}]], "InlineFormula"],
+     "\[LineSeparator]substitutes the monitor values in the ",
+     StyleBox[".ini", "Program"],
+     " ",
+     Cell[BoxData[
+      StyleBox["file", "TI"]], "InlineFormula"],
+     " with normalised values from the ",
+     Cell[BoxData[
+      StyleBox["flux", "TI"]], "InlineFormula"],
+     " file."
+    }]]},
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{Cell[
+          TextData["MonitorIni"]],"paclet:Xray/ref/MonitorIni"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", 
+       RowBox[{
+        StyleBox["file", "TI"], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          StyleBox["start", "TI"], ",", 
+          StyleBox["stop", "TI"]}], "}"}]}], "]"}]], "InlineFormula"],
+     "\[LineSeparator]substitutes the monitor values in the ",
+     StyleBox[".ini", "Program"],
+     " ",
+     Cell[BoxData[
+      StyleBox["file", "TI"]], "InlineFormula"],
+     " with automatically generated values going linearly from ",
+     Cell[BoxData[
+      StyleBox["start", "TI"]], "InlineFormula"],
+     " to ",
+     Cell[BoxData[
+      StyleBox["stop", "TI"]], "InlineFormula"],
+     "."
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, 
+   "Rows" -> {None, None, {None}}, "RowsIndexed" -> {}}},
+ CellID->982511436]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    TemplateBox[{6},
+     "Spacer1"]]],
+   "Details"
+  }], "NotesFrameText"],
+  Appearance->{Automatic, None, "Normal", Automatic},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->"Preemptive"]]]], "NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->155319213],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[TextData[{
+ "When the ",
+ Cell[BoxData[
+  RowBox[{"monitor", ".", "ini"}]], "InlineFormula"],
+ " files are created with the ",
+ StyleBox["xx monitorinifromrunlist", "InlineCode"],
+ " command, all the monitor values are set to ",
+ Cell[BoxData["1.000"], "InlineFormula"],
+ ". This functions helps substituting these values."
+}], "Notes",
+ CellID->1067943069],
+
+Cell[TextData[{
+ "A new file is generated with ",
+ Cell[BoxData["\"\<_new\>\""], "InlineFormula"],
+ " appended to the input ",
+ Cell[BoxData[
+  StyleBox["file", "TI"]], "InlineFormula"],
+ "."
+}], "Notes",
+ CellID->1281169926]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(2)", "ExampleCount"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->1257381786],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->1576590822],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"ini", "=", 
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", 
+     RowBox[{"$XrayExamples", ",", "\"\<monitor.ini\>\""}], "}"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"newini", "=", 
+   RowBox[{"StringReplace", "[", 
+    RowBox[{"ini", ",", 
+     RowBox[{"\"\<monitor.ini\>\"", "\[Rule]", "\"\<monitor_new.ini\>\""}]}], 
+    "]"}]}], ";"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1094871088],
+
+Cell[TextData[{
+ "The custom input values may in principle be anything, as long as it is a \
+list with the same length as the number of images in the ",
+ StyleBox[".ini", "Program"],
+ " file. Here, we simply use entries that go from ",
+ Cell[BoxData["1"], "InlineFormula"],
+ " to ",
+ Cell[BoxData["720"], "InlineFormula"],
+ " (the length of this example file):"
+}], "ExampleText",
+ CellID->2123744621],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"MonitorIni", "[", 
+   RowBox[{"ini", ",", 
+    RowBox[{"Range", "@", "720"}]}], "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Import", "@", "newini"}], "//", "Shallow"}]}], "Input",
+ CellLabel->"In[2]:=",
+ CellID->1027648522],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", "\<\"[Monitor]\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Refined_binning5_1_1.img=1\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Refined_binning5_1_2.img=2\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Refined_binning5_1_3.img=3\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Refined_binning5_1_4.img=4\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Refined_binning5_1_5.img=5\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Refined_binning5_1_6.img=6\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Refined_binning5_1_7.img=7\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Refined_binning5_1_8.img=8\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Refined_binning5_1_9.img=9\"\>", "}"}], ",", 
+   RowBox[{"\[LeftSkeleton]", "711", "\[RightSkeleton]"}]}], "}"}]], "Output",\
+
+ ImageSize->{491, 85},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[2]//Shallow=",
+ CellID->644856443]
+}, Open  ]],
+
+Cell[TextData[{
+ "Using the automated range method to automatically generate entries that \
+vary linearly from ",
+ Cell[BoxData["1.00"], "InlineFormula"],
+ " to ",
+ Cell[BoxData["0.75"], "InlineFormula"],
+ ":"
+}], "ExampleText",
+ CellID->537111355],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"MonitorIni", "[", 
+   RowBox[{"ini", ",", 
+    RowBox[{"{", 
+     RowBox[{"1.00", ",", "0.75"}], "}"}]}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Import", "@", "newini"}], "//", "Shallow"}]}], "Input",
+ CellLabel->"In[3]:=",
+ CellID->1688044346],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", "\<\"[Monitor]\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Refined_binning5_1_1.img=1.\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Refined_binning5_1_2.img=0.999652\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Refined_binning5_1_3.img=0.999305\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Refined_binning5_1_4.img=0.998957\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Refined_binning5_1_5.img=0.998609\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Refined_binning5_1_6.img=0.998261\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Refined_binning5_1_7.img=0.997914\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Refined_binning5_1_8.img=0.997566\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Refined_binning5_1_9.img=0.997218\"\>", "}"}], ",", 
+   RowBox[{"\[LeftSkeleton]", "711", "\[RightSkeleton]"}]}], "}"}]], "Output",\
+
+ ImageSize->{576, 85},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[3]//Shallow=",
+ CellID->1899754739]
+}, Open  ]],
+
+Cell[TextData[{
+ "The ",
+ Cell[BoxData[
+  StyleBox["input", "TI"]], "InlineFormula"],
+ " may also be a flux file generated from the ",
+ StyleBox["Header Extractor",
+  FontSlant->"Italic"],
+ " in the ",
+ StyleBox["SNBL Toolbox",
+  FontSlant->"Italic"],
+ "."
+}], "ExampleText",
+ CellID->1066585501],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"flux", "=", 
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", 
+     RowBox[{"$XrayExamples", ",", "\"\<flux.dat\>\""}], "}"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"MonitorIni", "[", 
+   RowBox[{"ini", ",", "flux"}], "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Import", "@", "newini"}], "//", "Shallow"}]}], "Input",
+ CellLabel->"In[4]:=",
+ CellID->170422683],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", "\<\"[Monitor]\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Refined_binning5_1_1.img=0.991202\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Refined_binning5_1_2.img=0.985893\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Refined_binning5_1_3.img=0.988208\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Refined_binning5_1_4.img=0.991322\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Refined_binning5_1_5.img=0.991393\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Refined_binning5_1_6.img=0.985249\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Refined_binning5_1_7.img=0.991081\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Refined_binning5_1_8.img=0.98939\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Refined_binning5_1_9.img=0.989375\"\>", "}"}], ",", 
+   RowBox[{"\[LeftSkeleton]", "711", "\[RightSkeleton]"}]}], "}"}]], "Output",\
+
+ ImageSize->{532, 102},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[4]//Shallow=",
+ CellID->391034777]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " code",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->887364112],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"MonitorIni", "::", "InvInput"}], "=", 
+   "\"\<The length og the custom input does not match that of the \
+\!\(\*StyleBox[\".\", \"Program\"]\)\!\(\*StyleBox[\"ini\", \"Program\"]\) \
+file (or invalid range).\>\""}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"MonitorIni", "::", "InvFlux"}], "=", 
+   "\"\<The flux file does not match the (length) of data.\>\""}], 
+  ";"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1802185616],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"MonitorIni", "[", 
+   RowBox[{
+    RowBox[{"file_", "?", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"FileExtension", "[", "#", "]"}], "\[Equal]", "\"\<ini\>\""}],
+        "&"}], ")"}]}], ",", "input_"}], "]"}], ":=", "\[IndentingNewLine]", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+     "flux", ",", "Flux", ",", "linFrom", ",", "linTo", ",", "method", ",", 
+      "import", ",", "end", ",", "prefix", ",", "L", ",", "seq", ",", 
+      "newvalues", ",", "i", ",", "newdata", ",", "filename"}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"(*", " ", 
+     RowBox[{"Basic", " ", "operations"}], " ", "*)"}], "\[IndentingNewLine]",
+     "\t", 
+    RowBox[{
+     RowBox[{"import", "=", 
+      RowBox[{"Check", "[", 
+       RowBox[{
+        RowBox[{"Import", "@", "file"}], ",", 
+        RowBox[{"Abort", "[", "]"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+     "\t", 
+     RowBox[{"end", "=", 
+      RowBox[{"StringExtract", "[", 
+       RowBox[{
+        RowBox[{"import", "[", 
+         RowBox[{"[", "2", "]"}], "]"}], ",", 
+        RowBox[{"\"\<_\>\"", "\[Rule]", 
+         RowBox[{"-", "1"}]}]}], "]"}]}], ";", "\[IndentingNewLine]", "\t", 
+     RowBox[{"prefix", "=", 
+      RowBox[{"StringTrim", "[", 
+       RowBox[{
+        RowBox[{"import", "[", 
+         RowBox[{"[", 
+          RowBox[{"2", ",", "1"}], "]"}], "]"}], ",", "end"}], "]"}]}], ";", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"L", "=", 
+      RowBox[{
+       RowBox[{"Length", "@", "import"}], "-", "1"}]}], ";", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"seq", "=", 
+      RowBox[{"ToString", "/@", 
+       RowBox[{"Range", "@", "L"}]}]}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+      "Checking", " ", "if", " ", "input", " ", "is", " ", "a", " ", "flux", 
+       " ", "file"}], " ", "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"ToString", "@", 
+         RowBox[{"Head", "[", "input", "]"}]}], "\[Equal]", 
+        "\"\<String\>\""}], ",", "\[IndentingNewLine]", "\t\t", 
+       RowBox[{
+        RowBox[{"flux", "=", 
+         RowBox[{"Check", "[", 
+          RowBox[{
+           RowBox[{"Import", "[", 
+            RowBox[{"input", ",", "\"\<Data\>\""}], "]"}], ",", 
+           RowBox[{"Abort", "[", "]"}]}], "]"}]}], ";", "\[IndentingNewLine]",
+         "\t\t", 
+        RowBox[{"Flux", "=", 
+         RowBox[{"Rest", "@", "flux"}]}], ";", "\[IndentingNewLine]", "\t\t", 
+        
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"First", "[", "flux", "]"}], "\[Equal]", 
+           RowBox[{"{", "\"\<Flux\>\"", "}"}]}], ",", "\[IndentingNewLine]", 
+          "\t\t", 
+          RowBox[{
+           RowBox[{"newvalues", "=", 
+            RowBox[{"ToString", "/@", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"Flatten", "[", "Flux", "]"}], "/", 
+               RowBox[{"N", "[", 
+                RowBox[{"Max", "[", "Flux", "]"}], "]"}]}], ")"}]}]}], ";", 
+           "\[IndentingNewLine]", "\t\t", 
+           RowBox[{"(*", " ", 
+            RowBox[{
+            "Checking", " ", "if", " ", "the", " ", "flux", " ", "file", " ", 
+             "is", " ", "correct"}], " ", "*)"}], "\[IndentingNewLine]", 
+           "\t\t", 
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"Length", "@", "newvalues"}], "\[NotEqual]", "L"}], ",", 
+             RowBox[{
+              RowBox[{"Message", "[", 
+               RowBox[{"MonitorIni", "::", "InvFlux"}], "]"}], ";", 
+              "\[IndentingNewLine]", "\t\t", 
+              RowBox[{"Abort", "[", "]"}]}]}], "]"}], ";", 
+           "\[IndentingNewLine]", "\t\t", 
+           RowBox[{"Goto", "[", "\"\<ToNewData\>\"", "]"}], ";"}]}], 
+         "\[IndentingNewLine]", "\t\t", "]"}]}]}], "\[IndentingNewLine]", 
+      "\t", "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Checking", " ", "input", " ", "for", " ", "method"}], " ", 
+      "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{"method", "=", "\"\<LinearDecay\>\""}], ";", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"If", "[", "\[IndentingNewLine]", "\t", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Length", "@", 
+         RowBox[{"Flatten", "@", "input"}]}], "\[Equal]", "2"}], ",", 
+       RowBox[{
+        RowBox[{"linFrom", "=", 
+         RowBox[{"input", "[", 
+          RowBox[{"[", "1", "]"}], "]"}]}], ";", 
+        RowBox[{"linTo", "=", 
+         RowBox[{"input", "[", 
+          RowBox[{"[", "2", "]"}], "]"}]}]}], ",", "\[IndentingNewLine]", 
+       "\t", 
+       RowBox[{"method", "=", "\"\<CustomInput\>\""}]}], 
+      "\[IndentingNewLine]", "\t", "]"}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Writing", " ", "new", " ", "data"}], " ", "*)"}], 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"method", "\[Equal]", "\"\<CustomInput\>\""}], ",", 
+       "\[IndentingNewLine]", "\t", 
+       RowBox[{
+        RowBox[{"newvalues", "=", 
+         RowBox[{"ToString", "/@", "input"}]}], ";", "\[IndentingNewLine]", 
+        "\t\t", 
+        RowBox[{"(*", " ", 
+         RowBox[{"Checking", " ", "the", " ", "custom", " ", "input"}], " ", 
+         "*)"}], "\[IndentingNewLine]", "\t\t", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Length", "@", "newvalues"}], "\[NotEqual]", "L"}], ",", 
+          RowBox[{
+           RowBox[{"Message", "[", 
+            RowBox[{"MonitorIni", "::", "InvInput"}], "]"}], ";", 
+           RowBox[{"Abort", "[", "]"}]}]}], "]"}]}], ",", 
+       "\[IndentingNewLine]", "\t", 
+       RowBox[{"newvalues", "=", 
+        RowBox[{"ToString", "/@", 
+         RowBox[{"Reverse", "@", 
+          RowBox[{"Check", "[", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"Table", "[", 
+             RowBox[{"i", ",", 
+              RowBox[{"{", 
+               RowBox[{"i", ",", "linTo", ",", "linFrom", ",", 
+                RowBox[{"N", "[", 
+                 RowBox[{
+                  RowBox[{"(", 
+                   RowBox[{"linFrom", "-", "linTo"}], ")"}], "/", 
+                  RowBox[{"(", 
+                   RowBox[{"L", "-", "1"}], ")"}]}], "]"}]}], "}"}]}], "]"}], 
+            ",", 
+            RowBox[{"Abort", "[", "]"}]}], "]"}]}]}]}]}], "]"}], ";", 
+     "\[IndentingNewLine]", "\t", "\[IndentingNewLine]", "\t", 
+     RowBox[{"Label", "[", "\"\<ToNewData\>\"", "]"}], ";", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"newdata", "=", 
+      RowBox[{"MapThread", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"prefix", "<>", "#1", "<>", "\"\<.img=\>\"", "<>", "#2"}], 
+         "&"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"seq", ",", "newvalues"}], "}"}]}], "]"}]}], ";", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"PrependTo", "[", 
+      RowBox[{"newdata", ",", "\"\<[Monitor]\>\""}], "]"}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Writing", " ", "new", " ", "file"}], " ", "*)"}], 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"filename", "=", 
+      RowBox[{"StringDrop", "[", 
+       RowBox[{"file", ",", 
+        RowBox[{"-", "4"}]}], "]"}]}], ";", "\[IndentingNewLine]", "\t", 
+     RowBox[{"Export", "[", 
+      RowBox[{
+       RowBox[{"filename", "<>", "\"\<_new\>\"", "<>", "\"\<.ini\>\""}], ",", 
+       "newdata", ",", "\"\<Table\>\""}], "]"}]}]}], "\[IndentingNewLine]", 
+   "]"}]}]], "Input",
+ Background->RGBColor[0.94, 0.91, 0.88],
+ CellLabel->"In[2]:=",
+ CellID->1224290824]
+}, Closed]]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"MonitorIni",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "Wolfram Language", ButtonData -> "paclet:guide/WolframRoot", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "ExampleCounter" -> 1, "NeedPlatMsgIn" -> None, "RootCaptions" -> 
+  "", "Metadata" -> {
+   "built" -> "{2019, 3, 16, 9, 28, 42.684176}", 
+    "history" -> {"0.0", "", "", ""}, "context" -> "Xray`", "keywords" -> {}, 
+    "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> True,
+     "label" -> "Xray Symbol", "language" -> "en", "paclet" -> "Xray", 
+    "status" -> "None", "summary" -> 
+    "MonitorIni[file, input] substitutes the monitor values in the .ini file \
+with the values of input. MonitorIni[file, flux] substitutes the monitor \
+values in the .ini file with normalised values from the flux file. \
+MonitorIni[file, {start, stop}] substitutes the monitor values in the .ini \
+file with automatically generated values going linearly from start to stop.", 
+    "synonyms" -> {}, "tabletags" -> {}, "title" -> "MonitorIni", 
+    "titlemodifier" -> "", "windowtitle" -> "MonitorIni", "type" -> "Symbol", 
+    "uri" -> "Xray/ref/MonitorIni", "WorkflowDockedCell" -> ""}, 
+  "SearchTextTranslated" -> "", "NewStyles" -> False},
+CellContext->"Global`",
+FrontEndVersion->"11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
+2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> 
+  "11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, 2018)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[6658, 211, 268, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"046fdfda-ba8b-4dcd-991f-fefbd0d633cb",
+   CellTags->"PrimaryExamplesSection",
+   CellID->1257381786]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 23297, 670}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[582, 21, 2259, 53, 70, "AnchorBarGrid",ExpressionUUID->"e7422ea3-445e-4b48-a1bf-95de298979cb",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[2866, 78, 167, 6, 70, "ObjectNameGrid",ExpressionUUID->"c9d885e5-e51a-4197-8d9c-93107fd47858"],
+Cell[3036, 86, 2292, 72, 70, "Usage",ExpressionUUID->"c808e5b8-a0a5-4051-a63a-a1489303b42f",
+ CellID->982511436]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5365, 163, 629, 19, 70, "NotesSection",ExpressionUUID->"68a8afc9-7e85-4f61-a6b3-d31118496342",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->155319213],
+Cell[5997, 184, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"81176677-7e88-4f4a-8003-55ee1e058e7e"],
+Cell[6031, 186, 362, 10, 70, "Notes",ExpressionUUID->"1bd1ff71-dfae-405b-915d-db483f8f2ca0",
+ CellID->1067943069],
+Cell[6396, 198, 225, 8, 70, "Notes",ExpressionUUID->"0bd85a62-65d7-4798-be82-cfe541a58083",
+ CellID->1281169926]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[6658, 211, 268, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"046fdfda-ba8b-4dcd-991f-fefbd0d633cb",
+ CellTags->"PrimaryExamplesSection",
+ CellID->1257381786],
+Cell[CellGroupData[{
+Cell[6951, 225, 196, 6, 70, "ExampleSection",ExpressionUUID->"19e57355-fd70-415a-aaf0-c8dd6c024142",
+ CellID->1576590822],
+Cell[7150, 233, 457, 14, 70, "Input",ExpressionUUID->"83af54d1-3baa-414a-b394-20741e277c97",
+ CellID->1094871088],
+Cell[7610, 249, 401, 10, 70, "ExampleText",ExpressionUUID->"d892d574-0979-472f-8f2d-cf55ef6e172a",
+ CellID->2123744621],
+Cell[CellGroupData[{
+Cell[8036, 263, 274, 8, 70, "Input",ExpressionUUID->"e671d494-d37f-432c-aa41-f8c5a51ef077",
+ CellID->1027648522],
+Cell[8313, 273, 913, 19, 70, "Output",ExpressionUUID->"396eb61c-2da4-44a1-a6aa-686bd7982ff8",
+ CellID->644856443]
+}, Open  ]],
+Cell[9241, 295, 248, 8, 70, "ExampleText",ExpressionUUID->"b5a40faa-50b2-4b88-af85-f77f05c3cb97",
+ CellID->537111355],
+Cell[CellGroupData[{
+Cell[9514, 307, 303, 10, 70, "Input",ExpressionUUID->"bbbde6ef-b37e-4c3f-b6a3-2f5b49a88fbb",
+ CellID->1688044346],
+Cell[9820, 319, 971, 19, 70, "Output",ExpressionUUID->"bbc04f0b-9c51-409a-bc06-a5951116c9dd",
+ CellID->1899754739]
+}, Open  ]],
+Cell[10806, 341, 296, 12, 70, "ExampleText",ExpressionUUID->"93b97b3e-7488-4156-a237-11c3aadcd70a",
+ CellID->1066585501],
+Cell[CellGroupData[{
+Cell[11127, 357, 437, 13, 70, "Input",ExpressionUUID->"a67b31b1-2b4e-4726-b26d-451ab529d3ed",
+ CellID->170422683],
+Cell[11567, 372, 976, 19, 70, "Output",ExpressionUUID->"19349a4a-1227-4612-bd49-3e60d344a23c",
+ CellID->391034777]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12592, 397, 235, 8, 70, "ExampleSection",ExpressionUUID->"15e2ddcc-a203-4d12-a27e-cc9f92dec331",
+ CellID->887364112],
+Cell[12830, 407, 498, 13, 70, "Input",ExpressionUUID->"1a9c0e75-a47c-4052-9ecc-7518f3a69c24",
+ CellID->1802185616],
+Cell[13331, 422, 7771, 194, 70, "Input",ExpressionUUID->"2e9c87c2-7978-4d57-accb-49eae67fe541",
+ CellID->1224290824]
+}, Closed]]
+}, Open  ]],
+Cell[21129, 620, 23, 0, 70, "FooterCell",ExpressionUUID->"0d32c153-6155-498c-a482-490b8affccd9"]
+}
+]
+*)
+
+(* End of internal cache information *)

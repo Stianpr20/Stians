@@ -1,0 +1,3350 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    135874,       3341]
+NotebookOptionsPosition[    130328,       3217]
+NotebookOutlinePosition[    132500,       3274]
+CellTagsIndexPosition[    132413,       3269]
+WindowTitle->$PixelData
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["XRAY SYMBOL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"$PeriodicTable\"\>":>
+       Documentation`HelpLookup[
+       "paclet:Xray/ref/$PeriodicTable"], "\<\"$CrystalData\"\>":>
+       Documentation`HelpLookup[
+       "paclet:Xray/ref/$CrystalData"], "\<\"ReciprocalImageCheck\"\>":>
+       Documentation`HelpLookup[
+       "paclet:Xray/ref/ReciprocalImageCheck"], "\<\"GeneratePixelData\"\>":>
+       Documentation`HelpLookup[
+       "paclet:Xray/ref/GeneratePixelData"], "\<\"FindPixelClusters\"\>":>
+       Documentation`HelpLookup["paclet:Xray/ref/FindPixelClusters"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"Xray/ref/$PixelData\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["Xray/ref/$PixelData"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/Xray/ref/$PixelData.\
+html"], StandardForm]], "Input", TextClipboardType -> "PlainText"]}, Visible -> 
+            False]]; SelectionMove[
+         DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$25848], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "Xray/ref/$PixelData", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell["$PixelData", "ObjectName"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      TemplateBox[{Cell[
+         TextData["$PixelData"]],"paclet:Xray/ref/$PixelData"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+     " \[LineSeparator]associates the MD5 hash of image files with a lists of \
+pixel values that correspond to reciprocal nodes."
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}}},
+ CellID->982511436]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    TemplateBox[{6},
+     "Spacer1"]]],
+   "Details"
+  }], "NotesFrameText"],
+  Appearance->{Automatic, None, "Normal", Automatic},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->"Preemptive"]]]], "NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1963875821],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["$PixelData"]],"paclet:Xray/ref/$PixelData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ " is an ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["Association"]],"paclet:ref/Association"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ "."
+}], "Notes",
+ CellID->1067943069],
+
+Cell[TextData[{
+ "When ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["ReciprocalImageCheck"]],"paclet:Xray/ref/ReciprocalImageCheck"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ " is used on an image file (i.e. not an image imported to ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ "), the hash of that image and the associated data will be stored in ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["$PixelData"]],"paclet:Xray/ref/$PixelData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ " automatically."
+}], "Notes",
+ CellID->1911558788],
+
+Cell[TextData[{
+ Cell[BoxData["GeneratePixelData"], "InlineFormula"],
+ " may be used to store the data of a batch of images in a ",
+ StyleBox[".dat", "Program"],
+ " file."
+}], "Notes",
+ CellID->1835220766]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(2)", "ExampleCount"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->37269157],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->1464980422],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"$Line", "=", "0"}], ";"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->658487588],
+
+Cell["The association starts out empty:", "ExampleText",
+ CellID->1369330424],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["$PixelData"], "Input",
+ CellLabel->"In[2]:=",
+ CellID->885320260],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", "\[RightAssociation]"}]], "Output",
+ ImageSize->{28, 16},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[2]=",
+ CellID->23059622]
+}, Open  ]],
+
+Cell[TextData[{
+ "Applying ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["ReciprocalImageCheck"]],
+    "paclet:Xray/ref/ReflectionConditionCheck"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ " on one of the example images will store the data in the association."
+}], "ExampleText",
+ CellID->575309928],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"examplefile", "=", 
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", 
+     RowBox[{
+     "$XrayExamples", ",", "\"\<Unwarps\>\"", ",", 
+      "\"\<Crystal_1_(01)_290K_UnwarpTemp_20perunit_001.bmp\>\""}], "}"}], 
+    "]"}]}], ";"}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->1834962516],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ReciprocalImageCheck", "[", "\[IndentingNewLine]", 
+  RowBox[{
+  "examplefile", ",", "\[IndentingNewLine]", "\"\<Hexagonal\>\"", ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"984", ",", "739", ",", "3", ",", "0", ",", "0"}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"769", ",", "944", ",", 
+       RowBox[{"-", "4"}], ",", "5", ",", "0"}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"1268", ",", "903", ",", "7", ",", "4", ",", "0"}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"912", ",", "451", ",", "5", ",", 
+       RowBox[{"-", "7"}], ",", "0"}], "}"}]}], "\[IndentingNewLine]", "}"}], 
+   ",", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"h_", ",", "k_", ",", "l_"}], "}"}], "/;", 
+    RowBox[{"Divisible", "[", 
+     RowBox[{
+      RowBox[{"h", "-", "k", "+", "l"}], ",", "3"}], "]"}]}]}], 
+  "\[IndentingNewLine]", "]"}]], "Input",
+ CellLabel->"In[4]:=",
+ CellID->898425310],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {{{}, 
+     {GrayLevel[0.85], PointSize[Large], AbsoluteThickness[1.6], 
+      PointBox[CompressedData["
+1:eJxdki1PA0EQhjcEUYmsQJR/gEBUVJzAYpqKKnIhIM6UgwBNQ0MW2sIRPvoJ
+FHeyAnGycn9ARSWi4gSishJJ6bwj3l5yefLc7OzOzO3O0WnxZMMYU1i+/1w9
+9sBbMdPxyO0L+7DH/tMXer7wq8M+eRP68PiR482B0MFnXaEJhL9t9vID8uEz
+nJ8LuD718B35Z3yeutYXXvL6+Z1wtyH8biHPCBf3WI/4OBKmV8LpE+pFP9Ez
+vqO+5JX3M5hbGgoHXY5P0KctYZ8+x+foKw7Y7T67OxRuos/4gl33V09qa/Fj
+9rQi3IM79Ln9IfTqwgw8vF6LY345uAvYt6rsiWXX/tTNuTA/FGZxXwrwxS27
+u+H1UZN9pPdV15c4X+ehrvMqfyKvzq71q+v/Us832Kctdj9iX/b7B/Hzjl8=
+
+       "]]}, 
+     {RGBColor[0.368417, 0.506779, 0.709798], PointSize[Large], 
+      AbsoluteThickness[1.6], 
+      PointBox[{{533., 123.}, {580., 41.}, {651., 1067.}, {1030., 411.}, {
+       1433., 779.}}]}, 
+     {RGBColor[0.880722, 0.611041, 0.142051], PointSize[Large], 
+      AbsoluteThickness[1.6], PointBox[CompressedData["
+1:eJxd2D9MVFsQx/GrsaCktMTEwpLSGIstNLHwJcRsYaUbg4k0iGYNkBCyyBqQ
+AFlcVOwoKSwoLCy3pKDY0sJiCwtKile88ql3PieZS3Py5Xf+3Du/mTkXbjx7
++ej51aqq7lypqj/j35/jzdbfsfupHqt/6vF4oR57wa21zON3mR9vZ758lfm0
+l/n2Zj7vcqceZzrBG3Fu8PRW5tZu5l67wfOZj1czj9bzeWf79dixvh96xMH7
+40mMVYwzy1kXHyw+uLyvON/LLF7l/M3G/L3McweN/SP+FR+6mS9j/uVSPYoH
+vthorO9nvr6V+eR9PU5iPX+mrW839pvPPFrMzC/MH/x1kPnusB47b2K/iMNS
+8Nxa5skw80kvs3hjfmL+9YKnBlmv7mcePWmsf5V5ejmzfMH8Lu9zkPnoQ+Zb
+H+M9I47qZxz830bW5Qf+9yAzP3DJl+DZ3ayfN87nf1m/2ND7jfPeZ+Y/5j/m
+/5zn2sk8u5ZZ/8Hij/mJxRtXr+uxE6x+sf5pfmc76/yiTxrPrx+bf/Yu6zcj
+vkvB8utF+Fr6WfB4PbN8ML8zn5k/5vMHq/eidzOXegzWz7H8wv3DfP7patbl
+Vzk//DnSF8M/99nDg6yrb8x/LL6YX1g+2Z/fdPHH8g2rX3z4Ie/3Y5hZfzBf
+PtLVNx417p1S7+7p8PdHMH/p8oMuf+i3h1mXD3T1ivmJB93M+g+WD2X/dmP/
+1cbz7GbWD7D+M+XeXc68FPU1Hay+MX8xP6xXv3T5hC928vzqaby3utvOunzB
+/LYff7F8xit7eb1+QpcvD+K5VsKfVrB8KLye54s3XX7QS/+1fj7r1du8Xv3i
+88bz8R/rByvxHPzqBfOTzh+6fo3lg/nue3q534PlA+YP5h/WD3D5/rXfXj7/
+5zDr/MLuk9OIu/h/j9H3GFbPeLKY1/OLrl6xfoG3+5n1fyw/sO/Lsl+7wd3M
+/C3rNzKrbyxfuvF7fmL5seY78X7W1QvWj1eC9WOs3rD8wCX/gvlfeCGzfMT6
+B3YfeX73EV3+YfmC5eMg4jDeb3Dkx2Gw/MHyBfMbyw+svxe9n8/jH12/x+4X
+8+UDlg/my9cj69VZ+Kj/fg2+Nsj6g83Ms8uZ1bv1+j/d34Pfgn1vmC+fzFff
+J8H8pMsfXOo9uNxzwb7/6O6XszjH99K5e2Ar6+KJ+Ws+P7F8MV8/oI/2M/MX
+yyfMX+w+wPoTVu8X7q2I/69gftOrQWb3ofnqja7eMH/M16/p7hcsP7B+hPV/
+rD9h/mP1XMXvx8HXgsUX8898/tDV91Sw+53OP1z+vg7mB1392U/9Yf8/mPkc
+vx9k5gcu/y8J9n2E+Yv1b1z+/xHMHyy+raN6VB93g92n2Ptj74vlY/tLfr/H
+we4HLH+w58PigX/7/z9CaxtK
+       "]]}, {}}, {
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{59., 1026.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(19.836\\), \\(_\\)]\\),7,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(19.836\), \(_\)]\),7,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{59., 944.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(18.8453\\), \\(_\\)]\\),5,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(18.8453\), \(_\)]\),5,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{59., 1190.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(21.8176\\), \\(_\\)]\\),11,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(21.8176\), \(_\)]\),11,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{59., 1273.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(22.8204\\), \\(_\\)]\\),13,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(22.8204\), \(_\)]\),13,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{130., 1067.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(18.8456\\), \\(_\\)]\\),8,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(18.8456\), \(_\)]\),8,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{130., 1395.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(22.8086\\), \\(_\\)]\\),16,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(22.8086\), \(_\)]\),16,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{131., 820.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(15.8403\\), \\(_\\)]\\),2,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(15.8403\), \(_\)]\),2,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{130., 1313.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(21.8179\\), \\(_\\)]\\),14,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(21.8179\), \(_\)]\),14,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{134., 1143.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(19.6801\\), \\(_\\)]\\),10,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(19.6801\), \(_\)]\),10,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{200., 1023.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(16.849\\), \\(_\\)]\\),7,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(16.849\), \(_\)]\),7,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{200., 747.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(13.5143\\), \\(_\\)]\\),0.24263,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(13.5143\), \(_\)]\),0.24263,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{202., 1271.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(19.8036\\), \\(_\\)]\\),13,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(19.8036\), \(_\)]\),13,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{201., 1190.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(18.8459\\), \\(_\\)]\\),11,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(18.8459\), \(_\)]\),11,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{201., 1436.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(21.8181\\), \\(_\\)]\\),17,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(21.8181\), \(_\)]\),17,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{272., 1313.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(18.8462\\), \\(_\\)]\\),14,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(18.8462\), \(_\)]\),14,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{272., 1395.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(19.8369\\), \\(_\\)]\\),16,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(19.8369\), \(_\)]\),16,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{343., 1436.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(18.8465\\), \\(_\\)]\\),17,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(18.8465\), \(_\)]\),17,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{605., 614.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(3.43179\\), \
+\\(_\\)]\\),\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(3.43179\), \(_\)]\),\!\(\*OverscriptBox[\(3\), \
+\(_\)]\),0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{699., 2.}}]},
+       "\"(6,\\!\\(\\*OverscriptBox[\\(17.8333\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(6,\!\(\*OverscriptBox[\(17.8333\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{734., 622.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(0.828821\\), \
+\\(_\\)]\\),\\!\\(\\*OverscriptBox[\\(2.79024\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(0.828821\), \
+\(_\)]\),\!\(\*OverscriptBox[\(2.79024\), \(_\)]\),0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{791., 366.}}]},
+       "\"(3.45713,\\!\\(\\*OverscriptBox[\\(9\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(3.45713,\!\(\*OverscriptBox[\(9\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{890., 1110.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(3.46037\\), \\(_\\)]\\),9,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(3.46037\), \(_\)]\),9,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{913., 1204.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\),11.3308,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(4\), \(_\)]\),11.3308,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{982., 2.}}]},
+       "\"(12,\\!\\(\\*OverscriptBox[\\(17.8333\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(12,\!\(\*OverscriptBox[\(17.8333\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1024., 270.}}]},
+       "\"(9.4931,\\!\\(\\*OverscriptBox[\\(11.3308\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(9.4931,\!\(\*OverscriptBox[\(11.3308\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1125., 2.}}]},
+       "\"(14.8448,\\!\\(\\*OverscriptBox[\\(17.8333\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(14.8448,\!\(\*OverscriptBox[\(17.8333\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1267., 82.}}]},
+       "\"(16.8499,\\!\\(\\*OverscriptBox[\\(16\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(16.8499,\!\(\*OverscriptBox[\(16\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1268., 2.}}]},
+       "\"(17.8375,\\!\\(\\*OverscriptBox[\\(17.8333\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(17.8375,\!\(\*OverscriptBox[\(17.8333\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1338., 205.}}]},
+       "\"(16.8496,\\!\\(\\*OverscriptBox[\\(13\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(16.8496,\!\(\*OverscriptBox[\(13\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1338., 41.}}]},
+       "\"(18.8311,\\!\\(\\*OverscriptBox[\\(17\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(18.8311,\!\(\*OverscriptBox[\(17\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1338., 123.}}]},
+       "\"(17.8404,\\!\\(\\*OverscriptBox[\\(15\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(17.8404,\!\(\*OverscriptBox[\(15\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1409., 330.}}]},
+       "\"(16.8252,\\!\\(\\*OverscriptBox[\\(10\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(16.8252,\!\(\*OverscriptBox[\(10\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1409., 82.}}]},
+       "\"(19.8216,\\!\\(\\*OverscriptBox[\\(16\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(19.8216,\!\(\*OverscriptBox[\(16\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1409., 411.}}]},
+       "\"(15.8465,\\!\\(\\*OverscriptBox[\\(8\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(15.8465,\!\(\*OverscriptBox[\(8\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1409., 164.}}]},
+       "\"(18.8309,\\!\\(\\*OverscriptBox[\\(14\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(18.8309,\!\(\*OverscriptBox[\(14\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1409., 247.}}]},
+       "\"(17.828,\\!\\(\\*OverscriptBox[\\(12\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(17.828,\!\(\*OverscriptBox[\(12\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1421., 920.}}]},
+       "\"(10,4.44012,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(10,4.44012,0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1479., 452.}}]},
+       "\"(16.816,\\!\\(\\*OverscriptBox[\\(7\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(16.816,\!\(\*OverscriptBox[\(7\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1474., 439.}}]},
+       "\"(17,\\!\\(\\*OverscriptBox[\\(7.23037\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(17,\!\(\*OverscriptBox[\(7.23037\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1479., 616.}}]},
+       "\"(14.8345,\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(14.8345,\!\(\*OverscriptBox[\(3\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1480., 206.}}]},
+       "\"(19.8092,\\!\\(\\*OverscriptBox[\\(13\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(19.8092,\!\(\*OverscriptBox[\(13\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1480., 369.}}]},
+       "\"(17.8398,\\!\\(\\*OverscriptBox[\\(9\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(17.8398,\!\(\*OverscriptBox[\(9\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1480., 534.}}]},
+       "\"(15.8462,\\!\\(\\*OverscriptBox[\\(5\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(15.8462,\!\(\*OverscriptBox[\(5\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1480., 41.}}]},
+       "\"(21.8028,\\!\\(\\*OverscriptBox[\\(17\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(21.8028,\!\(\*OverscriptBox[\(17\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1480., 288.}}]},
+       "\"(18.8185,\\!\\(\\*OverscriptBox[\\(11\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(18.8185,\!\(\*OverscriptBox[\(11\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1550., 739.}}]},
+       "\"(14.8342,0,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(14.8342,0,0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1551., 574.}}]},
+       "\"(16.8488,\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(16.8488,\!\(\*OverscriptBox[\(4\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1551., 492.}}]},
+       "\"(17.8395,\\!\\(\\*OverscriptBox[\\(6\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(17.8395,\!\(\*OverscriptBox[\(6\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1550., 657.}}]},
+       "\"(15.825,\\!\\(\\*OverscriptBox[\\(2\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(15.825,\!\(\*OverscriptBox[\(2\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1550., 821.}}]},
+       "\"(13.8435,2,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(13.8435,2,0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1552., 83.}}]},
+       "\"(22.8021,\\!\\(\\*OverscriptBox[\\(16\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(22.8021,\!\(\*OverscriptBox[\(16\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1551., 164.}}]},
+       "\"(21.8025,\\!\\(\\*OverscriptBox[\\(14\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(21.8025,\!\(\*OverscriptBox[\(14\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1551., 411.}}]},
+       "\"(18.8182,\\!\\(\\*OverscriptBox[\\(8\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(18.8182,\!\(\*OverscriptBox[\(8\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1622., 452.}}]},
+       "\"(19.8086,\\!\\(\\*OverscriptBox[\\(7\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(19.8086,\!\(\*OverscriptBox[\(7\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1622., 534.}}]},
+       "\"(18.8179,\\!\\(\\*OverscriptBox[\\(5\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(18.8179,\!\(\*OverscriptBox[\(5\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1622., 205.}}]},
+       "\"(22.793,\\!\\(\\*OverscriptBox[\\(13\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(22.793,\!\(\*OverscriptBox[\(13\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1622., 615.}}]},
+       "\"(17.8392,\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(17.8392,\!\(\*OverscriptBox[\(3\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1622., 698.}}]},
+       "\"(16.8364,\\!\\(\\*OverscriptBox[\\(1\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(16.8364,\!\(\*OverscriptBox[\(1\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1622., 780.}}]},
+       "\"(15.8456,1,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(15.8456,1,0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1622., 288.}}]},
+       "\"(21.7902,\\!\\(\\*OverscriptBox[\\(11\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(21.7902,\!\(\*OverscriptBox[\(11\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{533., 123.}}]},
+       "\"(1,\\!\\(\\*OverscriptBox[\\(15\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(1,\!\(\*OverscriptBox[\(15\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{580., 41.}}]},
+       "\"(3,\\!\\(\\*OverscriptBox[\\(17\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(3,\!\(\*OverscriptBox[\(17\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{651., 1067.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(8\\), \\(_\\)]\\)80)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(8\), \(_\)]\)80)", "Tooltip"]& ], 
+     
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1030., 411.}}]},
+       "\"(8\\!\\(\\*OverscriptBox[\\(8\\), \\(_\\)]\\)0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(8\!\(\*OverscriptBox[\(8\), \(_\)]\)0)", "Tooltip"]& ], 
+     
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1433., 779.}}]},
+       "\"(12,1,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(12,1,0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{628., 1437.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(13\\), \\(_\\)]\\),17,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(13\), \(_\)]\),17,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{58., 205.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(10\\), \
+\\(_\\)]\\),\\!\\(\\*OverscriptBox[\\(13\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(10\), \(_\)]\),\!\(\*OverscriptBox[\(13\), \(_\
+\)]\),0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{59., 452.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(13\\), \
+\\(_\\)]\\),\\!\\(\\*OverscriptBox[\\(7\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(13\), \(_\)]\),\!\(\*OverscriptBox[\(7\), \
+\(_\)]\),0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{59., 698.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(16\\), \
+\\(_\\)]\\),\\!\\(\\*OverscriptBox[\\(1\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(16\), \(_\)]\),\!\(\*OverscriptBox[\(1\), \
+\(_\)]\),0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{59., 779.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(17\\), \\(_\\)]\\),1,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(17\), \(_\)]\),1,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{59., 287.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(11\\), \
+\\(_\\)]\\),\\!\\(\\*OverscriptBox[\\(11\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(11\), \(_\)]\),\!\(\*OverscriptBox[\(11\), \(_\
+\)]\),0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{59., 534.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(14\\), \
+\\(_\\)]\\),\\!\\(\\*OverscriptBox[\\(5\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(14\), \(_\)]\),\!\(\*OverscriptBox[\(5\), \
+\(_\)]\),0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{59., 615.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(15\\), \
+\\(_\\)]\\),\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(15\), \(_\)]\),\!\(\*OverscriptBox[\(3\), \
+\(_\)]\),0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{58., 862.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(18\\), \\(_\\)]\\),3,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(18\), \(_\)]\),3,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{129., 574.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(13\\), \
+\\(_\\)]\\),\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(13\), \(_\)]\),\!\(\*OverscriptBox[\(4\), \
+\(_\)]\),0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{130., 738.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(15\\), \\(_\\)]\\),0,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(15\), \(_\)]\),0,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{130., 904.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(17\\), \\(_\\)]\\),4,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(17\), \(_\)]\),4,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{130., 82.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(7\\), \
+\\(_\\)]\\),\\!\\(\\*OverscriptBox[\\(16\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(7\), \(_\)]\),\!\(\*OverscriptBox[\(16\), \
+\(_\)]\),0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{130., 164.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(8\\), \
+\\(_\\)]\\),\\!\\(\\*OverscriptBox[\\(14\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(8\), \(_\)]\),\!\(\*OverscriptBox[\(14\), \
+\(_\)]\),0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{130., 410.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(11\\), \
+\\(_\\)]\\),\\!\\(\\*OverscriptBox[\\(8\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(11\), \(_\)]\),\!\(\*OverscriptBox[\(8\), \
+\(_\)]\),0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{130., 492.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(12\\), \
+\\(_\\)]\\),\\!\\(\\*OverscriptBox[\\(6\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(12\), \(_\)]\),\!\(\*OverscriptBox[\(6\), \
+\(_\)]\),0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{129., 985.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(18\\), \\(_\\)]\\),6,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(18\), \(_\)]\),6,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{131., 656.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(14\\), \
+\\(_\\)]\\),\\!\\(\\*OverscriptBox[\\(2\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(14\), \(_\)]\),\!\(\*OverscriptBox[\(2\), \
+\(_\)]\),0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{201., 452.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(10\\), \
+\\(_\\)]\\),\\!\\(\\*OverscriptBox[\\(7\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(10\), \(_\)]\),\!\(\*OverscriptBox[\(7\), \
+\(_\)]\),0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{201., 207.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(7\\), \
+\\(_\\)]\\),\\!\\(\\*OverscriptBox[\\(13\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(7\), \(_\)]\),\!\(\*OverscriptBox[\(13\), \
+\(_\)]\),0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{200., 370.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(9\\), \\(_\\)]\\)\\!\\(\\*OverscriptBox[\
+\\(9\\), \\(_\\)]\\)0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(9\), \(_\)]\)\!\(\*OverscriptBox[\(9\), \(_\)]\
+\)0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{201., 698.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(13\\), \
+\\(_\\)]\\),\\!\\(\\*OverscriptBox[\\(1\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(13\), \(_\)]\),\!\(\*OverscriptBox[\(1\), \
+\(_\)]\),0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{201., 779.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(14\\), \\(_\\)]\\),1,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(14\), \(_\)]\),1,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{201., 862.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(15\\), \\(_\\)]\\),3,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(15\), \(_\)]\),3,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{201., 41.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(5\\), \
+\\(_\\)]\\),\\!\\(\\*OverscriptBox[\\(17\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(5\), \(_\)]\),\!\(\*OverscriptBox[\(17\), \
+\(_\)]\),0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{201., 534.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(11\\), \
+\\(_\\)]\\),\\!\\(\\*OverscriptBox[\\(5\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(11\), \(_\)]\),\!\(\*OverscriptBox[\(5\), \
+\(_\)]\),0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{201., 616.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(12\\), \
+\\(_\\)]\\),\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(12\), \(_\)]\),\!\(\*OverscriptBox[\(3\), \
+\(_\)]\),0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{201., 944.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(16\\), \\(_\\)]\\),5,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(16\), \(_\)]\),5,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{201., 1108.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(18\\), \\(_\\)]\\),9,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(18\), \(_\)]\),9,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{201., 287.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(8\\), \
+\\(_\\)]\\),\\!\\(\\*OverscriptBox[\\(11\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(8\), \(_\)]\),\!\(\*OverscriptBox[\(11\), \
+\(_\)]\),0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{272., 328.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(7\\), \
+\\(_\\)]\\),\\!\\(\\*OverscriptBox[\\(10\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(7\), \(_\)]\),\!\(\*OverscriptBox[\(10\), \
+\(_\)]\),0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{272., 1148.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(17\\), \\(_\\)]\\),10,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(17\), \(_\)]\),10,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{271., 492.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(9\\), \\(_\\)]\\)\\!\\(\\*OverscriptBox[\
+\\(6\\), \\(_\\)]\\)0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(9\), \(_\)]\)\!\(\*OverscriptBox[\(6\), \(_\)]\
+\)0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{271., 573.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(10\\), \
+\\(_\\)]\\),\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(10\), \(_\)]\),\!\(\*OverscriptBox[\(4\), \
+\(_\)]\),0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{272., 656.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(11\\), \
+\\(_\\)]\\),\\!\\(\\*OverscriptBox[\\(2\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(11\), \(_\)]\),\!\(\*OverscriptBox[\(2\), \
+\(_\)]\),0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{272., 739.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(12\\), \\(_\\)]\\),0,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(12\), \(_\)]\),0,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{272., 821.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(13\\), \\(_\\)]\\),2,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(13\), \(_\)]\),2,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{270., 904.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(14\\), \\(_\\)]\\),4,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(14\), \(_\)]\),4,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{273., 82.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(4\\), \
+\\(_\\)]\\),\\!\\(\\*OverscriptBox[\\(16\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(4\), \(_\)]\),\!\(\*OverscriptBox[\(16\), \
+\(_\)]\),0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{272., 164.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(5\\), \
+\\(_\\)]\\),\\!\\(\\*OverscriptBox[\\(14\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(5\), \(_\)]\),\!\(\*OverscriptBox[\(14\), \
+\(_\)]\),0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{272., 246.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(6\\), \
+\\(_\\)]\\),\\!\\(\\*OverscriptBox[\\(12\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(6\), \(_\)]\),\!\(\*OverscriptBox[\(12\), \
+\(_\)]\),0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{272., 410.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(8\\), \\(_\\)]\\)\\!\\(\\*OverscriptBox[\
+\\(8\\), \\(_\\)]\\)0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(8\), \(_\)]\)\!\(\*OverscriptBox[\(8\), \(_\)]\
+\)0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{272., 985.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(15\\), \\(_\\)]\\),6,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(15\), \(_\)]\),6,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{272., 1067.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(16\\), \\(_\\)]\\),8,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(16\), \(_\)]\),8,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{272., 1231.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(18\\), \\(_\\)]\\),12,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(18\), \(_\)]\),12,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{342., 206.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(4\\), \
+\\(_\\)]\\),\\!\\(\\*OverscriptBox[\\(13\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(4\), \(_\)]\),\!\(\*OverscriptBox[\(13\), \
+\(_\)]\),0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{343., 453.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(7\\), \\(_\\)]\\)\\!\\(\\*OverscriptBox[\
+\\(7\\), \\(_\\)]\\)0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(7\), \(_\)]\)\!\(\*OverscriptBox[\(7\), \(_\)]\
+\)0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{343., 1272.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(17\\), \\(_\\)]\\),13,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(17\), \(_\)]\),13,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{343., 533.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(8\\), \\(_\\)]\\)\\!\\(\\*OverscriptBox[\
+\\(5\\), \\(_\\)]\\)0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(8\), \(_\)]\)\!\(\*OverscriptBox[\(5\), \(_\)]\
+\)0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{343., 616.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(9\\), \\(_\\)]\\)\\!\\(\\*OverscriptBox[\
+\\(3\\), \\(_\\)]\\)0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(9\), \(_\)]\)\!\(\*OverscriptBox[\(3\), \(_\)]\
+\)0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{343., 698.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(10\\), \
+\\(_\\)]\\),\\!\\(\\*OverscriptBox[\\(1\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(10\), \(_\)]\),\!\(\*OverscriptBox[\(1\), \
+\(_\)]\),0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{343., 862.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(12\\), \\(_\\)]\\),3,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(12\), \(_\)]\),3,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{344., 1026.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(14\\), \\(_\\)]\\),7,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(14\), \(_\)]\),7,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{343., 42.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(2\\), \
+\\(_\\)]\\),\\!\\(\\*OverscriptBox[\\(17\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(2\), \(_\)]\),\!\(\*OverscriptBox[\(17\), \
+\(_\)]\),0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{343., 123.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(3\\), \
+\\(_\\)]\\),\\!\\(\\*OverscriptBox[\\(15\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(3\), \(_\)]\),\!\(\*OverscriptBox[\(15\), \
+\(_\)]\),0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{343., 287.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(5\\), \
+\\(_\\)]\\),\\!\\(\\*OverscriptBox[\\(11\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(5\), \(_\)]\),\!\(\*OverscriptBox[\(11\), \
+\(_\)]\),0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{343., 369.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(6\\), \\(_\\)]\\)\\!\\(\\*OverscriptBox[\
+\\(9\\), \\(_\\)]\\)0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(6\), \(_\)]\)\!\(\*OverscriptBox[\(9\), \(_\)]\
+\)0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{343., 779.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(11\\), \\(_\\)]\\),1,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(11\), \(_\)]\),1,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{343., 944.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(13\\), \\(_\\)]\\),5,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(13\), \(_\)]\),5,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{343., 1108.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(15\\), \\(_\\)]\\),9,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(15\), \(_\)]\),9,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{343., 1190.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(16\\), \\(_\\)]\\),11,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(16\), \(_\)]\),11,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{343., 1354.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(18\\), \\(_\\)]\\),15,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(18\), \(_\)]\),15,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{414., 738.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(9\\), \\(_\\)]\\)00)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(9\), \(_\)]\)00)", "Tooltip"]& ], 
+     
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{413., 575.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(7\\), \\(_\\)]\\)\\!\\(\\*OverscriptBox[\
+\\(4\\), \\(_\\)]\\)0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(7\), \(_\)]\)\!\(\*OverscriptBox[\(4\), \(_\)]\
+\)0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{414., 328.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(4\\), \
+\\(_\\)]\\),\\!\\(\\*OverscriptBox[\\(10\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(4\), \(_\)]\),\!\(\*OverscriptBox[\(10\), \
+\(_\)]\),0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{414., 1149.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(14\\), \\(_\\)]\\),10,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(14\), \(_\)]\),10,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{414., 410.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(5\\), \\(_\\)]\\)\\!\\(\\*OverscriptBox[\
+\\(8\\), \\(_\\)]\\)0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(5\), \(_\)]\)\!\(\*OverscriptBox[\(8\), \(_\)]\
+\)0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{414., 492.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(6\\), \\(_\\)]\\)\\!\\(\\*OverscriptBox[\
+\\(6\\), \\(_\\)]\\)0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(6\), \(_\)]\)\!\(\*OverscriptBox[\(6\), \(_\)]\
+\)0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{415., 902.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(11\\), \\(_\\)]\\),4,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(11\), \(_\)]\),4,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{414., 1395.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(17\\), \\(_\\)]\\),16,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(17\), \(_\)]\),16,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{414., 82.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(1\\), \
+\\(_\\)]\\),\\!\\(\\*OverscriptBox[\\(16\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(1\), \(_\)]\),\!\(\*OverscriptBox[\(16\), \
+\(_\)]\),0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{414., 246.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(3\\), \
+\\(_\\)]\\),\\!\\(\\*OverscriptBox[\\(12\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(3\), \(_\)]\),\!\(\*OverscriptBox[\(12\), \
+\(_\)]\),0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{414., 656.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(8\\), \\(_\\)]\\)\\!\\(\\*OverscriptBox[\
+\\(2\\), \\(_\\)]\\)0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(8\), \(_\)]\)\!\(\*OverscriptBox[\(2\), \(_\)]\
+\)0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{414., 820.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(10\\), \\(_\\)]\\),2,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(10\), \(_\)]\),2,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{414., 985.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(12\\), \\(_\\)]\\),6,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(12\), \(_\)]\),6,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{414., 1067.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(13\\), \\(_\\)]\\),8,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(13\), \(_\)]\),8,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{414., 1231.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(15\\), \\(_\\)]\\),12,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(15\), \(_\)]\),12,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{485., 862.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(9\\), \\(_\\)]\\)30)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(9\), \(_\)]\)30)", "Tooltip"]& ], 
+     
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{485., 451.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\)\\!\\(\\*OverscriptBox[\
+\\(7\\), \\(_\\)]\\)0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(4\), \(_\)]\)\!\(\*OverscriptBox[\(7\), \(_\)]\
+\)0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{485., 615.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(6\\), \\(_\\)]\\)\\!\\(\\*OverscriptBox[\
+\\(3\\), \\(_\\)]\\)0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(6\), \(_\)]\)\!\(\*OverscriptBox[\(3\), \(_\)]\
+\)0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{485., 369.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)\\!\\(\\*OverscriptBox[\
+\\(9\\), \\(_\\)]\\)0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(3\), \(_\)]\)\!\(\*OverscriptBox[\(9\), \(_\)]\
+\)0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{485., 1026.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(11\\), \\(_\\)]\\),7,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(11\), \(_\)]\),7,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{485., 1108.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(12\\), \\(_\\)]\\),9,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(12\), \(_\)]\),9,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{485., 288.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(2\\), \
+\\(_\\)]\\),\\!\\(\\*OverscriptBox[\\(11\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(2\), \(_\)]\),\!\(\*OverscriptBox[\(11\), \
+\(_\)]\),0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{486., 41.}}]},
+       "\"(1,\\!\\(\\*OverscriptBox[\\(17\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(1,\!\(\*OverscriptBox[\(17\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{486., 205.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(1\\), \
+\\(_\\)]\\),\\!\\(\\*OverscriptBox[\\(13\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(1\), \(_\)]\),\!\(\*OverscriptBox[\(13\), \
+\(_\)]\),0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{485., 780.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(8\\), \\(_\\)]\\)10)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(8\), \(_\)]\)10)", "Tooltip"]& ], 
+     
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{486., 1190.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(13\\), \\(_\\)]\\),11,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(13\), \(_\)]\),11,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{485., 1272.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(14\\), \\(_\\)]\\),13,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(14\), \(_\)]\),13,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{485., 1437.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(16\\), \\(_\\)]\\),17,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(16\), \(_\)]\),17,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{486., 697.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(7\\), \\(_\\)]\\)\\!\\(\\*OverscriptBox[\
+\\(1\\), \\(_\\)]\\)0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(7\), \(_\)]\)\!\(\*OverscriptBox[\(1\), \(_\)]\
+\)0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{485., 1353.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(15\\), \\(_\\)]\\),15,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(15\), \(_\)]\),15,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{487., 123.}}]},
+       "\"(0,\\!\\(\\*OverscriptBox[\\(15\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(0,\!\(\*OverscriptBox[\(15\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{557., 985.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(9\\), \\(_\\)]\\)60)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(9\), \(_\)]\)60)", "Tooltip"]& ], 
+     
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{556., 493.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)\\!\\(\\*OverscriptBox[\
+\\(6\\), \\(_\\)]\\)0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(3\), \(_\)]\)\!\(\*OverscriptBox[\(6\), \(_\)]\
+\)0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{556., 738.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(6\\), \\(_\\)]\\)00)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(6\), \(_\)]\)00)", "Tooltip"]& ], 
+     
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{557., 163.}}]},
+       "\"(1,\\!\\(\\*OverscriptBox[\\(14\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(1,\!\(\*OverscriptBox[\(14\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{557., 246.}}]},
+       "\"(0,\\!\\(\\*OverscriptBox[\\(12\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(0,\!\(\*OverscriptBox[\(12\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{556., 656.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(5\\), \\(_\\)]\\)\\!\\(\\*OverscriptBox[\
+\\(2\\), \\(_\\)]\\)0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(5\), \(_\)]\)\!\(\*OverscriptBox[\(2\), \(_\)]\
+\)0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{556., 821.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(7\\), \\(_\\)]\\)20)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(7\), \(_\)]\)20)", "Tooltip"]& ], 
+     
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{556., 328.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(1\\), \
+\\(_\\)]\\),\\!\\(\\*OverscriptBox[\\(10\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(1\), \(_\)]\),\!\(\*OverscriptBox[\(10\), \
+\(_\)]\),0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{556., 1231.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(12\\), \\(_\\)]\\),12,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(12\), \(_\)]\),12,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{556., 574.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\)\\!\\(\\*OverscriptBox[\
+\\(4\\), \\(_\\)]\\)0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(4\), \(_\)]\)\!\(\*OverscriptBox[\(4\), \(_\)]\
+\)0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{556., 1149.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(11\\), \\(_\\)]\\),10,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(11\), \(_\)]\),10,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{556., 1313.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(13\\), \\(_\\)]\\),14,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(13\), \(_\)]\),14,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{557., 411.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(2\\), \\(_\\)]\\)\\!\\(\\*OverscriptBox[\
+\\(8\\), \\(_\\)]\\)0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(2\), \(_\)]\)\!\(\*OverscriptBox[\(8\), \(_\)]\
+\)0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{556., 902.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(8\\), \\(_\\)]\\)40)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(8\), \(_\)]\)40)", "Tooltip"]& ], 
+     
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{556., 1066.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(10\\), \\(_\\)]\\),8,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(10\), \(_\)]\),8,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{627., 370.}}]},
+       "\"(0\\!\\(\\*OverscriptBox[\\(9\\), \\(_\\)]\\)0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(0\!\(\*OverscriptBox[\(9\), \(_\)]\)0)", "Tooltip"]& ], 
+     
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{628., 1107.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(9\\), \\(_\\)]\\)90)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(9\), \(_\)]\)90)", "Tooltip"]& ], 
+     
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{627., 533.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(2\\), \\(_\\)]\\)\\!\\(\\*OverscriptBox[\
+\\(5\\), \\(_\\)]\\)0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(2\), \(_\)]\)\!\(\*OverscriptBox[\(5\), \(_\)]\
+\)0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{627., 615.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)\\!\\(\\*OverscriptBox[\
+\\(3\\), \\(_\\)]\\)0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(3\), \(_\)]\)\!\(\*OverscriptBox[\(3\), \(_\)]\
+\)0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{627., 697.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\)\\!\\(\\*OverscriptBox[\
+\\(1\\), \\(_\\)]\\)0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(4\), \(_\)]\)\!\(\*OverscriptBox[\(1\), \(_\)]\
+\)0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{627., 780.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(5\\), \\(_\\)]\\)10)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(5\), \(_\)]\)10)", "Tooltip"]& ], 
+     
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{627., 862.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(6\\), \\(_\\)]\\)30)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(6\), \(_\)]\)30)", "Tooltip"]& ], 
+     
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{628., 41.}}]},
+       "\"(4,\\!\\(\\*OverscriptBox[\\(17\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(4,\!\(\*OverscriptBox[\(17\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{627., 123.}}]},
+       "\"(3,\\!\\(\\*OverscriptBox[\\(15\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(3,\!\(\*OverscriptBox[\(15\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{627., 451.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(1\\), \\(_\\)]\\)\\!\\(\\*OverscriptBox[\
+\\(7\\), \\(_\\)]\\)0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(1\), \(_\)]\)\!\(\*OverscriptBox[\(7\), \(_\)]\
+\)0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{627., 944.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(7\\), \\(_\\)]\\)50)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(7\), \(_\)]\)50)", "Tooltip"]& ], 
+     
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{627., 1189.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(10\\), \\(_\\)]\\),11,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(10\), \(_\)]\),11,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{628., 1270.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(11\\), \\(_\\)]\\),13,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(11\), \(_\)]\),13,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{628., 287.}}]},
+       "\"(1,\\!\\(\\*OverscriptBox[\\(11\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(1,\!\(\*OverscriptBox[\(11\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{627., 1026.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(8\\), \\(_\\)]\\)70)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(8\), \(_\)]\)70)", "Tooltip"]& ], 
+     
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{628., 1354.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(12\\), \\(_\\)]\\),15,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(12\), \(_\)]\),15,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{628., 206.}}]},
+       "\"(2,\\!\\(\\*OverscriptBox[\\(13\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(2,\!\(\*OverscriptBox[\(13\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{698., 738.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)00)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(3\), \(_\)]\)00)", "Tooltip"]& ], 
+     
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{698., 164.}}]},
+       "\"(4,\\!\\(\\*OverscriptBox[\\(14\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(4,\!\(\*OverscriptBox[\(14\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{699., 246.}}]},
+       "\"(3,\\!\\(\\*OverscriptBox[\\(12\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(3,\!\(\*OverscriptBox[\(12\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{698., 493.}}]},
+       "\"(0\\!\\(\\*OverscriptBox[\\(6\\), \\(_\\)]\\)0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(0\!\(\*OverscriptBox[\(6\), \(_\)]\)0)", "Tooltip"]& ], 
+     
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{699., 985.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(6\\), \\(_\\)]\\)60)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(6\), \(_\)]\)60)", "Tooltip"]& ], 
+     
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{698., 1230.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(9\\), \\(_\\)]\\),12,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(9\), \(_\)]\),12,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{699., 656.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(2\\), \\(_\\)]\\)\\!\\(\\*OverscriptBox[\
+\\(2\\), \\(_\\)]\\)0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(2\), \(_\)]\)\!\(\*OverscriptBox[\(2\), \(_\)]\
+\)0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{698., 820.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\)20)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(4\), \(_\)]\)20)", "Tooltip"]& ], 
+     
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{698., 1313.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(10\\), \\(_\\)]\\),14,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(10\), \(_\)]\),14,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{698., 329.}}]},
+       "\"(2,\\!\\(\\*OverscriptBox[\\(10\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(2,\!\(\*OverscriptBox[\(10\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{698., 575.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(1\\), \\(_\\)]\\)\\!\\(\\*OverscriptBox[\
+\\(4\\), \\(_\\)]\\)0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, 
+       "(\!\(\*OverscriptBox[\(1\), \(_\)]\)\!\(\*OverscriptBox[\(4\), \(_\)]\
+\)0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{698., 1149.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(8\\), \\(_\\)]\\),10,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(8\), \(_\)]\),10,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{699., 82.}}]},
+       "\"(5,\\!\\(\\*OverscriptBox[\\(16\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(5,\!\(\*OverscriptBox[\(16\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{698., 410.}}]},
+       "\"(1\\!\\(\\*OverscriptBox[\\(8\\), \\(_\\)]\\)0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(1\!\(\*OverscriptBox[\(8\), \(_\)]\)0)", "Tooltip"]& ], 
+     
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{698., 903.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(5\\), \\(_\\)]\\)40)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(5\), \(_\)]\)40)", "Tooltip"]& ], 
+     
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{698., 1067.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(7\\), \\(_\\)]\\)80)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(7\), \(_\)]\)80)", "Tooltip"]& ], 
+     
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{698., 1395.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(11\\), \\(_\\)]\\),16,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(11\), \(_\)]\),16,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{769., 370.}}]},
+       "\"(3\\!\\(\\*OverscriptBox[\\(9\\), \\(_\\)]\\)0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(3\!\(\*OverscriptBox[\(9\), \(_\)]\)0)", "Tooltip"]& ], 
+     
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{769., 1436.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(10\\), \\(_\\)]\\),17,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(10\), \(_\)]\),17,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{770., 1108.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(6\\), \\(_\\)]\\)90)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(6\), \(_\)]\)90)", "Tooltip"]& ], 
+     
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{770., 41.}}]},
+       "\"(7,\\!\\(\\*OverscriptBox[\\(17\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(7,\!\(\*OverscriptBox[\(17\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{770., 287.}}]},
+       "\"(4,\\!\\(\\*OverscriptBox[\\(11\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(4,\!\(\*OverscriptBox[\(11\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{769., 1190.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(7\\), \\(_\\)]\\),11,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(7\), \(_\)]\),11,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{770., 615.}}]},
+       "\"(0\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(0\!\(\*OverscriptBox[\(3\), \(_\)]\)0)", "Tooltip"]& ], 
+     
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{770., 861.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)30)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(3\), \(_\)]\)30)", "Tooltip"]& ], 
+     
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{769., 124.}}]},
+       "\"(6,\\!\\(\\*OverscriptBox[\\(15\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(6,\!\(\*OverscriptBox[\(15\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{767., 781.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(2\\), \\(_\\)]\\)10)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(2\), \(_\)]\)10)", "Tooltip"]& ], 
+     
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{769., 451.}}]},
+       "\"(2\\!\\(\\*OverscriptBox[\\(7\\), \\(_\\)]\\)0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(2\!\(\*OverscriptBox[\(7\), \(_\)]\)0)", "Tooltip"]& ], 
+     
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{769., 1026.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(5\\), \\(_\\)]\\)70)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(5\), \(_\)]\)70)", "Tooltip"]& ], 
+     
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{770., 206.}}]},
+       "\"(5,\\!\\(\\*OverscriptBox[\\(13\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(5,\!\(\*OverscriptBox[\(13\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{770., 533.}}]},
+       "\"(1\\!\\(\\*OverscriptBox[\\(5\\), \\(_\\)]\\)0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(1\!\(\*OverscriptBox[\(5\), \(_\)]\)0)", "Tooltip"]& ], 
+     
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{770., 943.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\)50)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(4\), \(_\)]\)50)", "Tooltip"]& ], 
+     
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{769., 1272.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(8\\), \\(_\\)]\\),13,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(8\), \(_\)]\),13,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{770., 1354.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(9\\), \\(_\\)]\\),15,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(9\), \(_\)]\),15,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{841., 1310.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(7\\), \\(_\\)]\\),14,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(7\), \(_\)]\),14,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{840., 246.}}]},
+       "\"(6,\\!\\(\\*OverscriptBox[\\(12\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(6,\!\(\*OverscriptBox[\(12\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{840., 492.}}]},
+       "\"(3\\!\\(\\*OverscriptBox[\\(6\\), \\(_\\)]\\)0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(3\!\(\*OverscriptBox[\(6\), \(_\)]\)0)", "Tooltip"]& ], 
+     
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{841., 903.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(2\\), \\(_\\)]\\)40)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(2\), \(_\)]\)40)", "Tooltip"]& ], 
+     
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{840., 985.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)60)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(3\), \(_\)]\)60)", "Tooltip"]& ], 
+     
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{841., 1231.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(6\\), \\(_\\)]\\),12,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(6\), \(_\)]\),12,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{842., 166.}}]},
+       "\"(7,\\!\\(\\*OverscriptBox[\\(14\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(7,\!\(\*OverscriptBox[\(14\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{841., 576.}}]},
+       "\"(2\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\)0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(2\!\(\*OverscriptBox[\(4\), \(_\)]\)0)", "Tooltip"]& ], 
+     
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{840., 1066.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\)80)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(4\), \(_\)]\)80)", "Tooltip"]& ], 
+     
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{840., 1395.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(8\\), \\(_\\)]\\),16,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(8\), \(_\)]\),16,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{841., 82.}}]},
+       "\"(8,\\!\\(\\*OverscriptBox[\\(16\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(8,\!\(\*OverscriptBox[\(16\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{841., 411.}}]},
+       "\"(4\\!\\(\\*OverscriptBox[\\(8\\), \\(_\\)]\\)0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(4\!\(\*OverscriptBox[\(8\), \(_\)]\)0)", "Tooltip"]& ], 
+     
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{911., 1108.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)90)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(3\), \(_\)]\)90)", "Tooltip"]& ], 
+     
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{912., 1436.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(7\\), \\(_\\)]\\),17,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(7\), \(_\)]\),17,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{911., 1190.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\),11,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(4\), \(_\)]\),11,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{912., 288.}}]},
+       "\"(7,\\!\\(\\*OverscriptBox[\\(11\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(7,\!\(\*OverscriptBox[\(11\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{912., 370.}}]},
+       "\"(6\\!\\(\\*OverscriptBox[\\(9\\), \\(_\\)]\\)0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(6\!\(\*OverscriptBox[\(9\), \(_\)]\)0)", "Tooltip"]& ], 
+     
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{911., 616.}}]},
+       "\"(3\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(3\!\(\*OverscriptBox[\(3\), \(_\)]\)0)", "Tooltip"]& ], 
+     
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{912., 862.}}]},
+       "\"(030)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(030)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{912., 41.}}]},
+       "\"(10,\\!\\(\\*OverscriptBox[\\(17\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(10,\!\(\*OverscriptBox[\(17\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{912., 1026.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(2\\), \\(_\\)]\\)70)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(2\), \(_\)]\)70)", "Tooltip"]& ], 
+     
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{912., 451.}}]},
+       "\"(5\\!\\(\\*OverscriptBox[\\(7\\), \\(_\\)]\\)0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(5\!\(\*OverscriptBox[\(7\), \(_\)]\)0)", "Tooltip"]& ], 
+     
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{912., 123.}}]},
+       "\"(9,\\!\\(\\*OverscriptBox[\\(15\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(9,\!\(\*OverscriptBox[\(15\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{912., 534.}}]},
+       "\"(4\\!\\(\\*OverscriptBox[\\(5\\), \\(_\\)]\\)0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(4\!\(\*OverscriptBox[\(5\), \(_\)]\)0)", "Tooltip"]& ], 
+     
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{912., 944.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(1\\), \\(_\\)]\\)50)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(1\), \(_\)]\)50)", "Tooltip"]& ], 
+     
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{911., 1271.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(5\\), \\(_\\)]\\),13,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(5\), \(_\)]\),13,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{912., 1354.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(6\\), \\(_\\)]\\),15,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(6\), \(_\)]\),15,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{912., 205.}}]},
+       "\"(8,\\!\\(\\*OverscriptBox[\\(13\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(8,\!\(\*OverscriptBox[\(13\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{982., 985.}}]},
+       "\"(060)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(060)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{983., 739.}}]},
+       "\"(300)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(300)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{983., 493.}}]},
+       "\"(6\\!\\(\\*OverscriptBox[\\(6\\), \\(_\\)]\\)0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(6\!\(\*OverscriptBox[\(6\), \(_\)]\)0)", "Tooltip"]& ], 
+     
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{983., 247.}}]},
+       "\"(9,\\!\\(\\*OverscriptBox[\\(12\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(9,\!\(\*OverscriptBox[\(12\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{982., 1231.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\),12,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(3\), \(_\)]\),12,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{983., 1313.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\),14,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(4\), \(_\)]\),14,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{983., 164.}}]},
+       "\"(10,\\!\\(\\*OverscriptBox[\\(14\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(10,\!\(\*OverscriptBox[\(14\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{983., 657.}}]},
+       "\"(4\\!\\(\\*OverscriptBox[\\(2\\), \\(_\\)]\\)0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(4\!\(\*OverscriptBox[\(2\), \(_\)]\)0)", "Tooltip"]& ], 
+     
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{983., 821.}}]},
+       "\"(220)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(220)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{983., 903.}}]},
+       "\"(140)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(140)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{983., 1148.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(2\\), \\(_\\)]\\),10,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(2\), \(_\)]\),10,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{983., 82.}}]},
+       "\"(11,\\!\\(\\*OverscriptBox[\\(16\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(11,\!\(\*OverscriptBox[\(16\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{983., 328.}}]},
+       "\"(8,\\!\\(\\*OverscriptBox[\\(10\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(8,\!\(\*OverscriptBox[\(10\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{983., 411.}}]},
+       "\"(7\\!\\(\\*OverscriptBox[\\(8\\), \\(_\\)]\\)0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(7\!\(\*OverscriptBox[\(8\), \(_\)]\)0)", "Tooltip"]& ], 
+     
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{983., 574.}}]},
+       "\"(5\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\)0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(5\!\(\*OverscriptBox[\(4\), \(_\)]\)0)", "Tooltip"]& ], 
+     
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{983., 1067.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(1\\), \\(_\\)]\\)80)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(1\), \(_\)]\)80)", "Tooltip"]& ], 
+     
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{983., 1395.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(5\\), \\(_\\)]\\),16,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(5\), \(_\)]\),16,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1053., 370.}}]},
+       "\"(9\\!\\(\\*OverscriptBox[\\(9\\), \\(_\\)]\\)0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(9\!\(\*OverscriptBox[\(9\), \(_\)]\)0)", "Tooltip"]& ], 
+     
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1053., 1108.}}]},
+       "\"(090)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(090)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1055., 42.}}]},
+       "\"(13,\\!\\(\\*OverscriptBox[\\(17\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(13,\!\(\*OverscriptBox[\(17\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1053., 943.}}]},
+       "\"(250)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(250)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1053., 1189.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(1\\), \\(_\\)]\\),11,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(1\), \(_\)]\),11,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1054., 1270.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(2\\), \\(_\\)]\\),13,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(2\), \(_\)]\),13,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1054., 533.}}]},
+       "\"(7\\!\\(\\*OverscriptBox[\\(5\\), \\(_\\)]\\)0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(7\!\(\*OverscriptBox[\(5\), \(_\)]\)0)", "Tooltip"]& ], 
+     
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1054., 862.}}]},
+       "\"(330)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(330)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1054., 1436.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\),17,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(4\), \(_\)]\),17,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1054., 123.}}]},
+       "\"(12,\\!\\(\\*OverscriptBox[\\(15\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(12,\!\(\*OverscriptBox[\(15\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1054., 206.}}]},
+       "\"(11,\\!\\(\\*OverscriptBox[\\(13\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(11,\!\(\*OverscriptBox[\(13\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1054., 288.}}]},
+       "\"(10,\\!\\(\\*OverscriptBox[\\(11\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(10,\!\(\*OverscriptBox[\(11\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1054., 615.}}]},
+       "\"(6\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(6\!\(\*OverscriptBox[\(3\), \(_\)]\)0)", "Tooltip"]& ], 
+     
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1054., 697.}}]},
+       "\"(5\\!\\(\\*OverscriptBox[\\(1\\), \\(_\\)]\\)0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(5\!\(\*OverscriptBox[\(1\), \(_\)]\)0)", "Tooltip"]& ], 
+     
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1055., 780.}}]},
+       "\"(410)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(410)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1054., 1026.}}]},
+       "\"(170)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(170)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1054., 1354.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\),15,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(3\), \(_\)]\),15,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1054., 451.}}]},
+       "\"(8\\!\\(\\*OverscriptBox[\\(7\\), \\(_\\)]\\)0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(8\!\(\*OverscriptBox[\(7\), \(_\)]\)0)", "Tooltip"]& ], 
+     
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1124., 986.}}]},
+       "\"(360)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(360)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1124., 493.}}]},
+       "\"(9\\!\\(\\*OverscriptBox[\\(6\\), \\(_\\)]\\)0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(9\!\(\*OverscriptBox[\(6\), \(_\)]\)0)", "Tooltip"]& ], 
+     
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1125., 739.}}]},
+       "\"(600)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(600)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1125., 247.}}]},
+       "\"(12,\\!\\(\\*OverscriptBox[\\(12\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(12,\!\(\*OverscriptBox[\(12\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1125., 821.}}]},
+       "\"(520)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(520)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1125., 164.}}]},
+       "\"(13,\\!\\(\\*OverscriptBox[\\(14\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(13,\!\(\*OverscriptBox[\(14\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1125., 329.}}]},
+       "\"(11,\\!\\(\\*OverscriptBox[\\(10\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(11,\!\(\*OverscriptBox[\(10\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1125., 656.}}]},
+       "\"(7\\!\\(\\*OverscriptBox[\\(2\\), \\(_\\)]\\)0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(7\!\(\*OverscriptBox[\(2\), \(_\)]\)0)", "Tooltip"]& ], 
+     
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1124., 1067.}}]},
+       "\"(280)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(280)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1125., 1149.}}]},
+       "\"(1,10,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(1,10,0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1125., 1230.}}]},
+       "\"(0,12,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(0,12,0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1124., 411.}}]},
+       "\"(10,\\!\\(\\*OverscriptBox[\\(8\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(10,\!\(\*OverscriptBox[\(8\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1124., 574.}}]},
+       "\"(8\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\)0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(8\!\(\*OverscriptBox[\(4\), \(_\)]\)0)", "Tooltip"]& ], 
+     
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1125., 1313.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(1\\), \\(_\\)]\\),14,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(1\), \(_\)]\),14,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1126., 903.}}]},
+       "\"(440)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(440)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1196., 861.}}]},
+       "\"(630)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(630)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1195., 1025.}}]},
+       "\"(470)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(470)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1196., 617.}}]},
+       "\"(9\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(9\!\(\*OverscriptBox[\(3\), \(_\)]\)0)", "Tooltip"]& ], 
+     
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1196., 371.}}]},
+       "\"(12,\\!\\(\\*OverscriptBox[\\(9\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(12,\!\(\*OverscriptBox[\(9\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1196., 41.}}]},
+       "\"(16,\\!\\(\\*OverscriptBox[\\(17\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(16,\!\(\*OverscriptBox[\(17\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1195., 287.}}]},
+       "\"(13,\\!\\(\\*OverscriptBox[\\(11\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(13,\!\(\*OverscriptBox[\(11\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1196., 452.}}]},
+       "\"(11,\\!\\(\\*OverscriptBox[\\(7\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(11,\!\(\*OverscriptBox[\(7\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1197., 1107.}}]},
+       "\"(390)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(390)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1195., 1189.}}]},
+       "\"(2,11,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(2,11,0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1196., 1271.}}]},
+       "\"(1,13,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(1,13,0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1194., 780.}}]},
+       "\"(710)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(710)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1196., 1436.}}]},
+       "\"(\\!\\(\\*OverscriptBox[\\(1\\), \\(_\\)]\\),17,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(\!\(\*OverscriptBox[\(1\), \(_\)]\),17,0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1196., 205.}}]},
+       "\"(14,\\!\\(\\*OverscriptBox[\\(13\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(14,\!\(\*OverscriptBox[\(13\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1196., 698.}}]},
+       "\"(8\\!\\(\\*OverscriptBox[\\(1\\), \\(_\\)]\\)0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(8\!\(\*OverscriptBox[\(1\), \(_\)]\)0)", "Tooltip"]& ], 
+     
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1195., 1353.}}]},
+       "\"(0,15,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(0,15,0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1196., 124.}}]},
+       "\"(15,\\!\\(\\*OverscriptBox[\\(15\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(15,\!\(\*OverscriptBox[\(15\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1266., 902.}}]},
+       "\"(740)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(740)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1267., 738.}}]},
+       "\"(900)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(900)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1266., 574.}}]},
+       "\"(11,\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(11,\!\(\*OverscriptBox[\(4\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1266., 821.}}]},
+       "\"(820)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(820)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1267., 329.}}]},
+       "\"(14,\\!\\(\\*OverscriptBox[\\(10\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(14,\!\(\*OverscriptBox[\(10\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1267., 493.}}]},
+       "\"(12,\\!\\(\\*OverscriptBox[\\(6\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(12,\!\(\*OverscriptBox[\(6\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1266., 657.}}]},
+       "\"(10,\\!\\(\\*OverscriptBox[\\(2\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(10,\!\(\*OverscriptBox[\(2\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1267., 984.}}]},
+       "\"(660)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(660)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1267., 1149.}}]},
+       "\"(4,10,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(4,10,0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1267., 247.}}]},
+       "\"(15,\\!\\(\\*OverscriptBox[\\(12\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(15,\!\(\*OverscriptBox[\(12\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1267., 411.}}]},
+       "\"(13,\\!\\(\\*OverscriptBox[\\(8\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(13,\!\(\*OverscriptBox[\(8\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1267., 1066.}}]},
+       "\"(580)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(580)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1267., 1231.}}]},
+       "\"(3,12,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(3,12,0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1267., 1395.}}]},
+       "\"(1,16,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(1,16,0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1338., 452.}}]},
+       "\"(14,\\!\\(\\*OverscriptBox[\\(7\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(14,\!\(\*OverscriptBox[\(7\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1337., 861.}}]},
+       "\"(930)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(930)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1338., 1024.}}]},
+       "\"(770)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(770)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1338., 1272.}}]},
+       "\"(4,13,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(4,13,0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1337., 615.}}]},
+       "\"(12,\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(12,\!\(\*OverscriptBox[\(3\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1338., 697.}}]},
+       "\"(11,\\!\\(\\*OverscriptBox[\\(1\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(11,\!\(\*OverscriptBox[\(1\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1338., 780.}}]},
+       "\"(10,1,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(10,1,0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1337., 944.}}]},
+       "\"(850)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(850)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1338., 1190.}}]},
+       "\"(5,11,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(5,11,0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1338., 287.}}]},
+       "\"(16,\\!\\(\\*OverscriptBox[\\(11\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(16,\!\(\*OverscriptBox[\(11\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1338., 370.}}]},
+       "\"(15,\\!\\(\\*OverscriptBox[\\(9\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(15,\!\(\*OverscriptBox[\(9\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1338., 534.}}]},
+       "\"(13,\\!\\(\\*OverscriptBox[\\(5\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(13,\!\(\*OverscriptBox[\(5\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1338., 1108.}}]},
+       "\"(690)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(690)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1338., 1436.}}]},
+       "\"(2,17,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(2,17,0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1338., 1354.}}]},
+       "\"(3,15,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(3,15,0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1408., 1396.}}]},
+       "\"(4,16,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(4,16,0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1409., 1149.}}]},
+       "\"(7,10,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(7,10,0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1409., 821.}}]},
+       "\"(11,2,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(11,2,0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1408., 657.}}]},
+       "\"(13,\\!\\(\\*OverscriptBox[\\(2\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(13,\!\(\*OverscriptBox[\(2\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1409., 739.}}]},
+       "\"(12,0,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(12,0,0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1410., 492.}}]},
+       "\"(15,\\!\\(\\*OverscriptBox[\\(6\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(15,\!\(\*OverscriptBox[\(6\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1409., 984.}}]},
+       "\"(960)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(960)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1409., 1067.}}]},
+       "\"(880)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(880)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1408., 1231.}}]},
+       "\"(6,12,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(6,12,0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1409., 1313.}}]},
+       "\"(5,14,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(5,14,0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1410., 903.}}]},
+       "\"(10,4,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(10,4,0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1410., 573.}}]},
+       "\"(14,\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(14,\!\(\*OverscriptBox[\(4\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1480., 1026.}}]},
+       "\"(10,7,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(10,7,0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1480., 1272.}}]},
+       "\"(7,13,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(7,13,0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1480., 698.}}]},
+       "\"(14,\\!\\(\\*OverscriptBox[\\(1\\), \\(_\\)]\\),0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(14,\!\(\*OverscriptBox[\(1\), \(_\)]\),0)", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1480., 781.}}]},
+       "\"(13,1,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(13,1,0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1480., 861.}}]},
+       "\"(12,3,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(12,3,0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1480., 943.}}]},
+       "\"(11,5,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(11,5,0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1480., 1108.}}]},
+       "\"(990)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(990)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1480., 1190.}}]},
+       "\"(8,11,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(8,11,0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1480., 1436.}}]},
+       "\"(5,17,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(5,17,0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1552., 902.}}]},
+       "\"(13,4,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(13,4,0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1551., 985.}}]},
+       "\"(12,6,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(12,6,0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1551., 1067.}}]},
+       "\"(11,8,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(11,8,0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1551., 1313.}}]},
+       "\"(8,14,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(8,14,0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1551., 1395.}}]},
+       "\"(7,16,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(7,16,0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1621., 1026.}}]},
+       "\"(13,7,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(13,7,0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1622., 862.}}]},
+       "\"(15,3,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(15,3,0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1622., 944.}}]},
+       "\"(14,5,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(14,5,0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1622., 1190.}}]},
+       "\"(11,11,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(11,11,0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1622., 1272.}}]},
+       "\"(10,13,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(10,13,0)", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1622., 1354.}}]},
+       "\"(9,15,0)\"",
+       TooltipStyle->{FontFamily -> "Inconsolata", FontSize -> 14}],
+      Annotation[#, "(9,15,0)", "Tooltip"]& ]}}, {}, {}, {{}, {}}},
+  AspectRatio->NCache[
+    Rational[1475, 1679], 0.878499106611078],
+  Axes->{False, False},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{True, True}, {True, True}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->All,
+  ImageSize->Large,
+  Method->{"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+         Part[#, 1]], 
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+         Part[#, 1]], 
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+         Part[#, 2]]}& )}},
+  PlotRange->{{0, 1679}, {0, 1475}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{0, 0}, {0, 0}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ ImageSize->{580, 500},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[4]=",
+ CellID->205361079]
+}, Open  ]],
+
+Cell[TextData[{
+ "We will now find that ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["$PixelData"]],"paclet:Xray/ref/$PixelData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ " has been updated:"
+}], "ExampleText",
+ CellID->897805615],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"$PixelData", "//", "Short"}]], "Input",
+ CellLabel->"In[5]:=",
+ CellID->1147960854],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"\[LeftAssociation]", 
+   RowBox[{"\<\"60942f0b0733577068956b00e2a5a54a\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"628", ",", "1437"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"58", ",", "205"}], "}"}], ",", 
+      RowBox[{"\[LeftSkeleton]", "375", "\[RightSkeleton]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"1622", ",", "288"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"1622", ",", "1354"}], "}"}]}], "}"}]}], 
+   "\[RightAssociation]"}],
+  Short]], "Output",
+ ImageSize->{438, 36},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[5]//Short=",
+ CellID->567181939]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " code",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->2094423387],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"$PixelData", "=", 
+   RowBox[{"Association", "[", "]"}]}], ";"}]], "Input",
+ Background->RGBColor[0.94, 0.91, 0.88],
+ CellLabel->"In[1]:=",
+ CellID->1070055429]
+}, Closed]],
+
+Cell["", "SectionFooterSpacer"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["$PeriodicTable"]],"paclet:Xray/ref/$PeriodicTable"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["$CrystalData"]],"paclet:Xray/ref/$CrystalData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["ReciprocalImageCheck"]],"paclet:Xray/ref/ReciprocalImageCheck"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["GeneratePixelData"]],"paclet:Xray/ref/GeneratePixelData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["FindPixelClusters"]],"paclet:Xray/ref/FindPixelClusters"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"]
+}], "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"$PixelData",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "Wolfram Language", ButtonData -> "paclet:guide/WolframRoot", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "ExampleCounter" -> 1, "NeedPlatMsgIn" -> None, "RootCaptions" -> 
+  "", "Metadata" -> {
+   "built" -> "{2019, 3, 16, 9, 29, 17.132359}", 
+    "history" -> {"0.2", "", "", ""}, "context" -> "Xray`", "keywords" -> {}, 
+    "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> True,
+     "label" -> "Xray Symbol", "language" -> "en", "paclet" -> "Xray", 
+    "status" -> "None", "summary" -> 
+    "$PixelData associates the MD5 hash of image files with a lists of pixel \
+values that correspond to reciprocal nodes.", "synonyms" -> {}, 
+    "tabletags" -> {}, "title" -> "$PixelData", "titlemodifier" -> "", 
+    "windowtitle" -> "$PixelData", "type" -> "Symbol", "uri" -> 
+    "Xray/ref/$PixelData", "WorkflowDockedCell" -> ""}, 
+  "SearchTextTranslated" -> "", "NewStyles" -> False},
+CellContext->"Global`",
+FrontEndVersion->"11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
+2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> 
+  "11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, 2018)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[6692, 205, 266, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"3c7e530c-2427-4756-bc96-51856ee5b7f7",
+   CellTags->"PrimaryExamplesSection",
+   CellID->37269157]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 132216, 3262}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[582, 21, 3424, 82, 70, "AnchorBarGrid",ExpressionUUID->"859b3dce-be3a-4ba9-a9fa-765147b9e850",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[4031, 107, 167, 6, 70, "ObjectNameGrid",ExpressionUUID->"90cb0401-a528-4e0b-9433-84b1b32a8438"],
+Cell[4201, 115, 542, 15, 70, "Usage",ExpressionUUID->"e5646cce-3286-41c9-bb2e-28ba5cfde343",
+ CellID->982511436]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4780, 135, 630, 19, 70, "NotesSection",ExpressionUUID->"9bc017d9-ed36-49ef-824e-ae9905b4df12",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1963875821],
+Cell[5413, 156, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"24b05d68-1e34-4081-a5e4-df4e3c7ff79c"],
+Cell[5447, 158, 389, 14, 70, "Notes",ExpressionUUID->"d68c09dd-de21-413f-96bf-78184f5aee35",
+ CellID->1067943069],
+Cell[5839, 174, 608, 18, 70, "Notes",ExpressionUUID->"fa796aa4-4e40-4605-9da5-09bcef2774d9",
+ CellID->1911558788],
+Cell[6450, 194, 205, 6, 70, "Notes",ExpressionUUID->"b6a4c4c2-03b0-4d48-b6a4-7c3f59e9f06c",
+ CellID->1835220766]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[6692, 205, 266, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"3c7e530c-2427-4756-bc96-51856ee5b7f7",
+ CellTags->"PrimaryExamplesSection",
+ CellID->37269157],
+Cell[CellGroupData[{
+Cell[6983, 219, 196, 6, 70, "ExampleSection",ExpressionUUID->"6f5d4ccf-436c-4651-8446-9b6edd3ad5ae",
+ CellID->1464980422],
+Cell[7182, 227, 114, 4, 70, "Input",ExpressionUUID->"023c4d98-a44c-47cc-989b-95b1a3d2d223",
+ CellID->658487588],
+Cell[7299, 233, 77, 1, 70, "ExampleText",ExpressionUUID->"2b9a5869-2c5c-45e6-ab62-6dc422243802",
+ CellID->1369330424],
+Cell[CellGroupData[{
+Cell[7401, 238, 79, 2, 70, "Input",ExpressionUUID->"beb98e94-c247-485a-a5bd-470690eddb33",
+ CellID->885320260],
+Cell[7483, 242, 209, 6, 70, "Output",ExpressionUUID->"aa832458-ee57-44b9-bc33-6a979a937530",
+ CellID->23059622]
+}, Open  ]],
+Cell[7707, 251, 333, 10, 70, "ExampleText",ExpressionUUID->"e5d83931-2370-4e9c-966c-5a80ce5c1d57",
+ CellID->575309928],
+Cell[8043, 263, 321, 10, 70, "Input",ExpressionUUID->"3b710b87-1688-40fc-a992-13aaac521ab4",
+ CellID->1834962516],
+Cell[CellGroupData[{
+Cell[8389, 277, 1101, 29, 70, "Input",ExpressionUUID->"9427c756-afc1-4047-a5c9-b152ee28bff5",
+ CellID->898425310],
+Cell[9493, 308, 117439, 2780, 70, "Output",ExpressionUUID->"0e5cd285-92a5-444b-981f-6153019f2caa",
+ CellID->205361079]
+}, Open  ]],
+Cell[126947, 3091, 266, 9, 70, "ExampleText",ExpressionUUID->"73e77202-2332-4fb5-b8c9-d1f378ace5a9",
+ CellID->897805615],
+Cell[CellGroupData[{
+Cell[127238, 3104, 107, 3, 70, "Input",ExpressionUUID->"2e33b78b-01c7-429b-87c7-7ccba60841f1",
+ CellID->1147960854],
+Cell[127348, 3109, 694, 21, 70, "Output",ExpressionUUID->"c9cfcf83-a74d-4ddd-88a4-9f05793ef70b",
+ CellID->567181939]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[128091, 3136, 236, 8, 70, "ExampleSection",ExpressionUUID->"90f0c6db-7d7d-462f-aa5c-c87b721fa92f",
+ CellID->2094423387],
+Cell[128330, 3146, 195, 6, 70, "Input",ExpressionUUID->"ac574ed2-4708-435e-95bd-8ef25aafed81",
+ CellID->1070055429]
+}, Closed]],
+Cell[128540, 3155, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"93ddd353-f761-45db-a3a9-0773dea6f4b7"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[128608, 3160, 150, 7, 70, "SeeAlsoSection",ExpressionUUID->"e6abdfd7-91ef-4d08-b2a6-fdfbec11ea9e",
+ CellID->1255426704],
+Cell[128761, 3169, 1525, 43, 70, "SeeAlso",ExpressionUUID->"46c38072-bf3f-464b-8b8a-d933c4215660",
+ CellID->929782353]
+}, Open  ]],
+Cell[130301, 3215, 23, 0, 70, "FooterCell",ExpressionUUID->"b591f846-ced2-4c34-8d4b-23574580a933"]
+}
+]
+*)
+
+(* End of internal cache information *)

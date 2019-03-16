@@ -1,0 +1,8 @@
+Resources[
+    Version[1],
+    ExecutionBuildCommand["<<Stians`"],
+    Paclet[
+        PacletFolder["Stians"],
+        FunctionPaclet[False]
+    ]
+]

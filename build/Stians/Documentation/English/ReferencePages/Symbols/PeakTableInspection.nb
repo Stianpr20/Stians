@@ -1,0 +1,976 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     35248,        967]
+NotebookOptionsPosition[     28814,        825]
+NotebookOutlinePosition[     31100,        883]
+CellTagsIndexPosition[     31015,        878]
+WindowTitle->PeakTableInspection
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["XRAY SYMBOL", "PacletNameCell"], Cell[TextData[Cell[BoxData[
+     ActionMenuBox[
+      FrameBox[
+       InterpretationBox[Cell[TextData[{
+         "URL",
+         StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+          StripOnInput->False]
+        }]],
+        TextCell[
+         Row[{"URL", 
+           Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+       StripOnInput->False], {"\<\"Xray/ref/PeakTableInspection\"\>":>
+      None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+      Module[{DocumentationSearch`Private`nb$}, 
+       DocumentationSearch`Private`nb$ = NotebookPut[
+          Notebook[{
+            Cell["Xray/ref/PeakTableInspection"]}, Visible -> False]]; 
+       SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+       FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+       NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+      Delimiter, "\<\"Copy web URL\"\>":>
+      Module[{DocumentationSearch`Private`nb$}, 
+       DocumentationSearch`Private`nb$ = NotebookPut[
+          Notebook[{
+            Cell[
+             BoxData[
+              MakeBoxes[
+               Hyperlink[
+               "http://reference.wolfram.com/language/Xray/ref/\
+PeakTableInspection.html"], StandardForm]], "Input", TextClipboardType -> 
+             "PlainText"]}, Visible -> False]]; 
+       SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+       FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+       NotebookClose[DocumentationSearch`Private`nb$]; 
+       Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+        NotebookLocate[{
+          URL[
+           StringJoin[
+            If[
+             TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$19242], 
+             "http://reference.wolfram.com/system-modeler/", 
+             "http://reference.wolfram.com/language/"], 
+            "Xray/ref/PeakTableInspection", ".html"]], None}]}]},
+      Appearance->None,
+      MenuAppearance->Automatic,
+      MenuStyle->"URLMenu"]],
+     LineSpacing->{1.4, 0}]], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell["PeakTableInspection", "ObjectName"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{Cell[
+          TextData["PeakTableInspection"]],
+         "paclet:Xray/ref/PeakTableInspection"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", 
+       StyleBox["set", "TI"], "]"}]], "InlineFormula"],
+     " \[LineSeparator]returns which intensity entries should be kept in a \
+given ",
+     Cell[BoxData[
+      StyleBox["set", "TI"]], "InlineFormula"],
+     "."
+    }]]},
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{Cell[
+          TextData["PeakTableInspection"]],
+         "paclet:Xray/ref/PeakTableInspection"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", 
+       StyleBox["data", "TI"], "]"}]], "InlineFormula"],
+     "\[LineSeparator]returns a list of which reflections to delete from the \
+given peak table ",
+     Cell[BoxData[
+      StyleBox["data", "TI"]], "InlineFormula"],
+     "."
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {None, {None}}, 
+   "RowsIndexed" -> {}}},
+ CellID->982511436]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    TemplateBox[{6},
+     "Spacer1"]]],
+   "Details"
+  }], "NotesFrameText"],
+  Appearance->{Automatic, None, "Normal", Automatic},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->"Preemptive"]]]], "NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->318409998],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[TextData[{
+ "Taking standpoint at the largest intensity value in the ",
+ Cell[BoxData[
+  StyleBox["set", "TI"]], "InlineFormula"],
+ ", registrations that have an intensity reading less than 85 % of this \
+maximum value are deleted."
+}], "Notes",
+ CellID->1067943069],
+
+Cell["\<\
+For a largest intensity registration, this and all registrations within 5\
+\[Degree] in \[Phi] will be considered to be a single group. This process is \
+repeated until all registered reflections have been grouped. For each group, \
+all but the strongest registrations are deleted.\
+\>", "Notes",
+ CellID->621467115],
+
+Cell["\<\
+The two parameters described above can be adjusted with the following options:\
+\>", "Notes",
+ CellID->1731402405],
+
+Cell[BoxData[GridBox[{
+   {Cell["      ", "TableRowIcon"], "\"\<Cutoff\>\"", "0.85", Cell["\<\
+cutoff intensity (relative to the maximum in the dataset) for which entries \
+will be considered\
+\>", "TableText"]},
+   {Cell["      ", "TableRowIcon"], "\"\<GroupWidth\>\"", "5", Cell[
+    "angular threshold for group partitioning (in degrees)", "TableText"]}
+  }]], "3ColumnTableMod",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {None, {None}}, 
+   "RowsIndexed" -> {}},
+ GridBoxDividers->{"Rows" -> {{True, True, True}}}},
+ CellID->1660791605],
+
+Cell[TextData[{
+ "The input ",
+ Cell[BoxData[
+  StyleBox["data", "TI"]], "InlineFormula"],
+ " should be a ",
+ StyleBox[".dat", "InlineCode"],
+ " file containing the goniometer data from ",
+ StyleBox["CrysAlis",
+  FontSlant->"Italic"],
+ "."
+}], "Notes",
+ CellID->1103595084]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(3)", "ExampleCount"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->2135071709],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->1845955440],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"data", "=", 
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", 
+     RowBox[{"$XrayExamples", ",", "\"\<goniometer_data.dat\>\""}], "}"}], 
+    "]"}]}], ";"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1141622931],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PeakTableHelper", "@", "data"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->486846377],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "5", ",", "9", ",", "29", ",", "39", ",", "44", ",", "51", ",", "114", ",", 
+   "144", ",", "170", ",", "171", ",", "201", ",", "217", ",", "239", ",", 
+   "244", ",", "281", ",", "285", ",", "295", ",", "351", ",", "358", ",", 
+   "368", ",", "373", ",", "380", ",", "382", ",", "393", ",", "396", ",", 
+   "402", ",", "423", ",", "424", ",", "441", ",", "444", ",", "448", ",", 
+   "452", ",", "453", ",", "459", ",", "460", ",", "462", ",", "465", ",", 
+   "471", ",", "477", ",", "479", ",", "481", ",", "488", ",", "489", ",", 
+   "490", ",", "551", ",", "563", ",", "567", ",", "570", ",", "572", ",", 
+   "579", ",", "602", ",", "656", ",", "659", ",", "666", ",", "669", ",", 
+   "680", ",", "685", ",", "739", ",", "759", ",", "764", ",", "842", ",", 
+   "847", ",", "861", ",", "879", ",", "888", ",", "898", ",", "901", ",", 
+   "904", ",", "916", ",", "944", ",", "947", ",", "951", ",", "977", ",", 
+   "985", ",", "997", ",", "1026", ",", "1107", ",", "1111", ",", "1119", ",",
+    "1144", ",", "1157", ",", "1175", ",", "1186", ",", "1209", ",", "1211", 
+   ",", "1214", ",", "1225", ",", "1226", ",", "1230", ",", "1232", ",", 
+   "1236", ",", "1241", ",", "1248", ",", "1249", ",", "1250", ",", "1256", 
+   ",", "1259", ",", "1266", ",", "1267", ",", "1268", ",", "1270", ",", 
+   "1275", ",", "1276", ",", "1279", ",", "1281", ",", "1283", ",", "1285", 
+   ",", "1288", ",", "1291", ",", "1295", ",", "1296", ",", "1302", ",", 
+   "1304", ",", "1310", ",", "1316", ",", "1324", ",", "1326", ",", "1329", 
+   ",", "1337", ",", "1341", ",", "1344", ",", "1349", ",", "1352", ",", 
+   "1356", ",", "1357", ",", "1358", ",", "1364", ",", "1387", ",", "1396", 
+   ",", "1402", ",", "1404", ",", "1405", ",", "1407", ",", "1410", ",", 
+   "1411", ",", "1417", ",", "1419", ",", "1426", ",", "1428", ",", "1431", 
+   ",", "1436", ",", "1439", ",", "1441", ",", "1447", ",", "1493", ",", 
+   "1506", ",", "1514", ",", "1522", ",", "1532", ",", "1534", ",", "1537", 
+   ",", "1539", ",", "1543", ",", "1551", ",", "1557", ",", "1578", ",", 
+   "1580", ",", "1584", ",", "1592", ",", "1612", ",", "1620", ",", "1645", 
+   ",", "1656", ",", "1661", ",", "1704", ",", "1709", ",", "1715", ",", 
+   "1721", ",", "1726", ",", "1728", ",", "1735", ",", "1742", ",", "1762", 
+   ",", "1774", ",", "1799", ",", "1811", ",", "1842", ",", "1863", ",", 
+   "1865", ",", "1871", ",", "1875", ",", "1877"}], "}"}]], "Output",
+ ImageSize->{539, 221},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[2]=",
+ CellID->1737636805]
+}, Open  ]],
+
+Cell["These are the registrations that should be deleted.", "ExampleText",
+ CellID->1056202595]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Scope",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->1293636265],
+
+Cell["\<\
+In cases where multiple registrations are put down for the same reflection, \
+this function helps determine which to keep in a given set.\
+\>", "ExampleText",
+ CellID->84387536],
+
+Cell["\<\
+Here is an example of a data set registered to the same reflection:\
+\>", "ExampleText",
+ CellID->1933062447],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"data", "=", 
+   RowBox[{"Import", "@", 
+    RowBox[{"FileNameJoin", "[", 
+     RowBox[{"{", 
+      RowBox[{"$XrayExamples", ",", "\"\<reflectionset.dat\>\""}], "}"}], 
+     "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"data", "//", "TableForm"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->508800444],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"1211", 
+     RowBox[{"-", "1"}], 
+     RowBox[{"-", "2"}], "5", "233.45`", "65"},
+    {"1214", 
+     RowBox[{"-", "1"}], 
+     RowBox[{"-", "2"}], "5", "233.85`", "145"},
+    {"1225", 
+     RowBox[{"-", "1"}], 
+     RowBox[{"-", "2"}], "5", "234.35`", "302"},
+    {"1230", 
+     RowBox[{"-", "1"}], 
+     RowBox[{"-", "2"}], "5", "235.25`", "652"},
+    {"1232", 
+     RowBox[{"-", "1"}], 
+     RowBox[{"-", "2"}], "5", "235.85`", "941"},
+    {"1236", 
+     RowBox[{"-", "1"}], 
+     RowBox[{"-", "2"}], "5", "236.45`", "2648"},
+    {"1241", 
+     RowBox[{"-", "1"}], 
+     RowBox[{"-", "2"}], "5", "236.95`", "3772"},
+    {"1242", 
+     RowBox[{"-", "1"}], 
+     RowBox[{"-", "2"}], "5", "237.25`", "4269"},
+    {"1249", 
+     RowBox[{"-", "1"}], 
+     RowBox[{"-", "2"}], "5", "237.75`", "2525"},
+    {"1256", 
+     RowBox[{"-", "1"}], 
+     RowBox[{"-", "2"}], "5", "238.45`", "669"},
+    {"1259", 
+     RowBox[{"-", "1"}], 
+     RowBox[{"-", "2"}], "5", "238.95`", "495"},
+    {"1266", 
+     RowBox[{"-", "1"}], 
+     RowBox[{"-", "2"}], "5", "240.45`", "161"},
+    {"1270", 
+     RowBox[{"-", "1"}], 
+     RowBox[{"-", "2"}], "5", "241.45`", "99"},
+    {"1275", 
+     RowBox[{"-", "1"}], 
+     RowBox[{"-", "2"}], "5", "242.25`", "95"},
+    {"1279", 
+     RowBox[{"-", "1"}], 
+     RowBox[{"-", "2"}], "5", "242.95`", "93"},
+    {"1281", 
+     RowBox[{"-", "1"}], 
+     RowBox[{"-", "2"}], "5", "243.25`", "84"},
+    {"1285", 
+     RowBox[{"-", "1"}], 
+     RowBox[{"-", "2"}], "5", "243.55`", "90"},
+    {"1288", 
+     RowBox[{"-", "1"}], 
+     RowBox[{"-", "2"}], "5", "243.85`", "82"},
+    {"1291", 
+     RowBox[{"-", "1"}], 
+     RowBox[{"-", "2"}], "5", "244.25`", "95"},
+    {"1295", 
+     RowBox[{"-", "1"}], 
+     RowBox[{"-", "2"}], "5", "244.65`", "86"},
+    {"1302", 
+     RowBox[{"-", "1"}], 
+     RowBox[{"-", "2"}], "5", "245.45`", "120"},
+    {"1304", 
+     RowBox[{"-", "1"}], 
+     RowBox[{"-", "2"}], "5", "247.25`", "219"},
+    {"1316", 
+     RowBox[{"-", "1"}], 
+     RowBox[{"-", "2"}], "5", "248.75`", "1549"},
+    {"1326", 
+     RowBox[{"-", "1"}], 
+     RowBox[{"-", "2"}], "5", "248.75`", "1549"},
+    {"1329", 
+     RowBox[{"-", "1"}], 
+     RowBox[{"-", "2"}], "5", "249.25`", "3822"},
+    {"1332", 
+     RowBox[{"-", "1"}], 
+     RowBox[{"-", "2"}], "5", "249.55`", "4029"},
+    {"1337", 
+     RowBox[{"-", "1"}], 
+     RowBox[{"-", "2"}], "5", "250.15`", "3162"},
+    {"1341", 
+     RowBox[{"-", "1"}], 
+     RowBox[{"-", "2"}], "5", "250.95`", "1420"},
+    {"1344", 
+     RowBox[{"-", "1"}], 
+     RowBox[{"-", "2"}], "5", "251.45`", "935"},
+    {"1349", 
+     RowBox[{"-", "1"}], 
+     RowBox[{"-", "2"}], "5", "252.15`", "424"},
+    {"1352", 
+     RowBox[{"-", "1"}], 
+     RowBox[{"-", "2"}], "5", "252.85`", "166"},
+    {"1356", 
+     RowBox[{"-", "1"}], 
+     RowBox[{"-", "2"}], "5", "253.55`", "97"},
+    {"1357", 
+     RowBox[{"-", "1"}], 
+     RowBox[{"-", "2"}], "5", "253.75`", "59"}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ ImageSize->{267, 558},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]//TableForm=",
+ CellID->236022203]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ListPlot", "[", 
+  RowBox[{
+   RowBox[{"data", "[", 
+    RowBox[{"[", 
+     RowBox[{"All", ",", 
+      RowBox[{"-", "1"}]}], "]"}], "]"}], ",", 
+   RowBox[{"Joined", "\[Rule]", "True"}]}], "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->1333356731],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {{}, {}, 
+    {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.012833333333333334`],
+      AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJxd0L1qwlAYh/Hg5Ojg4OAQRUSkiFrrt/XcgCDiRycJoYLQoeAkDpLB1VW6
+t0MX0aGTUy/EwdHRS2j1/5zFQPjxnJDDy5vw33uTkOM4if/3qp5L+4bpGg6k
+69NheZrREemt6KicrumY3H/RcTnf0q7c7umkPHzSKXm296flZUlnmO+Vzsrf
+F/qBHtE5aWzncYAFGQzpIt2nH+/uK/Hd/v+EYyxL742uyNIHXb3rmjza/dTl
+Ykc35M833ZT5Dd2SVbv/Z+Zb0G3mt/sy0rCvgA465g95RTiq
+      
+      "]]}}, {}, {}, {{}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->All,
+  ImageSize->{315.6953125, Automatic},
+  Method->{"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+         Part[#, 1]], 
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+         Part[#, 1]], 
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+         Part[#, 2]]}& )}},
+  PlotRange->{{0., 33.}, {0, 4269.}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ ImageSize->{320, 196},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[2]=",
+ CellID->1595572915]
+}, Open  ]],
+
+Cell["Clearly, there should be two registrations:", "ExampleText",
+ CellID->1943134344],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PeakTableInspection", "@", "data"}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->1907840810],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1242", ",", "1332"}], "}"}]], "Output",
+ ImageSize->{87, 16},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[3]=",
+ CellID->369375449]
+}, Open  ]],
+
+Cell["The two main parameters in this function may be adjusted:", \
+"ExampleText",
+ CellID->1618143593],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"PeakTableInspection", "[", 
+    RowBox[{"data", ",", 
+     RowBox[{"\"\<Cutoff\>\"", "\[Rule]", "c"}], ",", 
+     RowBox[{"\"\<GroupWidth\>\"", "\[Rule]", "w"}]}], "]"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"c", ",", "0.85", ",", "\"\<Cutoff intensity\>\""}], "}"}], ",",
+      "0", ",", "1"}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"w", ",", "5", ",", "\"\<Group width\>\""}], "}"}], ",", "0", 
+     ",", "25"}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[4]:=",
+ CellID->1272181357],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`c$$ = 0.85, $CellContext`w$$ = 5, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`c$$], 0.85, "Cutoff intensity"}, 0, 1}, {{
+       Hold[$CellContext`w$$], 5, "Group width"}, 0, 25}}, Typeset`size$$ = {
+    83., {3., 8.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`c$6423$$ = 
+    0, $CellContext`w$6424$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`c$$ = 0.85, $CellContext`w$$ = 5}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`c$$, $CellContext`c$6423$$, 0], 
+        Hold[$CellContext`w$$, $CellContext`w$6424$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> $CellContext`PeakTableInspection[$CellContext`data, 
+        "Cutoff" -> $CellContext`c$$, "GroupWidth" -> $CellContext`w$$], 
+      "Specifications" :> {{{$CellContext`c$$, 0.85, "Cutoff intensity"}, 0, 
+         1}, {{$CellContext`w$$, 5, "Group width"}, 0, 25}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{306., {64., 70.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ ImageSize->{310, 136},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[4]=",
+ CellID->327663192]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " code",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->314605473],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"ReflectionSetInspection", "::", "cutoff"}], "=", 
+   "\"\<The cutoff intensity is relative to the maximum intensity and must be \
+a number between 0 and 1.\>\""}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"ReflectionSetInspection", "::", "width"}], "=", 
+    "\"\<The group width must be a positive number.\>\""}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Options", "@", "ReflectionSetInspection"}], "=", 
+   RowBox[{"{", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"\"\<Cutoff\>\"", "\[Rule]", "0.85"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"\"\<GroupWidth\>\"", "\[Rule]", "5"}]}], "\[IndentingNewLine]", 
+    "}"}]}], ";"}]}], "Input",
+ Background->GrayLevel[0.85],
+ CellLabel->"In[1]:=",
+ CellID->1368384857],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ReflectionSetInspection", "[", 
+   RowBox[{"set_", ",", "\[IndentingNewLine]", 
+    RowBox[{"OptionsPattern", "@", "ReflectionSetInspection"}]}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{
+     "cutoff", ",", "width", ",", "\[IndentingNewLine]", "lim", ",", "top", 
+      ",", "groups", ",", "newset", ",", "sort", ",", "\[Phi]max", ",", 
+      "\[Phi]", ",", "j", ",", "keep"}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"(*", " ", 
+     RowBox[{"Input", " ", "check"}], " ", "*)"}], "\[IndentingNewLine]", 
+    "\t", 
+    RowBox[{
+     RowBox[{"cutoff", "=", 
+      RowBox[{"OptionValue", "[", "\"\<Cutoff\>\"", "]"}]}], ";", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"!", 
+        RowBox[{"0", "\[LessEqual]", "cutoff", "\[LessEqual]", "1"}]}], ",", 
+       "\[IndentingNewLine]", "\t", 
+       RowBox[{
+        RowBox[{"Message", "[", 
+         RowBox[{"ReflectionSetInspection", "::", "cutoff"}], "]"}], ";", 
+        RowBox[{"Abort", "[", "]"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+     "\t", "\[IndentingNewLine]", "\t", 
+     RowBox[{"width", "=", 
+      RowBox[{"OptionValue", "[", "\"\<GroupWidth\>\"", "]"}]}], ";", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"!", 
+         RowBox[{"NumericQ", "[", "width", "]"}]}], "||", 
+        RowBox[{"Negative", "[", "width", "]"}]}], ",", "\[IndentingNewLine]",
+        "\t", 
+       RowBox[{
+        RowBox[{"Message", "[", 
+         RowBox[{"ReflectionSetInspection", "::", "width"}], "]"}], ";", 
+        RowBox[{"Abort", "[", "]"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+      "Keeping", " ", "the", " ", "top", " ", "part", " ", "of", " ", "the", 
+       " ", "registrations"}], " ", "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{"lim", "=", 
+      RowBox[{"Ceiling", "[", 
+       RowBox[{"cutoff", "*", 
+        RowBox[{"Max", "@", 
+         RowBox[{"set", "[", 
+          RowBox[{"[", 
+           RowBox[{"All", ",", "6"}], "]"}], "]"}]}]}], "]"}]}], ";", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"top", "=", 
+      RowBox[{"DeleteCases", "[", 
+       RowBox[{"set", ",", 
+        RowBox[{"i_", "/;", 
+         RowBox[{
+          RowBox[{"i", "[", 
+           RowBox[{"[", "6", "]"}], "]"}], "<", "lim"}]}]}], "]"}]}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Groping", " ", "registrated", " ", "reflections"}], " ", 
+      "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{"groups", "=", 
+      RowBox[{"{", "}"}]}], ";", 
+     RowBox[{"newset", "=", 
+      RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", "\t", 
+     RowBox[{"Do", "[", "\[IndentingNewLine]", "\t", 
+      RowBox[{
+       RowBox[{"While", "[", 
+        RowBox[{
+         RowBox[{"top", "\[NotEqual]", 
+          RowBox[{"{", "}"}]}], ",", "\[IndentingNewLine]", "\t", 
+         RowBox[{"(*", " ", 
+          RowBox[{
+          "Finding", " ", "the", " ", "value", " ", "of", " ", "\[Phi]", " ", 
+           "at", " ", "maximum"}], " ", "*)"}], "\[IndentingNewLine]", "\t\t", 
+         RowBox[{
+          RowBox[{"sort", "=", 
+           RowBox[{"Sort", "[", 
+            RowBox[{"top", ",", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"#1", "[", 
+                RowBox[{"[", "6", "]"}], "]"}], ">", 
+               RowBox[{"#2", "[", 
+                RowBox[{"[", "6", "]"}], "]"}]}], "&"}]}], "]"}]}], ";", 
+          "\[IndentingNewLine]", "\t\t", 
+          RowBox[{"\[Phi]max", "=", 
+           RowBox[{"sort", "[", 
+            RowBox[{"[", 
+             RowBox[{"1", ",", "5"}], "]"}], "]"}]}], ";", 
+          "\[IndentingNewLine]", "\[IndentingNewLine]", "\t", 
+          RowBox[{"(*", " ", 
+           RowBox[{
+           "Group", " ", "reflections", " ", "that", " ", "are", " ", 
+            "within", " ", "5", "\[Degree]", " ", "of", " ", "\[Phi]max"}], 
+           " ", "*)"}], "\[IndentingNewLine]", "\t\t", 
+          RowBox[{"Do", "[", "\[IndentingNewLine]", "\t\t", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"\[Phi]", "=", 
+              RowBox[{"top", "[", 
+               RowBox[{"[", 
+                RowBox[{"j", ",", "5"}], "]"}], "]"}]}], ";", 
+             "\[IndentingNewLine]", "\t\t", 
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{
+               "IntervalMemberQ", "[", "\[IndentingNewLine]", "\t\t", 
+                RowBox[{
+                 RowBox[{"Interval", "[", 
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"\[Phi]max", "-", "#"}], ",", 
+                    RowBox[{"\[Phi]max", "+", "#"}]}], "}"}], "&"}], "[", 
+                   "width", "]"}], "]"}], ",", "\[Phi]"}], "]"}], ",", 
+               "\[IndentingNewLine]", "\t\t", 
+               RowBox[{"AppendTo", "[", 
+                RowBox[{"groups", ",", 
+                 RowBox[{"top", "[", 
+                  RowBox[{"[", "j", "]"}], "]"}]}], "]"}]}], "]"}]}], ",", 
+            "\[IndentingNewLine]", "\t\t", 
+            RowBox[{"{", 
+             RowBox[{"j", ",", 
+              RowBox[{"Length", "@", "top"}]}], "}"}]}], "]"}], ";", 
+          "\[IndentingNewLine]", "\[IndentingNewLine]", "\t", 
+          RowBox[{"(*", " ", 
+           RowBox[{
+           "Clear", " ", "group", " ", "from", " ", "the", " ", "set", " ", 
+            "and", " ", "repeat"}], " ", "*)"}], "\[IndentingNewLine]", 
+          "\t\t", 
+          RowBox[{"top", "=", 
+           RowBox[{"Complement", "[", 
+            RowBox[{"top", ",", "groups"}], "]"}]}], ";", 
+          "\[IndentingNewLine]", "\t\t", 
+          RowBox[{"AppendTo", "[", 
+           RowBox[{"newset", ",", 
+            RowBox[{"{", "groups", "}"}]}], "]"}], ";", "\[IndentingNewLine]",
+           "\t\t", 
+          RowBox[{"groups", "=", 
+           RowBox[{"{", "}"}]}]}]}], "\[IndentingNewLine]", "\t", "]"}], ",", 
+       "\[IndentingNewLine]", "\t", 
+       RowBox[{"{", 
+        RowBox[{"j", ",", 
+         RowBox[{"Length", "@", "top"}]}], "}"}]}], "\[IndentingNewLine]", 
+      "\t", "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+      "Keeping", " ", "only", " ", "the", " ", "peak", " ", "from", " ", 
+       "each", " ", "group"}], " ", "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{"keep", "=", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"TakeLargestBy", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"First", "@", 
+             RowBox[{"Transpose", "@", "newset"}]}], ")"}], "[", 
+           RowBox[{"[", "#", "]"}], "]"}], ",", 
+          RowBox[{
+           RowBox[{"#", "[", 
+            RowBox[{"[", "6", "]"}], "]"}], "&"}], ",", "1"}], "]"}], "&"}], "/@", 
+       RowBox[{"(", 
+        RowBox[{"Range", "@", 
+         RowBox[{"Length", "@", "newset"}]}], ")"}]}]}], ";", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"First", "@", 
+        RowBox[{"Transpose", "@", "keep"}]}], ")"}], "[", 
+      RowBox[{"[", 
+       RowBox[{"All", ",", "1"}], "]"}], "]"}]}]}], "\[IndentingNewLine]", 
+   "]"}]}]], "Input",
+ Background->RGBColor[0.94, 0.91, 0.88],
+ CellLabel->"In[2]:=",
+ CellID->1041915876]
+}, Closed]]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"PeakTableInspection",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "Wolfram Language", ButtonData -> "paclet:guide/WolframRoot", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "ExampleCounter" -> 1, "NeedPlatMsgIn" -> None, "RootCaptions" -> 
+  "", "Metadata" -> {
+   "built" -> "{2019, 3, 16, 9, 28, 48.204071}", 
+    "history" -> {"0.0", "", "", ""}, "context" -> "Xray`", "keywords" -> {}, 
+    "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> True,
+     "label" -> "Xray Symbol", "language" -> "en", "paclet" -> "Xray", 
+    "status" -> "None", "summary" -> 
+    "PeakTableInspection[set] returns which intensity entries should be kept \
+in a given set. PeakTableInspection[data] returns a list of which reflections \
+to delete from the given peak table data.", "synonyms" -> {}, 
+    "tabletags" -> {}, "title" -> "PeakTableInspection", "titlemodifier" -> 
+    "", "windowtitle" -> "PeakTableInspection", "type" -> "Symbol", "uri" -> 
+    "Xray/ref/PeakTableInspection", "WorkflowDockedCell" -> ""}, 
+  "SearchTextTranslated" -> "", "NewStyles" -> False},
+CellContext->"Global`",
+FrontEndVersion->"11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
+2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> 
+  "11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, 2018)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[6588, 203, 268, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"6ff5a7b9-34ed-4b5c-aa59-7d5dbd09aedb",
+   CellTags->"PrimaryExamplesSection",
+   CellID->2135071709]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 30816, 871}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[591, 21, 2296, 53, 70, "AnchorBarGrid",ExpressionUUID->"c1c0b6e5-2631-4466-8657-3b88e8dcdc08",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[2912, 78, 176, 6, 70, "ObjectNameGrid",ExpressionUUID->"eef2ca24-c3d2-491e-8d18-c7b7a7005cde"],
+Cell[3091, 86, 1153, 36, 70, "Usage",ExpressionUUID->"79e5d098-4c24-4d00-a60a-6c8e973e3631",
+ CellID->982511436]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4281, 127, 629, 19, 70, "NotesSection",ExpressionUUID->"314d569c-7c73-488b-a2e3-d94060cc71f4",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->318409998],
+Cell[4913, 148, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"1b8cf8fe-e758-4b1a-bdd1-f88b5dfe3ad5"],
+Cell[4947, 150, 271, 7, 70, "Notes",ExpressionUUID->"cf09091e-7357-46d0-b1d8-e1aec54ac8cf",
+ CellID->1067943069],
+Cell[5221, 159, 326, 6, 70, "Notes",ExpressionUUID->"6a1f5213-ed86-4609-a9af-4dfde7ad0051",
+ CellID->621467115],
+Cell[5550, 167, 124, 3, 70, "Notes",ExpressionUUID->"0a7bda29-3adf-4be7-8bfd-fc8b86235fbb",
+ CellID->1731402405],
+Cell[5677, 172, 598, 13, 70, "3ColumnTableMod",ExpressionUUID->"3fe4ab09-cb8d-4974-9d3b-7af05cb624c9",
+ CellID->1660791605],
+Cell[6278, 187, 273, 11, 70, "Notes",ExpressionUUID->"6462e1f7-f048-4e69-87bd-ec74f3a6d1f4",
+ CellID->1103595084]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[6588, 203, 268, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"6ff5a7b9-34ed-4b5c-aa59-7d5dbd09aedb",
+ CellTags->"PrimaryExamplesSection",
+ CellID->2135071709],
+Cell[CellGroupData[{
+Cell[6881, 217, 196, 6, 70, "ExampleSection",ExpressionUUID->"1a6de95c-de16-46dc-b7ea-4dc3d923e46f",
+ CellID->1845955440],
+Cell[7080, 225, 248, 8, 70, "Input",ExpressionUUID->"d0fe296e-5fe5-4ca6-a6c6-72fbe44551c4",
+ CellID->1141622931],
+Cell[CellGroupData[{
+Cell[7353, 237, 109, 3, 70, "Input",ExpressionUUID->"e5395294-1793-4424-8332-fcaf5e8c5e6d",
+ CellID->486846377],
+Cell[7465, 242, 2596, 39, 70, "Output",ExpressionUUID->"97c762ec-05c3-4f7d-8d30-2a6ec9e759ed",
+ CellID->1737636805]
+}, Open  ]],
+Cell[10076, 284, 95, 1, 70, "ExampleText",ExpressionUUID->"e8da7330-1a74-47f6-9f71-b43ae934a489",
+ CellID->1056202595]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10208, 290, 187, 6, 70, "ExampleSection",ExpressionUUID->"3e2c332e-f10d-433e-a1af-0c3284f179ce",
+ CellID->1293636265],
+Cell[10398, 298, 187, 4, 70, "ExampleText",ExpressionUUID->"6d1a1276-9c6b-44e4-b187-3103d0d2ef9e",
+ CellID->84387536],
+Cell[10588, 304, 119, 3, 70, "ExampleText",ExpressionUUID->"6a50cac7-191f-4a38-8f95-bce42761bb3b",
+ CellID->1933062447],
+Cell[CellGroupData[{
+Cell[10732, 311, 342, 10, 70, "Input",ExpressionUUID->"f7a52993-acd3-485f-a33d-4dd0d94a8980",
+ CellID->508800444],
+Cell[11077, 323, 3581, 118, 70, "Output",ExpressionUUID->"fcafe780-4ba6-4ed1-a15f-2ba1103d2687",
+ CellID->236022203]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14695, 446, 273, 9, 70, "Input",ExpressionUUID->"b2a4085f-7b50-4105-83de-f971a10e58b7",
+ CellID->1333356731],
+Cell[14971, 457, 1797, 45, 70, "Output",ExpressionUUID->"e80289cc-c3cf-42c9-bfa2-e5774fc7ab00",
+ CellID->1595572915]
+}, Open  ]],
+Cell[16783, 505, 87, 1, 70, "ExampleText",ExpressionUUID->"d1930e99-f8b3-4e42-b2fb-afa14122ab52",
+ CellID->1943134344],
+Cell[CellGroupData[{
+Cell[16895, 510, 114, 3, 70, "Input",ExpressionUUID->"1d857bd7-025f-41f0-a923-7c4a63d35eb0",
+ CellID->1907840810],
+Cell[17012, 515, 209, 7, 70, "Output",ExpressionUUID->"06f739a5-91ce-4839-bd88-cb49388d02e6",
+ CellID->369375449]
+}, Open  ]],
+Cell[17236, 525, 103, 2, 70, "ExampleText",ExpressionUUID->"d84a4acd-5094-4551-99a0-f4b20a17a599",
+ CellID->1618143593],
+Cell[CellGroupData[{
+Cell[17364, 531, 693, 19, 70, "Input",ExpressionUUID->"2ec22247-ac13-4baa-b9a7-9b537ae4724d",
+ CellID->1272181357],
+Cell[18060, 552, 2062, 43, 70, "Output",ExpressionUUID->"b8263eb2-cccb-4cb7-b2d1-c5868fb9b644",
+ CellID->327663192]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[20171, 601, 235, 8, 70, "ExampleSection",ExpressionUUID->"7e8164a3-424b-4ee5-870c-89f34ec6331e",
+ CellID->314605473],
+Cell[20409, 611, 863, 23, 70, "Input",ExpressionUUID->"1cafa0e1-2e5a-4b99-8141-6b33ccce1da7",
+ CellID->1368384857],
+Cell[21275, 636, 7485, 183, 70, "Input",ExpressionUUID->"cefde982-be82-42a6-bfcc-849fa300b086",
+ CellID->1041915876]
+}, Closed]]
+}, Open  ]],
+Cell[28787, 823, 23, 0, 70, "FooterCell",ExpressionUUID->"b751cac0-91be-441f-9b4f-ad17a14ce725"]
+}
+]
+*)
+
+(* End of internal cache information *)

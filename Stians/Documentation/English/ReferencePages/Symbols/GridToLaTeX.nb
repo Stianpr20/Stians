@@ -1,0 +1,818 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     24812,        809]
+NotebookOptionsPosition[     20449,        653]
+NotebookOutlinePosition[     21085,        678]
+CellTagsIndexPosition[     21006,        673]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "New in: ",
+ Cell["0.4", "HistoryData",
+  CellTags->"New"],
+ " | Modified in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Modified"],
+ " | Obsolete in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Obsolete"],
+ " | Excised in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Excised"]
+}], "History",
+ CellID->1247902091],
+
+Cell[CellGroupData[{
+
+Cell["Categorization", "CategorizationSection",
+ CellID->1122911449],
+
+Cell["Symbol", "Categorization",
+ CellLabel->"Entity Type",
+ CellID->686433507],
+
+Cell["Xray", "Categorization",
+ CellLabel->"Paclet Name",
+ CellID->605800465],
+
+Cell["Xray`", "Categorization",
+ CellLabel->"Context",
+ CellID->468444828],
+
+Cell["Xray/ref/GridToLaTeX", "Categorization",
+ CellLabel->"URI"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Keywords", "KeywordsSection",
+ CellID->477174294],
+
+Cell["XXXX", "Keywords",
+ CellID->1164421360]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Syntax Templates", "TemplatesSection",
+ CellID->1872225408],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Additional Function Template",
+ CellID->1562036412],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Arguments Pattern",
+ CellID->158391909],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Local Variables",
+ CellID->1360575930],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Color Equal Signs",
+ CellID->793782254]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Details", "DetailsSection",
+ CellID->307771771],
+
+Cell["XXXX", "Details",
+ CellLabel->"Lead",
+ CellID->670882175],
+
+Cell["XXXX", "Details",
+ CellLabel->"Developers",
+ CellID->350963985],
+
+Cell["XXXX", "Details",
+ CellLabel->"Authors",
+ CellID->8391405],
+
+Cell["XXXX", "Details",
+ CellLabel->"Feature Name",
+ CellID->3610269],
+
+Cell["XXXX", "Details",
+ CellLabel->"QA",
+ CellID->401364205],
+
+Cell["XXXX", "Details",
+ CellLabel->"DA",
+ CellID->350204745],
+
+Cell["XXXX", "Details",
+ CellLabel->"Docs",
+ CellID->732958810],
+
+Cell["XXXX", "Details",
+ CellLabel->"Features Page Notes",
+ CellID->222905350],
+
+Cell["XXXX", "Details",
+ CellLabel->"Comments",
+ CellID->240026365]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["GridToLaTeX", "ObjectName",
+ CellID->1224892054],
+
+Cell[TextData[{
+ Cell["   ", "ModInfo"],
+ Cell[BoxData[
+  RowBox[{
+   ButtonBox["GridToLaTeX",
+    BaseStyle->"Link",
+    ButtonData->"paclet:Xray/ref/GridToLaTeX"], "[", 
+   StyleBox["grid", "TI"], "]"}]], "InlineFormula"],
+ " \[LineSeparator]converts ",
+ Cell[BoxData[
+  StyleBox["grid", "TI"]], "InlineFormula"],
+ " to ",
+ Cell[BoxData[
+  FormBox[
+   StyleBox[
+    RowBox[{"L", 
+     StyleBox[
+      AdjustmentBox["A",
+       BoxBaselineShift->-0.4,
+       BoxMargins->{{-0.5, -0.3}, {0, 0}}],
+      FontSize->Smaller], "T", 
+     AdjustmentBox["E",
+      BoxBaselineShift->0.5,
+      BoxMargins->{{-0.3, 0}, {0, 0}}], "X"}],
+    SingleLetterItalics->False], TraditionalForm]]],
+ " code."
+}], "Usage",
+ CellChangeTimes->{{3.668589703567376*^9, 3.6685897857221537`*^9}, {
+  3.668589870346242*^9, 3.66858989422735*^9}},
+ CellID->982511436],
+
+Cell["XXXX", "Notes",
+ CellID->1067943069]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Tutorials", "TutorialsSection",
+ CellID->250839057],
+
+Cell["XXXX", "Tutorials",
+ CellID->341631938]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Related Demonstrations", "RelatedDemonstrationsSection",
+ CellID->1268215905],
+
+Cell["XXXX", "RelatedDemonstrations",
+ CellID->1129518860]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Related Links", "RelatedLinksSection",
+ CellID->1584193535],
+
+Cell["XXXX", "RelatedLinks",
+ CellID->1038487239]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["See Also", "SeeAlsoSection",
+ CellID->1255426704],
+
+Cell["XXXX", "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["More About", "MoreAboutSection",
+ CellID->38303248],
+
+Cell["XXXX", "MoreAbout",
+ CellID->1665078683]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {
+     StyleBox["Examples", "PrimaryExamplesSection"], 
+     ButtonBox[
+      RowBox[{
+       RowBox[{"More", " ", "Examples"}], " ", "\[RightTriangle]"}],
+      BaseStyle->"ExtendedExamplesLink",
+      ButtonData:>"ExtendedExamples"]}
+   }],
+  $Line = 0; Null]], "PrimaryExamplesSection",
+ CellID->880084151],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"tab", "=", 
+  RowBox[{"StructureFactorTable", "[", 
+   RowBox[{
+   "0.70913713", ",", "\"\<silicon\>\"", ",", 
+    "\"\<m\!\(\*OverscriptBox[\(3\), \(_\)]\)m\>\"", ",", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"h_", ",", "k_", ",", "l_"}], "}"}], "/;", 
+     RowBox[{
+      RowBox[{"OddQ", "[", "h", "]"}], "||", 
+      RowBox[{"Divisible", "[", 
+       RowBox[{
+        RowBox[{"h", "+", "k", "+", "l"}], ",", "4"}], "]"}]}]}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"\"\<Sort\>\"", "\[Rule]", "3"}], ",", 
+    RowBox[{"\"\<Keep\>\"", "\[Rule]", "9"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.6685898012858667`*^9, 3.668589832450745*^9}},
+ CellLabel->"In[1]:=",
+ CellID->1683870562],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"", "\<\"Structure factor\"\>", "\<\"Phase\"\>", "\<\"Bragg angle\"\>", \
+"\<\"Pendell\[ODoubleDot]sung distance\"\>", "\<\"Darwin width\"\>"},
+    {"\<\"(hkl)\"\>", "\<\"\\!\\(\\*SubscriptBox[\\(F\\), \\(hkl\\)]\\)\"\>", \
+"\<\"\\!\\(\\*SubscriptBox[\\(\[Phi]\\), \\(hkl\\)]\\) [\[Degree]]\"\>", \
+"\<\"\\!\\(\\*SubscriptBox[\\(\[Theta]\\), \\(B\\)]\\) [\[Degree]]\"\>", \
+"\<\"\\!\\(\\*SubscriptBox[\\(\[CapitalLambda]\\), \\(0\\)]\\) \
+[\[Micro]m]\"\>", "\<\"2\\!\\(\\*SubscriptBox[\\(\[Delta]\\), \\(os\\)]\\) [\
+\[Micro]rad]\"\>"},
+    {
+     TagBox["\<\"(111)\"\>",
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"59.374\"\>",
+       59.37429128590705,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"-179.620\"\>",
+       -179.62045164145667`,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"6.493\"\>",
+       6.492967576408458,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"42.140\"\>",
+       42.14016106040496,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"14.881\"\>",
+       14.881386074637957`,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ]},
+    {
+     TagBox["\<\"(220)\"\>",
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"68.225\"\>",
+       68.22546005893791,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"-179.540\"\>",
+       -179.54191035642012`,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"10.641\"\>",
+       10.641364475161529`,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"36.275\"\>",
+       36.27512901950974,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"10.586\"\>",
+       10.58634987554428,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ]},
+    {
+     TagBox["\<\"(311)\"\>",
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"44.716\"\>",
+       44.71636403759392,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"-179.510\"\>",
+       -179.51154443254754`,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"12.506\"\>",
+       12.505547093225598`,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"54.979\"\>",
+       54.978765683909145`,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"5.957\"\>",
+       5.956743155911666,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ]},
+    {
+     TagBox["\<\"(400)\"\>",
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"57.093\"\>",
+       57.093142748756186`,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"-179.470\"\>",
+       -179.46943513975677`,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"15.138\"\>",
+       15.138309445376613`,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"42.576\"\>",
+       42.5761944986319,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"6.378\"\>",
+       6.377836328437608,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ]},
+    {
+     TagBox["\<\"(533)\"\>",
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"25.639\"\>",
+       25.638721946365756`,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"-179.250\"\>",
+       -179.24820747669375`,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"25.348\"\>",
+       25.34823053411111,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"88.762\"\>",
+       88.76218725728057,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"1.866\"\>",
+       1.8661131755290412`,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ]},
+    {
+     TagBox["\<\"(444)\"\>",
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"33.581\"\>",
+       33.581273058226394`,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"-179.200\"\>",
+       -179.2039714069603,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"26.893\"\>",
+       26.892954997348276`,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"66.878\"\>",
+       66.87833849568301,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"2.344\"\>",
+       2.3441970154050344`,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ]},
+    {
+     TagBox["\<\"(551)\"\>",
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"22.700\"\>",
+       22.699809203511116`,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"-179.180\"\>",
+       -179.17700244153718`,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"27.791\"\>",
+       27.790890318454096`,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"98.139\"\>",
+       98.13887286646772,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"1.550\"\>",
+       1.5497942620746044`,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ]},
+    {
+     TagBox["\<\"(642)\"\>",
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"29.830\"\>",
+       29.829603371353944`,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"-179.130\"\>",
+       -179.13142982178843`,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"29.246\"\>",
+       29.24643121612028,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"73.658\"\>",
+       73.65808036616046,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"1.971\"\>",
+       1.9705424391485633`,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ]},
+    {
+     TagBox["\<\"(553)\"\>",
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"20.203\"\>",
+       20.2032869398063,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"-179.100\"\>",
+       -179.10375776745386`,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"30.098\"\>",
+       30.098148824501415`,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"107.840\"\>",
+       107.8369275715338,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"1.311\"\>",
+       1.3113139789679564`,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ]}
+   },
+   AutoDelete->False,
+   GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+   GridBoxBackground->{"Columns" -> {None}, "Rows" -> {None, {None, 
+        GrayLevel[0.85]}}},
+   GridBoxDividers->{
+    "Columns" -> {None, {True}, None}, "Rows" -> {None, None, True}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+   GridBoxItemStyle->{
+    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+     "ItemsIndexed" -> {{{1, 1}, {1, 6}} -> {
+        FontFamily -> "Adobe Garamond Pro", FontSize -> 15}, {{2, 2}, {1, 
+        6}} -> {FontFamily -> "Latin Modern Math", FontSize -> 13, 
+         GrayLevel[0.5]}, {{3, 11}, {1, 6}} -> (FontFamily -> "Inconsolata")}},
+   GridBoxSpacings->{"Columns" -> {{Automatic}}, "RowsIndexed" -> {2 -> 0.5}}],
+  "Grid"]], "Output",
+ CellChangeTimes->{{3.66858983587737*^9, 3.6685898428521957`*^9}},
+ CellLabel->"Out[1]=",
+ CellID->939277012]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GridToLaTeX", "[", "tab", "]"}]], "Input",
+ CellChangeTimes->{{3.6685898455003977`*^9, 3.668589849344672*^9}},
+ CellLabel->"In[2]:=",
+ CellID->276451587],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"\\\\begin{tabular}{cccccc}\\n\"\>", 
+   "\[InvisibleSpace]", "\<\" & Structure factor & Phase & Bragg angle & \
+Pendell\[ODoubleDot]sung distance & Darwin width \\\\\\\\\\n\"\>", 
+   "\[InvisibleSpace]", "\<\"(hkl) & ${F}_{hkl}$ & ${\\\\phi}_{hkl}$ [\\\\si{\
+\\\\degree}] & ${\\\\theta}_{B}$ [\\\\si{\\\\degree}] & ${\\\\Lambda}_{0}$ [$\
+\\\\mu$ m] & ${2\\\\delta}_{os}$ [$\\\\mu$ rad] \\\\\\\\\\n\"\>", 
+   "\[InvisibleSpace]", "\<\"(111) & 59.374 & -179.620 & 6.493 & 42.140 & \
+14.881 \\\\\\\\\\n\"\>", 
+   "\[InvisibleSpace]", "\<\"(220) & 68.225 & -179.540 & 10.641 & 36.275 & \
+10.586 \\\\\\\\\\n\"\>", 
+   "\[InvisibleSpace]", "\<\"(311) & 44.716 & -179.510 & 12.506 & 54.979 & \
+5.957 \\\\\\\\\\n\"\>", 
+   "\[InvisibleSpace]", "\<\"(400) & 57.093 & -179.470 & 15.138 & 42.576 & \
+6.378 \\\\\\\\\\n\"\>", 
+   "\[InvisibleSpace]", "\<\"(533) & 25.639 & -179.250 & 25.348 & 88.762 & \
+1.866 \\\\\\\\\\n\"\>", 
+   "\[InvisibleSpace]", "\<\"(444) & 33.581 & -179.200 & 26.893 & 66.878 & \
+2.344 \\\\\\\\\\n\"\>", 
+   "\[InvisibleSpace]", "\<\"(551) & 22.700 & -179.180 & 27.791 & 98.139 & \
+1.550 \\\\\\\\\\n\"\>", 
+   "\[InvisibleSpace]", "\<\"(642) & 29.830 & -179.130 & 29.246 & 73.658 & \
+1.971 \\\\\\\\\\n\"\>", 
+   "\[InvisibleSpace]", "\<\"(553) & 20.203 & -179.100 & 30.098 & 107.840 & \
+1.311 \\\\\\\\\\n\"\>", "\[InvisibleSpace]", "\<\"\\\\end{tabular}\"\>"}],
+  SequenceForm[
+  "\\begin{tabular}{cccccc}\n", 
+   " & Structure factor & Phase & Bragg angle & Pendell\[ODoubleDot]sung \
+distance & Darwin width \\\\\n", 
+   "(hkl) & ${F}_{hkl}$ & ${\\phi}_{hkl}$ [\\si{\\degree}] & ${\\theta}_{B}$ \
+[\\si{\\degree}] & ${\\Lambda}_{0}$ [$\\mu$ m] & ${2\\delta}_{os}$ [$\\mu$ \
+rad] \\\\\n", "(111) & 59.374 & -179.620 & 6.493 & 42.140 & 14.881 \\\\\n", 
+   "(220) & 68.225 & -179.540 & 10.641 & 36.275 & 10.586 \\\\\n", 
+   "(311) & 44.716 & -179.510 & 12.506 & 54.979 & 5.957 \\\\\n", 
+   "(400) & 57.093 & -179.470 & 15.138 & 42.576 & 6.378 \\\\\n", 
+   "(533) & 25.639 & -179.250 & 25.348 & 88.762 & 1.866 \\\\\n", 
+   "(444) & 33.581 & -179.200 & 26.893 & 66.878 & 2.344 \\\\\n", 
+   "(551) & 22.700 & -179.180 & 27.791 & 98.139 & 1.550 \\\\\n", 
+   "(642) & 29.830 & -179.130 & 29.246 & 73.658 & 1.971 \\\\\n", 
+   "(553) & 20.203 & -179.100 & 30.098 & 107.840 & 1.311 \\\\\n", 
+   "\\end{tabular}"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.668589849644927*^9},
+ CellLabel->"During evaluation of In[2]:=",
+ CellID->610314754]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["More Examples", "ExtendedExamplesSection",
+ CellTags->"ExtendedExamples",
+ CellID->1854448968],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Scope", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1293636265],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Generalizations & Extensions", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1020263627],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["Options", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->2061341341],
+
+Cell[BoxData[
+ InterpretationBox[Cell["XXXX", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection",
+ CellID->1757724783],
+
+Cell[BoxData[
+ InterpretationBox[Cell["XXXX", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection",
+ CellID->1295379749]
+}, Closed]],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Applications", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->258228157],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Properties & Relations", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->2123667759],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Possible Issues", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1305812373],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Interactive Examples", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1653164318],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Neat Examples", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->589267740]
+}, Open  ]]
+},
+WindowSize->{700, 770},
+WindowMargins->{{890, Automatic}, {204, Automatic}},
+CellContext->"Global`",
+FrontEndVersion->"10.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (December 10, \
+2015)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "FunctionPageStyles.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "ExtendedExamples"->{
+  Cell[18929, 595, 100, 2, 55, "ExtendedExamplesSection",
+   CellTags->"ExtendedExamples",
+   CellID->1854448968]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"ExtendedExamples", 20867, 666}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 325, 14, 24, "History",
+ CellID->1247902091],
+Cell[CellGroupData[{
+Cell[908, 38, 68, 1, 29, "CategorizationSection",
+ CellID->1122911449],
+Cell[979, 41, 79, 2, 70, "Categorization",
+ CellID->686433507],
+Cell[1061, 45, 77, 2, 70, "Categorization",
+ CellID->605800465],
+Cell[1141, 49, 74, 2, 70, "Categorization",
+ CellID->468444828],
+Cell[1218, 53, 65, 1, 70, "Categorization"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1320, 59, 55, 1, 19, "KeywordsSection",
+ CellID->477174294],
+Cell[1378, 62, 45, 1, 70, "Keywords",
+ CellID->1164421360]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1460, 68, 65, 1, 19, "TemplatesSection",
+ CellID->1872225408],
+Cell[1528, 71, 94, 2, 70, "Template",
+ CellID->1562036412],
+Cell[1625, 75, 82, 2, 70, "Template",
+ CellID->158391909],
+Cell[1710, 79, 81, 2, 70, "Template",
+ CellID->1360575930],
+Cell[1794, 83, 82, 2, 70, "Template",
+ CellID->793782254]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1913, 90, 53, 1, 19, "DetailsSection",
+ CellID->307771771],
+Cell[1969, 93, 63, 2, 70, "Details",
+ CellID->670882175],
+Cell[2035, 97, 69, 2, 70, "Details",
+ CellID->350963985],
+Cell[2107, 101, 64, 2, 70, "Details",
+ CellID->8391405],
+Cell[2174, 105, 69, 2, 70, "Details",
+ CellID->3610269],
+Cell[2246, 109, 61, 2, 70, "Details",
+ CellID->401364205],
+Cell[2310, 113, 61, 2, 70, "Details",
+ CellID->350204745],
+Cell[2374, 117, 63, 2, 70, "Details",
+ CellID->732958810],
+Cell[2440, 121, 78, 2, 70, "Details",
+ CellID->222905350],
+Cell[2521, 125, 67, 2, 70, "Details",
+ CellID->240026365]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[2625, 132, 54, 1, 63, "ObjectName",
+ CellID->1224892054],
+Cell[2682, 135, 840, 29, 76, "Usage",
+ CellID->982511436],
+Cell[3525, 166, 42, 1, 25, "Notes",
+ CellID->1067943069]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3604, 172, 57, 1, 43, "TutorialsSection",
+ CellID->250839057],
+Cell[3664, 175, 45, 1, 16, "Tutorials",
+ CellID->341631938]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3746, 181, 83, 1, 30, "RelatedDemonstrationsSection",
+ CellID->1268215905],
+Cell[3832, 184, 58, 1, 16, "RelatedDemonstrations",
+ CellID->1129518860]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3927, 190, 65, 1, 30, "RelatedLinksSection",
+ CellID->1584193535],
+Cell[3995, 193, 49, 1, 16, "RelatedLinks",
+ CellID->1038487239]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4081, 199, 55, 1, 30, "SeeAlsoSection",
+ CellID->1255426704],
+Cell[4139, 202, 43, 1, 16, "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4219, 208, 57, 1, 30, "MoreAboutSection",
+ CellID->38303248],
+Cell[4279, 211, 46, 1, 16, "MoreAbout",
+ CellID->1665078683]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4362, 217, 356, 11, 69, "PrimaryExamplesSection",
+ CellID->880084151],
+Cell[CellGroupData[{
+Cell[4743, 232, 723, 19, 65, "Input",
+ CellID->1683870562],
+Cell[5469, 253, 10692, 280, 190, "Output",
+ CellID->939277012]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16198, 538, 177, 4, 24, "Input",
+ CellID->276451587],
+Cell[16378, 544, 2502, 45, 250, "Print",
+ CellID->610314754]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18929, 595, 100, 2, 55, "ExtendedExamplesSection",
+ CellTags->"ExtendedExamples",
+ CellID->1854448968],
+Cell[19032, 599, 125, 3, 33, "ExampleSection",
+ CellID->1293636265],
+Cell[19160, 604, 148, 3, 21, "ExampleSection",
+ CellID->1020263627],
+Cell[CellGroupData[{
+Cell[19333, 611, 127, 3, 21, "ExampleSection",
+ CellID->2061341341],
+Cell[19463, 616, 130, 3, 70, "ExampleSubsection",
+ CellID->1757724783],
+Cell[19596, 621, 130, 3, 70, "ExampleSubsection",
+ CellID->1295379749]
+}, Closed]],
+Cell[19741, 627, 131, 3, 21, "ExampleSection",
+ CellID->258228157],
+Cell[19875, 632, 142, 3, 21, "ExampleSection",
+ CellID->2123667759],
+Cell[20020, 637, 135, 3, 21, "ExampleSection",
+ CellID->1305812373],
+Cell[20158, 642, 140, 3, 21, "ExampleSection",
+ CellID->1653164318],
+Cell[20301, 647, 132, 3, 21, "ExampleSection",
+ CellID->589267740]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

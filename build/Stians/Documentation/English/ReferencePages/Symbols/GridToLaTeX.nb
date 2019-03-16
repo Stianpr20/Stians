@@ -1,0 +1,602 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     21966,        593]
+NotebookOptionsPosition[     18654,        511]
+NotebookOutlinePosition[     20762,        567]
+CellTagsIndexPosition[     20677,        562]
+WindowTitle->GridToLaTeX
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["XRAY SYMBOL", "PacletNameCell"], Cell[TextData[Cell[BoxData[
+     ActionMenuBox[
+      FrameBox[
+       InterpretationBox[Cell[TextData[{
+         "URL",
+         StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+          StripOnInput->False]
+        }]],
+        TextCell[
+         Row[{"URL", 
+           Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+       StripOnInput->False], {"\<\"Xray/ref/GridToLaTeX\"\>":>
+      None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+      Module[{DocumentationSearch`Private`nb$}, 
+       DocumentationSearch`Private`nb$ = NotebookPut[
+          Notebook[{
+            Cell["Xray/ref/GridToLaTeX"]}, Visible -> False]]; 
+       SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+       FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+       NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+      Delimiter, "\<\"Copy web URL\"\>":>
+      Module[{DocumentationSearch`Private`nb$}, 
+       DocumentationSearch`Private`nb$ = NotebookPut[
+          Notebook[{
+            Cell[
+             BoxData[
+              MakeBoxes[
+               Hyperlink[
+               "http://reference.wolfram.com/language/Xray/ref/GridToLaTeX.\
+html"], StandardForm]], "Input", TextClipboardType -> "PlainText"]}, Visible -> 
+           False]]; SelectionMove[
+        DocumentationSearch`Private`nb$, All, Notebook]; 
+       FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+       NotebookClose[DocumentationSearch`Private`nb$]; 
+       Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+        NotebookLocate[{
+          URL[
+           StringJoin[
+            If[
+             TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$13830], 
+             "http://reference.wolfram.com/system-modeler/", 
+             "http://reference.wolfram.com/language/"], 
+            "Xray/ref/GridToLaTeX", ".html"]], None}]}]},
+      Appearance->None,
+      MenuAppearance->Automatic,
+      MenuStyle->"URLMenu"]],
+     LineSpacing->{1.4, 0}]], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell["GridToLaTeX", "ObjectName"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{Cell[
+          TextData["GridToLaTeX"]],"paclet:Xray/ref/GridToLaTeX"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", 
+       StyleBox["grid", "TI"], "]"}]], "InlineFormula"],
+     " \[LineSeparator]converts ",
+     Cell[BoxData[
+      StyleBox["grid", "TI"]], "InlineFormula"],
+     " to ",
+     Cell[BoxData[
+      FormBox[
+       StyleBox[
+        RowBox[{"L", 
+         StyleBox[
+          AdjustmentBox["A",
+           BoxBaselineShift->-0.4,
+           BoxMargins->{{-0.5, -0.3}, {0, 0}}],
+          FontSize->Smaller], "T", 
+         AdjustmentBox["E",
+          BoxBaselineShift->0.5,
+          BoxMargins->{{-0.3, 0}, {0, 0}}], "X"}],
+        SingleLetterItalics->False], TraditionalForm]]],
+     " code."
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}}},
+ CellID->982511436]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->388250752],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->1275069278],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"tab", "=", 
+  RowBox[{"StructureFactorTable", "[", 
+   RowBox[{
+   "0.70913713", ",", "\"\<silicon\>\"", ",", 
+    "\"\<m\!\(\*OverscriptBox[\(3\), \(_\)]\)m\>\"", ",", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"h_", ",", "k_", ",", "l_"}], "}"}], "/;", 
+     RowBox[{
+      RowBox[{"OddQ", "[", "h", "]"}], "||", 
+      RowBox[{"Divisible", "[", 
+       RowBox[{
+        RowBox[{"h", "+", "k", "+", "l"}], ",", "4"}], "]"}]}]}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"\"\<Sort\>\"", "\[Rule]", "3"}], ",", 
+    RowBox[{"\"\<Keep\>\"", "\[Rule]", "9"}]}], "]"}]}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1683870562],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"", "\<\"Structure factor\"\>", "\<\"Phase\"\>", "\<\"Bragg angle\"\>", \
+"\<\"Pendell\[ODoubleDot]sung distance\"\>", "\<\"Darwin width\"\>"},
+    {"\<\"(hkl)\"\>", "\<\"\\!\\(\\*SubscriptBox[\\(F\\), \\(hkl\\)]\\)\"\>", \
+"\<\"\\!\\(\\*SubscriptBox[\\(\[Phi]\\), \\(hkl\\)]\\) [\[Degree]]\"\>", \
+"\<\"\\!\\(\\*SubscriptBox[\\(\[Theta]\\), \\(B\\)]\\) [\[Degree]]\"\>", \
+"\<\"\\!\\(\\*SubscriptBox[\\(\[CapitalLambda]\\), \\(0\\)]\\) \
+[\[Micro]m]\"\>", "\<\"2\\!\\(\\*SubscriptBox[\\(\[Delta]\\), \\(os\\)]\\) [\
+\[Micro]rad]\"\>"},
+    {
+     TagBox["\<\"(111)\"\>",
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"59.374\"\>",
+       59.37429128590705,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"-179.620\"\>",
+       -179.62045164145667`,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"6.493\"\>",
+       6.492967576408458,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"42.140\"\>",
+       42.14016106040496,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"14.881\"\>",
+       14.881386074637957`,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ]},
+    {
+     TagBox["\<\"(220)\"\>",
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"68.225\"\>",
+       68.22546005893791,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"-179.540\"\>",
+       -179.54191035642012`,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"10.641\"\>",
+       10.641364475161529`,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"36.275\"\>",
+       36.27512901950974,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"10.586\"\>",
+       10.58634987554428,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ]},
+    {
+     TagBox["\<\"(311)\"\>",
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"44.716\"\>",
+       44.71636403759392,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"-179.510\"\>",
+       -179.51154443254754`,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"12.506\"\>",
+       12.505547093225598`,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"54.979\"\>",
+       54.978765683909145`,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"5.957\"\>",
+       5.956743155911666,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ]},
+    {
+     TagBox["\<\"(400)\"\>",
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"57.093\"\>",
+       57.093142748756186`,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"-179.470\"\>",
+       -179.46943513975677`,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"15.138\"\>",
+       15.138309445376613`,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"42.576\"\>",
+       42.5761944986319,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"6.378\"\>",
+       6.377836328437608,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ]},
+    {
+     TagBox["\<\"(533)\"\>",
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"25.639\"\>",
+       25.638721946365756`,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"-179.250\"\>",
+       -179.24820747669375`,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"25.348\"\>",
+       25.34823053411111,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"88.762\"\>",
+       88.76218725728057,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"1.866\"\>",
+       1.8661131755290412`,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ]},
+    {
+     TagBox["\<\"(444)\"\>",
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"33.581\"\>",
+       33.581273058226394`,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"-179.200\"\>",
+       -179.2039714069603,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"26.893\"\>",
+       26.892954997348276`,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"66.878\"\>",
+       66.87833849568301,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"2.344\"\>",
+       2.3441970154050344`,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ]},
+    {
+     TagBox["\<\"(551)\"\>",
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"22.700\"\>",
+       22.699809203511116`,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"-179.180\"\>",
+       -179.17700244153718`,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"27.791\"\>",
+       27.790890318454096`,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"98.139\"\>",
+       98.13887286646772,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"1.550\"\>",
+       1.5497942620746044`,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ]},
+    {
+     TagBox["\<\"(642)\"\>",
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"29.830\"\>",
+       29.829603371353944`,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"-179.130\"\>",
+       -179.13142982178843`,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"29.246\"\>",
+       29.24643121612028,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"73.658\"\>",
+       73.65808036616046,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"1.971\"\>",
+       1.9705424391485633`,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ]},
+    {
+     TagBox["\<\"(553)\"\>",
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"20.203\"\>",
+       20.2032869398063,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"-179.100\"\>",
+       -179.10375776745386`,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"30.098\"\>",
+       30.098148824501415`,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"107.840\"\>",
+       107.8369275715338,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ], 
+     TagBox[
+      InterpretationBox["\<\"1.311\"\>",
+       1.3113139789679564`,
+       AutoDelete->True],
+      NumberForm[#, {5, 3}, DigitBlock -> 3, NumberSeparator -> ","]& ]}
+   },
+   AutoDelete->False,
+   GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+   GridBoxBackground->{"Columns" -> {None}, "Rows" -> {None, {None, 
+        GrayLevel[0.85]}}},
+   GridBoxDividers->{
+    "Columns" -> {None, {True}, None}, "Rows" -> {None, None, True}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+   GridBoxItemStyle->{
+    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+     "ItemsIndexed" -> {{{1, 1}, {1, 6}} -> {
+        FontFamily -> "Adobe Garamond Pro", FontSize -> 15}, {{2, 2}, {1, 
+        6}} -> {FontFamily -> "Latin Modern Math", FontSize -> 13, 
+         GrayLevel[0.5]}, {{3, 11}, {1, 6}} -> (FontFamily -> "Inconsolata")}},
+   GridBoxSpacings->{"Columns" -> {{Automatic}}, "RowsIndexed" -> {2 -> 0.5}}],
+  "Grid"]], "Output",
+ ImageSize->{500, 190},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->939277012]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GridToLaTeX", "[", "tab", "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->276451587],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"\\\\begin{tabular}{cccccc}\\n\"\>", 
+   "\[InvisibleSpace]", "\<\" & Structure factor & Phase & Bragg angle & \
+Pendell\[ODoubleDot]sung distance & Darwin width \\\\\\\\\\n\"\>", 
+   "\[InvisibleSpace]", "\<\"(hkl) & ${F}_{hkl}$ & ${\\\\phi}_{hkl}$ [\\\\si{\
+\\\\degree}] & ${\\\\theta}_{B}$ [\\\\si{\\\\degree}] & ${\\\\Lambda}_{0}$ [$\
+\\\\mu$ m] & ${2\\\\delta}_{os}$ [$\\\\mu$ rad] \\\\\\\\\\n\"\>", 
+   "\[InvisibleSpace]", "\<\"(111) & 59.374 & -179.620 & 6.493 & 42.140 & \
+14.881 \\\\\\\\\\n\"\>", 
+   "\[InvisibleSpace]", "\<\"(220) & 68.225 & -179.540 & 10.641 & 36.275 & \
+10.586 \\\\\\\\\\n\"\>", 
+   "\[InvisibleSpace]", "\<\"(311) & 44.716 & -179.510 & 12.506 & 54.979 & \
+5.957 \\\\\\\\\\n\"\>", 
+   "\[InvisibleSpace]", "\<\"(400) & 57.093 & -179.470 & 15.138 & 42.576 & \
+6.378 \\\\\\\\\\n\"\>", 
+   "\[InvisibleSpace]", "\<\"(533) & 25.639 & -179.250 & 25.348 & 88.762 & \
+1.866 \\\\\\\\\\n\"\>", 
+   "\[InvisibleSpace]", "\<\"(444) & 33.581 & -179.200 & 26.893 & 66.878 & \
+2.344 \\\\\\\\\\n\"\>", 
+   "\[InvisibleSpace]", "\<\"(551) & 22.700 & -179.180 & 27.791 & 98.139 & \
+1.550 \\\\\\\\\\n\"\>", 
+   "\[InvisibleSpace]", "\<\"(642) & 29.830 & -179.130 & 29.246 & 73.658 & \
+1.971 \\\\\\\\\\n\"\>", 
+   "\[InvisibleSpace]", "\<\"(553) & 20.203 & -179.100 & 30.098 & 107.840 & \
+1.311 \\\\\\\\\\n\"\>", "\[InvisibleSpace]", "\<\"\\\\end{tabular}\"\>"}],
+  SequenceForm[
+  "\\begin{tabular}{cccccc}\n", 
+   " & Structure factor & Phase & Bragg angle & Pendell\[ODoubleDot]sung \
+distance & Darwin width \\\\\n", 
+   "(hkl) & ${F}_{hkl}$ & ${\\phi}_{hkl}$ [\\si{\\degree}] & ${\\theta}_{B}$ \
+[\\si{\\degree}] & ${\\Lambda}_{0}$ [$\\mu$ m] & ${2\\delta}_{os}$ [$\\mu$ \
+rad] \\\\\n", "(111) & 59.374 & -179.620 & 6.493 & 42.140 & 14.881 \\\\\n", 
+   "(220) & 68.225 & -179.540 & 10.641 & 36.275 & 10.586 \\\\\n", 
+   "(311) & 44.716 & -179.510 & 12.506 & 54.979 & 5.957 \\\\\n", 
+   "(400) & 57.093 & -179.470 & 15.138 & 42.576 & 6.378 \\\\\n", 
+   "(533) & 25.639 & -179.250 & 25.348 & 88.762 & 1.866 \\\\\n", 
+   "(444) & 33.581 & -179.200 & 26.893 & 66.878 & 2.344 \\\\\n", 
+   "(551) & 22.700 & -179.180 & 27.791 & 98.139 & 1.550 \\\\\n", 
+   "(642) & 29.830 & -179.130 & 29.246 & 73.658 & 1.971 \\\\\n", 
+   "(553) & 20.203 & -179.100 & 30.098 & 107.840 & 1.311 \\\\\n", 
+   "\\end{tabular}"],
+  Editable->False]], "Print",
+ CellLabel->"During evaluation of In[2]:=",
+ CellID->610314754]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"GridToLaTeX",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "Wolfram Language", ButtonData -> "paclet:guide/WolframRoot", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "ExampleCounter" -> 1, "NeedPlatMsgIn" -> None, "RootCaptions" -> 
+  "", "Metadata" -> {
+   "built" -> "{2019, 3, 16, 9, 28, 31.014781}", 
+    "history" -> {"0.4", "", "", ""}, "context" -> "Xray`", "keywords" -> {}, 
+    "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> True,
+     "label" -> "Xray Symbol", "language" -> "en", "paclet" -> "Xray", 
+    "status" -> "None", "summary" -> 
+    "GridToLaTeX[grid] converts grid to L A T E X code.", "synonyms" -> {}, 
+    "tabletags" -> {}, "title" -> "GridToLaTeX", "titlemodifier" -> "", 
+    "windowtitle" -> "GridToLaTeX", "type" -> "Symbol", "uri" -> 
+    "Xray/ref/GridToLaTeX", "WorkflowDockedCell" -> ""}, 
+  "SearchTextTranslated" -> "", "NewStyles" -> False},
+CellContext->"Global`",
+FrontEndVersion->"11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
+2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> 
+  "11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, 2018)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[4094, 124, 267, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"1fd43daa-83fa-4c59-9655-3c091d2977a9",
+   CellTags->"PrimaryExamplesSection",
+   CellID->388250752]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 20479, 555}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[583, 21, 2263, 53, 70, "AnchorBarGrid",ExpressionUUID->"16df1b99-2edd-4cf5-940e-8c982f2a5bfd",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[2871, 78, 168, 6, 70, "ObjectNameGrid",ExpressionUUID->"00c9c7f5-0af8-4076-8b5b-00e593d5abd7"],
+Cell[3042, 86, 1015, 33, 70, "Usage",ExpressionUUID->"1082bdef-f68a-4c76-9bdc-f32d005ebe1a",
+ CellID->982511436]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4094, 124, 267, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"1fd43daa-83fa-4c59-9655-3c091d2977a9",
+ CellTags->"PrimaryExamplesSection",
+ CellID->388250752],
+Cell[CellGroupData[{
+Cell[4386, 138, 196, 6, 70, "ExampleSection",ExpressionUUID->"1f845a86-33ef-4251-a028-08cd4c50ef68",
+ CellID->1275069278],
+Cell[CellGroupData[{
+Cell[4607, 148, 655, 18, 70, "Input",ExpressionUUID->"70f77017-3d8f-4b3e-bc38-01e133896e1e",
+ CellID->1683870562],
+Cell[5265, 168, 10714, 282, 70, "Output",ExpressionUUID->"7d93e783-92a5-43f6-b3a4-1ce92e458f5b",
+ CellID->939277012]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16016, 455, 109, 3, 70, "Input",ExpressionUUID->"a7973849-00e8-429d-bf23-31acf05819e7",
+ CellID->276451587],
+Cell[16128, 460, 2460, 44, 70, "Print",ExpressionUUID->"fcc916fc-c02b-4a57-a578-643c6e399b0a",
+ CellID->610314754]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[18627, 509, 23, 0, 70, "FooterCell",ExpressionUUID->"f0654948-5b03-4f5c-b7a5-bb852e0572df"]
+}
+]
+*)
+
+(* End of internal cache information *)

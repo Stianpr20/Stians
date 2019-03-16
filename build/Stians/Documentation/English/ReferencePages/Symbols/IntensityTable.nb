@@ -1,0 +1,2020 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     73561,       2011]
+NotebookOptionsPosition[     68207,       1890]
+NotebookOutlinePosition[     70419,       1947]
+CellTagsIndexPosition[     70333,       1942]
+WindowTitle->IntensityTable
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["XRAY SYMBOL", "PacletNameCell"], Cell[TextData[Cell[BoxData[
+     ActionMenuBox[
+      FrameBox[
+       InterpretationBox[Cell[TextData[{
+         "URL",
+         StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+          StripOnInput->False]
+        }]],
+        TextCell[
+         Row[{"URL", 
+           Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+       StripOnInput->False], {"\<\"Xray/ref/IntensityTable\"\>":>
+      None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+      Module[{DocumentationSearch`Private`nb$}, 
+       DocumentationSearch`Private`nb$ = NotebookPut[
+          Notebook[{
+            Cell["Xray/ref/IntensityTable"]}, Visible -> False]]; 
+       SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+       FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+       NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+      Delimiter, "\<\"Copy web URL\"\>":>
+      Module[{DocumentationSearch`Private`nb$}, 
+       DocumentationSearch`Private`nb$ = NotebookPut[
+          Notebook[{
+            Cell[
+             BoxData[
+              MakeBoxes[
+               Hyperlink[
+               "http://reference.wolfram.com/language/Xray/ref/IntensityTable.\
+html"], StandardForm]], "Input", TextClipboardType -> "PlainText"]}, Visible -> 
+           False]]; SelectionMove[
+        DocumentationSearch`Private`nb$, All, Notebook]; 
+       FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+       NotebookClose[DocumentationSearch`Private`nb$]; 
+       Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+        NotebookLocate[{
+          URL[
+           StringJoin[
+            If[
+             TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$15937], 
+             "http://reference.wolfram.com/system-modeler/", 
+             "http://reference.wolfram.com/language/"], 
+            "Xray/ref/IntensityTable", ".html"]], None}]}]},
+      Appearance->None,
+      MenuAppearance->Automatic,
+      MenuStyle->"URLMenu"]],
+     LineSpacing->{1.4, 0}]], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell["IntensityTable", "ObjectName"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{Cell[
+          TextData["IntensityTable"]],"paclet:Xray/ref/IntensityTable"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", 
+       RowBox[{
+        StyleBox["group", "TI"], ",", 
+        StyleBox["file", "TI"]}], "]"}]], "InlineFormula"],
+     " \[LineSeparator]generates an overview of the intensity data in a \
+reflection information ",
+     Cell[BoxData[
+      StyleBox["file", "TI"]], "InlineFormula"],
+     " (",
+     StyleBox[".hkl", "InlineCode"],
+     ") for a given symmetry ",
+     Cell[BoxData[
+      StyleBox["group", "TI"]], "InlineFormula"],
+     "."
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1419660047]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    TemplateBox[{6},
+     "Spacer1"]]],
+   "Details"
+  }], "NotesFrameText"],
+  Appearance->{Automatic, None, "Normal", Automatic},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->"Preemptive"]]]], "NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1783253064],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[TextData[{
+ "Reflection information files usually have file extension ",
+ StyleBox["hkl", "InlineCode"],
+ "."
+}], "Notes",
+ CellID->38908022],
+
+Cell["\<\
+Symmetry equivalent reflections are gathered at a single entry in the table. \
+The number of reflections registrated to an entry may be read off the \
+\[LeftGuillemet]Tally\[RightGuillemet] column. The \[LeftGuillemet]Intensity\
+\[RightGuillemet] and \[LeftGuillemet]Uncertainty\[RightGuillemet] columns \
+are the weighted mean for each symmetry equivalent group.\
+\>", "Notes",
+ CellID->1067943069],
+
+Cell["\<\
+The \[LeftGuillemet]Range\[RightGuillemet] column gives the minimum and \
+maximum intensities among the symmetry equivalent reflections in the same \
+entry. For each entry, the \[LeftGuillemet]Relative span\[RightGuillemet] is \
+half of the difference between the maximum and minimum intensities in that \
+group divided by the weighted mean.\
+\>", "Notes",
+ CellID->473700027],
+
+Cell["\<\
+The function has a sorting option. By default, the function sorts by \
+decreasing intensity.\
+\>", "Notes",
+ CellID->401424661],
+
+Cell[BoxData[GridBox[{
+   {Cell["      ", "TableRowIcon"], "\"\<Sort\>\"", 
+    RowBox[{"-", "2"}], Cell["\<\
+which column to sort by (negative sign means reversed ordering)\
+\>", "TableText"]}
+  }]], "3ColumnTableMod",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}},
+ GridBoxDividers->{"Rows" -> {{True, True}}}},
+ CellID->78018141]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(3)", "ExampleCount"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->852469116],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->1585023475],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"hklfile", "=", 
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", 
+     RowBox[{"$XrayExamples", ",", "\"\<hkl file 1.hkl\>\""}], "}"}], "]"}]}],
+   ";"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->205790639],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"IntensityTable", "[", 
+  RowBox[{"\"\<Silicon\>\"", ",", "hklfile"}], "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->486849982],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"", "\<\"Intensity\"\>", "\<\"Uncertainty\"\>", "\<\"Tally\"\>", \
+"\<\"Range\"\>", "\<\"Relative span\"\>"},
+    {"\<\"(hkl)\"\>", "\<\"[counts]\"\>", "\<\"[counts]\"\>", 
+     "", "\<\"(min; max)\"\>", "\<\"from middle\"\>"},
+    {
+     TagBox["\<\"(004)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"302,105\"\>",
+       302104.8909961303,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"9,213\"\>",
+       9212.503519912281,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"10\"\>",
+       10,
+       Editable->False],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox["\<\"(263,369; 359,524)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], "\<\"16%\"\>"},
+    {
+     TagBox["\<\"(224)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"290,509\"\>",
+       290509.2512873198,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"7,093\"\>",
+       7092.503026735839,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"29\"\>",
+       29,
+       Editable->False],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox["\<\"(234,183; 355,750)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], "\<\"21%\"\>"},
+    {
+     TagBox["\<\"(044)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"288,375\"\>",
+       288375.30434378685`,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"9,692\"\>",
+       9691.551504243676,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"8\"\>",
+       8,
+       Editable->False],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox["\<\"(245,688; 320,673)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], "\<\"13%\"\>"},
+    {
+     TagBox["\<\"(022)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"259,799\"\>",
+       259798.62477535865`,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"14,452\"\>",
+       14451.855181102253`,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"10\"\>",
+       10,
+       Editable->False],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox["\<\"(212,089; 336,725)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], "\<\"24%\"\>"},
+    {
+     TagBox["\<\"(026)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"255,654\"\>",
+       255654.49748176857`,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"8,935\"\>",
+       8934.501023445895,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"16\"\>",
+       16,
+       Editable->False],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox["\<\"(207,929; 346,015)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], "\<\"27%\"\>"},
+    {
+     TagBox["\<\"(444)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"225,244\"\>",
+       225244.01391093625`,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"4,469\"\>",
+       4469.086218621001,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"6\"\>",
+       6,
+       Editable->False],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox["\<\"(210,815; 238,629)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], "\<\"6%\"\>"},
+    {
+     TagBox["\<\"(133)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"214,718\"\>",
+       214717.5075473311,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"4,243\"\>",
+       4243.264713460811,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"30\"\>",
+       30,
+       Editable->False],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox["\<\"(168,749; 251,939)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], "\<\"19%\"\>"},
+    {
+     TagBox["\<\"(113)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"212,078\"\>",
+       212078.02711534692`,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"2,877\"\>",
+       2877.4127169528465`,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"42\"\>",
+       42,
+       Editable->False],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox["\<\"(178,398; 263,524)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], "\<\"20%\"\>"},
+    {
+     TagBox["\<\"(333)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"199,318\"\>",
+       199318.05182158176`,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"5,577\"\>",
+       5576.619149586058,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"6\"\>",
+       6,
+       Editable->False],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox["\<\"(174,890; 210,979)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], "\<\"9%\"\>"},
+    {
+     TagBox["\<\"(115)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"199,021\"\>",
+       199021.2866465883,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"4,655\"\>",
+       4655.282115270555,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"33\"\>",
+       33,
+       Editable->False],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox["\<\"(151,641; 263,242)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], "\<\"28%\"\>"},
+    {
+     TagBox["\<\"(111)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"198,894\"\>",
+       198893.9062460025,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"4,515\"\>",
+       4515.318939974072,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"12\"\>",
+       12,
+       Editable->False],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox["\<\"(174,190; 224,184)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], "\<\"13%\"\>"},
+    {
+     TagBox["\<\"(246)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"188,820\"\>",
+       188819.9299878577,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"5,489\"\>",
+       5488.746082500889,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"8\"\>",
+       8,
+       Editable->False],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox["\<\"(166,000; 213,356)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], "\<\"13%\"\>"},
+    {
+     TagBox["\<\"(135)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"175,507\"\>",
+       175506.51788120286`,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"2,651\"\>",
+       2651.1722469095107`,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"44\"\>",
+       44,
+       Editable->False],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox["\<\"(147,942; 218,718)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], "\<\"20%\"\>"},
+    {
+     TagBox["\<\"(335)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"154,454\"\>",
+       154454.42987091283`,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"3,654\"\>",
+       3653.556598484867,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"12\"\>",
+       12,
+       Editable->False],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox["\<\"(132,497; 178,059)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], "\<\"15%\"\>"},
+    {
+     TagBox["\<\"(117)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"144,927\"\>",
+       144926.8733934905,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"6,132\"\>",
+       6132.337670090087,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"8\"\>",
+       8,
+       Editable->False],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox["\<\"(121,304; 167,211)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], "\<\"16%\"\>"},
+    {
+     TagBox["\<\"(155)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"130,708\"\>",
+       130708.26673803653`,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"2,203\"\>",
+       2203.2489719311807`,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"13\"\>",
+       13,
+       Editable->False],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox["\<\"(120,556; 149,297)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], "\<\"11%\"\>"},
+    {
+     TagBox["\<\"(222)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"876\"\>",
+       876.0485070376275,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"300\"\>",
+       300.45337271046463`,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"12\"\>",
+       12,
+       Editable->False],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox["\<\"(658; 15,785)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], "\<\"863%\"\>"},
+    {
+     TagBox["\<\"(226)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"26\"\>",
+       26.23303349953245,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"78\"\>",
+       78.32363178430006,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"12\"\>",
+       12,
+       Editable->False],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox["\<\"(-9; 13,969)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], "\<\"26,642%\"\>"},
+    {
+     TagBox["\<\"(244)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"6\"\>",
+       6.38182497143932,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"3\"\>",
+       3.2136984735824647`,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"18\"\>",
+       18,
+       Editable->False],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox["\<\"(-9; 90)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], "\<\"776%\"\>"}
+   },
+   AutoDelete->False,
+   GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+   GridBoxBackground->{"Columns" -> {None}, "Rows" -> {None, {None, 
+        GrayLevel[0.9]}}},
+   GridBoxDividers->{
+    "Columns" -> {None, {True}, None}, "Rows" -> {None, None, True}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+   GridBoxItemStyle->{
+    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+     "ItemsIndexed" -> {{{1, 1}, {1, 6}} -> {
+        FontFamily -> "Times New Roman", FontSize -> 15}, {{2, 2}, {1, 
+        6}} -> {FontFamily -> "Times New Roman", FontSize -> 13, 
+         GrayLevel[0.5]}, {{3, 21}, {1, 6}} -> (FontFamily -> "Courier")}},
+   GridBoxSpacings->{"Columns" -> {{1.5}}, "RowsIndexed" -> {2 -> 0.25}}],
+  "Grid"]], "Output",
+ ImageSize->{496, 360},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[2]=",
+ CellID->699459962]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Options",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->2061341341],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "\"Sort\"",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSubsection", "ExampleSubsection",
+ WholeCellGroupOpener->True,
+ CellID->1757724783],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"hklfile", "=", 
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", 
+     RowBox[{"$XrayExamples", ",", "\"\<hkl file 2.hkl\>\""}], "}"}], "]"}]}],
+   ";"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->513652380],
+
+Cell["Sort by decreasing intensity:", "ExampleText",
+ CellID->1190051425],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"IntensityTable", "[", 
+  RowBox[{"\"\<Silicon\>\"", ",", "hklfile", ",", 
+   RowBox[{"\"\<Sort\>\"", "\[Rule]", "3"}]}], "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->210097242],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"", "\<\"Intensity\"\>", "\<\"Uncertainty\"\>", "\<\"Tally\"\>", \
+"\<\"Range\"\>", "\<\"Relative span\"\>"},
+    {"\<\"(hkl)\"\>", "\<\"[counts]\"\>", "\<\"[counts]\"\>", 
+     "", "\<\"(min; max)\"\>", "\<\"from middle\"\>"},
+    {
+     TagBox["\<\"(226)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"-5\"\>",
+       -4.552801053862771,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"0\"\>",
+       0.0070312847418245415`,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"12\"\>",
+       12,
+       Editable->False],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox["\<\"(-5; 5)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], "\<\"-100%\"\>"},
+    {
+     TagBox["\<\"(446)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"-4\"\>",
+       -4.377196790127148,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"0\"\>",
+       0.03995231996301106,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"12\"\>",
+       12,
+       Editable->False],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox["\<\"(-4; 215)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], "\<\"-2,510%\"\>"},
+    {
+     TagBox["\<\"(244)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"-4\"\>",
+       -4.122661075326957,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"0\"\>",
+       0.10265850699745561`,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"12\"\>",
+       12,
+       Editable->False],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox["\<\"(-4; 138)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], "\<\"-1,726%\"\>"},
+    {
+     TagBox["\<\"(222)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"417\"\>",
+       417.43415442296913`,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"29\"\>",
+       29.30951068522853,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"4\"\>",
+       4,
+       Editable->False],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox["\<\"(340; 478)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], "\<\"17%\"\>"},
+    {
+     TagBox["\<\"(137)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"61,888\"\>",
+       61888.337812789665`,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"1,440\"\>",
+       1439.6495803280168`,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"21\"\>",
+       21,
+       Editable->False],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox["\<\"(52,131; 74,225)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], "\<\"18%\"\>"},
+    {
+     TagBox["\<\"(337)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"51,262\"\>",
+       51261.7543473541,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"1,626\"\>",
+       1625.9213049545071`,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"8\"\>",
+       8,
+       Editable->False],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox["\<\"(46,328; 58,198)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], "\<\"12%\"\>"},
+    {
+     TagBox["\<\"(135)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"111,179\"\>",
+       111179.2694997685,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"1,659\"\>",
+       1659.2922649675443`,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"34\"\>",
+       34,
+       Editable->False],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox["\<\"(97,277; 136,621)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], "\<\"18%\"\>"},
+    {
+     TagBox["\<\"(355)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"63,968\"\>",
+       63968.3391255943,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"1,871\"\>",
+       1871.1252019442861`,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"10\"\>",
+       10,
+       Editable->False],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox["\<\"(55,712; 74,201)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], "\<\"14%\"\>"},
+    {
+     TagBox["\<\"(155)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"77,246\"\>",
+       77246.29776933142,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"2,125\"\>",
+       2124.761112178032,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"12\"\>",
+       12,
+       Editable->False],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox["\<\"(66,795; 92,923)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], "\<\"17%\"\>"},
+    {
+     TagBox["\<\"(117)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"75,841\"\>",
+       75840.79012978154,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"2,556\"\>",
+       2555.927254978429,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"12\"\>",
+       12,
+       Editable->False],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox["\<\"(61,719; 88,192)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], "\<\"17%\"\>"},
+    {
+     TagBox["\<\"(335)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"95,535\"\>",
+       95535.09319394859,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"2,646\"\>",
+       2646.442887796228,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"14\"\>",
+       14,
+       Editable->False],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox["\<\"(83,360; 115,690)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], "\<\"17%\"\>"},
+    {
+     TagBox["\<\"(246)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"117,170\"\>",
+       117170.47044361295`,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"3,023\"\>",
+       3023.2065423036056`,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"20\"\>",
+       20,
+       Editable->False],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox["\<\"(91,325; 141,340)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], "\<\"21%\"\>"},
+    {
+     TagBox["\<\"(115)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"131,107\"\>",
+       131107.29126694804`,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"3,246\"\>",
+       3246.4161884710243`,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"20\"\>",
+       20,
+       Editable->False],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox["\<\"(107,382; 161,983)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], "\<\"21%\"\>"},
+    {
+     TagBox["\<\"(113)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"154,459\"\>",
+       154458.96456672344`,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"3,572\"\>",
+       3572.2209251856893`,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"24\"\>",
+       24,
+       Editable->False],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox["\<\"(130,336; 192,707)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], "\<\"20%\"\>"},
+    {
+     TagBox["\<\"(111)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"116,919\"\>",
+       116918.52686179602`,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"3,869\"\>",
+       3868.8142898517126`,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"6\"\>",
+       6,
+       Editable->False],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox["\<\"(106,379; 132,964)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], "\<\"11%\"\>"},
+    {
+     TagBox["\<\"(133)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"152,322\"\>",
+       152321.78699055227`,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"4,571\"\>",
+       4571.09968108833,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"19\"\>",
+       19,
+       Editable->False],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox["\<\"(109,160; 187,973)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], "\<\"26%\"\>"},
+    {
+     TagBox["\<\"(026)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"160,306\"\>",
+       160305.51823491172`,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"4,769\"\>",
+       4768.504198429453,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"17\"\>",
+       17,
+       Editable->False],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox["\<\"(122,283; 202,458)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], "\<\"25%\"\>"},
+    {
+     TagBox["\<\"(333)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"135,251\"\>",
+       135250.70862172422`,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"5,461\"\>",
+       5460.68673608569,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"8\"\>",
+       8,
+       Editable->False],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox["\<\"(119,371; 168,905)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], "\<\"18%\"\>"},
+    {
+     TagBox["\<\"(044)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"192,611\"\>",
+       192610.54969607107`,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"6,725\"\>",
+       6724.751185489429,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"10\"\>",
+       10,
+       Editable->False],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox["\<\"(172,315; 244,286)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], "\<\"19%\"\>"},
+    {
+     TagBox["\<\"(022)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"215,311\"\>",
+       215310.56614976047`,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"7,578\"\>",
+       7578.250150303942,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"10\"\>",
+       10,
+       Editable->False],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox["\<\"(193,652; 268,210)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], "\<\"17%\"\>"},
+    {
+     TagBox["\<\"(224)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"207,693\"\>",
+       207693.14879731613`,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"7,659\"\>",
+       7659.407528703863,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"17\"\>",
+       17,
+       Editable->False],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox["\<\"(174,037; 266,898)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], "\<\"22%\"\>"},
+    {
+     TagBox["\<\"(004)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"214,161\"\>",
+       214160.66399546983`,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"8,278\"\>",
+       8277.97358900393,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"6\"\>",
+       6,
+       Editable->False],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox["\<\"(185,582; 241,272)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], "\<\"13%\"\>"},
+    {
+     TagBox["\<\"(444)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"141,452\"\>",
+       141451.8304452224,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"9,711\"\>",
+       9711.3544308289,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"4\"\>",
+       4,
+       Editable->False],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox["\<\"(121,689; 165,973)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], "\<\"16%\"\>"},
+    {
+     TagBox["\<\"(008)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"95,754\"\>",
+       95754.22169564405,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"9,852\"\>",
+       9852.34834714585,
+       AutoDelete->True],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox[
+      InterpretationBox["\<\"2\"\>",
+       2,
+       Editable->False],
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], 
+     TagBox["\<\"(86,669; 106,438)\"\>",
+      NumberForm[#, {6, 0}, DigitBlock -> 3, NumberSeparator -> ",", 
+       NumberPoint -> ""]& ], "\<\"10%\"\>"}
+   },
+   AutoDelete->False,
+   GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+   GridBoxBackground->{"Columns" -> {None}, "Rows" -> {None, {None, 
+        GrayLevel[0.9]}}},
+   GridBoxDividers->{
+    "Columns" -> {None, {True}, None}, "Rows" -> {None, None, True}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+   GridBoxItemStyle->{
+    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+     "ItemsIndexed" -> {{{1, 1}, {1, 6}} -> {
+        FontFamily -> "Times New Roman", FontSize -> 15}, {{2, 2}, {1, 
+        6}} -> {FontFamily -> "Times New Roman", FontSize -> 13, 
+         GrayLevel[0.5]}, {{3, 26}, {1, 6}} -> (FontFamily -> "Courier")}},
+   GridBoxSpacings->{"Columns" -> {{1.5}}, "RowsIndexed" -> {2 -> 0.25}}],
+  "Grid"]], "Output",
+ ImageSize->{496, 444},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[2]=",
+ CellID->137127853]
+}, Open  ]]
+}, Closed]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " code",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->509873767],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Options", "@", "IntensityTable"}], "=", 
+   RowBox[{"{", "\[IndentingNewLine]", 
+    RowBox[{"\"\<Sort\>\"", "\[Rule]", 
+     RowBox[{"-", "2"}]}], "\[IndentingNewLine]", "}"}]}], ";"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->574952404],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"IntensityTable", "[", 
+   RowBox[{"group_String", ",", 
+    RowBox[{"file_", "?", "FileExistsQ"}], ",", 
+    RowBox[{"OptionsPattern", "@", "IntensityTable"}]}], "]"}], ":=", 
+  "\[IndentingNewLine]", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{
+     "import", ",", "sgHM", ",", "hkl", ",", "data", ",", 
+      "\[IndentingNewLine]", "gathered", ",", "wmean", ",", 
+      "\[IndentingNewLine]", "tally", ",", "minmax", ",", "min", ",", "max", 
+      ",", "range", ",", "span", ",", "\[IndentingNewLine]", "values", ",", 
+      "sort", ",", "table", ",", "\[IndentingNewLine]", "temp"}], "}"}], ",", 
+    "\[IndentingNewLine]", "\[IndentingNewLine]", 
+    RowBox[{"(*", 
+     RowBox[{
+      RowBox[{"--", "-"}], "*", " ", "Importing", " ", "data", " ", "and", 
+      " ", "reorganising", " ", "*", 
+      RowBox[{"--", "-"}]}], "*)"}], "\[IndentingNewLine]", "\t", 
+    RowBox[{
+     RowBox[{"import", "=", 
+      RowBox[{"Flatten", "@", 
+       RowBox[{"Check", "[", 
+        RowBox[{
+         RowBox[{"Import", "[", 
+          RowBox[{"file", ",", "\"\<CSV\>\""}], "]"}], ",", 
+         RowBox[{"Abort", "[", "]"}]}], "]"}]}]}], ";", "\[IndentingNewLine]",
+      "\t", 
+     RowBox[{"sgHM", "=", 
+      RowBox[{"Xray`Crystallography`SymmetryData", "[", 
+       RowBox[{"group", ",", "\"\<HermannMauguinFull\>\""}], "]"}]}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", "\t", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+      "Removing", " ", "the", " ", "metadata", " ", "appended", " ", "in", 
+       " ", "newer", " ", "versions"}], " ", "*)"}], "\[IndentingNewLine]", 
+     "\t\t", 
+     RowBox[{"temp", "=", 
+      RowBox[{"Position", "[", 
+       RowBox[{"import", ",", "\"\<   0   0   0    0.00    0.00   0\>\""}], 
+       "]"}]}], ";", "\[IndentingNewLine]", "\t\t", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"temp", "\[NotEqual]", 
+        RowBox[{"{", "}"}]}], ",", 
+       RowBox[{"import", "=", 
+        RowBox[{"import", "[", 
+         RowBox[{"[", 
+          RowBox[{";;", 
+           RowBox[{
+            RowBox[{"temp", "[", 
+             RowBox[{"[", 
+              RowBox[{"1", ",", "1"}], "]"}], "]"}], "-", "1"}]}], "]"}], 
+         "]"}]}]}], "]"}], ";", "\t\t", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Fixing", " ", "squeezed", " ", "entries"}], " ", "*)"}], 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"import", "=", 
+      RowBox[{"StringReplace", "[", 
+       RowBox[{"import", ",", "\[IndentingNewLine]", "\t", 
+        RowBox[{
+         RowBox[{"\"\<  \>\"", "~~", 
+          RowBox[{"p", ":", 
+           RowBox[{"{", 
+            RowBox[{"\"\<-\>\"", ",", "\"\<\>\""}], "}"}]}], "~~", 
+          RowBox[{"a", ":", 
+           RowBox[{"DigitCharacter", ".."}]}], "~~", "\"\<-\>\"", "~~", 
+          RowBox[{"b", ":", "DigitCharacter"}]}], "\[RuleDelayed]", 
+         "\[IndentingNewLine]", "\t", 
+         RowBox[{
+         "\"\<  \>\"", "~~", "p", "~~", "a", "~~", "\"\< -\>\"", "~~", 
+          "b"}]}]}], "]"}]}], ";", "\[IndentingNewLine]", "\t", 
+     RowBox[{"import", "=", 
+      RowBox[{"ToExpression", "@", 
+       RowBox[{"StringSplit", "[", 
+        RowBox[{"import", ",", "Whitespace"}], "]"}]}]}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", "\t", 
+     RowBox[{"(*", " ", "Reorganising", " ", "*)"}], "\[IndentingNewLine]", 
+     "\t", 
+     RowBox[{"data", "=", 
+      RowBox[{"import", "/.", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+         "h_", ",", "k_", ",", "l_", ",", "F2_", ",", "\[Sigma]2_", ",", 
+          "batch_"}], "}"}], "\[RuleDelayed]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"h", ",", "k", ",", "l"}], "}"}], ",", "F2", ",", 
+          "\[Sigma]2"}], "}"}]}]}]}], ";", "\[IndentingNewLine]", "\t", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Deleting", " ", "extinct", " ", "reflections"}], " ", "*)"}], 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"hkl", "=", 
+      RowBox[{"data", "[", 
+       RowBox[{"[", 
+        RowBox[{"All", ",", "1"}], "]"}], "]"}]}], ";", "\[IndentingNewLine]",
+      "\t", 
+     RowBox[{"temp", "=", 
+      RowBox[{"SystematicAbsentQ", "[", 
+       RowBox[{"sgHM", ",", "hkl"}], "]"}]}], ";", "\[IndentingNewLine]", 
+     "\t", 
+     RowBox[{"data", "=", 
+      RowBox[{"Pick", "[", 
+       RowBox[{"data", ",", "temp", ",", "False"}], "]"}]}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{
+       RowBox[{"--", "-"}], "*", " ", "Gathering", " ", "data", " ", "by", 
+       " ", "Laue", " ", "class", " ", "*", 
+       RowBox[{"--", "-"}]}], "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Gather", " ", "by", " ", "symmetry", " ", "equivalence"}], " ",
+       "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{"gathered", "=", 
+      RowBox[{"GatherBy", "[", 
+       RowBox[{"data", ",", 
+        RowBox[{
+         RowBox[{"Sort", "@", 
+          RowBox[{
+          "Xray`Crystallography`SymmetryEquivalentReflections", "[", 
+           "\[IndentingNewLine]", 
+           RowBox[{"sgHM", ",", 
+            RowBox[{"First", "@", "#"}]}], "]"}]}], "&"}]}], "]"}]}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", "\t", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+      "Calculating", " ", "a", " ", "weighted", " ", "mean", " ", "for", " ", 
+       "each", " ", "type"}], " ", "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{"temp", "=", 
+      RowBox[{"gathered", "[", 
+       RowBox[{"[", 
+        RowBox[{"All", ",", "All", ",", 
+         RowBox[{"{", 
+          RowBox[{"2", ",", "3"}], "}"}]}], "]"}], "]"}]}], ";", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"wmean", "=", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"Xray`Statistics`WeightedMean", "@", "#"}], ")"}], "[", 
+         RowBox[{"[", 
+          RowBox[{"{", 
+           RowBox[{"1", ",", "3"}], "}"}], "]"}], "]"}], "&"}], "/@", 
+       "temp"}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{
+       RowBox[{"--", "-"}], "*", " ", "Extracting", " ", "useful", " ", 
+       "information", " ", "for", " ", "each", " ", "group", " ", "*", 
+       RowBox[{"--", "-"}]}], "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{"tally", "=", 
+      RowBox[{"Length", "/@", "gathered"}]}], ";", "\[IndentingNewLine]", 
+     "\t", 
+     RowBox[{"minmax", "=", 
+      RowBox[{"Reap", "[", "\[IndentingNewLine]", "\t", 
+       RowBox[{"Do", "[", 
+        RowBox[{
+         RowBox[{"Sow", "[", "\[IndentingNewLine]", "\t", 
+          RowBox[{
+           RowBox[{"temp", "=", 
+            RowBox[{"f", "/@", 
+             RowBox[{"gathered", "[", 
+              RowBox[{"[", 
+               RowBox[{"All", ",", "All", ",", "2"}], "]"}], "]"}]}]}], ";", 
+           "\[IndentingNewLine]", "\t", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"NumberForm", "[", 
+              RowBox[{"#", ",", 
+               RowBox[{"{", 
+                RowBox[{"6", ",", "0"}], "}"}], ",", "\[IndentingNewLine]", 
+               "\t", 
+               RowBox[{"DigitBlock", "\[Rule]", "3"}], ",", 
+               "\[IndentingNewLine]", "\t", 
+               RowBox[{"NumberSeparator", "\[Rule]", "\"\<,\>\""}], ",", 
+               "\[IndentingNewLine]", "\t", 
+               RowBox[{"NumberPoint", "\[Rule]", "\"\<\>\""}]}], "]"}], "&"}],
+             "/@", "temp"}]}], "]"}], ",", "\[IndentingNewLine]", "\t", 
+         RowBox[{"{", 
+          RowBox[{"f", ",", 
+           RowBox[{"{", 
+            RowBox[{"Min", ",", "Max"}], "}"}]}], "}"}]}], "]"}], 
+       "\[IndentingNewLine]", "\t", "]"}]}], ";", "\[IndentingNewLine]", "\t", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"min", ",", "max"}], "}"}], "=", 
+      RowBox[{"minmax", "[", 
+       RowBox[{"[", 
+        RowBox[{"2", ",", "1"}], "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+     "\t", "\[IndentingNewLine]", "\t", 
+     RowBox[{"range", "=", 
+      RowBox[{"MapThread", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"\"\<(\>\"", "<>", 
+          RowBox[{"ToString", "[", "#1", "]"}], "<>", "\"\<; \>\"", "<>", 
+          RowBox[{"ToString", "[", "#2", "]"}], "<>", "\"\<)\>\""}], "&"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"min", ",", "max"}], "}"}]}], "]"}]}], ";", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"span", "=", 
+      RowBox[{"MapThread", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"#1", "-", "#2"}], ")"}], "/", 
+           RowBox[{"(", 
+            RowBox[{"2", "*", "#3"}], ")"}]}], "*", "100.0"}], "&"}], ",", 
+        RowBox[{"Map", "[", 
+         RowBox[{"First", ",", 
+          RowBox[{"{", 
+           RowBox[{"max", ",", "min", ",", "wmean"}], "}"}], ",", 
+          RowBox[{"{", "2", "}"}]}], "]"}]}], "]"}]}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", "\t", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+      "Assigning", " ", "a", " ", "representative", " ", "for", " ", "each", 
+       " ", "type", " ", "of", " ", "equivalent", " ", "reflections"}], " ", 
+      "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{"temp", "=", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Xray`Crystallography`ToStandardSetting", "[", 
+         RowBox[{"sgHM", ",", "#"}], "]"}], "&"}], "/@", 
+       "\[IndentingNewLine]", "\t", 
+       RowBox[{"(", 
+        RowBox[{"First", "/@", 
+         RowBox[{"First", "/@", "gathered"}]}], ")"}]}]}], ";", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"hkl", "=", 
+      RowBox[{"Xray`Crystallography`ToMiller", "/@", "temp"}]}], ";", 
+     "\[IndentingNewLine]", "\t", "\[IndentingNewLine]", "\t", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+      "Merging", " ", "the", " ", "representatives", " ", "with", " ", "the", 
+       " ", "corresponding", " ", "values"}], " ", "*)"}], 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"values", "=", 
+      RowBox[{"Transpose", "[", 
+       RowBox[{"{", "\[IndentingNewLine]", "\t", 
+        RowBox[{"hkl", ",", 
+         RowBox[{"wmean", "[", 
+          RowBox[{"[", 
+           RowBox[{"All", ",", "1"}], "]"}], "]"}], ",", 
+         RowBox[{"wmean", "[", 
+          RowBox[{"[", 
+           RowBox[{"All", ",", "2"}], "]"}], "]"}], ",", 
+         "\[IndentingNewLine]", "\t", 
+         RowBox[{"Length", "/@", "gathered"}], ",", "range", ",", "span"}], 
+        "}"}], "]"}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     "\t\t", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Optional", ":", " ", 
+       RowBox[{"Sorting", " ", "option"}]}], " ", "*)"}], 
+     "\[IndentingNewLine]", "\t\t", 
+     RowBox[{"sort", "=", 
+      RowBox[{"OptionValue", "[", "\"\<Sort\>\"", "]"}]}], ";", 
+     "\[IndentingNewLine]", "\t\t", 
+     RowBox[{"(*", " ", 
+      RowBox[{"No", " ", "preferance"}], " ", "*)"}], "\[IndentingNewLine]", 
+     "\t\t", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"!", 
+        RowBox[{"MemberQ", "[", 
+         RowBox[{
+          RowBox[{"Range", "@", 
+           RowBox[{"Last", "@", 
+            RowBox[{"Dimensions", "@", "values"}]}]}], ",", 
+          RowBox[{"Abs", "@", "sort"}]}], "]"}]}], ",", 
+       RowBox[{"Goto", "[", "\"\<SortingDone\>\"", "]"}]}], "]"}], ";", 
+     "\[IndentingNewLine]", "\t\t", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+      "Sorting", " ", "by", " ", "a", " ", "specific", " ", "column"}], " ", 
+      "*)"}], "\t\t\t", "\[IndentingNewLine]", "\t\t", 
+     RowBox[{"values", "=", 
+      RowBox[{"Sort", "[", 
+       RowBox[{"values", ",", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"#1", "[", 
+           RowBox[{"[", 
+            RowBox[{"Abs", "@", "sort"}], "]"}], "]"}], "<", 
+          RowBox[{"#2", "[", 
+           RowBox[{"[", 
+            RowBox[{"Abs", "@", "sort"}], "]"}], "]"}]}], "&"}]}], "]"}]}], 
+     ";", "\[IndentingNewLine]", "\t\t", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Reversing", " ", "if", " ", "negative"}], " ", "*)"}], 
+     "\[IndentingNewLine]", "\t\t", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"sort", "<", "0"}], ",", 
+       RowBox[{"values", "=", 
+        RowBox[{"Reverse", "@", "values"}]}]}], "]"}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{
+       RowBox[{"--", "-"}], "*", " ", "Rounding", " ", "off", " ", "numbers", 
+       " ", "*", 
+       RowBox[{"--", "-"}]}], "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{"Label", "[", "\"\<SortingDone\>\"", "]"}], ";", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"temp", "=", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"NumberForm", "[", 
+         RowBox[{"#", ",", 
+          RowBox[{"{", 
+           RowBox[{"6", ",", "0"}], "}"}], ",", "\[IndentingNewLine]", "\t", 
+          RowBox[{"DigitBlock", "\[Rule]", "3"}], ",", "\[IndentingNewLine]", 
+          "\t", 
+          RowBox[{"NumberSeparator", "\[Rule]", "\"\<,\>\""}], ",", 
+          "\[IndentingNewLine]", "\t", 
+          RowBox[{"NumberPoint", "\[Rule]", "\"\<\>\""}]}], "]"}], "&"}], "/@", 
+       RowBox[{"(", 
+        RowBox[{"Flatten", "@", "values"}], ")"}]}]}], ";", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"values", "=", 
+      RowBox[{"Partition", "[", 
+       RowBox[{"temp", ",", 
+        RowBox[{"Last", "@", 
+         RowBox[{"Dimensions", "@", "values"}]}]}], "]"}]}], ";", 
+     "\[IndentingNewLine]", "\t", "\[IndentingNewLine]", "\t", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Inserting", " ", "percentage", " ", "signs", " ", "to", " ", 
+       RowBox[{"the", " ", "'"}], "relative", " ", 
+       RowBox[{"span", "'"}]}], " ", "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{
+      RowBox[{"values", "[", 
+       RowBox[{"[", 
+        RowBox[{"All", ",", "6"}], "]"}], "]"}], "=", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"ToString", "[", "#", "]"}], "<>", "\"\<%\>\""}], "&"}], "/@", 
+       RowBox[{"values", "[", 
+        RowBox[{"[", 
+         RowBox[{"All", ",", "6"}], "]"}], "]"}]}]}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{
+       RowBox[{"--", "-"}], "*", " ", "Table", " ", "construction", " ", "*", 
+       
+       RowBox[{"--", "-"}]}], "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{"table", "=", 
+      RowBox[{"PrependTo", "[", 
+       RowBox[{"values", ",", "\[IndentingNewLine]", "\t", 
+        RowBox[{"{", 
+         RowBox[{
+         "\"\<(hkl)\>\"", ",", "\"\<[counts]\>\"", ",", "\"\<[counts]\>\"", 
+          ",", "Null", ",", "\"\<(min; max)\>\"", ",", 
+          "\"\<from middle\>\""}], "}"}]}], "]"}]}], ";", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"table", "=", 
+      RowBox[{"PrependTo", "[", 
+       RowBox[{"table", ",", "\[IndentingNewLine]", "\t", 
+        RowBox[{"{", 
+         RowBox[{
+         "Null", ",", "\"\<Intensity\>\"", ",", "\"\<Uncertainty\>\"", ",", 
+          "\"\<Tally\>\"", ",", "\"\<Range\>\"", ",", 
+          "\"\<Relative span\>\""}], "}"}]}], "]"}]}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", "\t", 
+     RowBox[{"Grid", "[", 
+      RowBox[{"table", ",", "\[IndentingNewLine]", "\t", 
+       RowBox[{"Dividers", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"None", ",", 
+            RowBox[{"{", "True", "}"}], ",", "None"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"None", ",", "None", ",", "True"}], "}"}]}], "}"}]}], ",", 
+       "\[IndentingNewLine]", "\t", 
+       RowBox[{"Background", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", "None", "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"None", ",", 
+            RowBox[{"{", 
+             RowBox[{"None", ",", 
+              RowBox[{"GrayLevel", "[", "0.90", "]"}]}], "}"}]}], "}"}]}], 
+         "}"}]}], ",", "\[IndentingNewLine]", "\t", 
+       RowBox[{"Alignment", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"Center", ",", "Center"}], "}"}]}], ",", 
+       "\[IndentingNewLine]", "\t", 
+       RowBox[{"Spacings", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"1.5", ",", 
+          RowBox[{"2", "\[Rule]", "0.25"}]}], "}"}]}], ",", 
+       "\[IndentingNewLine]", "\t", 
+       RowBox[{"ItemStyle", "\[Rule]", "\[IndentingNewLine]", "\t", 
+        RowBox[{"{", 
+         RowBox[{
+         "Automatic", ",", "\[IndentingNewLine]", "\t", "Automatic", ",", 
+          "\[IndentingNewLine]", "\t", 
+          RowBox[{"{", "\[IndentingNewLine]", "\t", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"{", 
+                RowBox[{"1", ",", "1"}], "}"}], ",", 
+               RowBox[{"{", 
+                RowBox[{"1", ",", 
+                 RowBox[{"Last", "@", 
+                  RowBox[{"Dimensions", "@", "values"}]}]}], "}"}]}], "}"}], 
+             "\[Rule]", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"FontFamily", "\[Rule]", "\"\<Times New Roman\>\""}], 
+               ",", 
+               RowBox[{"FontSize", "\[Rule]", "15"}]}], "}"}]}], ",", 
+            "\[IndentingNewLine]", "\t", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"{", 
+                RowBox[{"2", ",", "2"}], "}"}], ",", 
+               RowBox[{"{", 
+                RowBox[{"1", ",", 
+                 RowBox[{"Last", "@", 
+                  RowBox[{"Dimensions", "@", "values"}]}]}], "}"}]}], "}"}], 
+             "\[Rule]", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"FontFamily", "\[Rule]", "\"\<Times New Roman\>\""}], 
+               ",", 
+               RowBox[{"FontSize", "\[Rule]", "13"}], ",", "Gray"}], "}"}]}], 
+            ",", "\[IndentingNewLine]", "\t", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"{", 
+                RowBox[{"3", ",", 
+                 RowBox[{"Length", "@", "table"}]}], "}"}], ",", 
+               RowBox[{"{", 
+                RowBox[{"1", ",", "6"}], "}"}]}], "}"}], "\[Rule]", 
+             RowBox[{"FontFamily", "\[Rule]", "\"\<Courier\>\""}]}]}], 
+           "\[IndentingNewLine]", "\t", "}"}]}], "\[IndentingNewLine]", "\t", 
+         "}"}]}]}], "]"}]}]}], "\[IndentingNewLine]", "]"}]}]], "Input",
+ Background->RGBColor[0.94, 0.91, 0.88],
+ CellLabel->"In[2]:=",
+ CellID->756532804]
+}, Closed]]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"IntensityTable",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "Wolfram Language", ButtonData -> "paclet:guide/WolframRoot", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "ExampleCounter" -> 1, "NeedPlatMsgIn" -> None, "RootCaptions" -> 
+  "", "Metadata" -> {
+   "built" -> "{2019, 3, 16, 9, 28, 37.200396}", 
+    "history" -> {"0.1", "", "", ""}, "context" -> "Xray`", "keywords" -> {}, 
+    "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> True,
+     "label" -> "Xray Symbol", "language" -> "en", "paclet" -> "Xray", 
+    "status" -> "None", "summary" -> 
+    "IntensityTable[group, file] generates an overview of the intensity data \
+in a reflection information file (.hkl) for a given symmetry group.", 
+    "synonyms" -> {}, "tabletags" -> {}, "title" -> "IntensityTable", 
+    "titlemodifier" -> "", "windowtitle" -> "IntensityTable", "type" -> 
+    "Symbol", "uri" -> "Xray/ref/IntensityTable", "WorkflowDockedCell" -> ""},
+   "SearchTextTranslated" -> "", "NewStyles" -> False},
+CellContext->"Global`",
+FrontEndVersion->"11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
+2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> 
+  "11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, 2018)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[6179, 188, 267, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"fb39e120-3342-4ee7-b209-2e74874491b4",
+   CellTags->"PrimaryExamplesSection",
+   CellID->852469116]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 70135, 1935}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[586, 21, 2275, 53, 70, "AnchorBarGrid",ExpressionUUID->"11941b89-43b9-4246-959c-0032cc98162c",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[2886, 78, 171, 6, 70, "ObjectNameGrid",ExpressionUUID->"b31f7b42-f1e5-4c21-ad42-29bf67059bd3"],
+Cell[3060, 86, 867, 27, 70, "Usage",ExpressionUUID->"e8199342-51f4-435d-8406-67219de933ef",
+ CellID->1419660047]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3964, 118, 630, 19, 70, "NotesSection",ExpressionUUID->"eb8857f9-9aae-421e-8e5f-dd47c8b6817b",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1783253064],
+Cell[4597, 139, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"f8389699-debf-4d9c-a2f3-c844d97a9208"],
+Cell[4631, 141, 146, 5, 70, "Notes",ExpressionUUID->"bcc6d868-d5ae-4665-b4ba-a873bd6fbc00",
+ CellID->38908022],
+Cell[4780, 148, 409, 7, 70, "Notes",ExpressionUUID->"88134fb1-954f-4d79-a155-995ac03fe413",
+ CellID->1067943069],
+Cell[5192, 157, 386, 7, 70, "Notes",ExpressionUUID->"428806a5-eb8a-4610-aa10-18db5f8feb5e",
+ CellID->473700027],
+Cell[5581, 166, 137, 4, 70, "Notes",ExpressionUUID->"3f6fcf6e-1d15-4c6b-b0d6-209fb557124c",
+ CellID->401424661],
+Cell[5721, 172, 421, 11, 70, "3ColumnTableMod",ExpressionUUID->"efb492c0-9c44-409d-87e1-770af8b3a4eb",
+ CellID->78018141]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[6179, 188, 267, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"fb39e120-3342-4ee7-b209-2e74874491b4",
+ CellTags->"PrimaryExamplesSection",
+ CellID->852469116],
+Cell[CellGroupData[{
+Cell[6471, 202, 196, 6, 70, "ExampleSection",ExpressionUUID->"df3403d5-2a40-48cf-addc-f7c1b0a8cd6d",
+ CellID->1585023475],
+Cell[6670, 210, 243, 8, 70, "Input",ExpressionUUID->"f88fc025-fc1b-4e4d-98ee-3bd2185c81b7",
+ CellID->205790639],
+Cell[CellGroupData[{
+Cell[6938, 222, 153, 4, 70, "Input",ExpressionUUID->"361ff18b-2c32-49b0-83d5-6c2b59df7497",
+ CellID->486849982],
+Cell[7094, 228, 18235, 501, 70, "Output",ExpressionUUID->"e92a01bb-dc2d-43c7-af75-62e5d5aad7ae",
+ CellID->699459962]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[25378, 735, 189, 6, 70, "ExampleSection",ExpressionUUID->"1d1dc916-82bb-4aea-ad5f-f3eedfab52e5",
+ CellID->2061341341],
+Cell[CellGroupData[{
+Cell[25592, 745, 196, 6, 70, "ExampleSubsection",ExpressionUUID->"f8b392cc-28d0-4959-879d-f1f791ae2ea6",
+ CellID->1757724783],
+Cell[25791, 753, 243, 8, 70, "Input",ExpressionUUID->"2432312c-82d1-4bad-ae5e-5125a98e4640",
+ CellID->513652380],
+Cell[26037, 763, 73, 1, 70, "ExampleText",ExpressionUUID->"cc317f97-7323-49e1-b9da-4b2cf8bffaa0",
+ CellID->1190051425],
+Cell[CellGroupData[{
+Cell[26135, 768, 204, 5, 70, "Input",ExpressionUUID->"1dea7eeb-e786-402c-bdcc-c76471910e7c",
+ CellID->210097242],
+Cell[26342, 775, 22697, 626, 70, "Output",ExpressionUUID->"c2c986d0-eee3-4b0e-9d6e-dff3c02c2bdc",
+ CellID->137127853]
+}, Open  ]]
+}, Closed]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[49100, 1408, 235, 8, 70, "ExampleSection",ExpressionUUID->"baab6a72-8f03-45a8-8b96-5a356419fc38",
+ CellID->509873767],
+Cell[49338, 1418, 286, 8, 70, "Input",ExpressionUUID->"d646175e-6702-4fab-a2c5-1f844a198148",
+ CellID->574952404],
+Cell[49627, 1428, 18526, 456, 70, "Input",ExpressionUUID->"093bd03a-fefc-4bea-a023-2605368e7aaf",
+ CellID->756532804]
+}, Closed]]
+}, Open  ]],
+Cell[68180, 1888, 23, 0, 70, "FooterCell",ExpressionUUID->"6b6224c9-5501-4399-94eb-dac862ccf93f"]
+}
+]
+*)
+
+(* End of internal cache information *)

@@ -1,0 +1,610 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     20282,        601]
+NotebookOptionsPosition[     15872,        500]
+NotebookOutlinePosition[     18035,        556]
+CellTagsIndexPosition[     17950,        551]
+WindowTitle->ImportReflectionFile
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["XRAY SYMBOL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"ExportReflectionFile\"\>":>
+       Documentation`HelpLookup[
+       "paclet:Xray/ref/ExportReflectionFile"], "\<\"RefinedValues\"\>":>
+       Documentation`HelpLookup[
+       "paclet:Xray/ref/RefinedValues"], "\<\"PeakTableHelper\"\>":>
+       Documentation`HelpLookup[
+       "paclet:Xray/ref/PeakTableHelper"], "\<\"ImgScript\"\>":>
+       Documentation`HelpLookup[
+       "paclet:Xray/ref/ImgScript"], "\<\"MergeLogs\"\>":>
+       Documentation`HelpLookup[
+       "paclet:Xray/ref/MergeLogs"], "\<\"UnwarpLayerList\"\>":>
+       Documentation`HelpLookup["paclet:Xray/ref/UnwarpLayerList"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"Xray/ref/ImportReflectionFile\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["Xray/ref/ImportReflectionFile"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/Xray/ref/\
+ImportReflectionFile.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$15381], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "Xray/ref/ImportReflectionFile", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell["ImportReflectionFile", "ObjectName"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{Cell[
+          TextData["ImportReflectionFile"]],
+         "paclet:Xray/ref/ImportReflectionFile"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", 
+       StyleBox["file", "TI"], "]"}]], "InlineFormula"],
+     " \[LineSeparator]imports data in reflection (",
+     StyleBox[".hkl", "InlineCode"],
+     ") ",
+     Cell[BoxData[
+      StyleBox["file", "TI"]], "InlineFormula"],
+     "."
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}}},
+ CellID->982511436]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    TemplateBox[{6},
+     "Spacer1"]]],
+   "Details"
+  }], "NotesFrameText"],
+  Appearance->{Automatic, None, "Normal", Automatic},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->"Preemptive"]]]], "NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1215985200],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[TextData[{
+ "\[LeftGuillemet]The .hkl file consists of one line per reflection in ",
+ StyleBox["FORMAT(3I4,2F8.2,I4)", "InlineCode"],
+ " for ",
+ Cell[BoxData[
+  FormBox["h", TraditionalForm]], "InlineMath"],
+ ", ",
+ Cell[BoxData[
+  FormBox["k", TraditionalForm]], "InlineMath"],
+ ", ",
+ Cell[BoxData[
+  FormBox["l", TraditionalForm]], "InlineMath"],
+ ", ",
+ Cell[BoxData[
+  SubsuperscriptBox["F", "o", "2"]], "InlineFormula"],
+ ", ",
+ Cell[BoxData[
+  RowBox[{"\[Sigma]", 
+   RowBox[{"(", 
+    SubsuperscriptBox["F", "o", "2"], ")"}]}]], "InlineFormula"],
+ ", and (optionally) a batch number.\[RightGuillemet] (",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["The SHELX-97 Manual"]],
+    "http://shelx.uni-ac.gwdg.de/SHELX/shelx97.pdf"},
+   "WebLink",
+   BaseStyle->{"Notes"}]]],
+ ", p. 2\[Dash]3)"
+}], "Notes",
+ CellID->1067943069]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(2)", "ExampleCount"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->1608871548],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->1337507859],
+
+Cell[TextData[{
+ "Sample ",
+ StyleBox[".hkl", "InlineCode"],
+ " file:"
+}], "ExampleText",
+ CellID->858687879],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"reflectionFile", "=", 
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", 
+     RowBox[{"$XrayExamples", ",", "\"\<hkl file 1.hkl\>\""}], "}"}], "]"}]}],
+   ";"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1396952255],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"hkl", "=", 
+   RowBox[{"ImportReflectionFile", "[", "reflectionFile", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"hkl", "//", "Shallow"}]}], "Input",
+ CellLabel->"In[2]:=",
+ CellID->1118539792],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", 
+     RowBox[{"-", "1"}], ",", "1", ",", "188567.`", ",", "2156.71`", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "1"}], ",", "1", ",", "200329.`", ",", "2089.12`", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1", ",", 
+     RowBox[{"-", "1"}], ",", "189293.`", ",", "2022.25`", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", 
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "1"}], ",", "197073.`", ",", "2145.46`", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "1", ",", "1", ",", "222035.`", ",", "2275.46`",
+      ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "1"}], ",", "1", ",", "174190.`", ",", "1940.03`", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "1", ",", 
+     RowBox[{"-", "1"}], ",", "208160.`", ",", "2288.`", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "1", ",", "1", ",", "213846.`", ",", "2248.72`",
+      ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", 
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "1"}], ",", "211194.`", ",", "2254.58`", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "1", ",", 
+     RowBox[{"-", "1"}], ",", "193239.`", ",", "2171.95`", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"\[LeftSkeleton]", "386", "\[RightSkeleton]"}]}], "}"}]], "Output",\
+
+ ImageSize->{523, 85},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[2]//Shallow=",
+ CellID->725206506]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " code",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->683732457],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ImportReflectionFile", "[", 
+   RowBox[{"file_", "?", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"StringTake", "[", 
+        RowBox[{"#", ",", 
+         RowBox[{"-", "3"}]}], "]"}], "\[Equal]", "\"\<hkl\>\""}], "&"}], 
+     ")"}]}], "]"}], ":=", 
+  RowBox[{"Module", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+     "import", ",", "end", ",", "temp", ",", "need0", ",", "l", ",", "zero"}],
+      "}"}], ",", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+    RowBox[{"(*", " ", 
+     RowBox[{"Importing", " ", "and", " ", 
+      RowBox[{"trimming", " ", ".", "hkl"}], " ", "file"}], " ", "*)"}], 
+    "\[IndentingNewLine]", "\t", 
+    RowBox[{
+     RowBox[{"import", "=", 
+      RowBox[{"Check", "[", 
+       RowBox[{
+        RowBox[{"Import", "[", 
+         RowBox[{"file", ",", "\"\<Table\>\""}], "]"}], ",", 
+        RowBox[{"Abort", "[", "]"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+     "\t", 
+     RowBox[{"import", "=", 
+      RowBox[{"ToString", "/@", "import"}]}], ";", "\[IndentingNewLine]", 
+     "\t", 
+     RowBox[{"end", "=", 
+      RowBox[{"Position", "[", 
+       RowBox[{
+        RowBox[{"StringCases", "[", 
+         RowBox[{"import", ",", "\"\<0, 0, 0\>\""}], "]"}], ",", 
+        RowBox[{"{", "\"\<0, 0, 0\>\"", "}"}]}], "]"}]}], ";", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Not", " ", "ending", " ", "with", " ", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0", ",", "0"}], "}"}]}], " ", "*)"}], 
+     "\[IndentingNewLine]", "\t\t", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"end", "\[Equal]", 
+        RowBox[{"{", "}"}]}], ",", "\[IndentingNewLine]", "\t\t", 
+       RowBox[{
+        RowBox[{"end", "=", 
+         RowBox[{"Length", "@", "import"}]}], ";", 
+        RowBox[{"need0", "=", "True"}]}], ",", "\[IndentingNewLine]", "\t\t", 
+       
+       RowBox[{
+        RowBox[{"end", "=", 
+         RowBox[{"First", "@", 
+          RowBox[{"Flatten", "@", "end"}]}]}], ";", 
+        RowBox[{"need0", "=", "False"}]}]}], "]"}], ";", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"temp", "=", 
+      RowBox[{"import", "[", 
+       RowBox[{"[", 
+        RowBox[{";;", "end"}], "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Fixing", " ", "clustered", " ", "entries"}], " ", "*)"}], 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"temp", "=", 
+      RowBox[{"StringReplace", "[", 
+       RowBox[{"temp", ",", "\[IndentingNewLine]", "\t", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"a", ":", "DigitCharacter"}], "~~", "\"\<-\>\"", "~~", 
+          RowBox[{"b", ":", "DigitCharacter"}]}], "\[RuleDelayed]", 
+         RowBox[{"a", "<>", "\"\< , \>\"", "<>", "b"}]}]}], "]"}]}], ";", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"temp", "=", 
+      RowBox[{"ToExpression", "/@", 
+       RowBox[{"StringTrim", "/@", "temp"}]}]}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+      "Appending", " ", "zero", " ", "element", " ", "if", " ", "needed"}], 
+      " ", "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{"l", "=", 
+      RowBox[{"Length", "@", 
+       RowBox[{"RandomChoice", "@", "temp"}]}]}], ";", "\[IndentingNewLine]", 
+     "\t", 
+     RowBox[{"zero", "=", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0", ",", "0", ",", "0.00", ",", "0.00", ",", "0"}], 
+       "}"}]}], ";", "\[IndentingNewLine]", "\t", 
+     RowBox[{"zero", "=", 
+      RowBox[{"zero", "[", 
+       RowBox[{"[", 
+        RowBox[{";;", "l"}], "]"}], "]"}]}], ";", "\[IndentingNewLine]", "\t", 
+     RowBox[{"If", "[", 
+      RowBox[{"need0", ",", 
+       RowBox[{"AppendTo", "[", 
+        RowBox[{"temp", ",", "zero"}], "]"}]}], "]"}], ";", 
+     "\[IndentingNewLine]", "\t", "temp"}]}], "\[IndentingNewLine]", 
+   "]"}]}]], "Input",
+ Background->RGBColor[0.94, 0.91, 0.88],
+ CellLabel->"In[1]:=",
+ CellID->858420829]
+}, Closed]],
+
+Cell["", "SectionFooterSpacer"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["ExportReflectionFile"]],"paclet:Xray/ref/ExportReflectionFile"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["RefinedValues"]],"paclet:Xray/ref/RefinedValues"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["PeakTableHelper"]],"paclet:Xray/ref/PeakTableHelper"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["ImgScript"]],"paclet:Xray/ref/ImgScript"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["MergeLogs"]],"paclet:Xray/ref/MergeLogs"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["UnwarpLayerList"]],"paclet:Xray/ref/UnwarpLayerList"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"]
+}], "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"ImportReflectionFile",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "Wolfram Language", ButtonData -> "paclet:guide/WolframRoot", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "ExampleCounter" -> 1, "NeedPlatMsgIn" -> None, "RootCaptions" -> 
+  "", "Metadata" -> {
+   "built" -> "{2019, 3, 16, 9, 28, 35.462208}", 
+    "history" -> {"0.7", "", "", ""}, "context" -> "Xray`", "keywords" -> {}, 
+    "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> True,
+     "label" -> "Xray Symbol", "language" -> "en", "paclet" -> "Xray", 
+    "status" -> "None", "summary" -> 
+    "ImportReflectionFile[file] imports data in reflection (.hkl) file.", 
+    "synonyms" -> {}, "tabletags" -> {}, "title" -> "ImportReflectionFile", 
+    "titlemodifier" -> "", "windowtitle" -> "ImportReflectionFile", "type" -> 
+    "Symbol", "uri" -> "Xray/ref/ImportReflectionFile", "WorkflowDockedCell" -> 
+    ""}, "SearchTextTranslated" -> "", "NewStyles" -> False},
+CellContext->"Global`",
+FrontEndVersion->"11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
+2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> 
+  "11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, 2018)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[6603, 201, 268, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"13d0da7f-36a3-49a6-93ae-d2aaaae5c7c3",
+   CellTags->"PrimaryExamplesSection",
+   CellID->1608871548]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 17751, 544}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[592, 21, 3541, 84, 70, "AnchorBarGrid",ExpressionUUID->"9f890517-73f5-48ff-bfe4-57c3a083ac23",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[4158, 109, 177, 6, 70, "ObjectNameGrid",ExpressionUUID->"b395d33f-838d-4b54-9b3b-81d4f6e84052"],
+Cell[4338, 117, 683, 22, 70, "Usage",ExpressionUUID->"77e5d40a-96be-4919-86e7-917877ea5cae",
+ CellID->982511436]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5058, 144, 630, 19, 70, "NotesSection",ExpressionUUID->"c693a663-6c2a-4e81-ba9c-906f15ebcca5",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1215985200],
+Cell[5691, 165, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"b59ba77d-e3a7-40c7-b98c-0dafaae8f869"],
+Cell[5725, 167, 841, 29, 70, "Notes",ExpressionUUID->"521fa938-c675-41a9-a3c2-ee265e2a6a09",
+ CellID->1067943069]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[6603, 201, 268, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"13d0da7f-36a3-49a6-93ae-d2aaaae5c7c3",
+ CellTags->"PrimaryExamplesSection",
+ CellID->1608871548],
+Cell[CellGroupData[{
+Cell[6896, 215, 196, 6, 70, "ExampleSection",ExpressionUUID->"3593b9ad-1d10-406a-af68-710cd7203357",
+ CellID->1337507859],
+Cell[7095, 223, 109, 5, 70, "ExampleText",ExpressionUUID->"a0c7adef-81d0-4f48-99f1-e25b35c3c96d",
+ CellID->858687879],
+Cell[7207, 230, 251, 8, 70, "Input",ExpressionUUID->"7ad22ab5-de9d-4123-95a5-7d38113e3c41",
+ CellID->1396952255],
+Cell[CellGroupData[{
+Cell[7483, 242, 238, 7, 70, "Input",ExpressionUUID->"dcae134e-1ad3-4d83-8447-c2aa83db00d6",
+ CellID->1118539792],
+Cell[7724, 251, 1774, 55, 70, "Output",ExpressionUUID->"73c40b59-4c97-45c2-b712-aefa23f81988",
+ CellID->725206506]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9547, 312, 235, 8, 70, "ExampleSection",ExpressionUUID->"f4135029-dc62-42d2-92f3-c702d97a07b3",
+ CellID->683732457],
+Cell[9785, 322, 3995, 104, 70, "Input",ExpressionUUID->"01a3d6ab-1849-486f-b1aa-756c692d7a89",
+ CellID->858420829]
+}, Closed]],
+Cell[13795, 429, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"745aa36a-8bbf-407a-99df-f92e69d5fa12"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13863, 434, 150, 7, 70, "SeeAlsoSection",ExpressionUUID->"30025507-5adf-4c65-9a84-a9852e5e9f42",
+ CellID->1255426704],
+Cell[14016, 443, 1814, 52, 70, "SeeAlso",ExpressionUUID->"1b3c8296-eac6-4d1e-aae4-8c4f2d9bfa5b",
+ CellID->929782353]
+}, Open  ]],
+Cell[15845, 498, 23, 0, 70, "FooterCell",ExpressionUUID->"6597a0ee-ff4a-40f4-9506-4b30da46df78"]
+}
+]
+*)
+
+(* End of internal cache information *)

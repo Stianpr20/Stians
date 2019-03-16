@@ -1,0 +1,19 @@
+\ce{Ba} & \num{5.02} &
+\ce{Ar} & \num{5.26} (\SI{4.2}{\kelvin}) &
+\ce{Be} & \num{2.29} & \num{3.58} & \num{1.56} &
+\ce{AgI} & \num{6.47}
+\\
+\ce{Cr} & \num{2.88} &
+\ce{Ag} & \num{4.09} &
+\ce{Cd} & \num{2.98} & \num{5.62} & \num{1.89} &
+\ce{AlAs} & \num{5.62}
+\\
+\ce{Cs} & \num{6.05} (\SI{78}{\kelvin}) &
+\ce{Al} & \num{4.05} &
+\ce{Ce} & \num{3.65} & \num{5.96} & \num{1.63} &
+\ce{AlP} & \num{5.45}
+\\
+\ce{Fe} & \num{2.87} &
+\ce{Au} & \num{4.08} &
+$\alpha$-\ce{Co} & \num{2.51} & \num{4.07} & \num{1.62} &
+\ce{AlSb} & \num{6.13}

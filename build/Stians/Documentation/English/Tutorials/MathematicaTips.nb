@@ -1,0 +1,819 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     24541,        810]
+NotebookOptionsPosition[     14052,        572]
+NotebookOutlinePosition[     16309,        632]
+CellTagsIndexPosition[     16266,        629]
+WindowTitle->Mathematica tips
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["STIANS TUTORIAL", "PacletNameCell"], Cell[TextData[Cell[BoxData[
+     ActionMenuBox[
+      FrameBox[
+       InterpretationBox[Cell[TextData[{
+         "URL",
+         StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+          StripOnInput->False]
+        }]],
+        TextCell[
+         Row[{"URL", 
+           Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+       StripOnInput->False], {"\<\"Stians/tutorial/Mathematica tips\"\>":>
+      None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+      Module[{DocumentationSearch`Private`nb$}, 
+       DocumentationSearch`Private`nb$ = NotebookPut[
+          Notebook[{
+            Cell["Stians/tutorial/Mathematica tips"]}, Visible -> False]]; 
+       SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+       FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+       NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+      Delimiter, "\<\"Copy web URL\"\>":>
+      Module[{DocumentationSearch`Private`nb$}, 
+       DocumentationSearch`Private`nb$ = NotebookPut[
+          Notebook[{
+            Cell[
+             BoxData[
+              MakeBoxes[
+               Hyperlink[
+               "http://reference.wolfram.com/language/Stians/tutorial/\
+Mathematica tips.html"], StandardForm]], "Input", TextClipboardType -> 
+             "PlainText"]}, Visible -> False]]; 
+       SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+       FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+       NotebookClose[DocumentationSearch`Private`nb$]; 
+       Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+        NotebookLocate[{
+          URL[
+           StringJoin[
+            If[
+             TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$26386], 
+             "http://reference.wolfram.com/system-modeler/", 
+             "http://reference.wolfram.com/language/"], 
+            "Stians/tutorial/Mathematica tips", ".html"]], None}]}]},
+      Appearance->None,
+      MenuAppearance->Automatic,
+      MenuStyle->"URLMenu"]],
+     LineSpacing->{1.4, 0}]], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell["Mathematica tips", "Title",
+ CellID->509267359],
+
+Cell[TextData[{
+ "This is an overview of alternative ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " code."
+}], "Text",
+ CellID->1534169418],
+
+Cell[CellGroupData[{
+
+Cell["Example 1", "Subsection",
+ CellID->1429865062],
+
+Cell["Instead of:", "MathCaption",
+ CellID->836781195],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ToString", "[", 
+  RowBox[{"Length", "[", 
+   RowBox[{"ToExpression", "[", 
+    RowBox[{"Plus", "[", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "2", ",", "3"}], "}"}], "]"}], "]"}], "]"}], 
+  "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->2058623809],
+
+Cell[BoxData["\<\"3\"\>"], "Output",
+ ImageSize->{11, 16},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->5595599]
+}, Open  ]],
+
+Cell["Perhaps:", "MathCaption",
+ CellID->1615428410],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ToString", "@", 
+  RowBox[{"Length", "@", 
+   RowBox[{"ToExpression", "@", 
+    RowBox[{"Plus", "@", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "2", ",", "3"}], "}"}]}]}]}]}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->2017021496],
+
+Cell[BoxData["\<\"3\"\>"], "Output",
+ ImageSize->{11, 16},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[2]=",
+ CellID->1703435572]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Example 2", "Subsection",
+ CellID->1716597766],
+
+Cell["Let us first define a list of some random numbers:", "Text",
+ CellID->206403803],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"data", "=", 
+  RowBox[{"RandomInteger", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"1", ",", "100"}], "}"}], ",", "14"}], "]"}]}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->1149523937],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "15", ",", "72", ",", "86", ",", "69", ",", "80", ",", "73", ",", "30", ",",
+    "65", ",", "72", ",", "64", ",", "6", ",", "14", ",", "31", ",", "27"}], 
+  "}"}]], "Output",
+ ImageSize->{350, 16},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[3]=",
+ CellID->1537160447]
+}, Open  ]],
+
+Cell["Instead of:", "MathCaption",
+ CellID->1563339364],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Plus", "@@", "data"}]], "Input",
+ CellLabel->"In[4]:=",
+ CellID->582269703],
+
+Cell[BoxData["704"], "Output",
+ ImageSize->{26, 16},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[4]=",
+ CellID->827359319]
+}, Open  ]],
+
+Cell["Perhaps:", "MathCaption",
+ CellID->1794004251],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Total", "@", "data"}]], "Input",
+ CellLabel->"In[5]:=",
+ CellID->1159042677],
+
+Cell[BoxData["704"], "Output",
+ ImageSize->{26, 16},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[5]=",
+ CellID->471460108]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Example 3", "Subsection",
+ CellID->722548255],
+
+Cell["Instead of:", "MathCaption",
+ CellID->1995981647],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"data2", "=", 
+   RowBox[{"Insert", "[", 
+    RowBox[{"data", ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "2", ",", "3", ",", "4"}], "}"}], ",", 
+     RowBox[{"-", "1"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", "data2"}], "Input",
+ CellLabel->"In[6]:=",
+ CellID->621491342],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "15", ",", "72", ",", "86", ",", "69", ",", "80", ",", "73", ",", "30", ",",
+    "65", ",", "72", ",", "64", ",", "6", ",", "14", ",", "31", ",", "27", 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "3", ",", "4"}], "}"}]}], "}"}]], "Output",
+ ImageSize->{436, 16},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[7]=",
+ CellID->1762861373]
+}, Open  ]],
+
+Cell["Perhaps:", "MathCaption",
+ CellID->1023937546],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"AppendTo", "[", 
+   RowBox[{"data", ",", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "2", ",", "3", ",", "4"}], "}"}]}], "]"}], 
+  ";"}], "\[IndentingNewLine]", "data"}], "Input",
+ CellLabel->"In[8]:=",
+ CellID->1531872211],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "15", ",", "72", ",", "86", ",", "69", ",", "80", ",", "73", ",", "30", ",",
+    "65", ",", "72", ",", "64", ",", "6", ",", "14", ",", "31", ",", "27", 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "3", ",", "4"}], "}"}]}], "}"}]], "Output",
+ ImageSize->{436, 16},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[9]=",
+ CellID->1726701999]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Example 4", "Subsection",
+ CellID->439974191],
+
+Cell["Instead of:", "MathCaption",
+ CellID->860031516],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Not", "[", "True", "]"}]], "Input",
+ CellLabel->"In[10]:=",
+ CellID->1984745102],
+
+Cell[BoxData["False"], "Output",
+ ImageSize->{40, 16},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[10]=",
+ CellID->1733975282]
+}, Open  ]],
+
+Cell["Perhaps:", "MathCaption",
+ CellID->1600010338],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"!", "True"}]], "Input",
+ CellLabel->"In[11]:=",
+ CellID->583523032],
+
+Cell[BoxData["False"], "Output",
+ ImageSize->{40, 16},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[11]=",
+ CellID->1569474784]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Example 5", "Subsection",
+ CellID->774130130],
+
+Cell[TextData[{
+ "An example of the use of ",
+ ButtonBox["GatherBy",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/GatherBy"],
+ ":"
+}], "MathCaption",
+ CellID->1349161384],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"list", "=", 
+  RowBox[{"Range", "@", "14"}]}]], "Input",
+ CellLabel->"In[12]:=",
+ CellID->75552215],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "1", ",", "2", ",", "3", ",", "4", ",", "5", ",", "6", ",", "7", ",", "8", 
+   ",", "9", ",", "10", ",", "11", ",", "12", ",", "13", ",", "14"}], 
+  "}"}]], "Output",
+ ImageSize->{294, 16},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[12]=",
+ CellID->621058587]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GatherBy", "[", 
+  RowBox[{"list", ",", "OddQ"}], "]"}]], "Input",
+ CellLabel->"In[13]:=",
+ CellID->1822498656],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+    "1", ",", "3", ",", "5", ",", "7", ",", "9", ",", "11", ",", "13"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "2", ",", "4", ",", "6", ",", "8", ",", "10", ",", "12", ",", "14"}], 
+    "}"}]}], "}"}]], "Output",
+ ImageSize->{322, 16},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[13]=",
+ CellID->1361147289]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Example 6", "Subsection",
+ CellID->1423472946],
+
+Cell["Instead of:", "MathCaption",
+ CellID->1341975842],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"StringJoin", "[", 
+  RowBox[{"\"\<a\>\"", ",", "\"\<b\>\"", ",", "\"\<c\>\""}], "]"}]], "Input",
+ CellLabel->"In[14]:=",
+ CellID->1714715700],
+
+Cell[BoxData["\<\"abc\"\>"], "Output",
+ ImageSize->{26, 16},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[14]=",
+ CellID->1806678379]
+}, Open  ]],
+
+Cell["Perhaps:", "MathCaption",
+ CellID->1014387530],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\"\<a\>\"", "<>", "\"\<b\>\"", "<>", "\"\<c\>\""}]], "Input",
+ CellLabel->"In[15]:=",
+ CellID->2086026824],
+
+Cell[BoxData["\<\"abc\"\>"], "Output",
+ ImageSize->{26, 16},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[15]=",
+ CellID->1572230920]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Example 7", "Subsection",
+ CellID->546488649],
+
+Cell["Wrong:", "MathCaption",
+ CellID->47165524],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ToExpression", "[", 
+   RowBox[{"\"\<data\>\"", "<>", 
+    RowBox[{"ToString", "[", "k", "]"}]}], "]"}], "=", "42"}]], "Input",
+ CellLabel->"In[16]:=",
+ CellID->289496125],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Set", "::", "write"}], "MessageName"], ":", 
+  " ", "\<\"Tag \
+\[NoBreak]\\!\\(\\*RowBox[{\\\"ToExpression\\\"}]\\)\[NoBreak] in \
+\[NoBreak]\\!\\(\\*RowBox[{\\\"ToExpression\\\", \\\"[\\\", \\\"\\\\\\\"datak\
+\\\\\\\"\\\", \\\"]\\\"}]\\)\[NoBreak] is Protected. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/write\\\", ButtonNote -> \
+\\\"Set::write\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellLabel->"During evaluation of In[16]:=",
+ CellID->1846279752],
+
+Cell[BoxData["42"], "Output",
+ ImageSize->{18, 16},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[16]=",
+ CellID->1432576361]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["datak"], "Input",
+ CellLabel->"In[17]:=",
+ CellID->1440642592],
+
+Cell[BoxData["datak"], "Output",
+ ImageSize->{40, 16},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[17]=",
+ CellID->1871732810]
+}, Open  ]],
+
+Cell["Correct:", "MathCaption",
+ CellID->2058400812],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Evaluate", "@", 
+   RowBox[{"ToExpression", "[", 
+    RowBox[{"\"\<data\>\"", "<>", 
+     RowBox[{"ToString", "[", "k", "]"}]}], "]"}]}], "=", "42"}]], "Input",
+ CellLabel->"In[18]:=",
+ CellID->1728377761],
+
+Cell[BoxData["42"], "Output",
+ ImageSize->{18, 16},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[18]=",
+ CellID->1872876414]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["datak"], "Input",
+ CellLabel->"In[19]:=",
+ CellID->928755162],
+
+Cell[BoxData["42"], "Output",
+ ImageSize->{18, 16},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[19]=",
+ CellID->1766076019]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Example 8", "Subsection",
+ CellID->97997749],
+
+Cell["Instead of:", "MathCaption",
+ CellID->893391257],
+
+Cell[TextData[Cell[BoxData[
+ FormBox[
+  RowBox[{
+   FractionBox["1", "2"], "+", 
+   RowBox[{"\[Integral]", 
+    RowBox[{
+     FractionBox["1", 
+      RowBox[{"1", "+", 
+       SuperscriptBox["x", "2"]}]], 
+     RowBox[{"\[DifferentialD]", "x"}]}]}]}], 
+  TraditionalForm]], "InlineFormula"]], "DisplayMath",
+ CellID->1667599844],
+
+Cell[TextData[{
+ "Perhaps: (",
+ StyleBox["Cell", "MenuName"],
+ StyleBox[" \[FilledRightTriangle] ", "MenuNameDelimiter"],
+ StyleBox["Convert To", "MenuName"],
+ StyleBox[" \[FilledRightTriangle] ", "MenuNameDelimiter"],
+ StyleBox["TraditionalForm", "MenuName"],
+ StyleBox[" and remove ", "MenuName",
+  FontWeight->"Plain"],
+ StyleBox["bold", "MenuName"],
+ ")"
+}], "MathCaption",
+ CellID->186329219],
+
+Cell[BoxData[
+ FormBox[
+  StyleBox[
+   RowBox[{
+    FractionBox[
+     StyleBox["1",
+      FontWeight->"Plain"], "2"], "+", 
+    RowBox[{"\[Integral]", 
+     RowBox[{
+      FractionBox["1", 
+       RowBox[{"1", "+", 
+        SuperscriptBox["x", "2"]}]], 
+      RowBox[{"\[DifferentialD]", "x"}]}]}]}],
+   FontWeight->"Plain"], TraditionalForm]], "Input",
+ CellID->52483792]
+}, Open  ]]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"Mathematica tips",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "TutorialColor", 
+  "LinkTrails" -> GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "Wolfram Language", ButtonData -> "paclet:guide/WolframRoot", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "ExampleCounter" -> 1, "NeedPlatMsgIn" -> None, "RootCaptions" -> 
+  "", "Metadata" -> {
+   "built" -> "{2019, 3, 16, 9, 29, 18.576540}", 
+    "history" -> {"0.0", "", "", ""}, "context" -> "Stians`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Stians Tutorial", "language" -> "en", "paclet" -> "Stians", "status" -> 
+    "None", "summary" -> 
+    "This is an overview of alternative Mathematica code. Instead of: \
+Perhaps:", "synonyms" -> {}, "tabletags" -> 
+    DocumentationBuild`Make`Private`tabletaggingrules$26302, "title" -> 
+    "Mathematica tips", "titlemodifier" -> "", "windowtitle" -> 
+    "Mathematica tips", "type" -> "Tutorial", "uri" -> 
+    "Stians/tutorial/Mathematica tips", "WorkflowDockedCell" -> ""}, 
+  "SearchTextTranslated" -> ""},
+FrontEndVersion->"11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
+2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> Notebook], 
+   Cell[
+    StyleData["Output"], CellContext -> Notebook], 
+   Cell[
+    StyleData["TutorialMoreAboutSection"], 
+    CellGroupingRules -> {"SectionGrouping", 30}], 
+   Cell[
+    StyleData["RelatedTutorialsSection"], 
+    CellGroupingRules -> {"SectionGrouping", 30}], 
+   Cell[
+    StyleData["TutorialRelatedLinksSection"], 
+    CellGroupingRules -> {"SectionGrouping", 30}]}, Visible -> False, 
+  FrontEndVersion -> 
+  "11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, 2018)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[588, 21, 2316, 53, 70, "AnchorBarGrid",ExpressionUUID->"7d65dd7d-e103-4b68-b95f-e5cd30076a61",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[2929, 78, 53, 1, 70, "Title",ExpressionUUID->"2b4d8e4f-ba47-4ad8-9f5d-66b4b4a7b683",
+ CellID->509267359],
+Cell[2985, 81, 147, 6, 70, "Text",ExpressionUUID->"bff2ebd0-3aef-42a7-9779-9149d1281e4a",
+ CellID->1534169418],
+Cell[CellGroupData[{
+Cell[3157, 91, 52, 1, 70, "Subsection",ExpressionUUID->"41c93369-bebe-4b29-8f86-adbf4bb9c6be",
+ CellID->1429865062],
+Cell[3212, 94, 54, 1, 70, "MathCaption",ExpressionUUID->"16b48f0e-5ba2-454c-9a12-0e1094003610",
+ CellID->836781195],
+Cell[CellGroupData[{
+Cell[3291, 99, 277, 9, 70, "Input",ExpressionUUID->"1f7c2eaa-e628-47e5-8d7c-13c13032f499",
+ CellID->2058623809],
+Cell[3571, 110, 164, 5, 70, "Output",ExpressionUUID->"abed1d14-158c-4447-80a0-31981de4c53e",
+ CellID->5595599]
+}, Open  ]],
+Cell[3750, 118, 52, 1, 70, "MathCaption",ExpressionUUID->"ba116e40-08e6-4921-b1c8-17acc8244d2d",
+ CellID->1615428410],
+Cell[CellGroupData[{
+Cell[3827, 123, 254, 8, 70, "Input",ExpressionUUID->"463d278a-3c5a-4c88-90b4-d793b44ca0d2",
+ CellID->2017021496],
+Cell[4084, 133, 167, 5, 70, "Output",ExpressionUUID->"88421720-b688-4a20-9eea-81947232c676",
+ CellID->1703435572]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4300, 144, 52, 1, 70, "Subsection",ExpressionUUID->"feedc1b9-bc2e-40e5-a845-aba50c7edd14",
+ CellID->1716597766],
+Cell[4355, 147, 86, 1, 70, "Text",ExpressionUUID->"0b5b760a-c400-4cab-b55f-45e60cce5950",
+ CellID->206403803],
+Cell[CellGroupData[{
+Cell[4466, 152, 214, 7, 70, "Input",ExpressionUUID->"c72da6c8-e175-4722-8998-34da7406fae1",
+ CellID->1149523937],
+Cell[4683, 161, 348, 10, 70, "Output",ExpressionUUID->"5299cec5-f8e1-4ce2-ae56-f4f6ee29ffa1",
+ CellID->1537160447]
+}, Open  ]],
+Cell[5046, 174, 55, 1, 70, "MathCaption",ExpressionUUID->"611afb18-d423-460e-b7da-96297cafdb63",
+ CellID->1563339364],
+Cell[CellGroupData[{
+Cell[5126, 179, 99, 3, 70, "Input",ExpressionUUID->"a9af1868-aab5-41ed-a52e-6a0409e24bd2",
+ CellID->582269703],
+Cell[5228, 184, 160, 5, 70, "Output",ExpressionUUID->"3b600a27-718d-41c8-8eda-edc062d4982b",
+ CellID->827359319]
+}, Open  ]],
+Cell[5403, 192, 52, 1, 70, "MathCaption",ExpressionUUID->"cb110c87-c530-4a42-8c08-41777f35fa0e",
+ CellID->1794004251],
+Cell[CellGroupData[{
+Cell[5480, 197, 100, 3, 70, "Input",ExpressionUUID->"b525fc1c-7301-4fee-a9e8-4529217def87",
+ CellID->1159042677],
+Cell[5583, 202, 160, 5, 70, "Output",ExpressionUUID->"a5314e4f-f6b7-4b4c-ae49-effd3117b950",
+ CellID->471460108]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5792, 213, 51, 1, 70, "Subsection",ExpressionUUID->"2ae5c8a6-49c6-4dc4-a221-de7251a4e3c4",
+ CellID->722548255],
+Cell[5846, 216, 55, 1, 70, "MathCaption",ExpressionUUID->"ad2f3c61-968f-425f-bfed-8a73ac158e4b",
+ CellID->1995981647],
+Cell[CellGroupData[{
+Cell[5926, 221, 317, 10, 70, "Input",ExpressionUUID->"6aab2865-5634-41c6-80d8-adea248a93e8",
+ CellID->621491342],
+Cell[6246, 233, 428, 12, 70, "Output",ExpressionUUID->"ffc1ba44-975f-4312-bc67-da2169f3c91a",
+ CellID->1762861373]
+}, Open  ]],
+Cell[6689, 248, 52, 1, 70, "MathCaption",ExpressionUUID->"d2d48c56-00d0-46dd-b331-5672ee16b051",
+ CellID->1023937546],
+Cell[CellGroupData[{
+Cell[6766, 253, 257, 8, 70, "Input",ExpressionUUID->"e1ca9441-9191-4b3b-9031-f093320d6997",
+ CellID->1531872211],
+Cell[7026, 263, 428, 12, 70, "Output",ExpressionUUID->"e4da5812-9189-406a-ae2f-7d546f341e17",
+ CellID->1726701999]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7503, 281, 51, 1, 70, "Subsection",ExpressionUUID->"bc4a8c4b-7c1b-4a1f-b72c-6b397b72462f",
+ CellID->439974191],
+Cell[7557, 284, 54, 1, 70, "MathCaption",ExpressionUUID->"bd3f1922-e3e6-4fad-804b-744142897eea",
+ CellID->860031516],
+Cell[CellGroupData[{
+Cell[7636, 289, 104, 3, 70, "Input",ExpressionUUID->"6be776ed-f252-4f74-8a71-4041d9b77e3c",
+ CellID->1984745102],
+Cell[7743, 294, 164, 5, 70, "Output",ExpressionUUID->"d5a23b23-5b13-4e79-ab31-ff7a8be8b3e9",
+ CellID->1733975282]
+}, Open  ]],
+Cell[7922, 302, 52, 1, 70, "MathCaption",ExpressionUUID->"f0b4eb7f-037c-402c-a103-c511b2684aff",
+ CellID->1600010338],
+Cell[CellGroupData[{
+Cell[7999, 307, 91, 3, 70, "Input",ExpressionUUID->"e0f253a8-c451-4b4d-8ede-ebd1441d828e",
+ CellID->583523032],
+Cell[8093, 312, 164, 5, 70, "Output",ExpressionUUID->"37578932-2876-49e5-9fff-f51c5d2067b4",
+ CellID->1569474784]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8306, 323, 51, 1, 70, "Subsection",ExpressionUUID->"5b9db235-4ab6-4321-a0ac-dd69054a40ba",
+ CellID->774130130],
+Cell[8360, 326, 172, 7, 70, "MathCaption",ExpressionUUID->"566bcc64-4165-4f92-b0e4-0bc184cd2e38",
+ CellID->1349161384],
+Cell[CellGroupData[{
+Cell[8557, 337, 123, 4, 70, "Input",ExpressionUUID->"06b04b29-1faa-45d8-99e8-89169f07c25c",
+ CellID->75552215],
+Cell[8683, 343, 340, 10, 70, "Output",ExpressionUUID->"d8c14c70-c55d-4290-894b-afdc605ac7c6",
+ CellID->621058587]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9060, 358, 135, 4, 70, "Input",ExpressionUUID->"6eb43231-dcaf-4ecf-a528-dfc4b0dca9b4",
+ CellID->1822498656],
+Cell[9198, 364, 429, 15, 70, "Output",ExpressionUUID->"26d350c7-5fed-4fdf-aa74-d978ecf9b8e1",
+ CellID->1361147289]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9676, 385, 52, 1, 70, "Subsection",ExpressionUUID->"aec267b2-d5fe-4f8b-9aed-9b8887e1f28f",
+ CellID->1423472946],
+Cell[9731, 388, 55, 1, 70, "MathCaption",ExpressionUUID->"3cc1f788-ddf2-43db-b166-ca166b92735f",
+ CellID->1341975842],
+Cell[CellGroupData[{
+Cell[9811, 393, 165, 4, 70, "Input",ExpressionUUID->"6b13695c-646a-4e31-a34a-f06b1e021f24",
+ CellID->1714715700],
+Cell[9979, 399, 170, 5, 70, "Output",ExpressionUUID->"b25d21fb-eb5e-4a2a-b7fd-a07fc09237e0",
+ CellID->1806678379]
+}, Open  ]],
+Cell[10164, 407, 52, 1, 70, "MathCaption",ExpressionUUID->"1454bc53-0750-41fe-b281-a2f8b876dea8",
+ CellID->1014387530],
+Cell[CellGroupData[{
+Cell[10241, 412, 130, 3, 70, "Input",ExpressionUUID->"9c249474-5ca5-4e04-b62f-e7846ca2aa76",
+ CellID->2086026824],
+Cell[10374, 417, 170, 5, 70, "Output",ExpressionUUID->"7646fabc-a3f0-4d13-8598-a53ca80de678",
+ CellID->1572230920]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10593, 428, 51, 1, 70, "Subsection",ExpressionUUID->"46c5e7b6-ab97-4138-b3ad-2f09aa878c5b",
+ CellID->546488649],
+Cell[10647, 431, 48, 1, 70, "MathCaption",ExpressionUUID->"2fdea43d-4284-4ed7-a736-c0f3909567dc",
+ CellID->47165524],
+Cell[CellGroupData[{
+Cell[10720, 436, 206, 6, 70, "Input",ExpressionUUID->"f200bab5-e005-4baf-ab31-dce69efaa09b",
+ CellID->289496125],
+Cell[10929, 444, 591, 12, 70, "Message",ExpressionUUID->"fc98c269-100b-47a0-9242-77e01005687c",
+ CellID->1846279752],
+Cell[11523, 458, 161, 5, 70, "Output",ExpressionUUID->"f0f81f7a-14f9-426c-8d9c-f48190f2c13c",
+ CellID->1432576361]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11721, 468, 76, 2, 70, "Input",ExpressionUUID->"02f65092-6ba1-4262-a117-e25dfe0a5157",
+ CellID->1440642592],
+Cell[11800, 472, 164, 5, 70, "Output",ExpressionUUID->"2616cec9-5cf3-4c7e-89c4-8835faba7cb2",
+ CellID->1871732810]
+}, Open  ]],
+Cell[11979, 480, 52, 1, 70, "MathCaption",ExpressionUUID->"eead6193-5786-4760-a9a4-b4e8cdb2fbb3",
+ CellID->2058400812],
+Cell[CellGroupData[{
+Cell[12056, 485, 240, 7, 70, "Input",ExpressionUUID->"10a36efe-690d-4d56-b83d-f01014bdf41c",
+ CellID->1728377761],
+Cell[12299, 494, 161, 5, 70, "Output",ExpressionUUID->"94e7aec0-7678-4029-be8b-7627e5d6e56d",
+ CellID->1872876414]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12497, 504, 75, 2, 70, "Input",ExpressionUUID->"5ef0490d-fe67-461d-9665-47dbb504856f",
+ CellID->928755162],
+Cell[12575, 508, 161, 5, 70, "Output",ExpressionUUID->"436e6d33-32dd-4e67-998d-23a3012847d1",
+ CellID->1766076019]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12785, 519, 50, 1, 70, "Subsection",ExpressionUUID->"7c5f9a84-4b83-412d-9c03-58f2c045b600",
+ CellID->97997749],
+Cell[12838, 522, 54, 1, 70, "MathCaption",ExpressionUUID->"0c52a495-8659-4014-b3cd-332c8370d368",
+ CellID->893391257],
+Cell[12895, 525, 328, 11, 70, "DisplayMath",ExpressionUUID->"ba952539-1e0e-4d09-956b-94464182b73a",
+ CellID->1667599844],
+Cell[13226, 538, 397, 12, 70, "MathCaption",ExpressionUUID->"9807c860-c530-4eae-85f8-13c76508de42",
+ CellID->186329219],
+Cell[13626, 552, 372, 14, 70, "Input",ExpressionUUID->"730d79ab-b4ab-47aa-b44c-43f237cf5d34",
+ CellID->52483792]
+}, Open  ]]
+}, Open  ]],
+Cell[14025, 570, 23, 0, 70, "FooterCell",ExpressionUUID->"5541f589-0bb9-42aa-b547-ed9beca6a558"]
+}
+]
+*)
+
+(* End of internal cache information *)

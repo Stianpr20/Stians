@@ -1,0 +1,1150 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     37387,       1142]
+NotebookOptionsPosition[     31355,        930]
+NotebookOutlinePosition[     31988,        955]
+CellTagsIndexPosition[     31909,        950]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "New in: ",
+ Cell["0.0", "HistoryData",
+  CellTags->"New"],
+ " | Modified in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Modified"],
+ " | Obsolete in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Obsolete"],
+ " | Excised in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Excised"]
+}], "History",
+ CellID->1247902091],
+
+Cell[CellGroupData[{
+
+Cell["Categorization", "CategorizationSection",
+ CellID->1122911449],
+
+Cell["Symbol", "Categorization",
+ CellLabel->"Entity Type",
+ CellID->686433507],
+
+Cell["Xray", "Categorization",
+ CellLabel->"Paclet Name",
+ CellID->605800465],
+
+Cell["Xray`", "Categorization",
+ CellLabel->"Context",
+ CellID->468444828],
+
+Cell["Xray/ref/GifGenerator", "Categorization",
+ CellLabel->"URI"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Keywords", "KeywordsSection",
+ CellID->477174294],
+
+Cell["XXXX", "Keywords",
+ CellID->1164421360]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Syntax Templates", "TemplatesSection",
+ CellID->1872225408],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Additional Function Template",
+ CellID->1562036412],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Arguments Pattern",
+ CellID->158391909],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Local Variables",
+ CellID->1360575930],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Color Equal Signs",
+ CellID->793782254]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Details", "DetailsSection",
+ CellID->307771771],
+
+Cell["XXXX", "Details",
+ CellLabel->"Lead",
+ CellID->670882175],
+
+Cell["XXXX", "Details",
+ CellLabel->"Developers",
+ CellID->350963985],
+
+Cell["XXXX", "Details",
+ CellLabel->"Authors",
+ CellID->8391405],
+
+Cell["XXXX", "Details",
+ CellLabel->"Feature Name",
+ CellID->3610269],
+
+Cell["XXXX", "Details",
+ CellLabel->"QA",
+ CellID->401364205],
+
+Cell["XXXX", "Details",
+ CellLabel->"DA",
+ CellID->350204745],
+
+Cell["XXXX", "Details",
+ CellLabel->"Docs",
+ CellID->732958810],
+
+Cell["XXXX", "Details",
+ CellLabel->"Features Page Notes",
+ CellID->222905350],
+
+Cell["XXXX", "Details",
+ CellLabel->"Comments",
+ CellID->240026365]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["GifGenerator", "ObjectName",
+ CellID->1224892054],
+
+Cell[TextData[{
+ Cell["   ", "ModInfo"],
+ Cell[BoxData[
+  RowBox[{
+   ButtonBox["GifGenerator",
+    BaseStyle->"Link",
+    ButtonData->"paclet:Xray/ref/GifGenerator"], "[", 
+   StyleBox["input", "TI"], "]"}]], "InlineFormula"],
+ " \[LineSeparator]produces a ",
+ StyleBox["gif", "InlineCode"],
+ " file based on ",
+ Cell[BoxData[
+  StyleBox["input", "TI"]], "InlineFormula"],
+ "."
+}], "Usage",
+ CellChangeTimes->{{3.6590163451735687`*^9, 3.6590163456908913`*^9}, {
+   3.659016414329567*^9, 3.659016447309547*^9}, 3.713511800200428*^9},
+ CellID->982511436],
+
+Cell[TextData[{
+ "The ",
+ Cell[BoxData[
+  StyleBox["input", "TI"]], "InlineFormula"],
+ " may be images or file paths to images, but it has to be a list. If it is a \
+list of file paths, the images will be imported automatically."
+}], "Notes",
+ CellChangeTimes->{{3.659016458065034*^9, 3.6590164775482388`*^9}, {
+  3.6590167121161547`*^9, 3.6590167644913807`*^9}},
+ CellID->1067943069],
+
+Cell[BoxData[GridBox[{
+   {Cell["      ", "ModInfo"], "\"\<BackwardsLoop\>\"", Cell[
+    "appends a duplicate of input in reversed order", "TableText"]},
+   {Cell["      ", "ModInfo"], "\"\<Format\>\"", Cell[
+    "produce MPEG-4 video instead", "TableText"]},
+   {Cell["      ", "ModInfo"], "\"\<GifName\>\"", Cell[TextData[{
+     "the file name of the ",
+     StyleBox["gif", "InlineCode"]
+    }], "TableText"]},
+   {Cell["      ", "ModInfo"], "\"\<OutputDirectory\>\"", Cell[
+    "where the produced file is placed", "TableText"]},
+   {Cell["      ", "ModInfo"], "\"\<Time\>\"", Cell[
+    "how many seconds each frame is visible", "TableText"]}
+  }]], "2ColumnTableMod",
+ TaggingRules->{"Alphabetized" -> True},
+ CellChangeTimes->{{3.659016580683097*^9, 3.659016602007278*^9}, {
+  3.6590166417835608`*^9, 3.659016700037657*^9}, {3.6590182806862507`*^9, 
+  3.659018281252877*^9}, {3.660719539849815*^9, 3.6607195839519167`*^9}, {
+  3.66071973222936*^9, 3.66071973236392*^9}, {3.71351178879989*^9, 
+  3.713511807660489*^9}, {3.713511842723915*^9, 3.713511885883917*^9}},
+ CellID->1115609353],
+
+Cell[TextData[{
+ "The only supported settings for ",
+ Cell[BoxData["\"\<Format\>\""], "InlineFormula",
+  FormatType->"StandardForm"],
+ " are ",
+ Cell[BoxData["\"\<gif\>\""], "InlineFormula",
+  FormatType->"StandardForm"],
+ " and ",
+ Cell[BoxData["\"\<mp4\>\""], "InlineFormula",
+  FormatType->"StandardForm"],
+ ". The defulat setting for ",
+ Cell[BoxData["\"\<Time\>\""], "InlineFormula",
+  FormatType->"StandardForm"],
+ " is ",
+ Cell[BoxData["0.1"], "InlineFormula",
+  FormatType->"StandardForm"],
+ "."
+}], "Notes",
+ CellChangeTimes->{{3.71351189793629*^9, 3.7135120103135157`*^9}},
+ CellID->1150039653],
+
+Cell[TextData[{
+ "If the ",
+ Cell[BoxData[
+  StyleBox["input", "TI"]], "InlineFormula"],
+ " is a list of images, and no name for the ",
+ StyleBox["gif", "InlineCode"],
+ " is specified, it wil be called ",
+ StyleBox["output.gif", "InlineCode"],
+ "."
+}], "Notes",
+ CellChangeTimes->{{3.659018347501829*^9, 3.6590183943365602`*^9}, 
+   3.713512014594385*^9},
+ CellID->171948806]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Tutorials", "TutorialsSection",
+ CellID->250839057],
+
+Cell["XXXX", "Tutorials",
+ CellID->341631938]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Related Demonstrations", "RelatedDemonstrationsSection",
+ CellID->1268215905],
+
+Cell["XXXX", "RelatedDemonstrations",
+ CellID->1129518860]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Related Links", "RelatedLinksSection",
+ CellID->1584193535],
+
+Cell["XXXX", "RelatedLinks",
+ CellID->1038487239]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["See Also", "SeeAlsoSection",
+ CellID->1255426704],
+
+Cell["XXXX", "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["More About", "MoreAboutSection",
+ CellID->38303248],
+
+Cell["XXXX", "MoreAbout",
+ CellID->1665078683]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {
+     StyleBox["Examples", "PrimaryExamplesSection"], 
+     ButtonBox[
+      RowBox[{
+       RowBox[{"More", " ", "Examples"}], " ", "\[RightTriangle]"}],
+      BaseStyle->"ExtendedExamplesLink",
+      ButtonData:>"ExtendedExamples"]}
+   }],
+  $Line = 0; Null]], "PrimaryExamplesSection",
+ CellID->880084151],
+
+Cell["\<\
+Gather all the image files from a project and store them in a symbol.\
+\>", "ExampleText",
+ CellChangeTimes->{{3.659016848699581*^9, 3.659016897353492*^9}, {
+  3.659017064728187*^9, 3.6590170702230167`*^9}},
+ CellID->709791874],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"files", "=", 
+   RowBox[{"FileNames", "[", 
+    RowBox[{"FileNameJoin", "[", 
+     RowBox[{"{", 
+      RowBox[{
+      "$XrayExamples", ",", "\"\<Unwarps\>\"", ",", 
+       "\"\<Crystal_1*.bmp\>\""}], "}"}], "]"}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.659016949595913*^9, 3.659016950800667*^9}, {
+   3.659017494089872*^9, 3.6590175132890253`*^9}, {3.660662248911128*^9, 
+   3.660662284755962*^9}, {3.660712614595542*^9, 3.660712648296638*^9}, 
+   3.660719366695547*^9, 3.713510941052498*^9},
+ CellLabel->"In[1]:=",
+ CellID->65826069],
+
+Cell["Now input this list to the function:", "ExampleText",
+ CellChangeTimes->{{3.659017529881673*^9, 3.659017539921101*^9}},
+ CellID->1868727872],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"GifGenerator", "[", "files", "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.6590175524745817`*^9, 3.659017555783781*^9}, 
+   3.660709761604648*^9},
+ CellLabel->"In[2]:=",
+ CellID->869774346],
+
+Cell[TextData[{
+ "You may also import the images first, and use a list of these as input. \
+This method may be preferable if you want to try different settings for the \
+",
+ StyleBox["\"DisplayDurations\"", "InlineCode"],
+ " option."
+}], "ExampleText",
+ CellChangeTimes->{{3.659017612312414*^9, 3.659017727814447*^9}, {
+  3.6606623533061943`*^9, 3.660662367729578*^9}},
+ CellID->645910824],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"images", "=", 
+   RowBox[{"Import", "/@", "files"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.6590177383694963`*^9, 3.659017750734728*^9}, 
+   3.660709785244451*^9, 3.660712667344887*^9, 3.660719370022482*^9, {
+   3.713510993799481*^9, 3.7135110007899523`*^9}},
+ CellLabel->"In[3]:=",
+ CellID->1975675792],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"GifGenerator", "[", 
+   RowBox[{"images", ",", 
+    RowBox[{"\"\<GifName\>\"", "\[Rule]", "\"\<test2\>\""}]}], "]"}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.65901777216917*^9, 3.6590177881082973`*^9}, 
+   3.660709838273423*^9},
+ CellLabel->"In[4]:=",
+ CellID->1856339563],
+
+Cell[TextData[{
+ "The second ",
+ StyleBox["gif", "InlineCode"],
+ " will be placed on the desktop, since it has no source directory."
+}], "ExampleText",
+ CellChangeTimes->{{3.6607127182493687`*^9, 3.660712762757403*^9}, {
+  3.713511033527795*^9, 3.713511072971092*^9}},
+ CellID->423447444]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["More Examples", "ExtendedExamplesSection",
+ CellTags->"ExtendedExamples",
+ CellID->1854448968],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Scope", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1293636265],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Generalizations & Extensions", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1020263627],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["Options", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->2061341341],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\"BackwardsLoop\"", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection",
+ CellChangeTimes->{{3.659017914924951*^9, 3.659017922835883*^9}, {
+  3.660719468148346*^9, 3.660719468282942*^9}, {3.713511327176906*^9, 
+  3.713511328061818*^9}, {3.7135113801156063`*^9, 3.713511385546653*^9}},
+ CellID->1280469678],
+
+Cell[TextData[{
+ "Setting this to ",
+ Cell[BoxData[
+  ButtonBox["True",
+   BaseStyle->"Link",
+   ButtonData->"paclet:ref/True"]], "InlineFormula",
+  FormatType->"StandardForm"],
+ " will loop the gif backwards."
+}], "ExampleText",
+ CellChangeTimes->{{3.660719679413261*^9, 3.6607196934114933`*^9}, {
+   3.660719735850629*^9, 3.660719778281452*^9}, 3.66072000296611*^9, {
+   3.713511331323544*^9, 3.713511363780571*^9}, {3.713511396116002*^9, 
+   3.7135114283945704`*^9}},
+ CellID->920251559],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"GifGenerator", "[", 
+   RowBox[{"images", ",", 
+    RowBox[{"\"\<BackwardsLoop\>\"", "\[Rule]", "True"}]}], "]"}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.6590180825321283`*^9, 3.659018098055787*^9}, {
+   3.659018165055028*^9, 3.659018165310885*^9}, {3.659018298701303*^9, 
+   3.659018299205163*^9}, 3.66070987984002*^9, {3.660719632758567*^9, 
+   3.660719639213081*^9}, {3.71351130139889*^9, 3.713511308008623*^9}, {
+   3.713511387592094*^9, 3.71351139339751*^9}},
+ CellLabel->"In[1]:=",
+ CellID->490726419]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\"Format\"", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection",
+ CellChangeTimes->{{3.659017914924951*^9, 3.659017922835883*^9}, {
+  3.660719468148346*^9, 3.660719468282942*^9}, {3.713511327176906*^9, 
+  3.713511328061818*^9}},
+ CellID->1513056849],
+
+Cell[TextData[{
+ "MPEG-4 video takes considerably less space than a ",
+ StyleBox["gif", "InlineCode"],
+ "."
+}], "ExampleText",
+ CellChangeTimes->{{3.660719679413261*^9, 3.6607196934114933`*^9}, {
+   3.660719735850629*^9, 3.660719778281452*^9}, 3.66072000296611*^9, {
+   3.713511331323544*^9, 3.713511363780571*^9}, 3.713511603787868*^9},
+ CellID->1851027952],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"GifGenerator", "[", 
+   RowBox[{"images", ",", 
+    RowBox[{"\"\<Format\>\"", "\[Rule]", "\"\<mp4\>\""}]}], "]"}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.6590180825321283`*^9, 3.659018098055787*^9}, {
+   3.659018165055028*^9, 3.659018165310885*^9}, {3.659018298701303*^9, 
+   3.659018299205163*^9}, 3.66070987984002*^9, {3.660719632758567*^9, 
+   3.660719639213081*^9}, {3.71351130139889*^9, 3.713511308008623*^9}},
+ CellLabel->"In[1]:=",
+ CellID->601174653]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\"GifName\"", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection",
+ CellChangeTimes->{{3.659018450508864*^9, 3.659018452388061*^9}},
+ CellID->1059096415],
+
+Cell[TextData[{
+ "This option lets the user specify the name of the ",
+ StyleBox["gif", "InlineCode"],
+ "."
+}], "ExampleText",
+ CellChangeTimes->{{3.659018482811471*^9, 3.659018499825824*^9}, {
+  3.713511609258196*^9, 3.71351161076405*^9}},
+ CellID->890265875],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"GifGenerator", "[", 
+   RowBox[{"images", ",", 
+    RowBox[{"\"\<GifName\>\"", "\[Rule]", "\"\<abc\>\""}]}], "]"}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.659018508466654*^9, 3.659018512841675*^9}, 
+   3.660709886455998*^9},
+ CellLabel->"In[1]:=",
+ CellID->1849079739]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\"OutputDirectory\"", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection",
+ CellChangeTimes->{{3.6590185252109137`*^9, 3.659018533359067*^9}},
+ CellID->1295379749],
+
+Cell[TextData[{
+ "This option lets the user specify where the produced ",
+ StyleBox["gif", "InlineCode"],
+ " will be placed."
+}], "ExampleText",
+ CellChangeTimes->{{3.659018482811471*^9, 3.659018499825824*^9}, {
+   3.659018543858179*^9, 3.6590185656648083`*^9}, 3.713511607925906*^9},
+ CellID->153372639],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"GifGenerator", "[", 
+   RowBox[{"images", ",", 
+    RowBox[{"\"\<OutputDirectory\>\"", "\[Rule]", "$XrayExamples"}]}], "]"}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.6590185767218122`*^9, 3.659018583008737*^9}, 
+   3.6607099277855587`*^9, {3.6607099724547567`*^9, 3.6607099763571253`*^9}, {
+   3.6607100070219088`*^9, 3.6607100084205933`*^9}, {3.660710045597033*^9, 
+   3.6607100728749638`*^9}, {3.660718474582407*^9, 3.660718477300467*^9}, 
+   3.660719414804934*^9},
+ CellLabel->"In[1]:=",
+ CellID->1958393268]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\"Time\"", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection",
+ CellChangeTimes->{{3.659017914924951*^9, 3.659017922835883*^9}, {
+  3.7135112324449997`*^9, 3.7135112328660173`*^9}},
+ CellID->1757724783],
+
+Cell[TextData[{
+ "This option governs the \
+\[OpenCurlyDoubleQuote]speed\[CloseCurlyDoubleQuote] of the ",
+ StyleBox["gif", "InlineCode"],
+ "."
+}], "ExampleText",
+ CellChangeTimes->{{3.6590179297317457`*^9, 3.659017949098035*^9}, {
+  3.659018102303606*^9, 3.659018108839563*^9}, {3.713511612355975*^9, 
+  3.713511612761075*^9}},
+ CellID->1223426193],
+
+Cell[TextData[{
+ "For instace, we can have the ",
+ StyleBox[".gif", "InlineCode"],
+ " stay 0.25 second on each frame:"
+}], "ExampleText",
+ CellChangeTimes->{{3.659018168206861*^9, 3.659018204814148*^9}},
+ CellID->362310981],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"GifGenerator", "[", 
+   RowBox[{"images", ",", 
+    RowBox[{"\"\<Time\>\"", "\[Rule]", "0.25"}]}], "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.6590180825321283`*^9, 3.659018098055787*^9}, {
+   3.659018165055028*^9, 3.659018165310885*^9}, {3.659018298701303*^9, 
+   3.659018299205163*^9}, 3.66070987984002*^9},
+ CellLabel->"In[1]:=",
+ CellID->1394380883]
+}, Open  ]]
+}, Open  ]],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Applications", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->258228157],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Properties & Relations", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->2123667759],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Possible Issues", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1305812373],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Interactive Examples", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1653164318],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Neat Examples", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->589267740],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[TextData[{
+   StyleBox["Mathematica",
+    FontSlant->"Italic"],
+   " code"
+  }], "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellChangeTimes->{{3.713511511093975*^9, 3.713511514914196*^9}},
+ CellID->1144320007],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"GifGenerator", "::", "names"}], "=", 
+   "\"\<Invalid dimensions of custom name list.\>\""}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"GifGenerator", "::", "namestring"}], "=", 
+   "\"\<Some of the names are not strings.\>\""}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"GifGenerator", "::", "invalid"}], "=", 
+   "\"\<Invalid \[LeftGuillemet]Names\[RightGuillemet] option.\>\""}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"GifGenerator", "::", "format"}], "=", 
+    "\"\<\[LeftGuillemet]`1`\[RightGuillemet] is not a valid output format.\>\
+\""}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Options", "[", "GifGenerator", "]"}], "=", 
+   RowBox[{"{", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"\"\<Time\>\"", "\[Rule]", "0.1"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"\"\<GifName\>\"", "\[Rule]", "False"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"\"\<OutputDirectory\>\"", "\[Rule]", "False"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"\"\<Format\>\"", "\[Rule]", "\"\<gif\>\""}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"\"\<BackwardsLoop\>\"", "\[Rule]", "False"}]}], "}"}]}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{
+  3.6678104346724377`*^9, {3.6678106741260653`*^9, 3.667810676122314*^9}, {
+   3.6912156591212883`*^9, 3.691215706763674*^9}, {3.691216026574657*^9, 
+   3.6912160345326557`*^9}, {3.6912167300240297`*^9, 3.69121673551864*^9}, 
+   3.691221247334304*^9, {3.713511197716024*^9, 3.7135112024420033`*^9}},
+ Background->GrayLevel[0.85],
+ CellID->1242971199],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"GifGenerator", "[", 
+   RowBox[{"input_List", ",", 
+    RowBox[{"OptionsPattern", "@", "GifGenerator"}]}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{
+     "L", ",", "autoimport", ",", "format", ",", "\[IndentingNewLine]", 
+      "data", ",", "progress", ",", "image", ",", "\[IndentingNewLine]", 
+      "data1", ",", "data2", ",", "\[IndentingNewLine]", "gifname", ",", 
+      "dir", ",", "random", ",", "temp"}], "}"}], ",", "\[IndentingNewLine]", 
+    "\[IndentingNewLine]", 
+    RowBox[{"(*", " ", 
+     RowBox[{"Checking", " ", "input", " ", "form"}], " ", "*)"}], 
+    "\[IndentingNewLine]", "\t", 
+    RowBox[{
+     RowBox[{"L", "=", 
+      RowBox[{"Length", "@", "input"}]}], ";", "\[IndentingNewLine]", "\t\t", 
+     
+     RowBox[{"Off", "[", 
+      StyleBox[
+       RowBox[{"FileExistsQ", "::", "fstr"}], "MessageName"], 
+      StyleBox["]", "MessageName"]}], 
+     StyleBox[";", "MessageName"], "\[IndentingNewLine]", "\t", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"Check", "[", 
+        RowBox[{
+         RowBox[{"FileExistsQ", "@", 
+          RowBox[{"First", "@", "input"}]}], ",", 
+         RowBox[{"Abort", "[", "]"}]}], "]"}], ",", "\[IndentingNewLine]", 
+       "\t", 
+       RowBox[{"autoimport", "=", "True"}], ",", "\[IndentingNewLine]", "\t", 
+       
+       RowBox[{"autoimport", "=", "False"}], ",", "\[IndentingNewLine]", "\t", 
+       RowBox[{"autoimport", "=", "False"}]}], "]"}], ";", 
+     "\[IndentingNewLine]", "\t\t", 
+     RowBox[{"On", "[", 
+      RowBox[{"FileExistsQ", "::", "fstr"}], "]"}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", "\t", 
+     RowBox[{"format", "=", 
+      RowBox[{"OptionValue", "[", "\"\<Format\>\"", "]"}]}], ";", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"!", 
+        RowBox[{"MemberQ", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"\"\<gif\>\"", ",", "\"\<mp4\>\""}], "}"}], ",", 
+          "format"}], "]"}]}], ",", "\[IndentingNewLine]", "\t", 
+       RowBox[{"Message", "[", 
+        RowBox[{
+         RowBox[{"GifGenerator", "::", "format"}], ",", "format"}], "]"}]}], 
+      "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Importing", " ", "data", " ", "if", " ", "necessary"}], " ", 
+      "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{"If", "[", 
+      RowBox[{"autoimport", ",", "\[IndentingNewLine]", "\t", 
+       RowBox[{"(*", " ", 
+        RowBox[{"Dynamic", " ", "status"}], " ", "*)"}], 
+       "\[IndentingNewLine]", "\t", 
+       RowBox[{
+        RowBox[{"data", "=", 
+         RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", "\t", 
+        RowBox[{"progress", "=", "0"}], ";", "\[IndentingNewLine]", "\t", 
+        RowBox[{"PrintTemporary", "[", "\[IndentingNewLine]", "\t", 
+         RowBox[{"Row", "[", "\[IndentingNewLine]", "\t", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"Text", "[", 
+              RowBox[{"Style", "[", 
+               RowBox[{"\"\<Image import progress:\>\"", ",", 
+                RowBox[{"FontFamily", "\[Rule]", "\"\<Avenir Next\>\""}], ",",
+                 "16"}], "]"}], "]"}], ",", "\[IndentingNewLine]", "\t", 
+             RowBox[{"Spacer", "[", "20", "]"}], ",", "\[IndentingNewLine]", 
+             "\t", 
+             RowBox[{"Dynamic", "@", 
+              RowBox[{"ProgressIndicator", "[", 
+               RowBox[{"progress", "/", "L"}], "]"}]}], ",", 
+             "\[IndentingNewLine]", "\t", 
+             RowBox[{"Spacer", "[", "20", "]"}], ",", "\[IndentingNewLine]", 
+             "\t", 
+             RowBox[{"Dynamic", "[", 
+              RowBox[{"Text", "[", 
+               RowBox[{"Style", "[", 
+                RowBox[{
+                 RowBox[{"\"\<Imported: \>\"", "<>", 
+                  RowBox[{"ToString", "[", "progress", "]"}], "<>", 
+                  "\"\< of \>\"", "<>", 
+                  RowBox[{"ToString", "@", "L"}]}], ",", 
+                 RowBox[{"FontFamily", "\[Rule]", "\"\<Avenir Next\>\""}], 
+                 ",", "12"}], "]"}], "]"}], "]"}]}], "\[IndentingNewLine]", 
+            "\t", "}"}], ",", "\[IndentingNewLine]", "\t", 
+           RowBox[{"Alignment", "\[Rule]", "Center"}]}], 
+          "\[IndentingNewLine]", "\t", "]"}], "]"}], ";", 
+        "\[IndentingNewLine]", "\[IndentingNewLine]", "\t", 
+        RowBox[{"Do", "[", "\[IndentingNewLine]", "\t", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"image", "=", 
+            RowBox[{"Import", "@", 
+             RowBox[{"input", "[", 
+              RowBox[{"[", "i", "]"}], "]"}]}]}], ";", "\[IndentingNewLine]", 
+           "\t", 
+           RowBox[{"AppendTo", "[", 
+            RowBox[{"data", ",", "image"}], "]"}], ";", "\[IndentingNewLine]",
+            "\t", 
+           RowBox[{"progress", "++"}]}], ",", "\[IndentingNewLine]", "\t", 
+          RowBox[{"{", 
+           RowBox[{"i", ",", "L"}], "}"}]}], "]"}]}], ",", "\t", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", "\t", 
+       RowBox[{"(*", " ", 
+        RowBox[{"No", " ", "import"}], " ", "*)"}], "\[IndentingNewLine]", 
+       "\t", 
+       RowBox[{"data", "=", "input"}]}], "]"}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Optional", ":", " ", 
+       RowBox[{"Backwards", " ", "loop"}]}], " ", "*)"}], 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"OptionValue", "[", "\"\<BackwardsLoop\>\"", "]"}], ",", 
+       "\[IndentingNewLine]", "\t", 
+       RowBox[{
+        RowBox[{"data1", "=", "data"}], ";", "\[IndentingNewLine]", "\t", 
+        RowBox[{"data2", "=", 
+         RowBox[{"Rest", "@", 
+          RowBox[{"Reverse", "@", "data"}]}]}], ";", "\[IndentingNewLine]", 
+        "\t", 
+        RowBox[{"data", "=", 
+         RowBox[{"Join", "[", 
+          RowBox[{"data1", ",", "data2"}], "]"}]}]}]}], "\[IndentingNewLine]",
+       "\t", "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+      "Making", " ", "the", " ", "name", " ", "of", " ", "the", " ", "gif"}], 
+      " ", "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"ImageQ", "[", 
+        RowBox[{"First", "@", "input"}], "]"}], ",", "\[IndentingNewLine]", 
+       "\t", 
+       RowBox[{"gifname", "=", "\"\<output\>\""}], ",", "\[IndentingNewLine]",
+        "\t", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"StringContainsQ", "[", 
+          RowBox[{
+           RowBox[{"FileNameTake", "@", 
+            RowBox[{"First", "@", "input"}]}], ",", "\"\<_\>\""}], "]"}], ",",
+          "\[IndentingNewLine]", "\t", 
+         RowBox[{"gifname", "=", 
+          RowBox[{"StringDrop", "[", 
+           RowBox[{
+            RowBox[{"First", "@", 
+             RowBox[{"StringCases", "[", 
+              RowBox[{
+               RowBox[{"FileNameTake", "@", 
+                RowBox[{"First", "@", "input"}]}], ",", 
+               RowBox[{"__", "~~", "\"\<_\>\""}]}], "]"}]}], ",", 
+            RowBox[{"-", "1"}]}], "]"}]}], ",", "\[IndentingNewLine]", "\t", 
+         RowBox[{"gifname", "=", "\"\<output\>\""}]}], "]"}]}], "]"}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", "\t", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"StringQ", "@", 
+        RowBox[{"OptionValue", "[", "\"\<GifName\>\"", "]"}]}], ",", 
+       RowBox[{"gifname", "=", 
+        RowBox[{"OptionValue", "[", "\"\<GifName\>\"", "]"}]}]}], "]"}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Checking", " ", "output", " ", "directory"}], " ", "*)"}], 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"If", "[", 
+      RowBox[{"autoimport", ",", "\[IndentingNewLine]", "\t", 
+       RowBox[{"(*", " ", 
+        RowBox[{"Use", " ", "source", " ", "directory"}], " ", "*)"}], 
+       "\[IndentingNewLine]", "\t\t", 
+       RowBox[{"dir", "=", 
+        RowBox[{"FileNameTake", "[", 
+         RowBox[{
+          RowBox[{"First", "@", "input"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"1", ",", 
+            RowBox[{"-", "2"}]}], "}"}]}], "]"}]}], ",", 
+       "\[IndentingNewLine]", "\t", 
+       RowBox[{"(*", " ", 
+        RowBox[{"Use", " ", "desktop"}], " ", "*)"}], "\[IndentingNewLine]", 
+       "\t\t", 
+       RowBox[{"dir", "=", 
+        RowBox[{"FileNameJoin", "[", 
+         RowBox[{"{", 
+          RowBox[{"$HomeDirectory", ",", "\"\<Desktop\>\""}], "}"}], 
+         "]"}]}]}], "\[IndentingNewLine]", "\t", "]"}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", "\t", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"OptionValue", "[", "\"\<OutputDirectory\>\"", "]"}], ",", 
+       "Null", ",", "Null", ",", 
+       RowBox[{"dir", "=", 
+        RowBox[{"OptionValue", "[", "\"\<OutputDirectory\>\"", "]"}]}]}], 
+      "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Optional", ":", " ", 
+       RowBox[{"Exporting", " ", "to", " ", 
+        RowBox[{"a", " ", ".", "mp4"}], " ", "video"}]}], " ", "*)"}], 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"format", "===", "\"\<mp4\>\""}], ",", "\[IndentingNewLine]", 
+       "\t", 
+       RowBox[{
+        RowBox[{"random", "=", 
+         RowBox[{"ToString", "@", 
+          RowBox[{"RandomInteger", "[", 
+           RowBox[{"10", "^", "10"}], "]"}]}]}], ";", "\[IndentingNewLine]", 
+        "\t", 
+        RowBox[{"temp", "=", 
+         RowBox[{"FileNameJoin", "[", 
+          RowBox[{"{", 
+           RowBox[{"dir", ",", 
+            RowBox[{
+            "\"\<tempname\>\"", "<>", "random", "<>", "\"\<.mov\>\""}]}], 
+           "}"}], "]"}]}], ";", "\[IndentingNewLine]", "\t", 
+        RowBox[{"Export", "[", "\[IndentingNewLine]", "\t", 
+         RowBox[{
+         "temp", ",", "\[IndentingNewLine]", "\t", "data", ",", 
+          "\[IndentingNewLine]", "\t", 
+          RowBox[{
+          "\"\<VideoEncoding\>\"", "\[Rule]", "\"\<MPEG-4 Video\>\""}], ",", 
+          "\[IndentingNewLine]", "\t", 
+          RowBox[{"\"\<FrameRate\>\"", "\[Rule]", 
+           RowBox[{"1", "/", 
+            RowBox[{"OptionValue", "[", "\"\<Time\>\"", "]"}]}]}]}], "]"}], 
+        ";", "\[IndentingNewLine]", "\t", "\[IndentingNewLine]", "\t", 
+        RowBox[{"Return", "@", 
+         RowBox[{"RenameFile", "[", "\[IndentingNewLine]", "\t", 
+          RowBox[{"temp", ",", "\[IndentingNewLine]", "\t", 
+           RowBox[{"FileNameJoin", "[", 
+            RowBox[{"{", 
+             RowBox[{"dir", ",", 
+              RowBox[{"gifname", "<>", "\"\<.mp4\>\""}]}], "}"}], "]"}], ",", 
+           "\[IndentingNewLine]", "\t", 
+           RowBox[{"OverwriteTarget", "\[Rule]", "True"}]}], "]"}]}]}]}], 
+      "\[IndentingNewLine]", "\t", "]"}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Exporting", " ", "gif"}], " ", "*)"}], "\[IndentingNewLine]", 
+     "\t", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"format", "===", "\"\<gif\>\""}], ",", "\[IndentingNewLine]", 
+       "\t", 
+       RowBox[{"Return", "@", 
+        RowBox[{"Export", "[", "\[IndentingNewLine]", "\t", 
+         RowBox[{
+          RowBox[{"FileNameJoin", "[", 
+           RowBox[{"{", 
+            RowBox[{"dir", ",", 
+             RowBox[{"gifname", "<>", "\"\<.gif\>\""}]}], "}"}], "]"}], ",", 
+          "\[IndentingNewLine]", "\t", "data", ",", "\[IndentingNewLine]", 
+          "\t", 
+          RowBox[{"\"\<DisplayDurations\>\"", "\[Rule]", 
+           RowBox[{"OptionValue", "[", "\"\<Time\>\"", "]"}]}]}], "]"}]}]}], 
+      "\[IndentingNewLine]", "\t", "]"}], ";"}]}], "\[IndentingNewLine]", 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.667810424970599*^9, 3.667810432313558*^9}, 
+   3.667810666631538*^9, {3.669556436379407*^9, 3.669556443945465*^9}, {
+   3.6912156836361237`*^9, 3.691215691704616*^9}, {3.69121596102699*^9, 
+   3.691216023233466*^9}, {3.6912160979319572`*^9, 3.6912163992302313`*^9}, {
+   3.691216511344393*^9, 3.691216511722507*^9}, {3.691216802362258*^9, 
+   3.6912169039143972`*^9}, {3.691216946107288*^9, 3.691216948252275*^9}, 
+   3.691216998432334*^9, {3.691217031882002*^9, 3.691217049269642*^9}, {
+   3.691217109181466*^9, 3.691217164341524*^9}, {3.691217196325759*^9, 
+   3.691217197652151*^9}, {3.6912174827952223`*^9, 3.6912174882906237`*^9}, {
+   3.691217726509802*^9, 3.691217730152487*^9}, {3.691218143932776*^9, 
+   3.6912181493599577`*^9}, {3.6912182361857443`*^9, 3.691218276722579*^9}, {
+   3.691218499416984*^9, 3.6912184996811247`*^9}, {3.691219455092321*^9, 
+   3.6912194552535553`*^9}, {3.7135112837866707`*^9, 3.713511285616396*^9}},
+ Background->RGBColor[0.94, 0.91, 0.88],
+ CellID->2043507224]
+}, Closed]]
+}, Open  ]]
+},
+WindowSize->{720, 732},
+WindowMargins->{{15, Automatic}, {Automatic, 0}},
+CellContext->"Global`",
+FrontEndVersion->"11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (September \
+21, 2016)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "FunctionPageStyles.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "ExtendedExamples"->{
+  Cell[9426, 362, 100, 2, 55, "ExtendedExamplesSection",
+   CellTags->"ExtendedExamples",
+   CellID->1854448968]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"ExtendedExamples", 31771, 943}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 325, 14, 24, "History",
+ CellID->1247902091],
+Cell[CellGroupData[{
+Cell[908, 38, 68, 1, 29, "CategorizationSection",
+ CellID->1122911449],
+Cell[979, 41, 79, 2, 70, "Categorization",
+ CellID->686433507],
+Cell[1061, 45, 77, 2, 70, "Categorization",
+ CellID->605800465],
+Cell[1141, 49, 74, 2, 70, "Categorization",
+ CellID->468444828],
+Cell[1218, 53, 66, 1, 70, "Categorization"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1321, 59, 55, 1, 19, "KeywordsSection",
+ CellID->477174294],
+Cell[1379, 62, 45, 1, 70, "Keywords",
+ CellID->1164421360]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1461, 68, 65, 1, 19, "TemplatesSection",
+ CellID->1872225408],
+Cell[1529, 71, 94, 2, 70, "Template",
+ CellID->1562036412],
+Cell[1626, 75, 82, 2, 70, "Template",
+ CellID->158391909],
+Cell[1711, 79, 81, 2, 70, "Template",
+ CellID->1360575930],
+Cell[1795, 83, 82, 2, 70, "Template",
+ CellID->793782254]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1914, 90, 53, 1, 19, "DetailsSection",
+ CellID->307771771],
+Cell[1970, 93, 63, 2, 70, "Details",
+ CellID->670882175],
+Cell[2036, 97, 69, 2, 70, "Details",
+ CellID->350963985],
+Cell[2108, 101, 64, 2, 70, "Details",
+ CellID->8391405],
+Cell[2175, 105, 69, 2, 70, "Details",
+ CellID->3610269],
+Cell[2247, 109, 61, 2, 70, "Details",
+ CellID->401364205],
+Cell[2311, 113, 61, 2, 70, "Details",
+ CellID->350204745],
+Cell[2375, 117, 63, 2, 70, "Details",
+ CellID->732958810],
+Cell[2441, 121, 78, 2, 70, "Details",
+ CellID->222905350],
+Cell[2522, 125, 67, 2, 70, "Details",
+ CellID->240026365]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[2626, 132, 55, 1, 63, "ObjectName",
+ CellID->1224892054],
+Cell[2684, 135, 553, 17, 76, "Usage",
+ CellID->982511436],
+Cell[3240, 154, 384, 9, 41, "Notes",
+ CellID->1067943069],
+Cell[3627, 165, 1091, 20, 95, "2ColumnTableMod",
+ CellID->1115609353],
+Cell[4721, 187, 604, 19, 27, "Notes",
+ CellID->1150039653],
+Cell[5328, 208, 375, 12, 25, "Notes",
+ CellID->171948806]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5740, 225, 57, 1, 43, "TutorialsSection",
+ CellID->250839057],
+Cell[5800, 228, 45, 1, 16, "Tutorials",
+ CellID->341631938]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5882, 234, 83, 1, 30, "RelatedDemonstrationsSection",
+ CellID->1268215905],
+Cell[5968, 237, 58, 1, 16, "RelatedDemonstrations",
+ CellID->1129518860]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6063, 243, 65, 1, 30, "RelatedLinksSection",
+ CellID->1584193535],
+Cell[6131, 246, 49, 1, 16, "RelatedLinks",
+ CellID->1038487239]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6217, 252, 55, 1, 30, "SeeAlsoSection",
+ CellID->1255426704],
+Cell[6275, 255, 43, 1, 16, "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6355, 261, 57, 1, 30, "MoreAboutSection",
+ CellID->38303248],
+Cell[6415, 264, 46, 1, 16, "MoreAbout",
+ CellID->1665078683]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6498, 270, 356, 11, 69, "PrimaryExamplesSection",
+ CellID->880084151],
+Cell[6857, 283, 237, 5, 22, "ExampleText",
+ CellID->709791874],
+Cell[7097, 290, 578, 14, 47, "Input",
+ CellID->65826069],
+Cell[7678, 306, 146, 2, 22, "ExampleText",
+ CellID->1868727872],
+Cell[7827, 310, 224, 6, 27, "Input",
+ CellID->869774346],
+Cell[8054, 318, 389, 9, 37, "ExampleText",
+ CellID->645910824],
+Cell[8446, 329, 340, 8, 27, "Input",
+ CellID->1975675792],
+Cell[8789, 339, 309, 9, 27, "Input",
+ CellID->1856339563],
+Cell[9101, 350, 288, 7, 22, "ExampleText",
+ CellID->423447444]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9426, 362, 100, 2, 55, "ExtendedExamplesSection",
+ CellTags->"ExtendedExamples",
+ CellID->1854448968],
+Cell[9529, 366, 125, 3, 33, "ExampleSection",
+ CellID->1293636265],
+Cell[9657, 371, 148, 3, 21, "ExampleSection",
+ CellID->1020263627],
+Cell[CellGroupData[{
+Cell[9830, 378, 127, 3, 21, "ExampleSection",
+ CellID->2061341341],
+Cell[CellGroupData[{
+Cell[9982, 385, 355, 6, 24, "ExampleSubsection",
+ CellID->1280469678],
+Cell[10340, 393, 490, 13, 23, "ExampleText",
+ CellID->920251559],
+Cell[10833, 408, 545, 12, 27, "Input",
+ CellID->490726419]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11415, 425, 300, 6, 24, "ExampleSubsection",
+ CellID->1513056849],
+Cell[11718, 433, 358, 8, 22, "ExampleText",
+ CellID->1851027952],
+Cell[12079, 443, 496, 11, 27, "Input",
+ CellID->601174653]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12612, 459, 203, 4, 24, "ExampleSubsection",
+ CellID->1059096415],
+Cell[12818, 465, 260, 7, 22, "ExampleText",
+ CellID->890265875],
+Cell[13081, 474, 306, 9, 27, "Input",
+ CellID->1849079739]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13424, 488, 213, 4, 24, "ExampleSubsection",
+ CellID->1295379749],
+Cell[13640, 494, 304, 7, 22, "ExampleText",
+ CellID->153372639],
+Cell[13947, 503, 548, 12, 27, "Input",
+ CellID->1958393268]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14532, 520, 253, 5, 24, "ExampleSubsection",
+ CellID->1757724783],
+Cell[14788, 527, 349, 9, 22, "ExampleText",
+ CellID->1223426193],
+Cell[15140, 538, 223, 6, 22, "ExampleText",
+ CellID->362310981],
+Cell[15366, 546, 390, 9, 27, "Input",
+ CellID->1394380883]
+}, Open  ]]
+}, Open  ]],
+Cell[15783, 559, 131, 3, 33, "ExampleSection",
+ CellID->258228157],
+Cell[15917, 564, 142, 3, 21, "ExampleSection",
+ CellID->2123667759],
+Cell[16062, 569, 135, 3, 21, "ExampleSection",
+ CellID->1305812373],
+Cell[16200, 574, 140, 3, 21, "ExampleSection",
+ CellID->1653164318],
+Cell[16343, 579, 132, 3, 21, "ExampleSection",
+ CellID->589267740],
+Cell[CellGroupData[{
+Cell[16500, 586, 263, 8, 21, "ExampleSection",
+ CellID->1144320007],
+Cell[16766, 596, 1692, 42, 234, "Input",
+ CellID->1242971199],
+Cell[18461, 640, 12866, 286, 2001, "Input",
+ CellID->2043507224]
+}, Closed]]
+}, Open  ]]
+}
+]
+*)
+

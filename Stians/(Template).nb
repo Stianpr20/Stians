@@ -1,0 +1,634 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     23830,        626]
+NotebookOptionsPosition[     20971,        523]
+NotebookOutlinePosition[     21423,        542]
+CellTagsIndexPosition[     21380,        539]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ "Stian\[CloseCurlyQuote]s ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " package \[Dash] ",
+ StyleBox["SpecificTheme",
+  FontFamily->"Courier"],
+ " functions"
+}], "Title",
+ CellChangeTimes->{{3.6325088204434223`*^9, 3.632508823522456*^9}, {
+   3.655742119951337*^9, 3.655742125247018*^9}, {3.657176107171741*^9, 
+   3.657176113595751*^9}, {3.6571965175177727`*^9, 3.657196518139456*^9}, {
+   3.667811374858439*^9, 3.667811377601095*^9}, {3.667900351656826*^9, 
+   3.667900356531871*^9}, {3.67575821153409*^9, 3.675758245630015*^9}, {
+   3.675758564815556*^9, 3.6757585720063353`*^9}, 3.6757716010874443`*^9}],
+
+Cell[CellGroupData[{
+
+Cell["Setup", "Chapter",
+ CellChangeTimes->{{3.667809710340659*^9, 3.667809727338533*^9}, {
+  3.6678099238942623`*^9, 3.667809924822213*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Export usage messages", "Subchapter",
+ CellChangeTimes->{{3.667899335139988*^9, 3.667899339699316*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"Begin", "[", "\"\<`Private`\>\"", "]"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"packagename", "=", 
+   RowBox[{"FileNameTake", "@", 
+    RowBox[{"NotebookDirectory", "[", "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"sectionname", "=", 
+    RowBox[{"First", "@", 
+     RowBox[{"Flatten", "@", 
+      RowBox[{"StringCases", "[", 
+       RowBox[{
+        RowBox[{"NotebookImport", "[", 
+         RowBox[{
+          RowBox[{"NotebookFileName", "[", "]"}], ",", "\"\<Title\>\""}], 
+         "]"}], ",", 
+        RowBox[{
+         RowBox[{"\"\<\\\\[Dash] \>\"", "~~", 
+          RowBox[{"x", ":", 
+           RowBox[{"LetterCharacter", ".."}]}]}], "\[RuleDelayed]", "x"}]}], 
+       "]"}]}]}]}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"<<", "Stians`"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"messagefile", "=", 
+    RowBox[{"FileNameJoin", "[", 
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"NotebookDirectory", "[", "]"}], ",", "\[IndentingNewLine]", 
+       "\"\<Messages\>\"", ",", "\[IndentingNewLine]", 
+       RowBox[{"packagename", "<>", "sectionname", "<>", "\"\<.txt\>\""}]}], 
+      "\[IndentingNewLine]", "}"}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"functions", "=", 
+    RowBox[{
+     RowBox[{"NotebookImport", "[", 
+      RowBox[{
+       RowBox[{"NotebookFileName", "[", "]"}], ",", "\"\<Subchapter\>\""}], 
+      "]"}], "[", 
+     RowBox[{"[", 
+      RowBox[{"3", ";;"}], "]"}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"notebooks", "=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"FileNameJoin", "[", 
+       RowBox[{"{", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"NotebookDirectory", "[", "]"}], ",", "\[IndentingNewLine]", 
+         "\"\<Documentation\>\"", ",", "\[IndentingNewLine]", 
+         "\"\<English\>\"", ",", "\[IndentingNewLine]", 
+         "\"\<ReferencePages\>\"", ",", "\[IndentingNewLine]", 
+         "\"\<Symbols\>\"", ",", "\[IndentingNewLine]", 
+         RowBox[{"#", "<>", "\"\<.nb\>\""}]}], "}"}], "]"}], "&"}], "/@", 
+     "functions"}]}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"found", "=", 
+    RowBox[{"Select", "[", 
+     RowBox[{"notebooks", ",", "FileExistsQ"}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Complement", "[", 
+       RowBox[{"notebooks", ",", "found"}], "]"}], "\[NotEqual]", 
+      RowBox[{"{", "}"}]}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"Print", "[", "\"\<Missing documentation pages:\>\"", "]"}], 
+      ";", 
+      RowBox[{"Print", "[", 
+       RowBox[{"Column", "[", 
+        RowBox[{"FileNameTake", "/@", 
+         RowBox[{"Complement", "[", 
+          RowBox[{"notebooks", ",", "found"}], "]"}]}], "]"}], "]"}]}]}], 
+    "\[IndentingNewLine]", "]"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"NeatUsage", "[", 
+     RowBox[{"#", ",", "messagefile"}], "]"}], "&"}], "/@", "found"}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.660662612972769*^9, 3.660662615331635*^9}, {
+   3.6678996421176853`*^9, 3.66789969462072*^9}, {3.667899845913467*^9, 
+   3.667899850423938*^9}, {3.667899984372815*^9, 3.6678999940522842`*^9}, {
+   3.667900034828264*^9, 3.667900089209947*^9}, {3.667900334078722*^9, 
+   3.6679003638145247`*^9}, {3.667903245172576*^9, 3.6679032454925957`*^9}, {
+   3.667903509806757*^9, 3.6679035140052967`*^9}, {3.675758442867031*^9, 
+   3.675758481993051*^9}, {3.6757585443694277`*^9, 3.6757585456885557`*^9}, {
+   3.6757585983182087`*^9, 3.675758704140443*^9}, {3.675758754211491*^9, 
+   3.675758772678719*^9}, {3.675759204709443*^9, 3.6757592307473087`*^9}, {
+   3.675759379117465*^9, 3.6757594378723717`*^9}, {3.675759500854343*^9, 
+   3.675759530220367*^9}, {3.675759709648603*^9, 3.675759710360009*^9}, {
+   3.675759767239332*^9, 3.675759808110104*^9}, {3.675760218477907*^9, 
+   3.6757602205561533`*^9}, {3.675762009516317*^9, 3.675762010034891*^9}, {
+   3.675762172552596*^9, 3.675762176643489*^9}, {3.6757694543401737`*^9, 
+   3.675769455794608*^9}, {3.67576953993613*^9, 3.6757695580553617`*^9}, {
+   3.6757710214550257`*^9, 3.6757710272949677`*^9}, 3.675771150291032*^9, {
+   3.675856100530809*^9, 3.675856100753621*^9}, {3.675856527195032*^9, 
+   3.675856540089183*^9}, 3.679727001698728*^9, 3.679727049088442*^9, 
+   3.679727711425622*^9, {3.7148472092728043`*^9, 3.714847210486568*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"Missing documentation pages:\"\>"], "Print",
+ CellChangeTimes->{{3.675856150820507*^9, 3.6758561514869347`*^9}, {
+   3.6758561845770283`*^9, 3.675856185194291*^9}, {3.675856236988235*^9, 
+   3.675856237585203*^9}, {3.675856497565666*^9, 3.675856498152535*^9}, {
+   3.6758565728394938`*^9, 3.6758565734443827`*^9}, 3.675857467020989*^9, 
+   3.675857548746808*^9, {3.675857772995242*^9, 3.675857798970192*^9}, 
+   3.675857971114163*^9}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"NewFunction1.nb\"\>"},
+    {"\<\"NewFunction2.nb\"\>"}
+   },
+   DefaultBaseStyle->"Column",
+   GridBoxAlignment->{"Columns" -> {{Left}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Column"]], "Print",
+ CellChangeTimes->{{3.675856150820507*^9, 3.6758561514869347`*^9}, {
+   3.6758561845770283`*^9, 3.675856185194291*^9}, {3.675856236988235*^9, 
+   3.675856237585203*^9}, {3.675856497565666*^9, 3.675856498152535*^9}, {
+   3.6758565728394938`*^9, 3.6758565734443827`*^9}, 3.675857467020989*^9, 
+   3.675857548746808*^9, {3.675857772995242*^9, 3.675857798970192*^9}, 
+   3.67585797112043*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Start package", "Subchapter",
+ CellChangeTimes->{{3.6678994075374317`*^9, 3.667899407889496*^9}, {
+  3.667899743835251*^9, 3.6678997459540863`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{
+   RowBox[{"1.", " ", "Automatically", " ", "detected", " ", "package"}], "-",
+    " ", 
+   RowBox[{"and", " ", "section", " ", "names"}]}], " ", "*)"}]], "Input",
+ CellChangeTimes->{{3.667819463432852*^9, 3.667819469852543*^9}, {
+  3.667891181663424*^9, 3.667891186174388*^9}, {3.667891302645341*^9, 
+  3.667891318523108*^9}, {3.667894792436206*^9, 3.66789479714669*^9}, {
+  3.6758561234256287`*^9, 3.675856132776348*^9}, {3.714847221278653*^9, 
+  3.7148472214932337`*^9}},
+ Background->RGBColor[0.87, 0.94, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Print", "[", 
+  RowBox[{
+  "packagename", "<>", "\"\<`\>\"", "<>", "sectionname", "<>", "\"\<`\>\""}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.675856135230393*^9, 3.67585617188929*^9}}],
+
+Cell[BoxData["\<\"Stians`SpecificTheme`\"\>"], "Print",
+ CellChangeTimes->{{3.675856151568821*^9, 3.675856185278205*^9}, 
+   3.675856240102826*^9, 3.6758564982340517`*^9, 3.6758565735238657`*^9, 
+   3.6758574671563187`*^9, 3.675857548898489*^9, {3.675857773109282*^9, 
+   3.675857799113914*^9}, 3.675857971211151*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{
+  "2.", " ", "Automatically", " ", "suggested", " ", "file", " ", "with", " ",
+    "usage", " ", "messages"}], " ", "*)"}]], "Input",
+ CellChangeTimes->{{3.667819463432852*^9, 3.667819469852543*^9}, {
+  3.667891181663424*^9, 3.667891186174388*^9}, {3.667891302645341*^9, 
+  3.667891318523108*^9}, {3.667894792436206*^9, 3.66789479714669*^9}, {
+  3.6758561234256287`*^9, 3.675856132776348*^9}, {3.675857439792679*^9, 
+  3.675857441783497*^9}, {3.6758575074480057`*^9, 3.675857526070496*^9}, {
+  3.675857836347898*^9, 3.675857837090664*^9}, {3.714847223701399*^9, 
+  3.714847223901187*^9}},
+ Background->RGBColor[0.87, 0.94, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\"\<<< \>\"", "<>", "packagename", "<>", "\"\</Messages/\>\"", "<>", 
+  RowBox[{"FileNameTake", "@", "messagefile"}]}]], "Input",
+ CellChangeTimes->{{3.675856135230393*^9, 3.67585617188929*^9}, {
+   3.675857447799584*^9, 3.67585744908737*^9}, 3.675857543400454*^9, {
+   3.675857758461503*^9, 3.6758578491467648`*^9}, {3.675857931171277*^9, 
+   3.675857968137019*^9}}],
+
+Cell[BoxData["\<\"<< Stians/Messages/StiansSpecificTheme.txt\"\>"], "Output",
+ CellChangeTimes->{{3.6758577731765547`*^9, 3.675857849472341*^9}, 
+   3.67585793260028*^9, 3.675857971281651*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{"End", " ", "of", " ", "preamble"}], " ", "*)"}]], "Input",
+ CellChangeTimes->{{3.667819463432852*^9, 3.667819469852543*^9}, {
+  3.667891181663424*^9, 3.667891186174388*^9}, {3.667891302645341*^9, 
+  3.667891318523108*^9}, {3.667894792436206*^9, 3.66789479714669*^9}, {
+  3.675855644779607*^9, 3.675855646786475*^9}, {3.675856105809746*^9, 
+  3.675856106032909*^9}},
+ Background->RGBColor[0.87, 0.94, 1]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"End", "[", "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.6758565494205027`*^9, 3.675856551144558*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"BeginPackage", "[", "\"\<Stians`SpecificTheme`\>\"", "]"}], 
+  ";"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.650291995903159*^9, 3.650291999656385*^9}, {
+   3.655794914392253*^9, 3.655794915028521*^9}, {3.6570168680070057`*^9, 
+   3.657016910052175*^9}, {3.657182226988536*^9, 3.657182262339521*^9}, {
+   3.6571965249075317`*^9, 3.657196529083351*^9}, {3.657222486965454*^9, 
+   3.6572224883724937`*^9}, {3.6572225935629787`*^9, 3.657222623281169*^9}, {
+   3.667732206857939*^9, 3.667732209689768*^9}, {3.667899881152515*^9, 
+   3.6678998857748203`*^9}, {3.667899972645935*^9, 3.667899975156528*^9}, {
+   3.667900338764357*^9, 3.6679003473080177`*^9}, {3.675759543603879*^9, 
+   3.6757595670369987`*^9}, 3.675856191993038*^9},
+ Background->RGBColor[1, 0.9, 1]],
+
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{"Import", " ", "usage", " ", "messages", " ", "from", " ", "file"}],
+   " ", "*)"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.667819463432852*^9, 3.667819469852543*^9}, {
+  3.667891181663424*^9, 3.667891186174388*^9}, {3.667891302645341*^9, 
+  3.667891318523108*^9}, {3.667894792436206*^9, 3.66789479714669*^9}},
+ Background->RGBColor[0.87, 0.94, 1]],
+
+Cell[BoxData[
+ RowBox[{"<<", " ", 
+  "\"\<Stians/Messages/StiansSpecificTheme.txt\>\""}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.6758578586034203`*^9, 3.675857858866438*^9}, {
+   3.675857915843672*^9, 3.6758579164176292`*^9}, 3.675857952946909*^9},
+ Background->RGBColor[1, 0.9, 1]]
+}, Closed]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Definitions", "Chapter",
+ CellChangeTimes->{{3.657263896281269*^9, 3.6572639010563383`*^9}, {
+  3.667809853233161*^9, 3.667809863671739*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["NewFunction1", "Subchapter",
+ CellChangeTimes->{{3.6646242294759808`*^9, 3.664624234339078*^9}, {
+   3.6678113884901648`*^9, 3.66781139169668*^9}, {3.667811515797525*^9, 
+   3.667811516189644*^9}, 3.667900125753806*^9}],
+
+Cell["Development", "Section",
+ CellChangeTimes->{{3.675760459630951*^9, 3.675760461542103*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Definition", "Section",
+ CellChangeTimes->{{3.675760464846199*^9, 3.675760466286085*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{"Messages", " ", "and", " ", "options"}], " ", "*)"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.650292046940385*^9, 3.650292055837142*^9}, 
+   3.6502927586977587`*^9, {3.6678074330734873`*^9, 3.6678074367696*^9}, {
+   3.6678100547077*^9, 3.667810058922462*^9}},
+ Background->RGBColor[0.87, 0.94, 1]],
+
+Cell[BoxData[""], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{3.667811591227736*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Begin", "[", "\"\<`Private`\>\"", "]"}], ";"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.655742356838553*^9, 3.655742372060646*^9}, 
+   3.6557467627944937`*^9, 3.655788801290646*^9, {3.655788875176199*^9, 
+   3.6557888758261757`*^9}, {3.65578919971651*^9, 3.655789200037839*^9}, {
+   3.655801038237483*^9, 3.6558010435312433`*^9}, {3.657190485055834*^9, 
+   3.657190510152482*^9}, {3.657190761354436*^9, 3.657190764136423*^9}, {
+   3.657190864206573*^9, 3.6571908652469587`*^9}, {3.657191249647196*^9, 
+   3.657191274140421*^9}, 3.6571913792520313`*^9, {3.657191423745737*^9, 
+   3.6571914240092087`*^9}, {3.6571914551444397`*^9, 3.657191456632414*^9}, 
+   3.657196777421657*^9, {3.657196859389958*^9, 3.657196883978856*^9}, {
+   3.657196988256592*^9, 3.657197001336329*^9}, 3.657200247719434*^9, 
+   3.6572007261726093`*^9, {3.657203655191904*^9, 3.657203655319538*^9}, 
+   3.657221819331767*^9, {3.658395294791712*^9, 3.658395316637723*^9}, {
+   3.667811042307796*^9, 3.6678110688569927`*^9}, {3.6678110991292048`*^9, 
+   3.667811099480304*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"NewFunction1", "[", 
+   RowBox[{"x_", ",", "y_"}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "a", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"a", "=", 
+     RowBox[{"x", "+", "y"}]}]}], "\[IndentingNewLine]", "]"}]}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{
+  3.6678115931321983`*^9, {3.675760500525331*^9, 3.675760518660946*^9}},
+ Background->RGBColor[0.94, 0.91, 0.88]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"End", "[", "]"}], ";"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.655742356838553*^9, 3.655742372060646*^9}, 
+   3.6557467627944937`*^9, 3.655788801290646*^9, {3.655788875176199*^9, 
+   3.6557888758261757`*^9}, {3.65578919971651*^9, 3.655789200037839*^9}, {
+   3.655801038237483*^9, 3.6558010435312433`*^9}, {3.657190485055834*^9, 
+   3.657190510152482*^9}, {3.657190761354436*^9, 3.657190764136423*^9}, {
+   3.657190864206573*^9, 3.6571908652469587`*^9}, {3.657191249647196*^9, 
+   3.657191274140421*^9}, 3.6571913792520313`*^9, {3.657191423745737*^9, 
+   3.6571914240092087`*^9}, {3.6571914551444397`*^9, 3.657191456632414*^9}, 
+   3.657196777421657*^9, {3.657196859389958*^9, 3.657196883978856*^9}, {
+   3.657196988256592*^9, 3.657197001336329*^9}, 3.657200247719434*^9, 
+   3.6572007261726093`*^9, {3.657203655191904*^9, 3.657203655319538*^9}, 
+   3.657221819331767*^9, {3.658395294791712*^9, 3.658395316637723*^9}, {
+   3.667810213479385*^9, 3.667810216902418*^9}},
+ Background->RGBColor[1, 0.9, 0.8]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Testing", "Section",
+ CellChangeTimes->{{3.6757604688380404`*^9, 3.675760470085926*^9}}],
+
+Cell["Basic demonstration", "Subsection",
+ CellChangeTimes->{{3.675760471301897*^9, 3.675760474965781*^9}}]
+}, Closed]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["NewFunction2", "Subchapter",
+ CellChangeTimes->{{3.6646242294759808`*^9, 3.664624234339078*^9}, {
+   3.6678113884901648`*^9, 3.66781139169668*^9}, {3.667811515797525*^9, 
+   3.667811516189644*^9}, 3.667900125753806*^9, {3.675760528981639*^9, 
+   3.675760529044574*^9}}],
+
+Cell["Development", "Section",
+ CellChangeTimes->{{3.675760459630951*^9, 3.675760461542103*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Definition", "Section",
+ CellChangeTimes->{{3.675760464846199*^9, 3.675760466286085*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{"Messages", " ", "and", " ", "options"}], " ", "*)"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.650292046940385*^9, 3.650292055837142*^9}, 
+   3.6502927586977587`*^9, {3.6678074330734873`*^9, 3.6678074367696*^9}, {
+   3.6678100547077*^9, 3.667810058922462*^9}},
+ Background->RGBColor[0.87, 0.94, 1]],
+
+Cell[BoxData[""], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{3.667811591227736*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Begin", "[", "\"\<`Private`\>\"", "]"}], ";"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.655742356838553*^9, 3.655742372060646*^9}, 
+   3.6557467627944937`*^9, 3.655788801290646*^9, {3.655788875176199*^9, 
+   3.6557888758261757`*^9}, {3.65578919971651*^9, 3.655789200037839*^9}, {
+   3.655801038237483*^9, 3.6558010435312433`*^9}, {3.657190485055834*^9, 
+   3.657190510152482*^9}, {3.657190761354436*^9, 3.657190764136423*^9}, {
+   3.657190864206573*^9, 3.6571908652469587`*^9}, {3.657191249647196*^9, 
+   3.657191274140421*^9}, 3.6571913792520313`*^9, {3.657191423745737*^9, 
+   3.6571914240092087`*^9}, {3.6571914551444397`*^9, 3.657191456632414*^9}, 
+   3.657196777421657*^9, {3.657196859389958*^9, 3.657196883978856*^9}, {
+   3.657196988256592*^9, 3.657197001336329*^9}, 3.657200247719434*^9, 
+   3.6572007261726093`*^9, {3.657203655191904*^9, 3.657203655319538*^9}, 
+   3.657221819331767*^9, {3.658395294791712*^9, 3.658395316637723*^9}, {
+   3.667811042307796*^9, 3.6678110688569927`*^9}, {3.6678110991292048`*^9, 
+   3.667811099480304*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"NewFunction2", "[", 
+   RowBox[{"x_", ",", "y_"}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "a", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"a", "=", 
+     RowBox[{"x", "+", "y"}]}]}], "\[IndentingNewLine]", "]"}]}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{
+  3.6678115931321983`*^9, {3.675760500525331*^9, 3.675760532517644*^9}},
+ Background->RGBColor[0.94, 0.91, 0.88]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"End", "[", "]"}], ";"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.655742356838553*^9, 3.655742372060646*^9}, 
+   3.6557467627944937`*^9, 3.655788801290646*^9, {3.655788875176199*^9, 
+   3.6557888758261757`*^9}, {3.65578919971651*^9, 3.655789200037839*^9}, {
+   3.655801038237483*^9, 3.6558010435312433`*^9}, {3.657190485055834*^9, 
+   3.657190510152482*^9}, {3.657190761354436*^9, 3.657190764136423*^9}, {
+   3.657190864206573*^9, 3.6571908652469587`*^9}, {3.657191249647196*^9, 
+   3.657191274140421*^9}, 3.6571913792520313`*^9, {3.657191423745737*^9, 
+   3.6571914240092087`*^9}, {3.6571914551444397`*^9, 3.657191456632414*^9}, 
+   3.657196777421657*^9, {3.657196859389958*^9, 3.657196883978856*^9}, {
+   3.657196988256592*^9, 3.657197001336329*^9}, 3.657200247719434*^9, 
+   3.6572007261726093`*^9, {3.657203655191904*^9, 3.657203655319538*^9}, 
+   3.657221819331767*^9, {3.658395294791712*^9, 3.658395316637723*^9}, {
+   3.667810213479385*^9, 3.667810216902418*^9}},
+ Background->RGBColor[1, 0.9, 0.8]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Testing", "Section",
+ CellChangeTimes->{{3.6757604688380404`*^9, 3.675760470085926*^9}}],
+
+Cell["Basic demonstration", "Subsection",
+ CellChangeTimes->{{3.675760471301897*^9, 3.675760474965781*^9}}]
+}, Closed]]
+}, Closed]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Finalise", "Chapter",
+ CellChangeTimes->{{3.667810135289062*^9, 3.667810137240119*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EndPackage", "[", "]"}], ";"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.650291995903159*^9, 3.650291999656385*^9}, {
+  3.655794914392253*^9, 3.655794915028521*^9}, {3.6570168680070057`*^9, 
+  3.657016910052175*^9}, {3.657182226988536*^9, 3.657182262339521*^9}, {
+  3.6571965249075317`*^9, 3.657196529083351*^9}, {3.657222486965454*^9, 
+  3.6572224883724937`*^9}, {3.6572225935629787`*^9, 3.657222623281169*^9}, {
+  3.667732206857939*^9, 3.667732209689768*^9}, {3.667810145961068*^9, 
+  3.66781016027987*^9}},
+ Background->GrayLevel[0.85]]
+}, Closed]]
+}, Open  ]]
+},
+AutoGeneratedPackage->Automatic,
+WindowToolbars->"EditBar",
+InitializationCellWarning->False,
+WindowSize->{834, 888},
+WindowMargins->{{Automatic, 85}, {Automatic, 0}},
+FrontEndVersion->"11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (September \
+21, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 633, 14, 148, "Title"],
+Cell[CellGroupData[{
+Cell[1238, 40, 141, 2, 65, "Chapter"],
+Cell[CellGroupData[{
+Cell[1404, 46, 109, 1, 63, "Subchapter"],
+Cell[CellGroupData[{
+Cell[1538, 51, 4802, 114, 705, "Input"],
+Cell[CellGroupData[{
+Cell[6365, 169, 452, 6, 24, "Print"],
+Cell[6820, 177, 667, 14, 40, "Print"]
+}, Open  ]]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[7548, 198, 154, 2, 47, "Subchapter"],
+Cell[7705, 202, 558, 11, 48, "Input"],
+Cell[CellGroupData[{
+Cell[8288, 217, 211, 5, 32, "Input"],
+Cell[8502, 224, 317, 4, 24, "Print"]
+}, Open  ]],
+Cell[8834, 231, 672, 12, 48, "Input"],
+Cell[CellGroupData[{
+Cell[9531, 247, 391, 6, 32, "Input"],
+Cell[9925, 255, 192, 2, 32, "Output"]
+}, Open  ]],
+Cell[10132, 260, 449, 8, 48, "Input"],
+Cell[10584, 270, 137, 3, 32, "Input"],
+Cell[10724, 275, 815, 14, 48, "Input",
+ InitializationCell->True],
+Cell[11542, 291, 413, 8, 48, "Input",
+ InitializationCell->True],
+Cell[11958, 301, 302, 6, 48, "Input",
+ InitializationCell->True]
+}, Closed]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[12309, 313, 147, 2, 54, "Chapter"],
+Cell[CellGroupData[{
+Cell[12481, 319, 225, 3, 63, "Subchapter"],
+Cell[12709, 324, 96, 1, 64, "Section"],
+Cell[CellGroupData[{
+Cell[12830, 329, 95, 1, 50, "Section"],
+Cell[12928, 332, 362, 7, 44, "Input",
+ InitializationCell->True],
+Cell[13293, 341, 95, 2, 28, "Input",
+ InitializationCell->True],
+Cell[13391, 345, 1136, 18, 44, "Input",
+ InitializationCell->True],
+Cell[14530, 365, 455, 12, 79, "Input",
+ InitializationCell->True],
+Cell[14988, 379, 1059, 17, 44, "Input",
+ InitializationCell->True]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[16084, 401, 94, 1, 50, "Section"],
+Cell[16181, 404, 107, 1, 44, "Subsection"]
+}, Closed]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[16337, 411, 275, 4, 47, "Subchapter"],
+Cell[16615, 417, 96, 1, 64, "Section"],
+Cell[CellGroupData[{
+Cell[16736, 422, 95, 1, 50, "Section"],
+Cell[16834, 425, 362, 7, 44, "Input",
+ InitializationCell->True],
+Cell[17199, 434, 95, 2, 28, "Input",
+ InitializationCell->True],
+Cell[17297, 438, 1136, 18, 44, "Input",
+ InitializationCell->True],
+Cell[18436, 458, 455, 12, 79, "Input",
+ InitializationCell->True],
+Cell[18894, 472, 1059, 17, 44, "Input",
+ InitializationCell->True]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[19990, 494, 94, 1, 50, "Section"],
+Cell[20087, 497, 107, 1, 44, "Subsection"]
+}, Closed]]
+}, Closed]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20255, 505, 93, 1, 65, "Chapter"],
+Cell[20351, 508, 592, 11, 44, "Input",
+ InitializationCell->True]
+}, Closed]]
+}, Open  ]]
+}
+]
+*)
+
