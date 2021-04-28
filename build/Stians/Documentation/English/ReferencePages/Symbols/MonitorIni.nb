@@ -3,70 +3,91 @@
 (*** Wolfram Notebook File ***)
 (* http://www.wolfram.com/nb *)
 
-(* CreatedBy='Mathematica 11.3' *)
+(* CreatedBy='Mathematica 12.1' *)
 
 (*CacheID: 234*)
 (* Internal cache information:
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     26448,        740]
-NotebookOptionsPosition[     21156,        622]
-NotebookOutlinePosition[     23581,        682]
-CellTagsIndexPosition[     23496,        677]
+NotebookDataLength[     28050,        789]
+NotebookOptionsPosition[     22158,        662]
+NotebookOutlinePosition[     24585,        722]
+CellTagsIndexPosition[     24500,        717]
 WindowTitle->MonitorIni
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
 Cell[BoxData[GridBox[{
-   {Cell["XRAY SYMBOL", "PacletNameCell"], Cell[TextData[Cell[BoxData[
-     ActionMenuBox[
-      FrameBox[
-       InterpretationBox[Cell[TextData[{
-         "URL",
-         StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
-          StripOnInput->False]
-        }]],
-        TextCell[
-         Row[{"URL", 
-           Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
-       StripOnInput->False], {"\<\"Xray/ref/MonitorIni\"\>":>
-      None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
-      Module[{DocumentationSearch`Private`nb$}, 
-       DocumentationSearch`Private`nb$ = NotebookPut[
-          Notebook[{
-            Cell["Xray/ref/MonitorIni"]}, Visible -> False]]; 
-       SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
-       FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
-       NotebookClose[DocumentationSearch`Private`nb$]; Null], 
-      Delimiter, "\<\"Copy web URL\"\>":>
-      Module[{DocumentationSearch`Private`nb$}, 
-       DocumentationSearch`Private`nb$ = NotebookPut[
-          Notebook[{
-            Cell[
-             BoxData[
-              MakeBoxes[
-               Hyperlink[
-               "http://reference.wolfram.com/language/Xray/ref/MonitorIni.\
+   {Cell["STIANS SYMBOL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"Stian's Mathematica package\"\>":>
+       Documentation`HelpLookup["paclet:Stians/guide/StiansOverview"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"Stians/ref/MonitorIni\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["Stians/ref/MonitorIni"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/Stians/ref/MonitorIni.\
 html"], StandardForm]], "Input", TextClipboardType -> "PlainText"]}, Visible -> 
-           False]]; SelectionMove[
-        DocumentationSearch`Private`nb$, All, Notebook]; 
-       FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
-       NotebookClose[DocumentationSearch`Private`nb$]; 
-       Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
-        NotebookLocate[{
-          URL[
-           StringJoin[
-            If[
-             TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$17525], 
-             "http://reference.wolfram.com/system-modeler/", 
-             "http://reference.wolfram.com/language/"], "Xray/ref/MonitorIni",
-             ".html"]], None}]}]},
-      Appearance->None,
-      MenuAppearance->Automatic,
-      MenuStyle->"URLMenu"]],
-     LineSpacing->{1.4, 0}]], "AnchorBar"]}
+            False]]; SelectionMove[
+         DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$23410], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "Stians/ref/MonitorIni", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
   }]], "AnchorBarGrid",
  GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
      Scaled[0.65], {
@@ -88,8 +109,9 @@ Cell[BoxData[GridBox[{
    {"", Cell[TextData[{
      Cell[BoxData[
       RowBox[{
-       TemplateBox[{Cell[
-          TextData["MonitorIni"]],"paclet:Xray/ref/MonitorIni"},
+       TemplateBox[{
+         Cell[
+          TextData["MonitorIni"]], "paclet:Stians/ref/MonitorIni"},
         "RefLink",
         BaseStyle->{"InlineFormula"}], "[", 
        RowBox[{
@@ -108,8 +130,9 @@ Cell[BoxData[GridBox[{
    {"", Cell[TextData[{
      Cell[BoxData[
       RowBox[{
-       TemplateBox[{Cell[
-          TextData["MonitorIni"]],"paclet:Xray/ref/MonitorIni"},
+       TemplateBox[{
+         Cell[
+          TextData["MonitorIni"]], "paclet:Stians/ref/MonitorIni"},
         "RefLink",
         BaseStyle->{"InlineFormula"}], "[", 
        RowBox[{
@@ -128,8 +151,9 @@ Cell[BoxData[GridBox[{
    {"", Cell[TextData[{
      Cell[BoxData[
       RowBox[{
-       TemplateBox[{Cell[
-          TextData["MonitorIni"]],"paclet:Xray/ref/MonitorIni"},
+       TemplateBox[{
+         Cell[
+          TextData["MonitorIni"]], "paclet:Stians/ref/MonitorIni"},
         "RefLink",
         BaseStyle->{"InlineFormula"}], "[", 
        RowBox[{
@@ -153,9 +177,7 @@ Cell[BoxData[GridBox[{
     }]]}
   }]], "Usage",
  GridBoxOptions->{
- GridBoxBackground->{
-  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, 
-   "Rows" -> {None, None, {None}}, "RowsIndexed" -> {}}},
+ GridBoxBackground->{"Columns" -> {{None}}, "Rows" -> {None, None, {None}}}},
  CellID->982511436]
 }, Open  ]],
 
@@ -180,7 +202,7 @@ Cell[TextData[Cell[BoxData[
   Method->"Preemptive"]]]], "NotesSection",
  WholeCellGroupOpener->True,
  CellGroupingRules->{"SectionGrouping", 50},
- CellID->155319213],
+ CellID->896916856],
 
 Cell["", "SectionHeaderSpacer"],
 
@@ -204,7 +226,9 @@ Cell[TextData[{
   StyleBox["file", "TI"]], "InlineFormula"],
  "."
 }], "Notes",
- CellID->1281169926]
+ CellID->1281169926],
+
+Cell["", "SectionFooterSpacer"]
 }, Closed]],
 
 Cell[CellGroupData[{
@@ -219,7 +243,7 @@ Cell[TextData[{
 }], "PrimaryExamplesSection",
  WholeCellGroupOpener->True,
  CellTags->"PrimaryExamplesSection",
- CellID->1257381786],
+ CellID->1293880499],
 
 Cell[CellGroupData[{
 
@@ -229,14 +253,14 @@ Cell[TextData[{
  Cell["(1)", "ExampleCount"]
 }], "ExampleSection", "ExampleSection",
  WholeCellGroupOpener->True,
- CellID->1576590822],
+ CellID->830137171],
 
 Cell[BoxData[{
  RowBox[{
   RowBox[{"ini", "=", 
    RowBox[{"FileNameJoin", "[", 
     RowBox[{"{", 
-     RowBox[{"$XrayExamples", ",", "\"\<monitor.ini\>\""}], "}"}], "]"}]}], 
+     RowBox[{"$StiansExamples", ",", "\"\<monitor.ini\>\""}], "}"}], "]"}]}], 
   ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"newini", "=", 
@@ -286,9 +310,6 @@ Cell[BoxData[
    RowBox[{"{", "\<\"Refined_binning5_1_9.img=9\"\>", "}"}], ",", 
    RowBox[{"\[LeftSkeleton]", "711", "\[RightSkeleton]"}]}], "}"}]], "Output",\
 
- ImageSize->{491, 85},
- ImageMargins->{{0, 0}, {0, 0}},
- ImageRegion->{{0, 1}, {0, 1}},
  CellLabel->"Out[2]//Shallow=",
  CellID->644856443]
 }, Open  ]],
@@ -332,9 +353,6 @@ Cell[BoxData[
    RowBox[{"{", "\<\"Refined_binning5_1_9.img=0.997218\"\>", "}"}], ",", 
    RowBox[{"\[LeftSkeleton]", "711", "\[RightSkeleton]"}]}], "}"}]], "Output",\
 
- ImageSize->{576, 85},
- ImageMargins->{{0, 0}, {0, 0}},
- ImageRegion->{{0, 1}, {0, 1}},
  CellLabel->"Out[3]//Shallow=",
  CellID->1899754739]
 }, Open  ]],
@@ -360,7 +378,7 @@ Cell[BoxData[{
   RowBox[{"flux", "=", 
    RowBox[{"FileNameJoin", "[", 
     RowBox[{"{", 
-     RowBox[{"$XrayExamples", ",", "\"\<flux.dat\>\""}], "}"}], "]"}]}], 
+     RowBox[{"$StiansExamples", ",", "\"\<flux.dat\>\""}], "}"}], "]"}]}], 
   ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"MonitorIni", "[", 
@@ -385,9 +403,6 @@ Cell[BoxData[
    RowBox[{"{", "\<\"Refined_binning5_1_9.img=0.989375\"\>", "}"}], ",", 
    RowBox[{"\[LeftSkeleton]", "711", "\[RightSkeleton]"}]}], "}"}]], "Output",\
 
- ImageSize->{532, 102},
- ImageMargins->{{0, 0}, {0, 0}},
- ImageRegion->{{0, 1}, {0, 1}},
  CellLabel->"Out[4]//Shallow=",
  CellID->391034777]
 }, Open  ]]
@@ -615,7 +630,32 @@ Cell[BoxData[
  Background->RGBColor[0.94, 0.91, 0.88],
  CellLabel->"In[2]:=",
  CellID->1224290824]
-}, Closed]]
+}, Closed]],
+
+Cell["", "SectionFooterSpacer"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["Stian's Mathematica package"]], 
+   "paclet:Stians/guide/StiansOverview"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->2061662085]
 }, Open  ]],
 
 Cell[" ", "FooterCell"]
@@ -630,15 +670,17 @@ TaggingRules->{
   GridBox[{{
       RowBox[{
         ButtonBox[
-        "Wolfram Language", ButtonData -> "paclet:guide/WolframRoot", 
+        "Mathematica", ButtonData -> "paclet:Stians/guide/Stians", 
          BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
-    Left], "ExampleCounter" -> 1, "NeedPlatMsgIn" -> None, "RootCaptions" -> 
-  "", "Metadata" -> {
-   "built" -> "{2019, 3, 16, 9, 28, 42.684176}", 
-    "history" -> {"0.0", "", "", ""}, "context" -> "Xray`", "keywords" -> {}, 
-    "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> True,
-     "label" -> "Xray Symbol", "language" -> "en", "paclet" -> "Xray", 
-    "status" -> "None", "summary" -> 
+    Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2021, 4, 28, 13, 39, 41.719904}", 
+    "history" -> {"0.0", "", "", ""}, "context" -> "Stians`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Stians Symbol", "language" -> "en", "paclet" -> "Stians", "status" -> 
+    "None", "summary" -> 
     "MonitorIni[file, input] substitutes the monitor values in the .ini file \
 with the values of input. MonitorIni[file, flux] substitutes the monitor \
 values in the .ini file with normalised values from the flux file. \
@@ -646,11 +688,10 @@ MonitorIni[file, {start, stop}] substitutes the monitor values in the .ini \
 file with automatically generated values going linearly from start to stop.", 
     "synonyms" -> {}, "tabletags" -> {}, "title" -> "MonitorIni", 
     "titlemodifier" -> "", "windowtitle" -> "MonitorIni", "type" -> "Symbol", 
-    "uri" -> "Xray/ref/MonitorIni", "WorkflowDockedCell" -> ""}, 
+    "uri" -> "Stians/ref/MonitorIni", "WorkflowDockedCell" -> ""}, 
   "SearchTextTranslated" -> "", "NewStyles" -> False},
 CellContext->"Global`",
-FrontEndVersion->"11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
-2018)",
+FrontEndVersion->"12.1 for Mac OS X x86 (64-bit) (June 19, 2020)",
 StyleDefinitions->Notebook[{
    Cell[
     StyleData[
@@ -659,8 +700,7 @@ StyleDefinitions->Notebook[{
     StyleData["Input"], CellContext -> "Global`"], 
    Cell[
     StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
-  FrontEndVersion -> 
-  "11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, 2018)", 
+  FrontEndVersion -> "12.1 for Mac OS X x86 (64-bit) (June 19, 2020)", 
   StyleDefinitions -> "Default.nb"]
 ]
 (* End of Notebook Content *)
@@ -669,79 +709,88 @@ StyleDefinitions->Notebook[{
 (*CellTagsOutline
 CellTagsIndex->{
  "PrimaryExamplesSection"->{
-  Cell[6658, 211, 268, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"046fdfda-ba8b-4dcd-991f-fefbd0d633cb",
+  Cell[7457, 235, 268, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"673f2e6b-d52e-4bac-bd77-9426bb25247e",
    CellTags->"PrimaryExamplesSection",
-   CellID->1257381786]}
+   CellID->1293880499]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"PrimaryExamplesSection", 23297, 670}
+ {"PrimaryExamplesSection", 24301, 710}
  }
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[582, 21, 2259, 53, 70, "AnchorBarGrid",ExpressionUUID->"e7422ea3-445e-4b48-a1bf-95de298979cb",
+Cell[582, 21, 3037, 74, 70, "AnchorBarGrid",ExpressionUUID->"60aa2a98-40cb-4f63-b64f-6280c8732ad6",
  CellID->1],
 Cell[CellGroupData[{
-Cell[2866, 78, 167, 6, 70, "ObjectNameGrid",ExpressionUUID->"c9d885e5-e51a-4197-8d9c-93107fd47858"],
-Cell[3036, 86, 2292, 72, 70, "Usage",ExpressionUUID->"c808e5b8-a0a5-4051-a63a-a1489303b42f",
+Cell[3644, 99, 167, 6, 70, "ObjectNameGrid",ExpressionUUID->"5b7e3674-80f3-4863-a376-15cf7bee8086"],
+Cell[3814, 107, 2279, 73, 70, "Usage",ExpressionUUID->"04d2ac2e-be85-4e8f-aeff-808f345570a8",
  CellID->982511436]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5365, 163, 629, 19, 70, "NotesSection",ExpressionUUID->"68a8afc9-7e85-4f61-a6b3-d31118496342",
+Cell[6130, 185, 629, 19, 70, "NotesSection",ExpressionUUID->"c4d7d839-ac24-4e45-8eac-3955da46efb5",
  CellGroupingRules->{"SectionGrouping", 50},
- CellID->155319213],
-Cell[5997, 184, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"81176677-7e88-4f4a-8003-55ee1e058e7e"],
-Cell[6031, 186, 362, 10, 70, "Notes",ExpressionUUID->"1bd1ff71-dfae-405b-915d-db483f8f2ca0",
+ CellID->896916856],
+Cell[6762, 206, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"fa7f8a52-5c9b-49a8-b575-cb1fe1df7a9d"],
+Cell[6796, 208, 362, 10, 70, "Notes",ExpressionUUID->"f688e4a5-78f9-4427-94ce-82346c04fe88",
  CellID->1067943069],
-Cell[6396, 198, 225, 8, 70, "Notes",ExpressionUUID->"0bd85a62-65d7-4798-be82-cfe541a58083",
- CellID->1281169926]
+Cell[7161, 220, 225, 8, 70, "Notes",ExpressionUUID->"3c26f510-d0dd-45d8-b4df-dfc7dc02b983",
+ CellID->1281169926],
+Cell[7389, 230, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"41853c53-b1a0-47a5-a2fb-597428dbf7b2"]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[6658, 211, 268, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"046fdfda-ba8b-4dcd-991f-fefbd0d633cb",
+Cell[7457, 235, 268, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"673f2e6b-d52e-4bac-bd77-9426bb25247e",
  CellTags->"PrimaryExamplesSection",
- CellID->1257381786],
+ CellID->1293880499],
 Cell[CellGroupData[{
-Cell[6951, 225, 196, 6, 70, "ExampleSection",ExpressionUUID->"19e57355-fd70-415a-aaf0-c8dd6c024142",
- CellID->1576590822],
-Cell[7150, 233, 457, 14, 70, "Input",ExpressionUUID->"83af54d1-3baa-414a-b394-20741e277c97",
+Cell[7750, 249, 195, 6, 70, "ExampleSection",ExpressionUUID->"6559aef0-12c9-40d6-b4f7-13667c3581b3",
+ CellID->830137171],
+Cell[7948, 257, 459, 14, 70, "Input",ExpressionUUID->"d9b46af5-1e5f-46ca-b1c1-a7f753f600f2",
  CellID->1094871088],
-Cell[7610, 249, 401, 10, 70, "ExampleText",ExpressionUUID->"d892d574-0979-472f-8f2d-cf55ef6e172a",
+Cell[8410, 273, 401, 10, 70, "ExampleText",ExpressionUUID->"1cf14277-c2d0-466e-afdc-333ded05c660",
  CellID->2123744621],
 Cell[CellGroupData[{
-Cell[8036, 263, 274, 8, 70, "Input",ExpressionUUID->"e671d494-d37f-432c-aa41-f8c5a51ef077",
+Cell[8836, 287, 274, 8, 70, "Input",ExpressionUUID->"8abd9ae0-3a59-424d-adaf-7c18e548b86a",
  CellID->1027648522],
-Cell[8313, 273, 913, 19, 70, "Output",ExpressionUUID->"396eb61c-2da4-44a1-a6aa-686bd7982ff8",
+Cell[9113, 297, 825, 16, 70, "Output",ExpressionUUID->"39101ffa-4c39-42c7-86e1-aef5abacfcae",
  CellID->644856443]
 }, Open  ]],
-Cell[9241, 295, 248, 8, 70, "ExampleText",ExpressionUUID->"b5a40faa-50b2-4b88-af85-f77f05c3cb97",
+Cell[9953, 316, 248, 8, 70, "ExampleText",ExpressionUUID->"3a8f294a-901a-4dc5-95a4-73e02ee76008",
  CellID->537111355],
 Cell[CellGroupData[{
-Cell[9514, 307, 303, 10, 70, "Input",ExpressionUUID->"bbbde6ef-b37e-4c3f-b6a3-2f5b49a88fbb",
+Cell[10226, 328, 303, 10, 70, "Input",ExpressionUUID->"f213d5a9-a665-44be-8db0-1fefd4392a92",
  CellID->1688044346],
-Cell[9820, 319, 971, 19, 70, "Output",ExpressionUUID->"bbc04f0b-9c51-409a-bc06-a5951116c9dd",
+Cell[10532, 340, 883, 16, 70, "Output",ExpressionUUID->"067246c0-480b-4fbf-acec-32be7dbaa35c",
  CellID->1899754739]
 }, Open  ]],
-Cell[10806, 341, 296, 12, 70, "ExampleText",ExpressionUUID->"93b97b3e-7488-4156-a237-11c3aadcd70a",
+Cell[11430, 359, 296, 12, 70, "ExampleText",ExpressionUUID->"e9b716b5-ced5-444c-8432-1020f3518fae",
  CellID->1066585501],
 Cell[CellGroupData[{
-Cell[11127, 357, 437, 13, 70, "Input",ExpressionUUID->"a67b31b1-2b4e-4726-b26d-451ab529d3ed",
+Cell[11751, 375, 439, 13, 70, "Input",ExpressionUUID->"2ab9ee79-3ead-4e8a-b3ab-2be938553363",
  CellID->170422683],
-Cell[11567, 372, 976, 19, 70, "Output",ExpressionUUID->"19349a4a-1227-4612-bd49-3e60d344a23c",
+Cell[12193, 390, 887, 16, 70, "Output",ExpressionUUID->"ed514615-6858-4ec4-87d6-7063aaba0bca",
  CellID->391034777]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[12592, 397, 235, 8, 70, "ExampleSection",ExpressionUUID->"15e2ddcc-a203-4d12-a27e-cc9f92dec331",
+Cell[13129, 412, 235, 8, 70, "ExampleSection",ExpressionUUID->"d14b0b92-d92c-4124-88d8-a08d26cb04a2",
  CellID->887364112],
-Cell[12830, 407, 498, 13, 70, "Input",ExpressionUUID->"1a9c0e75-a47c-4052-9ecc-7518f3a69c24",
+Cell[13367, 422, 498, 13, 70, "Input",ExpressionUUID->"38e999f5-bd02-4961-aaad-9dfa3da12926",
  CellID->1802185616],
-Cell[13331, 422, 7771, 194, 70, "Input",ExpressionUUID->"2e9c87c2-7978-4d57-accb-49eae67fe541",
+Cell[13868, 437, 7771, 194, 70, "Input",ExpressionUUID->"d4134f73-683d-41b6-80a2-3df21d89944a",
  CellID->1224290824]
-}, Closed]]
+}, Closed]],
+Cell[21654, 634, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"b0cd0a77-2121-4695-b29d-1d295e910f22"]
 }, Open  ]],
-Cell[21129, 620, 23, 0, 70, "FooterCell",ExpressionUUID->"0d32c153-6155-498c-a482-490b8affccd9"]
+Cell[CellGroupData[{
+Cell[21722, 639, 156, 7, 70, "MoreAboutSection",ExpressionUUID->"ebf175d8-dde5-412d-82a3-77bf81b53e35",
+ CellID->38303248],
+Cell[21881, 648, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"2b979102-2530-451a-b0d6-53413cf16b73"],
+Cell[21915, 650, 201, 7, 70, "MoreAbout",ExpressionUUID->"133f6fa2-3be8-4db7-8ea4-91e0da252c39",
+ CellID->2061662085]
+}, Open  ]],
+Cell[22131, 660, 23, 0, 70, "FooterCell",ExpressionUUID->"e191fc36-1bef-40a6-8470-aa97288dc4e8"]
 }
 ]
 *)

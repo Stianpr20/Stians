@@ -3,24 +3,24 @@
 (*** Wolfram Notebook File ***)
 (* http://www.wolfram.com/nb *)
 
-(* CreatedBy='Mathematica 11.3' *)
+(* CreatedBy='Mathematica 12.1' *)
 
 (*CacheID: 234*)
 (* Internal cache information:
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     21966,        593]
-NotebookOptionsPosition[     18654,        511]
-NotebookOutlinePosition[     20762,        567]
-CellTagsIndexPosition[     20677,        562]
+NotebookDataLength[     21846,        588]
+NotebookOptionsPosition[     18537,        507]
+NotebookOutlinePosition[     20642,        562]
+CellTagsIndexPosition[     20557,        557]
 WindowTitle->GridToLaTeX
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
 Cell[BoxData[GridBox[{
-   {Cell["XRAY SYMBOL", "PacletNameCell"], Cell[TextData[Cell[BoxData[
+   {Cell["STIANS SYMBOL", "PacletNameCell"], Cell[TextData[Cell[BoxData[
      ActionMenuBox[
       FrameBox[
        InterpretationBox[Cell[TextData[{
@@ -31,12 +31,12 @@ Cell[BoxData[GridBox[{
         TextCell[
          Row[{"URL", 
            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
-       StripOnInput->False], {"\<\"Xray/ref/GridToLaTeX\"\>":>
+       StripOnInput->False], {"\<\"Stians/ref/GridToLaTeX\"\>":>
       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
       Module[{DocumentationSearch`Private`nb$}, 
        DocumentationSearch`Private`nb$ = NotebookPut[
           Notebook[{
-            Cell["Xray/ref/GridToLaTeX"]}, Visible -> False]]; 
+            Cell["Stians/ref/GridToLaTeX"]}, Visible -> False]]; 
        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
@@ -48,7 +48,7 @@ Cell[BoxData[GridBox[{
              BoxData[
               MakeBoxes[
                Hyperlink[
-               "http://reference.wolfram.com/language/Xray/ref/GridToLaTeX.\
+               "http://reference.wolfram.com/language/Stians/ref/GridToLaTeX.\
 html"], StandardForm]], "Input", TextClipboardType -> "PlainText"]}, Visible -> 
            False]]; SelectionMove[
         DocumentationSearch`Private`nb$, All, Notebook]; 
@@ -59,10 +59,10 @@ html"], StandardForm]], "Input", TextClipboardType -> "PlainText"]}, Visible ->
           URL[
            StringJoin[
             If[
-             TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$13830], 
+             TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$17228], 
              "http://reference.wolfram.com/system-modeler/", 
              "http://reference.wolfram.com/language/"], 
-            "Xray/ref/GridToLaTeX", ".html"]], None}]}]},
+            "Stians/ref/GridToLaTeX", ".html"]], None}]}]},
       Appearance->None,
       MenuAppearance->Automatic,
       MenuStyle->"URLMenu"]],
@@ -88,8 +88,9 @@ Cell[BoxData[GridBox[{
    {"", Cell[TextData[{
      Cell[BoxData[
       RowBox[{
-       TemplateBox[{Cell[
-          TextData["GridToLaTeX"]],"paclet:Xray/ref/GridToLaTeX"},
+       TemplateBox[{
+         Cell[
+          TextData["GridToLaTeX"]], "paclet:Stians/ref/GridToLaTeX"},
         "RefLink",
         BaseStyle->{"InlineFormula"}], "[", 
        StyleBox["grid", "TI"], "]"}]], "InlineFormula"],
@@ -114,9 +115,7 @@ Cell[BoxData[GridBox[{
     }]]}
   }]], "Usage",
  GridBoxOptions->{
- GridBoxBackground->{
-  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
-   "RowsIndexed" -> {}}},
+ GridBoxBackground->{"Columns" -> {{None}}, "Rows" -> {{None}}}},
  CellID->982511436]
 }, Open  ]],
 
@@ -132,7 +131,7 @@ Cell[TextData[{
 }], "PrimaryExamplesSection",
  WholeCellGroupOpener->True,
  CellTags->"PrimaryExamplesSection",
- CellID->388250752],
+ CellID->1790709685],
 
 Cell[CellGroupData[{
 
@@ -142,7 +141,7 @@ Cell[TextData[{
  Cell["(1)", "ExampleCount"]
 }], "ExampleSection", "ExampleSection",
  WholeCellGroupOpener->True,
- CellID->1275069278],
+ CellID->1621846737],
 
 Cell[CellGroupData[{
 
@@ -444,9 +443,6 @@ Cell[BoxData[
          GrayLevel[0.5]}, {{3, 11}, {1, 6}} -> (FontFamily -> "Inconsolata")}},
    GridBoxSpacings->{"Columns" -> {{Automatic}}, "RowsIndexed" -> {2 -> 0.5}}],
   "Grid"]], "Output",
- ImageSize->{500, 190},
- ImageMargins->{{0, 0}, {0, 0}},
- ImageRegion->{{0, 1}, {0, 1}},
  CellLabel->"Out[1]=",
  CellID->939277012]
 }, Open  ]],
@@ -519,23 +515,23 @@ TaggingRules->{
   GridBox[{{
       RowBox[{
         ButtonBox[
-        "Wolfram Language", ButtonData -> "paclet:guide/WolframRoot", 
+        "Mathematica", ButtonData -> "paclet:Stians/guide/Stians", 
          BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
-    Left], "ExampleCounter" -> 1, "NeedPlatMsgIn" -> None, "RootCaptions" -> 
-  "", "Metadata" -> {
-   "built" -> "{2019, 3, 16, 9, 28, 31.014781}", 
-    "history" -> {"0.4", "", "", ""}, "context" -> "Xray`", "keywords" -> {}, 
-    "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> True,
-     "label" -> "Xray Symbol", "language" -> "en", "paclet" -> "Xray", 
-    "status" -> "None", "summary" -> 
-    "GridToLaTeX[grid] converts grid to L A T E X code.", "synonyms" -> {}, 
-    "tabletags" -> {}, "title" -> "GridToLaTeX", "titlemodifier" -> "", 
-    "windowtitle" -> "GridToLaTeX", "type" -> "Symbol", "uri" -> 
-    "Xray/ref/GridToLaTeX", "WorkflowDockedCell" -> ""}, 
+    Left], "HasOptions" -> True, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2021, 4, 28, 13, 39, 32.718078}", 
+    "history" -> {"0.4", "", "", ""}, "context" -> "Stians`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Stians Symbol", "language" -> "en", "paclet" -> "Stians", "status" -> 
+    "None", "summary" -> "GridToLaTeX[grid] converts grid to L A T E X code.",
+     "synonyms" -> {}, "tabletags" -> {}, "title" -> "GridToLaTeX", 
+    "titlemodifier" -> "", "windowtitle" -> "GridToLaTeX", "type" -> "Symbol",
+     "uri" -> "Stians/ref/GridToLaTeX", "WorkflowDockedCell" -> ""}, 
   "SearchTextTranslated" -> "", "NewStyles" -> False},
 CellContext->"Global`",
-FrontEndVersion->"11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
-2018)",
+FrontEndVersion->"12.1 for Mac OS X x86 (64-bit) (June 19, 2020)",
 StyleDefinitions->Notebook[{
    Cell[
     StyleData[
@@ -544,8 +540,7 @@ StyleDefinitions->Notebook[{
     StyleData["Input"], CellContext -> "Global`"], 
    Cell[
     StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
-  FrontEndVersion -> 
-  "11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, 2018)", 
+  FrontEndVersion -> "12.1 for Mac OS X x86 (64-bit) (June 19, 2020)", 
   StyleDefinitions -> "Default.nb"]
 ]
 (* End of Notebook Content *)
@@ -554,47 +549,47 @@ StyleDefinitions->Notebook[{
 (*CellTagsOutline
 CellTagsIndex->{
  "PrimaryExamplesSection"->{
-  Cell[4094, 124, 267, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"1fd43daa-83fa-4c59-9655-3c091d2977a9",
+  Cell[4065, 123, 268, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"9d966c7d-8f1d-41a5-bd25-2cbe684100b3",
    CellTags->"PrimaryExamplesSection",
-   CellID->388250752]}
+   CellID->1790709685]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"PrimaryExamplesSection", 20479, 555}
+ {"PrimaryExamplesSection", 20358, 550}
  }
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[583, 21, 2263, 53, 70, "AnchorBarGrid",ExpressionUUID->"16df1b99-2edd-4cf5-940e-8c982f2a5bfd",
+Cell[583, 21, 2273, 53, 70, "AnchorBarGrid",ExpressionUUID->"5fbb2c62-abf0-4297-b7a1-2083f22a2f3d",
  CellID->1],
 Cell[CellGroupData[{
-Cell[2871, 78, 168, 6, 70, "ObjectNameGrid",ExpressionUUID->"00c9c7f5-0af8-4076-8b5b-00e593d5abd7"],
-Cell[3042, 86, 1015, 33, 70, "Usage",ExpressionUUID->"1082bdef-f68a-4c76-9bdc-f32d005ebe1a",
+Cell[2881, 78, 168, 6, 70, "ObjectNameGrid",ExpressionUUID->"15451f80-ee89-41b1-9fcc-d6b0b09b73dc"],
+Cell[3052, 86, 976, 32, 70, "Usage",ExpressionUUID->"5afb638f-50eb-4050-ae55-0367698d49de",
  CellID->982511436]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[4094, 124, 267, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"1fd43daa-83fa-4c59-9655-3c091d2977a9",
+Cell[4065, 123, 268, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"9d966c7d-8f1d-41a5-bd25-2cbe684100b3",
  CellTags->"PrimaryExamplesSection",
- CellID->388250752],
+ CellID->1790709685],
 Cell[CellGroupData[{
-Cell[4386, 138, 196, 6, 70, "ExampleSection",ExpressionUUID->"1f845a86-33ef-4251-a028-08cd4c50ef68",
- CellID->1275069278],
+Cell[4358, 137, 196, 6, 70, "ExampleSection",ExpressionUUID->"ee4d146f-b1b7-4bee-bd5b-91052aa40910",
+ CellID->1621846737],
 Cell[CellGroupData[{
-Cell[4607, 148, 655, 18, 70, "Input",ExpressionUUID->"70f77017-3d8f-4b3e-bc38-01e133896e1e",
+Cell[4579, 147, 655, 18, 70, "Input",ExpressionUUID->"8c40fb02-700c-4be0-92a2-9d3ba385b553",
  CellID->1683870562],
-Cell[5265, 168, 10714, 282, 70, "Output",ExpressionUUID->"7d93e783-92a5-43f6-b3a4-1ce92e458f5b",
+Cell[5237, 167, 10625, 279, 70, "Output",ExpressionUUID->"0eb7a9ec-ed24-43a8-b780-1e10cb91681c",
  CellID->939277012]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[16016, 455, 109, 3, 70, "Input",ExpressionUUID->"a7973849-00e8-429d-bf23-31acf05819e7",
+Cell[15899, 451, 109, 3, 70, "Input",ExpressionUUID->"5a898db5-223e-4445-9046-db956a9b2917",
  CellID->276451587],
-Cell[16128, 460, 2460, 44, 70, "Print",ExpressionUUID->"fcc916fc-c02b-4a57-a578-643c6e399b0a",
+Cell[16011, 456, 2460, 44, 70, "Print",ExpressionUUID->"0d2f5772-82b8-40e2-85a4-1679d0596c87",
  CellID->610314754]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
-Cell[18627, 509, 23, 0, 70, "FooterCell",ExpressionUUID->"f0654948-5b03-4f5c-b7a5-bb852e0572df"]
+Cell[18510, 505, 23, 0, 70, "FooterCell",ExpressionUUID->"23d1a901-e9ec-48de-864f-ab027f788a45"]
 }
 ]
 *)

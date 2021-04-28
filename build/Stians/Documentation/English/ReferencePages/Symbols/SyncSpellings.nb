@@ -3,17 +3,17 @@
 (*** Wolfram Notebook File ***)
 (* http://www.wolfram.com/nb *)
 
-(* CreatedBy='Mathematica 11.3' *)
+(* CreatedBy='Mathematica 12.1' *)
 
 (*CacheID: 234*)
 (* Internal cache information:
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      8915,        253]
-NotebookOptionsPosition[      6222,        190]
-NotebookOutlinePosition[      8220,        242]
-CellTagsIndexPosition[      8177,        239]
+NotebookDataLength[      8859,        252]
+NotebookOptionsPosition[      6198,        191]
+NotebookOutlinePosition[      8163,        241]
+CellTagsIndexPosition[      8120,        238]
 WindowTitle->SyncSpellings
 WindowFrame->Normal*)
 
@@ -59,7 +59,7 @@ SyncSpellings.html"], StandardForm]], "Input", TextClipboardType ->
           URL[
            StringJoin[
             If[
-             TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$23693], 
+             TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$31659], 
              "http://reference.wolfram.com/system-modeler/", 
              "http://reference.wolfram.com/language/"], 
             "Stians/ref/SyncSpellings", ".html"]], None}]}]},
@@ -86,8 +86,9 @@ Cell[BoxData[GridBox[{
    {"", Cell[TextData[{
      Cell[BoxData[
       RowBox[{
-       TemplateBox[{Cell[
-          TextData["SyncSpellings"]],"paclet:Stians/ref/SyncSpellings"},
+       TemplateBox[{
+         Cell[
+          TextData["SyncSpellings"]], "paclet:Stians/ref/SyncSpellings"},
         "RefLink",
         BaseStyle->{"InlineFormula"}], "[", 
        RowBox[{
@@ -108,8 +109,9 @@ Cell[BoxData[GridBox[{
    {"", Cell[TextData[{
      Cell[BoxData[
       RowBox[{
-       TemplateBox[{Cell[
-          TextData["SyncSpellings"]],"paclet:Stians/ref/SyncSpellings"},
+       TemplateBox[{
+         Cell[
+          TextData["SyncSpellings"]], "paclet:Stians/ref/SyncSpellings"},
         "RefLink",
         BaseStyle->{"InlineFormula"}], "[", 
        RowBox[{
@@ -144,9 +146,7 @@ Cell[BoxData[GridBox[{
     }]]}
   }]], "Usage",
  GridBoxOptions->{
- GridBoxBackground->{
-  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {None, {None}}, 
-   "RowsIndexed" -> {}}},
+ GridBoxBackground->{"Columns" -> {{None}}, "Rows" -> {None, {None}}}},
  CellID->982511436],
 
 Cell[CellGroupData[{
@@ -176,8 +176,9 @@ Cell["", "SectionHeaderSpacer"],
 
 Cell[TextData[{
  Cell[BoxData[
-  TemplateBox[{Cell[
-     TextData["SyncSpellings"]],"paclet:Stians/ref/SyncSpellings"},
+  TemplateBox[{
+    Cell[
+     TextData["SyncSpellings"]], "paclet:Stians/ref/SyncSpellings"},
    "RefLink",
    BaseStyle->{"InlineFormula"}]], "InlineFormula"],
  " gathers dictionaries from the specified paths, merges them and replaces \
@@ -203,7 +204,7 @@ TaggingRules->{
     Left], "HasOptions" -> True, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
   None, "RootCaptions" -> "", 
   "Metadata" -> {
-   "built" -> "{2019, 3, 16, 9, 29, 9.136516}", 
+   "built" -> "{2021, 4, 28, 13, 39, 57.448796}", 
     "history" -> {"0.0", "", "", ""}, "context" -> "Stians`", 
     "keywords" -> {}, "specialkeywords" -> {}, 
     "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
@@ -216,8 +217,7 @@ synchronises them. SyncSpellings[{pathx1, pathx2, ...}, {pathy1, pathy2, \
     "titlemodifier" -> "", "windowtitle" -> "SyncSpellings", "type" -> 
     "Symbol", "uri" -> "Stians/ref/SyncSpellings"}},
 CellContext->"Global`",
-FrontEndVersion->"11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
-2018)",
+FrontEndVersion->"12.1 for Mac OS X x86 (64-bit) (June 19, 2020)",
 StyleDefinitions->Notebook[{
    Cell[
     StyleData[
@@ -226,8 +226,7 @@ StyleDefinitions->Notebook[{
     StyleData["Input"], CellContext -> "Global`"], 
    Cell[
     StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
-  FrontEndVersion -> 
-  "11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, 2018)", 
+  FrontEndVersion -> "12.1 for Mac OS X x86 (64-bit) (June 19, 2020)", 
   StyleDefinitions -> "Default.nb"]
 ]
 (* End of Notebook Content *)
@@ -241,20 +240,20 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[585, 21, 2282, 53, 70, "AnchorBarGrid",ExpressionUUID->"b4120b5f-82ca-47ee-b7f9-59d3ba52ec53",
+Cell[585, 21, 2282, 53, 70, "AnchorBarGrid",ExpressionUUID->"7c38c3e2-2159-4100-a696-b5a3ad3cddf3",
  CellID->1],
-Cell[2870, 76, 170, 6, 70, "ObjectNameGrid",ExpressionUUID->"d4af11fe-8049-49eb-80f9-b1e72c827633"],
-Cell[3043, 84, 2100, 65, 70, "Usage",ExpressionUUID->"3ec8d439-7971-47cb-b0b9-b0f41be76ca7",
+Cell[2870, 76, 170, 6, 70, "ObjectNameGrid",ExpressionUUID->"a3692733-6b21-4cb0-8d49-94f323e21030"],
+Cell[3043, 84, 2070, 65, 70, "Usage",ExpressionUUID->"846a5390-1805-44d1-a990-5b7e94c8323d",
  CellID->982511436],
 Cell[CellGroupData[{
-Cell[5168, 153, 633, 19, 70, "NotesSection",ExpressionUUID->"3768ca12-dc21-490a-8e40-e18eb0894ba8",
+Cell[5138, 153, 633, 19, 70, "NotesSection",ExpressionUUID->"a182e4d4-08ae-4abe-b8b2-9293082e9fda",
  CellGroupingRules->{"SectionGrouping", 50},
  CellID->1],
-Cell[5804, 174, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"af9d4503-bbc9-4c89-9f6b-cce8dff64744"],
-Cell[5838, 176, 342, 9, 70, "Notes",ExpressionUUID->"cca2e656-b3d0-492a-9e12-80ee749c875e",
+Cell[5774, 174, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"3a9c1df3-81b6-4416-af53-7646b066a032"],
+Cell[5808, 176, 348, 10, 70, "Notes",ExpressionUUID->"17543fc4-9c7d-4474-953b-80ad863fc1bb",
  CellID->1067943069]
 }, Closed]],
-Cell[6195, 188, 23, 0, 70, "FooterCell",ExpressionUUID->"23c99fdf-734a-4d3a-8902-6e6d64be2216"]
+Cell[6171, 189, 23, 0, 70, "FooterCell",ExpressionUUID->"f0f2a45a-113a-4d5b-8caf-ff2572fa0fdb"]
 }
 ]
 *)

@@ -3,17 +3,17 @@
 (*** Wolfram Notebook File ***)
 (* http://www.wolfram.com/nb *)
 
-(* CreatedBy='Mathematica 11.3' *)
+(* CreatedBy='Mathematica 12.1' *)
 
 (*CacheID: 234*)
 (* Internal cache information:
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      7968,        223]
-NotebookOptionsPosition[      5350,        161]
-NotebookOutlinePosition[      7274,        212]
-CellTagsIndexPosition[      7231,        209]
+NotebookDataLength[      7936,        223]
+NotebookOptionsPosition[      5352,        163]
+NotebookOutlinePosition[      7242,        212]
+CellTagsIndexPosition[      7199,        209]
 WindowTitle->ColourConversion
 WindowFrame->Normal*)
 
@@ -59,7 +59,7 @@ ColourConversion.html"], StandardForm]], "Input", TextClipboardType ->
           URL[
            StringJoin[
             If[
-             TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$9979], 
+             TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$9830], 
              "http://reference.wolfram.com/system-modeler/", 
              "http://reference.wolfram.com/language/"], 
             "Stians/ref/ColourConversion", ".html"]], None}]}]},
@@ -86,23 +86,26 @@ Cell[BoxData[GridBox[{
    {"", Cell[TextData[{
      Cell[BoxData[
       RowBox[{
-       TemplateBox[{Cell[
-          TextData["ColourConversion"]],"paclet:Stians/ref/ColourConversion"},
-        
+       TemplateBox[{
+         Cell[
+          TextData["ColourConversion"]], "paclet:Stians/ref/ColourConversion"},
         "RefLink",
         BaseStyle->{"InlineFormula"}], "[", 
        RowBox[{"{", 
         RowBox[{
-         TemplateBox[{Cell[
-            TextData["R"]],"paclet:ref/R"},
+         TemplateBox[{
+           Cell[
+            TextData["R"]], "paclet:ref/R"},
           "RefLink",
           BaseStyle->{"InlineFormula"}], ",", 
-         TemplateBox[{Cell[
-            TextData["G"]],"paclet:ref/G"},
+         TemplateBox[{
+           Cell[
+            TextData["G"]], "paclet:ref/G"},
           "RefLink",
           BaseStyle->{"InlineFormula"}], ",", 
-         TemplateBox[{Cell[
-            TextData["B"]],"paclet:ref/B"},
+         TemplateBox[{
+           Cell[
+            TextData["B"]], "paclet:ref/B"},
           "RefLink",
           BaseStyle->{"InlineFormula"}]}], "}"}], "]"}]], "InlineFormula"],
      " \[LineSeparator]converts from the RGB colour model to HTML."
@@ -110,22 +113,21 @@ Cell[BoxData[GridBox[{
    {"", Cell[TextData[{
      Cell[BoxData[
       RowBox[{
-       TemplateBox[{Cell[
-          TextData["ColourConversion"]],"paclet:Stians/ref/ColourConversion"},
-        
+       TemplateBox[{
+         Cell[
+          TextData["ColourConversion"]], "paclet:Stians/ref/ColourConversion"},
         "RefLink",
         BaseStyle->{"InlineFormula"}], "[", 
-       TemplateBox[{Cell[
-          TextData["HTML"]],"paclet:ref/HTML"},
+       TemplateBox[{
+         Cell[
+          TextData["HTML"]], "paclet:ref/HTML"},
         "RefLink",
         BaseStyle->{"InlineFormula"}], "]"}]], "InlineFormula"],
      "\[LineSeparator]converts from the HTML colour model to RGB."
     }]]}
   }]], "Usage",
  GridBoxOptions->{
- GridBoxBackground->{
-  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {None, {None}}, 
-   "RowsIndexed" -> {}}},
+ GridBoxBackground->{"Columns" -> {{None}}, "Rows" -> {None, {None}}}},
  CellID->982511436],
 
 Cell[CellGroupData[{
@@ -174,7 +176,7 @@ TaggingRules->{
     Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
   None, "RootCaptions" -> "", 
   "Metadata" -> {
-   "built" -> "{2019, 3, 16, 9, 28, 17.523538}", 
+   "built" -> "{2021, 4, 28, 13, 39, 23.007254}", 
     "history" -> {"0.0", "", "", ""}, "context" -> "Stians`", 
     "keywords" -> {}, "specialkeywords" -> {}, 
     "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
@@ -186,8 +188,7 @@ ColourConversion[HTML] converts from the HTML colour model to RGB.",
     "titlemodifier" -> "", "windowtitle" -> "ColourConversion", "type" -> 
     "Symbol", "uri" -> "Stians/ref/ColourConversion"}},
 CellContext->"Global`",
-FrontEndVersion->"11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
-2018)",
+FrontEndVersion->"12.1 for Mac OS X x86 (64-bit) (June 19, 2020)",
 StyleDefinitions->Notebook[{
    Cell[
     StyleData[
@@ -196,8 +197,7 @@ StyleDefinitions->Notebook[{
     StyleData["Input"], CellContext -> "Global`"], 
    Cell[
     StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
-  FrontEndVersion -> 
-  "11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, 2018)", 
+  FrontEndVersion -> "12.1 for Mac OS X x86 (64-bit) (June 19, 2020)", 
   StyleDefinitions -> "Default.nb"]
 ]
 (* End of Notebook Content *)
@@ -211,20 +211,20 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[588, 21, 2293, 53, 70, "AnchorBarGrid",ExpressionUUID->"20fdafaf-ae50-4232-9741-08bc80f2ea4d",
+Cell[588, 21, 2293, 53, 70, "AnchorBarGrid",ExpressionUUID->"5277d400-3a4a-4815-add5-b602d9585217",
  CellID->1],
-Cell[2884, 76, 173, 6, 70, "ObjectNameGrid",ExpressionUUID->"4a516e3e-3848-41fa-a809-a9a97c8b4c11"],
-Cell[3060, 84, 1472, 44, 70, "Usage",ExpressionUUID->"2cdec9b8-80d3-48e9-871f-75f0dc9c8b83",
+Cell[2884, 76, 173, 6, 70, "ObjectNameGrid",ExpressionUUID->"5fce407d-2912-4a9e-856f-14bab70c59da"],
+Cell[3060, 84, 1474, 46, 70, "Usage",ExpressionUUID->"a3ffd391-a414-444c-b834-b0cec6a02951",
  CellID->982511436],
 Cell[CellGroupData[{
-Cell[4557, 132, 621, 19, 70, "NotesSection",ExpressionUUID->"fe0bb2c7-17c0-4283-8a1b-b5bb29ea35d4",
+Cell[4559, 134, 621, 19, 70, "NotesSection",ExpressionUUID->"d3160218-3d35-4825-a770-1fbd0eb5efbd",
  CellGroupingRules->{"SectionGrouping", 50},
  CellID->1],
-Cell[5181, 153, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"1c6f3cb3-99dd-42df-a6dd-38c0b52ea4b6"],
-Cell[5215, 155, 93, 1, 70, "Notes",ExpressionUUID->"3f1b37b8-08fa-4e20-bfbc-7359e60d68d1",
+Cell[5183, 155, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"d597ce10-4b49-465d-8160-0ab1dc36a101"],
+Cell[5217, 157, 93, 1, 70, "Notes",ExpressionUUID->"943fc17d-eef0-42e7-95d3-0138735cc4ef",
  CellID->1067943069]
 }, Closed]],
-Cell[5323, 159, 23, 0, 70, "FooterCell",ExpressionUUID->"529fcc5f-4af6-4199-ba9b-7a978076a613"]
+Cell[5325, 161, 23, 0, 70, "FooterCell",ExpressionUUID->"eb78bbb8-e600-4a7f-8bfc-caf7f5b34e5a"]
 }
 ]
 *)

@@ -3,24 +3,24 @@
 (*** Wolfram Notebook File ***)
 (* http://www.wolfram.com/nb *)
 
-(* CreatedBy='Mathematica 11.3' *)
+(* CreatedBy='Mathematica 12.1' *)
 
 (*CacheID: 234*)
 (* Internal cache information:
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     32440,        913]
-NotebookOptionsPosition[     25458,        762]
-NotebookOutlinePosition[     27484,        817]
-CellTagsIndexPosition[     27399,        812]
+NotebookDataLength[     32358,        910]
+NotebookOptionsPosition[     25368,        759]
+NotebookOutlinePosition[     27402,        814]
+CellTagsIndexPosition[     27317,        809]
 WindowTitle->GifGenerator
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
 Cell[BoxData[GridBox[{
-   {Cell["XRAY SYMBOL", "PacletNameCell"], Cell[TextData[Cell[BoxData[
+   {Cell["STIANS SYMBOL", "PacletNameCell"], Cell[TextData[Cell[BoxData[
      ActionMenuBox[
       FrameBox[
        InterpretationBox[Cell[TextData[{
@@ -31,12 +31,12 @@ Cell[BoxData[GridBox[{
         TextCell[
          Row[{"URL", 
            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
-       StripOnInput->False], {"\<\"Xray/ref/GifGenerator\"\>":>
+       StripOnInput->False], {"\<\"Stians/ref/GifGenerator\"\>":>
       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
       Module[{DocumentationSearch`Private`nb$}, 
        DocumentationSearch`Private`nb$ = NotebookPut[
           Notebook[{
-            Cell["Xray/ref/GifGenerator"]}, Visible -> False]]; 
+            Cell["Stians/ref/GifGenerator"]}, Visible -> False]]; 
        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
@@ -48,7 +48,7 @@ Cell[BoxData[GridBox[{
              BoxData[
               MakeBoxes[
                Hyperlink[
-               "http://reference.wolfram.com/language/Xray/ref/GifGenerator.\
+               "http://reference.wolfram.com/language/Stians/ref/GifGenerator.\
 html"], StandardForm]], "Input", TextClipboardType -> "PlainText"]}, Visible -> 
            False]]; SelectionMove[
         DocumentationSearch`Private`nb$, All, Notebook]; 
@@ -59,10 +59,10 @@ html"], StandardForm]], "Input", TextClipboardType -> "PlainText"]}, Visible ->
           URL[
            StringJoin[
             If[
-             TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$13329], 
+             TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$16042], 
              "http://reference.wolfram.com/system-modeler/", 
              "http://reference.wolfram.com/language/"], 
-            "Xray/ref/GifGenerator", ".html"]], None}]}]},
+            "Stians/ref/GifGenerator", ".html"]], None}]}]},
       Appearance->None,
       MenuAppearance->Automatic,
       MenuStyle->"URLMenu"]],
@@ -86,23 +86,20 @@ Cell[BoxData[GridBox[{
    {"", Cell[TextData[{
      Cell[BoxData[
       RowBox[{
-       TemplateBox[{Cell[
-          TextData["GifGenerator"]],"paclet:Xray/ref/GifGenerator"},
+       TemplateBox[{
+         Cell[
+          TextData["GifGenerator"]], "paclet:Stians/ref/GifGenerator"},
         "RefLink",
         BaseStyle->{"InlineFormula"}], "[", 
        StyleBox["input", "TI"], "]"}]], "InlineFormula"],
-     " \[LineSeparator]produces a ",
-     StyleBox["gif", "InlineCode"],
-     " file based on ",
+     " \[LineSeparator]produces an animation file based on ",
      Cell[BoxData[
       StyleBox["input", "TI"]], "InlineFormula"],
      "."
     }]]}
   }]], "Usage",
  GridBoxOptions->{
- GridBoxBackground->{
-  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
-   "RowsIndexed" -> {}}},
+ GridBoxBackground->{"Columns" -> {{None}}, "Rows" -> {{None}}}},
  CellID->982511436],
 
 Cell[CellGroupData[{
@@ -112,7 +109,7 @@ Cell[TextData[Cell[BoxData[
    Cell[BoxData[
     TemplateBox[{6},
      "Spacer1"]]],
-   "Details"
+   "Details and Options"
   }], "NotesFrameText"],
   Appearance->{Automatic, None, "Normal", Automatic},
   BaseStyle->None,
@@ -155,8 +152,7 @@ Cell[BoxData[GridBox[{
   }]], "2ColumnTableMod",
  GridBoxOptions->{
  GridBoxBackground->{
-  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, 
-   "Rows" -> {None, None, None, None, {None}}, "RowsIndexed" -> {}},
+  "Columns" -> {{None}}, "Rows" -> {None, None, None, None, {None}}},
  GridBoxDividers->{"Rows" -> {{True, True, True, True, True, True}}}},
  CellID->1115609353],
 
@@ -224,7 +220,7 @@ Cell[BoxData[
     RowBox[{"FileNameJoin", "[", 
      RowBox[{"{", 
       RowBox[{
-      "$XrayExamples", ",", "\"\<Unwarps\>\"", ",", 
+      "$StiansExamples", ",", "\"\<Unwarps\>\"", ",", 
        "\"\<Crystal_1*.bmp\>\""}], "}"}], "]"}], "]"}]}], ";"}]], "Input",
  CellLabel->"In[1]:=",
  CellID->65826069],
@@ -294,8 +290,9 @@ Cell[TextData[{
 Cell[TextData[{
  "Setting this to ",
  Cell[BoxData[
-  TemplateBox[{Cell[
-     TextData["True"]],"paclet:ref/True"},
+  TemplateBox[{
+    Cell[
+     TextData["True"]], "paclet:ref/True"},
    "RefLink",
    BaseStyle->{"InlineFormula"}]], "InlineFormula"],
  " will loop the gif backwards."
@@ -387,8 +384,8 @@ Cell[BoxData[
  RowBox[{
   RowBox[{"GifGenerator", "[", 
    RowBox[{"images", ",", 
-    RowBox[{"\"\<OutputDirectory\>\"", "\[Rule]", "$XrayExamples"}]}], "]"}], 
-  ";"}]], "Input",
+    RowBox[{"\"\<OutputDirectory\>\"", "\[Rule]", "$StiansExamples"}]}], 
+   "]"}], ";"}]], "Input",
  CellLabel->"In[1]:=",
  CellID->1958393268]
 }, Closed]],
@@ -770,22 +767,23 @@ TaggingRules->{
   GridBox[{{
       RowBox[{
         ButtonBox[
-        "Wolfram Language", ButtonData -> "paclet:guide/WolframRoot", 
+        "Mathematica", ButtonData -> "paclet:Stians/guide/Stians", 
          BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
-    Left], "ExampleCounter" -> 1, "NeedPlatMsgIn" -> None, "RootCaptions" -> 
-  "", "Metadata" -> {
-   "built" -> "{2019, 3, 16, 9, 28, 29.777101}", 
-    "history" -> {"0.0", "", "", ""}, "context" -> "Xray`", "keywords" -> {}, 
-    "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> True,
-     "label" -> "Xray Symbol", "language" -> "en", "paclet" -> "Xray", 
-    "status" -> "None", "summary" -> 
-    "GifGenerator[input] produces a gif file based on input.", 
+    Left], "HasOptions" -> True, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2021, 4, 28, 13, 39, 31.194024}", 
+    "history" -> {"0.0", "", "", ""}, "context" -> "Stians`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Stians Symbol", "language" -> "en", "paclet" -> "Stians", "status" -> 
+    "None", "summary" -> 
+    "GifGenerator[input] produces an animation file based on input.", 
     "synonyms" -> {}, "tabletags" -> {}, "title" -> "GifGenerator", 
     "titlemodifier" -> "", "windowtitle" -> "GifGenerator", "type" -> 
-    "Symbol", "uri" -> "Xray/ref/GifGenerator"}},
+    "Symbol", "uri" -> "Stians/ref/GifGenerator"}},
 CellContext->"Global`",
-FrontEndVersion->"11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
-2018)",
+FrontEndVersion->"12.1 for Mac OS X x86 (64-bit) (June 19, 2020)",
 StyleDefinitions->Notebook[{
    Cell[
     StyleData[
@@ -794,8 +792,7 @@ StyleDefinitions->Notebook[{
     StyleData["Input"], CellContext -> "Global`"], 
    Cell[
     StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
-  FrontEndVersion -> 
-  "11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, 2018)", 
+  FrontEndVersion -> "12.1 for Mac OS X x86 (64-bit) (June 19, 2020)", 
   StyleDefinitions -> "Default.nb"]
 ]
 (* End of Notebook Content *)
@@ -804,117 +801,117 @@ StyleDefinitions->Notebook[{
 (*CellTagsOutline
 CellTagsIndex->{
  "PrimaryExamplesSection"->{
-  Cell[6289, 192, 259, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"8848735c-c06c-420b-9c29-1a40a1fdde7f",
+  Cell[6188, 188, 259, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"4bbcbf7c-b728-4029-a861-3b6bb6a02edf",
    CellTags->"PrimaryExamplesSection",
    CellID->1]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"PrimaryExamplesSection", 27209, 805}
+ {"PrimaryExamplesSection", 27127, 802}
  }
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[584, 21, 2267, 53, 70, "AnchorBarGrid",ExpressionUUID->"969fb3ff-a4fd-44f7-9ec8-0ba03fb1d42f",
+Cell[584, 21, 2277, 53, 70, "AnchorBarGrid",ExpressionUUID->"b40e286d-e225-4720-ba26-1ee450f5ed81",
  CellID->1],
-Cell[2854, 76, 169, 6, 70, "ObjectNameGrid",ExpressionUUID->"222f5608-2af5-4722-8ae8-001de112e68a"],
-Cell[3026, 84, 654, 21, 70, "Usage",ExpressionUUID->"4508ff38-d658-401b-8477-f6dcb5710a79",
+Cell[2864, 76, 169, 6, 70, "ObjectNameGrid",ExpressionUUID->"15b51ffc-1939-465c-a090-26511faeb8b6"],
+Cell[3036, 84, 580, 18, 70, "Usage",ExpressionUUID->"ec9ba6e3-339d-49a7-8696-c6b3355038b9",
  CellID->982511436],
 Cell[CellGroupData[{
-Cell[3705, 109, 621, 19, 70, "NotesSection",ExpressionUUID->"e82b7c6e-f611-44fa-85eb-6829830bb3d6",
+Cell[3641, 106, 633, 19, 70, "NotesSection",ExpressionUUID->"53ffaa61-cfb5-42e2-8246-0dd2acf39016",
  CellGroupingRules->{"SectionGrouping", 50},
  CellID->1],
-Cell[4329, 130, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"7f34a8e7-b725-4253-82d9-180b036542cf"],
-Cell[4363, 132, 263, 7, 70, "Notes",ExpressionUUID->"b241fc36-9ab1-4318-961b-19f8d5e0dcd4",
+Cell[4277, 127, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"0d30e24b-8863-4a87-a2ed-e39a9879a941"],
+Cell[4311, 129, 263, 7, 70, "Notes",ExpressionUUID->"9c84bd8b-87f1-42bb-b913-8e4428066251",
  CellID->1067943069],
-Cell[4629, 141, 949, 19, 70, "2ColumnTableMod",ExpressionUUID->"f31caacf-2770-47c6-8852-366ee06dca15",
+Cell[4577, 138, 900, 18, 70, "2ColumnTableMod",ExpressionUUID->"12ffe996-ed81-4431-b034-c28081a892f6",
  CellID->1115609353],
-Cell[5581, 162, 387, 13, 70, "Notes",ExpressionUUID->"6631b2fa-9cbc-4d10-8f26-2f2bb44d63e1",
+Cell[5480, 158, 387, 13, 70, "Notes",ExpressionUUID->"9cc4588f-5db3-4525-a957-e82a90f0c623",
  CellID->1150039653],
-Cell[5971, 177, 281, 10, 70, "Notes",ExpressionUUID->"be78cd8c-dd7b-419b-83c6-3943f0c28f74",
+Cell[5870, 173, 281, 10, 70, "Notes",ExpressionUUID->"caf6f973-e902-4cc2-b784-01aa81fbbdb4",
  CellID->171948806]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[6289, 192, 259, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"8848735c-c06c-420b-9c29-1a40a1fdde7f",
+Cell[6188, 188, 259, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"4bbcbf7c-b728-4029-a861-3b6bb6a02edf",
  CellTags->"PrimaryExamplesSection",
  CellID->1],
 Cell[CellGroupData[{
-Cell[6573, 206, 187, 6, 70, "ExampleSection",ExpressionUUID->"60609710-9e7e-4549-8f91-1cb76d1e8813",
+Cell[6472, 202, 187, 6, 70, "ExampleSection",ExpressionUUID->"aefcca93-6e79-4289-8f8b-4886e32df1b6",
  CellID->1],
-Cell[6763, 214, 120, 3, 70, "ExampleText",ExpressionUUID->"849fd166-c9ef-4eba-9644-16816683277d",
+Cell[6662, 210, 120, 3, 70, "ExampleText",ExpressionUUID->"a7107072-145f-4f82-9eea-c3b41f946e21",
  CellID->709791874],
-Cell[6886, 219, 316, 10, 70, "Input",ExpressionUUID->"14a0ee5e-9ca3-4bf4-a124-ff1b1efb82a3",
+Cell[6785, 215, 318, 10, 70, "Input",ExpressionUUID->"9ded6b33-1959-4541-81f4-6268d294857c",
  CellID->65826069],
-Cell[7205, 231, 80, 1, 70, "ExampleText",ExpressionUUID->"48921ea6-e531-4e86-9221-4b9048e042f6",
+Cell[7106, 227, 80, 1, 70, "ExampleText",ExpressionUUID->"0140523a-9b8a-4ed6-8379-ed1158e208fb",
  CellID->1868727872],
-Cell[7288, 234, 130, 4, 70, "Input",ExpressionUUID->"4cab2a20-8ab7-4aae-92ab-3dacc40e743f",
+Cell[7189, 230, 130, 4, 70, "Input",ExpressionUUID->"eed9b01a-79c4-4f83-b3e5-0eca1812b3c4",
  CellID->869774346],
-Cell[7421, 240, 272, 7, 70, "ExampleText",ExpressionUUID->"65aba506-f07f-4408-962c-e831d481fa34",
+Cell[7322, 236, 272, 7, 70, "ExampleText",ExpressionUUID->"fa6796fb-3633-41de-b725-67715541abab",
  CellID->645910824],
-Cell[7696, 249, 150, 5, 70, "Input",ExpressionUUID->"cb7132fd-baf4-444c-9fe8-5c267afd7b2e",
+Cell[7597, 245, 150, 5, 70, "Input",ExpressionUUID->"7682d1f7-e1b6-4e44-98d1-e317efeed360",
  CellID->1975675792],
-Cell[7849, 256, 216, 7, 70, "Input",ExpressionUUID->"e0493901-4c50-4300-a408-12b5226d1ee2",
+Cell[7750, 252, 216, 7, 70, "Input",ExpressionUUID->"b8ffd345-89f9-49d4-a343-c017e9921c71",
  CellID->1856339563],
-Cell[8068, 265, 171, 5, 70, "ExampleText",ExpressionUUID->"9943a6d8-5ed1-44e1-bf2b-667f39881128",
+Cell[7969, 261, 171, 5, 70, "ExampleText",ExpressionUUID->"125ea3e5-47aa-4aee-b36c-4c6b17f88b3c",
  CellID->423447444]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[8276, 275, 189, 6, 70, "ExampleSection",ExpressionUUID->"ea38b544-5211-47d9-976a-86f2113b8c8f",
+Cell[8177, 271, 189, 6, 70, "ExampleSection",ExpressionUUID->"e6f2980b-ce17-4668-b248-070a02a072f2",
  CellID->2061341341],
 Cell[CellGroupData[{
-Cell[8490, 285, 205, 6, 70, "ExampleSubsection",ExpressionUUID->"920dac2b-57b6-44fb-973a-48d66c8a35aa",
+Cell[8391, 281, 205, 6, 70, "ExampleSubsection",ExpressionUUID->"967391e9-dbcc-40da-966d-592a1c99ef35",
  CellID->1280469678],
-Cell[8698, 293, 254, 9, 70, "ExampleText",ExpressionUUID->"6305e6b6-a02a-4c15-85c7-a5e144f0a44d",
+Cell[8599, 289, 260, 10, 70, "ExampleText",ExpressionUUID->"45dcba04-acc7-4a2a-b081-1e2dd9e62773",
  CellID->920251559],
-Cell[8955, 304, 212, 7, 70, "Input",ExpressionUUID->"cac188dc-20ef-46d7-8522-00b000a48ad7",
+Cell[8862, 301, 212, 7, 70, "Input",ExpressionUUID->"bd9a120e-2afd-49c8-a111-000a71d944f8",
  CellID->490726419]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[9204, 316, 198, 6, 70, "ExampleSubsection",ExpressionUUID->"b5b83985-c2d5-4e4b-bff1-942796237101",
+Cell[9111, 313, 198, 6, 70, "ExampleSubsection",ExpressionUUID->"18207a83-99b1-4d9a-91da-cb3e6c7a0ca7",
  CellID->1513056849],
-Cell[9405, 324, 147, 5, 70, "ExampleText",ExpressionUUID->"405eeeec-987b-4a3f-9f6e-0a54953bbfeb",
+Cell[9312, 321, 147, 5, 70, "ExampleText",ExpressionUUID->"9930188e-65e1-4ae1-b877-c0c3502e9c44",
  CellID->1851027952],
-Cell[9555, 331, 212, 7, 70, "Input",ExpressionUUID->"a44b8074-14be-4a18-9931-7ee9f8498dc1",
+Cell[9462, 328, 212, 7, 70, "Input",ExpressionUUID->"1012f484-a940-4900-a2dc-d0bf8976fb24",
  CellID->601174653]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[9804, 343, 199, 6, 70, "ExampleSubsection",ExpressionUUID->"06568bbd-ff46-4019-ac0c-96ce54051123",
+Cell[9711, 340, 199, 6, 70, "ExampleSubsection",ExpressionUUID->"dcd9558b-1d98-4e53-a0f6-87807280fdd7",
  CellID->1059096415],
-Cell[10006, 351, 146, 5, 70, "ExampleText",ExpressionUUID->"fb0ea4eb-ec8c-46e2-bd23-af26bdb297bc",
+Cell[9913, 348, 146, 5, 70, "ExampleText",ExpressionUUID->"6eb20895-54bb-4628-a22c-b26f5a60a661",
  CellID->890265875],
-Cell[10155, 358, 214, 7, 70, "Input",ExpressionUUID->"4a0a0f94-8515-4f98-b7a8-f9cfd95ab768",
+Cell[10062, 355, 214, 7, 70, "Input",ExpressionUUID->"9ebf1925-9290-45c8-8204-f874a2ea0f43",
  CellID->1849079739]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[10406, 370, 207, 6, 70, "ExampleSubsection",ExpressionUUID->"d5513a92-3832-4a72-80c1-c94a30af28c9",
+Cell[10313, 367, 207, 6, 70, "ExampleSubsection",ExpressionUUID->"55d536da-84db-498a-bdd9-c1dfbf5c2ed6",
  CellID->1295379749],
-Cell[10616, 378, 164, 5, 70, "ExampleText",ExpressionUUID->"088fbf59-d745-43a9-966d-a7b96e5ddc49",
+Cell[10523, 375, 164, 5, 70, "ExampleText",ExpressionUUID->"985a6eb8-ee53-4993-8df6-26c8b7a8275f",
  CellID->153372639],
-Cell[10783, 385, 224, 7, 70, "Input",ExpressionUUID->"5bc86e14-b887-42c9-adc1-e904dec334bb",
+Cell[10690, 382, 227, 7, 70, "Input",ExpressionUUID->"9e2662a7-8b83-470b-b854-0d199a3744be",
  CellID->1958393268]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[11044, 397, 196, 6, 70, "ExampleSubsection",ExpressionUUID->"0e3757b7-c64d-48d0-8eea-c4007e1cd30c",
+Cell[10954, 394, 196, 6, 70, "ExampleSubsection",ExpressionUUID->"2a3816c6-b68f-426c-8d8b-69ed40a66556",
  CellID->1757724783],
-Cell[11243, 405, 183, 6, 70, "ExampleText",ExpressionUUID->"6484181f-1517-45d6-adbf-a05a0a46a77f",
+Cell[11153, 402, 183, 6, 70, "ExampleText",ExpressionUUID->"a6a747f2-0995-4247-967d-6b8b28012bfb",
  CellID->1223426193],
-Cell[11429, 413, 157, 5, 70, "ExampleText",ExpressionUUID->"71c0f993-39c2-4373-93d4-c8d2d6703f3a",
+Cell[11339, 410, 157, 5, 70, "ExampleText",ExpressionUUID->"04a13246-9455-4105-8787-1b46bc989377",
  CellID->362310981],
-Cell[11589, 420, 201, 6, 70, "Input",ExpressionUUID->"180f3bf3-a511-421f-be7d-947025607603",
+Cell[11499, 417, 201, 6, 70, "Input",ExpressionUUID->"c23eb41a-739d-4c8e-b265-ff0d55ff0b02",
  CellID->1394380883]
 }, Closed]]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[11839, 432, 236, 8, 70, "ExampleSection",ExpressionUUID->"0c30e647-0cda-4497-9fcc-683dd8ac2c54",
+Cell[11749, 429, 236, 8, 70, "ExampleSection",ExpressionUUID->"546686dd-64f4-4326-847b-ce244e0c6798",
  CellID->1144320007],
-Cell[12078, 442, 1395, 38, 70, "Input",ExpressionUUID->"d7805263-69c5-4f74-859b-a1ad57735d13",
+Cell[11988, 439, 1395, 38, 70, "Input",ExpressionUUID->"32792f1f-c1c6-4d10-8510-831bdab0aefb",
  CellID->1242971199],
-Cell[13476, 482, 11928, 274, 70, "Input",ExpressionUUID->"2ce4f3a1-27b7-4faf-9695-da3f6bbfa08e",
+Cell[13386, 479, 11928, 274, 70, "Input",ExpressionUUID->"b9d59b83-39c0-44fc-90dd-e26655bbcd19",
  CellID->2043507224]
 }, Closed]]
 }, Open  ]],
-Cell[25431, 760, 23, 0, 70, "FooterCell",ExpressionUUID->"bae7feb8-e39e-4026-8a74-2eda52ddf826"]
+Cell[25341, 757, 23, 0, 70, "FooterCell",ExpressionUUID->"2e9749c8-68b4-4946-9b6d-14a87e4f165a"]
 }
 ]
 *)

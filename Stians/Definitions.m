@@ -60,12 +60,17 @@ End[];
 
 
 (* ::Input::Initialization:: *)
-SyncSpellings::one="Input consists of only one dictionary.";
-SyncSpellings::missing="File \[LeftGuillemet]`1`\[RightGuillemet] was not found.";
-SyncSpellings::done="Update`1` completed.";
-SyncSpellings::inv="Invalid input format.";
+CopyDefinitionCodeToDocumentation::MissingFile="Cannot find the file for \[LeftGuillemet]`1`\[RightGuillemet].";
+CopyDefinitionCodeToDocumentation::nbEditor="\[LeftGuillemet]`1`\[RightGuillemet] does not appear to be open. Recall that this function has to be run in the 'Notebook Editor' front end.";
+CopyDefinitionCodeToDocumentation::MissingDocTools="Missing \[LeftGuillemet]DocumentationTools\[RightGuillemet] from Applications.";
+CopyDefinitionCodeToDocumentation::InvalidProject="Cannot find the definition notebook or documentation notebooks.";
+CopyDefinitionCodeToDocumentation::MissingSymbolNotebook="File \[LeftGuillemet]`1`\[RightGuillemet] does not exist.";
 
-Options[SyncSpellings]={"Remove"->{}};
+Options@CopyDefinitionCodeToDocumentation={
+"ShowNotebooks"->True,
+"TestRun"->True,
+"OpenedWindowsMode"->False
+};
 
 
 (* ::Input::Initialization:: *)
@@ -73,42 +78,107 @@ Begin["`Private`"];
 
 
 (* ::Input::Initialization:: *)
-SyncSpellings[input__String,OptionsPattern[SyncSpellings]]:=Module[{checked,new,remove,afterfilter},
-(* Checking input *)
-	If[checked,Goto["checked"]];
-	If[Length[{input}]==1,Message[SyncSpellings::one];Abort[]];
-	If[!FileExistsQ[#],Message[SyncSpellings::missing,#];Abort[]]&/@{input};
+CopyDefinitionCodeToDocumentation[
+projectDir_String,OptionsPattern[]]:=
+Module[{
+symbolsDocDir,definitionsFile,
+functionNames,options},
 
-(* Merging dictionaries *)
-	Label["checked"];
-	new=Sort@DeleteDuplicates@Flatten[StringSplit@Import[#,"Text"]&/@{input}];
+(*---* File and directory setup *---*)
+definitionsFile=FileNames["Definitions.nb",projectDir,Infinity];
+symbolsDocDir=FileNames["Symbols",projectDir,Infinity];
+symbolsDocDir=Select[symbolsDocDir,!StringContainsQ[#,"build"]&];
+If[#==={},Message[CopyDefinitionCodeToDocumentation::InvalidProject];
+Abort[]]&/@{definitionsFile,symbolsDocDir};
+{definitionsFile,symbolsDocDir}=First/@{definitionsFile,symbolsDocDir};
+If[FileNameTake[ParentDirectory@symbolsDocDir]=!="ReferencePages",
+Message[CopyDefinitionCodeToDocumentation::InvalidProject];
+Abort[]];
 
-(* Optional: Remove word(s) from the dictionary *)
-	If[Depth[#]==1,remove={#},remove=#]&@OptionValue["Remove"];
-	afterfilter=DeleteCases[new,x_/;MemberQ[remove,x]];
+(*---* Find all symbols and map function over them *---*)
+functionNames=NotebookImport[definitionsFile,"Subchapter"];
 
-(* Rewriting the old files with the new version *)
-	Export[#,afterfilter,"Text"]&/@{input};
+options=Keys@Options@CopyDefinitionCodeToDocumentation;
+options=#->OptionValue[#]&/@options;
 
-Message[SyncSpellings::done,""]
+Do[CopyDefinitionCodeToDocumentation[
+definitionsFile,symbolsDocDir,functionNames[[i]],options/.List->Sequence],
+{i,Length@functionNames}];
 ]
 
 
 (* ::Input::Initialization:: *)
-SyncSpellings[input__List]:=Module[{all,depthcheck,checked},
-(* Checking input *)
-	all={input};
-	depthcheck=DeleteCases[all,"Remove"->_List,{2}];
-	If[Depth[depthcheck]!=3,Message[SyncSpellings::inv];Abort[]];
-	If[!FileExistsQ[#],Message[SyncSpellings::missing,#];Abort[]]&/@Flatten@depthcheck;
+CopyDefinitionCodeToDocumentation[
+definitionsFile_String,symbolsDocDir_String,symbol_String,OptionsPattern[]]:=
+Module[{
+showQ,testRunQ,windowModeQ,
+nb,nbPath,check,data,cells,
+temp},
 
-(* Processing each dictionary batch *)
-	Off[SyncSpellings::done];
-	checked=True;
-	Do[SyncSpellings@@all[[i]],{i,Length@all}];
-	On[SyncSpellings::done];
+(*---* Options setup *---*)
+showQ=OptionValue["ShowNotebooks"];
+testRunQ=OptionValue["TestRun"];
+windowModeQ=OptionValue["OpenedWindowsMode"];
 
-Message[SyncSpellings::done,"s"]
+(*---* Copy cell(s) from source *---*)
+nb=NotebookOpen[definitionsFile,Visible->False];
+SetSelectedNotebook@nb;
+check=False;
+While[check===False,
+NotebookFind[definitionsFile,symbol];
+SelectionMove[nb,Next,Cell];
+data=NotebookRead[nb];
+check=(data[[1]]===symbol&&data[[2]]==="Subchapter")
+];
+SelectionMove[nb,Next,CellGroup];
+cells=NotebookRead[nb];
+NotebookClose[nb];
+temp=Flatten[Position[cells,Background->#,Infinity]&/@{RGBColor[0.87, 0.94, 1],RGBColor[1, 0.9, 0.8]},1];
+temp=Join[{{1,1,1}},temp[[All,;;3]]];
+cells=Delete[cells,temp[[All,;;3]]];
+cells=Replace[cells,(InitializationCell->True)->InitializationCell -> False,Infinity];
+
+(*---* Copy to target (documentation notebook) *---*)
+If[TrueQ@windowModeQ,
+(* a. 'OpenedWindows' mode: execute copying on window opened in notebook editior *)
+nb=Check[SetSelectedNotebook@@Notebooks@symbol,
+Message[CopyDefinitionCodeToDocumentation::nbEditor,symbol];Abort[]],
+
+(* b. Assume notebook editor front-end is running and open notebook *)
+(* Check if 'DocumentationTools' are present *)
+If[!FileExistsQ@FileNameJoin[{
+$UserBaseDirectory,"Applications","DocumentationTools",
+"Kernel","init.m"}],
+Message[CopyDefinitionCodeToDocumentation::MissingDocTools];
+Abort[]];
+
+nbPath=FileNameJoin[{symbolsDocDir,symbol<>".nb"}];
+If[!FileExistsQ@nbPath,
+Message[CopyDefinitionCodeToDocumentation::MissingSymbolNotebook,nbPath];Abort[]];
+nb=NotebookOpen[nbPath,Visible->showQ];
+];
+
+(* Common copying procedure *)
+SelectionMove[nb,After,Notebook];
+NotebookFind[nb,"Mathematica code",Previous];
+While[
+True,
+SelectionMove[nb,Next,Cell];
+check=NotebookRead[nb];
+If[check==={},Break[]];
+NotebookDelete[nb]
+];
+NotebookFind[nb,"Mathematica code",Previous];
+SelectionMove[nb,Next,Cell];
+NotebookWrite[nb,cells];
+NotebookFind[nb,"Mathematica code",Previous];
+SelectionMove[nb,All,CellGroup];
+FrontEndExecute[FrontEndToken["OpenCloseGroup"]];
+SetOptions[nb,WindowSize->Medium,WindowMargins->Automatic];
+If[!testRunQ,NotebookSave@nb];
+If[!testRunQ,NotebookClose@nb];
+
+Label["End"];
 ]
 
 
@@ -121,127 +191,317 @@ End[];
 
 
 (* ::Input::Initialization:: *)
-SyncTexitEasy::done="TexitEasy configuration files were copied successfully from `1` to `2`.";
-SyncTexitEasy::uptodate="Nothing to update.";
+CreateUsage::InvalidInput="The usage is neither a string nor a list of strings.";
+CreateUsage::InvalidDir="\[LeftGuillemet]`1`\[RightGuillemet] is not a valid directory.";
+CreateUsage::link="The function name \[LeftGuillemet]`1`\[RightGuillemet] needs to be a hyperlink.";
+CreateUsage::PackageName="Failed to obtain the application/package name.";
+CreateUsage::NoUsage="No usage content found in \[LeftGuillemet]`1`\[RightGuillemet].";
+CreateUsage::NoDocPages="Unable to find any accompanying documentation pages.";
 
-Options@SyncTexitEasy={
-"LocalPaths"-><|
-"MacOSX"->"/Users/Stian/Library/Mobile Documents/com~apple~CloudDocs/Stians iCloud"|>,
-"ShowDialogue"->True,
-"ForceCopyFrom"->False
+Options@CreateUsage={
+"AppendHyperlink"->False,
+"DefinitionsNotebook"->False,
+"FormattedInput"->False,
+"OverwriteAutomatically"->True,
+"WriteTo"->""
 };
 
 
 (* ::Input::Initialization:: *)
-Begin["`Private`"];
-
-
-(* ::Input::Initialization:: *)
-SyncTexitEasy[OptionsPattern@SyncTexitEasy]:=Module[{
-cloudDir,dialogueQ,
-configDirSystem,libraryDirSystem,configDirCloud,libraryDirCloud,
-dirs,configDir,libraryDir,
-forceOpt,files,top,newest,newestSource,copyFrom,
-buttonRow,
-temp
+CreateUsage[{application_String,symbol_},usage_,OptionsPattern[]]:=
+Block[{
+definitionsQ=TrueQ@OptionValue["DefinitionsNotebook"],
+formattedQ=OptionValue["FormattedInput"],L,usagelist,messagelist,
+cleared1,cleared2,cleared3,cleared4,
+arguments,rules,message,nogap,complete,f,
+outputfile,old,windowtext,decision,case
 },
-(* Check local paths *)
-cloudDir=OptionValue["LocalPaths"][$OperatingSystem];
-dialogueQ=OptionValue["ShowDialogue"];
 
-(* Directories *)
-configDirSystem="/Users/Stian/.config/texiteasy.com";
-libraryDirSystem="/Users/Stian/Library/Application Support/TexitEasy/TexitEasy";
-configDirCloud=FileNameJoin[{
-cloudDir,"Prosjekter/Programoppsett/TexitEasy-oppsett"}];
-libraryDirCloud=FileNameJoin[{
-cloudDir,"Prosjekter/Programoppsett/TexitEasy-oppsett/Bibliotek-mappe"}];
+(*---* Analysing input *---*)
+(* Message may already be formatted *)
+If[StringContainsQ[
+ToString[usage,StandardForm],
+"StyleBox"|"SubscriptBox"],
+	formattedQ=True];
+		
+If[formattedQ,
+If[ListQ@usage,
+messagelist=usage,
+messagelist={usage}];
+Goto["FormattingDone"]];
 
-dirs={
-configDirSystem,libraryDirSystem,
-configDirCloud,libraryDirCloud
-};
-
-configDir=FileNameJoin[{configDirCloud,"Config-mappe"}];
-libraryDir=FileNameJoin[{configDirCloud,"Bibliotek-mappe"}];
-
-	(* Option: Force copy *)
-	forceOpt=OptionValue["ForceCopyFrom"];
+(*---* Input form *---*)
 	Which[
-	forceOpt==="System",copyFrom="System";Goto["Copy"],
-	forceOpt==="Cloud",copyFrom="Cloud";Goto["Copy"]];
+	ToString[Head@usage]=="String",
+		L=1;
+		usagelist={usage},
+	ToString[Head@usage]=="List",
+		If[!AllTrue[usage,StringQ],
+		Message[CreateUsage::InvalidInput];Abort[]];
+		L=Length@usage;
+		usagelist=usage,
+	True,Message[CreateUsage::InvalidInput];Abort[]];
 
-	(* Any directories missing? *)
-	If[!AllTrue[dirs[[{1,2}]],DirectoryQ],
-	copyFrom="Cloud";
-	If[dialogueQ,Goto["Dialogue"],Goto["Copy"]]];
-	If[!AllTrue[dirs[[{3,4}]],DirectoryQ],
-	copyFrom="System";
-	If[dialogueQ,Goto["Dialogue"],Goto["Copy"]]];
 
-(* Find newest; 'push' to cloud or 'pull' from cloud *)
-files=FileNames["*",{#},Infinity]&/@dirs;
-	(*files=DeleteCases[files,x_/;StringTake[#,1]==="."&,Infinity];*)
-top=Check[
-	Flatten[TakeLargestBy[#,(FileDate[#,"Modification"]&),1]&/@files],
-	Abort[]];
-	(* Nothing new? *)
-	If[!dialogueQ&&Abs[Subtract@@(
-UnixTime@FileDate[top[[#]],"Modification"]&/@{2,4}
-)]<30,
-	Message[SyncTexitEasy::uptodate];Goto["End"]];
-newest=First@TakeLargestBy[top,(FileDate[#,"Modification"]&),1];
-newestSource=Select[dirs,StringContainsQ[DirectoryName@newest,#]&];
-copyFrom=If[SubsetQ[{configDirSystem,libraryDirSystem},newestSource],"System","Cloud"];
+(** Formatting one or several messages **)
+	messagelist={};
+	Do[
 
-(* Dialogue *)
-Label["Dialogue"];
-temp=If[copyFrom==="System",{"System","Cloud"},{"Cloud","System"}];
+(* Formatting usage message *)
+	(* In case function name contains '$' *)
+	cleared1=StringCases[usagelist[[i]],"$"~~LetterCharacter..~~_];
+	cleared2=StringTrim@DeleteCases[cleared1,x_/;StringTake[x,-1]=="$"];
+	cleared3=StringReplace[cleared2,"$"->"\[Section]"];
+	cleared4=StringReplace[usagelist[[i]],Thread[cleared2->cleared3]];
+	
+	arguments=StringCases[cleared4,Shortest["$"~~__~~"$"]];
 
-buttonRow={Spacer[200],
-DefaultButton[#1,DialogReturn[#1]],
-Spacer[5],
-Button[#2,DialogReturn[#2]]}&@@temp;
+	rules=Table[
+	arguments[[i]]->"\!\(\*\nStyleBox[\""<>arguments[[i]]<>"\", \"TI\"]\)",
+	{i,Length@arguments}];
 
-copyFrom=DialogInput[
-Column[{Style[
-"Choose where to copy from.\nMost recently modified: "<>copyFrom,13],
-Spacer[20],
-Row[buttonRow]
-}],
-WindowTitle->"Sync TexitEasy settings"];
+	message=StringReplace[cleared4,rules];
+	message=StringDelete[message,"$"];
+	message=StringReplace[message,"\[Section]"->"$"];
 
-If[copyFrom===$Failed,Abort[]];
+(* Processing subscripts *)
+	nogap=WordCharacter..|Except[" ",Except[" "]..~~", "~~Except[" "]..]..;
 
-(* Delete and copy *)
-Label["Copy"];
-If[
-copyFrom==="System",
-(* 'System' --> 'Cloud' *)
-DeleteDirectory[configDirCloud,DeleteContents->True];
-CreateDirectory[configDirCloud];
-CopyDirectory[configDirSystem,configDir];
-CopyDirectory[libraryDirSystem,libraryDir],
+	message=StringReplace[message,
+	pre:nogap~~"_"~~sub:nogap:>"\!\(\*SubscriptBox[\("<>pre<>"\), \("<>sub<>"\)]\)"];
 
-(* 'Cloud' --> 'System' *)
-DeleteDirectory[configDirSystem,DeleteContents->True];
-CopyDirectory[configDir,configDirSystem];
-DeleteDirectory[libraryDirSystem,DeleteContents->True];
-CopyDirectory[libraryDir,libraryDirSystem]
+(* Correcting ellipses *)
+	message=StringReplace[message,"..."->"\[Ellipsis]"];
+
+(* Correcting spaces between arguments *)
+	message=StringReplace[message,
+	{"\"TI\"]\),\!\(\*\nStyleBox["->"\"TI\"], \*\nStyleBox[",
+	"\"TI\"]\),{\!\(\*\nStyleBox["->"\"TI\"]\), {\!\(\*\nStyleBox[",
+	"\"TI\"]\)},\!\(\*\nStyleBox["->"\"TI\"]\)}, \!\(\*\nStyleBox["}];
+
+	AppendTo[messagelist,message],
+	{i,L}
 ];
 
-(* Report *)
-temp={"system","cloud"};
-If[copyFrom==="Cloud",temp=Reverse@temp];
 
-Message[SyncTexitEasy::done,temp[[1]],temp[[2]]];
+(** Preparing the usage layout **)
+	Label["FormattingDone"];
+	complete=Riffle[messagelist,"\n"];
 
-Label["End"];
+(* Appending hyperlink to the documentation *)
+f=ToString@symbol;
+If[TrueQ@OptionValue["AppendHyperlink"],
+complete[[-1]]=ToString[Row[{complete[[-1]],"   ",
+Hyperlink["\[RightSkeleton]","paclet:"<>application<>"/ref/"<>f,
+ActiveStyle->None]}],StandardForm]
+];
+
+(* Setting the usage *)
+	outputfile=ToString@OptionValue["WriteTo"];
+	message=StringJoin@complete;
+
+	If[DirectoryName[outputfile]===""||!DirectoryQ@DirectoryName@outputfile,
+	symbol::usage=message;
+	Return@Information[symbol,LongForm->False]
+	];
+
+
+(** Option: Store usage messages **)
+
+(* Check if output file already exists *)
+	If[!FileExistsQ@outputfile,
+	Check[Export[outputfile,""],Abort[]];
+	old="",
+	old=Check[ReadString@outputfile,Abort[]]
+	];
+
+(* Check if file already contains the symbol *)
+	If[StringContainsQ[old,StartOfLine~~f<>"::usage="],
+	If[!OptionValue["OverwriteAutomatically"],
+	windowtext=StringJoin[
+	{"A usage message for \[LeftGuillemet]",f,"\[RightGuillemet] already exists in \[LeftGuillemet]",
+	FileNameTake@outputfile,
+	"\[RightGuillemet].\nWould you like to overwrite the old message?"}];
+
+	decision=ChoiceDialog[windowtext,
+	{"No"->False,"Yes"->True},
+	WindowTitle->"Overwrite usage message",
+	WindowFloating->True];
+		
+	If[!decision,Abort[]]
+	];
+
+	(* Replacing old message *)
+		case=StringReplace[old,
+		Shortest[f<>"::usage="~~__~~";"]->
+		f<>"::usage="<>ToString@FullForm@StringJoin@message<>";"];
+		
+		Return@Export[outputfile,case]
+		];
+
+
+(* Append new usage *)
+	WriteString[outputfile,
+	old,
+	f<>"::usage="<>ToString@FullForm@StringJoin@message,
+	";\n\n\n"];
+
+	Close@outputfile
 ]
 
 
 (* ::Input::Initialization:: *)
-End[];
+CreateUsage[notebook_?(FileExtension[#]==="nb"&),OptionsPattern[]]:=Block[{
+formattedQ=OptionValue["FormattedInput"],
+definitionsQ=TrueQ@OptionValue["DefinitionsNotebook"],
+nb,packageName,functionName=FileBaseName@notebook,check,data,
+L,starts,intervals,usages,span,
+specialStart,specialEnd,wrap,escapeQuotes,messages,s,arg,info,startSpace,line,
+outputFile=OptionValue["WriteTo"],
+temp
+},
+
+(* Special case: Definitions notebook *)
+If[definitionsQ,
+Return@CreateUsage[notebook,"Mode:DefinitionsNotebook",
+Sequence@@#->OptionValue[#]&/@Keys@Options@CreateUsage]];
+
+(* Get main usage cell from (undeployed) documentation notebook *)
+nb=Check[NotebookOpen[notebook,Visible->False],Abort[]];
+SetSelectedNotebook@nb;
+check=False;
+While[check===False,
+SelectionMove[nb,Next,Cell];
+data=NotebookRead[nb];
+If[data==={},
+Message[CreateUsage::NoUsage,FileNameTake@notebook];
+Abort[]];
+check=Quiet[(data[[2]]==="Usage")]
+];
+NotebookClose[nb];
+
+(* Find intervals with usage information *)
+temp=data[[1,1]];
+L=Length@temp;
+starts=starts=1+Position[temp,"ModInfo",Infinity][[All,1]];
+If[MatchQ[starts,{_Integer}],
+intervals={{starts[[1]],L}},
+intervals=Table[{starts[[i]],starts[[i+1]]-2},{i,Length@starts-1}];
+intervals=Join[intervals,{{intervals[[-1,2]]+2,L}}]
+];
+
+span=Span[#[[1]],#[[2]]]&/@intervals;
+usages=Part[temp,#]&/@span;
+
+(* Extraction *)
+specialStart="\!\(\*";
+specialEnd="\)";
+wrap[input_]:=Block[{x=ToString@input},
+If[StringContainsQ[x,"Box"],x,"\""<>x<>"\""]];
+escapeQuotes[input_]:=StringReplace[input,
+Shortest[","~~
+Except[","]...~~"\""~~
+Except[","]...~~
+"\""~~x:LetterCharacter..~~"\""~~
+Except[","]...~~","
+]:>", \"\\\"\", \"\[NegativeVeryThinSpace]\",\""<>x<>"\", \"\[NegativeVeryThinSpace]\", \"\\\"\", "];
+
+messages={};
+Do[
+s=usages[[l]]/.x_ButtonBox:>First@x;
+s=ToExpression@StringDelete[ToString@FullForm@s,{"\\[LineSeparator]","\\n"}];
+
+Which[
+Cases[s,"[",Infinity]==={},(* Function name only *)
+arg=functionName,
+
+MatchQ[s[[1,1,1,1]],{functionName,"[","]"}],(* Void function *)
+arg=ToString@RowBox[{"\""<>functionName<>"\"","\""<>"[]"<>"\""}],
+
+True,
+arg=s[[1,1,1,1,3;;-2]];
+If[Depth@arg<5,
+arg=RowBox[{functionName,"[",First@arg,"]"}],
+arg=Insert[arg,{functionName,"["},{1,1,1}];
+arg=Insert[arg,"]",{1,1,-1}];
+arg=FlattenAt[First@arg,{1,1}]];
+arg=wrap//@arg
+];
+arg=escapeQuotes[arg];
+
+info=s[[2;;]]/.s_String:>"\""<>s<>"\"";
+info=info/.s_String:>StringDelete[s,{"\[LineSeparator]","\n"}];
+startSpace=If[StringTake[info[[1]],{2}]===" ",""," "];
+info=escapeQuotes@ToString@RowBox@info;
+
+line=specialStart<>arg<>specialEnd<>startSpace<>specialStart<>info<>specialEnd;
+
+AppendTo[messages,line],
+{l,Length@intervals}];
+
+(* Acquiring application/pacakge name *)
+data=ToString[data,InputForm];
+packageName=StringCases[data,
+Shortest["paclet:"~~name:LetterCharacter..~~"/ref/"]:>name];
+
+If[!StringContainsQ[data,"ButtonData"],
+Message[CreateUsage::link,functionName];Abort[]];
+If[packageName==={},Message[CreateUsage::PackageName];Abort[]];
+packageName=packageName[[1]];
+
+If[outputFile=!="",
+(* A. Optional: Write usage data to a file *)
+	(* Check output directory *)
+	If[!DirectoryQ@DirectoryName@outputFile,
+	Message[CreateUsage::InvalidDir,DirectoryName@outputFile];Abort[]];
+
+	(* Write information to output file *)
+	CreateUsage[{packageName,functionName},messages,
+	"FormattedInput"->True,"WriteTo"->outputFile],
+
+(* B. Just output messages *)
+	(* Optional: Include package- and function name if just outputting messages *)
+	packageName=StringCases[
+	notebook,name:Except["/"]..~~"/Documentation":>name];
+If[packageName==={},
+messages,{packageName[[1]],functionName,messages}]
+]
+]
+
+
+(* ::Input::Initialization:: *)
+CreateUsage[definitionFile_String,"Mode:DefinitionsNotebook",OptionsPattern[]]:=Block[{
+dir=DirectoryName@definitionFile,outputFile=OptionValue["WriteTo"],
+definedFunctions,documentationNotebooks,discrepancy,
+list,nb
+},
+
+If[outputFile==="",outputFile=FileNameJoin[{dir,"Messages.txt"}]];
+
+definedFunctions=NotebookImport[definitionFile,"Subchapter"];
+(*Clear@@definedFunctions;*)
+
+documentationNotebooks=FileNames[
+FileNameJoin[{"Documentation","English","ReferencePages","Symbols","*.nb"}],
+{ParentDirectory@dir,dir},Infinity];
+If[documentationNotebooks==={},Message[CreateUsage::NoDocPages];Abort[]];
+
+discrepancy=Complement[definedFunctions,FileBaseName/@documentationNotebooks];
+If[discrepancy=!={},
+Print["Missing documentation pages:"];
+Print@Column@discrepancy;
+Print["----------"];
+];
+
+list={};
+Print@Dynamic@Multicolumn[list,{20,3}];
+Do[
+nb=documentationNotebooks[[i]];
+AppendTo[list,FileBaseName@nb];
+Check[CreateUsage[nb,"WriteTo"->outputFile],
+AppendTo[list,"(error in previous)"]],
+{i,Length@documentationNotebooks}];
+]
 
 
 (* ::Input::Initialization:: *)
@@ -457,11 +717,11 @@ gifname,dir,random,temp},
 	progress=0;
 	PrintTemporary[
 	Row[
-	{Text[Style["Image import progress:",FontFamily->"Avenir Next",16]],
+	{Text[Style["Image import progress:",12]],
 	Spacer[20],
 	Dynamic@ProgressIndicator[progress/L],
 	Spacer[20],
-	Dynamic[Text[Style["Imported: "<>ToString[progress]<>" of "<>ToString@L,FontFamily->"Avenir Next",12]]]
+	Dynamic[Text[Style["Imported: "<>ToString[progress]<>" of "<>ToString@L,12]]]
 	},
 	Alignment->Center
 	]];
@@ -505,14 +765,9 @@ gifname,dir,random,temp},
 	If[format==="mp4",
 	random=ToString@RandomInteger[10^10];
 	temp=FileNameJoin[{dir,"tempname"<>random<>".mov"}];
-	Export[
-	temp,
-	data,
-	"VideoEncoding"->"MPEG-4 Video",
-	"FrameRate"->1/OptionValue["Time"]];
+	Export[temp,data,"FrameRate"->1/OptionValue["Time"]];
 	
-	Return@RenameFile[
-	temp,
+	Return@RenameFile[temp,
 	FileNameJoin[{dir,gifname<>".mp4"}],
 	OverwriteTarget->True]
 	];
@@ -524,605 +779,6 @@ gifname,dir,random,temp},
 	data,
 	"DisplayDurations"->OptionValue["Time"]]
 	];
-]
-
-
-(* ::Input::Initialization:: *)
-End[];
-
-
-(* ::Input::Initialization:: *)
-(* Messages, options, attributes and syntax information *)
-
-
-(* ::Input::Initialization:: *)
-TagImages::images="Some of the images or file paths were invalid.";
-TagImages::tags="Invalid dimensions of tag list.";
-TagImages::tagstrings="Some of the tags are not strings.";
-TagImages::format="\[LeftGuillemet]`1`\[RightGuillemet] is not a valid output format.";
-
-Options@TagImages={
-"ExportTo"->"InputDirectory",
-"Style"->{White,"Inconsolata",54},
-"ImageFormat"->"png",
-"NewName"->False
-};
-
-
-(* ::Input::Initialization:: *)
-Begin["`Private`"];
-
-
-(* ::Input::Initialization:: *)
-TagImages[input_,tags_List,OptionsPattern@TagImages]:=
-Module[{
-images,type,L,
-tagsLB,tagsRB,progress,i,firstimage,dim,Lspace,Rspace,Bspace,
-oldbasename,newnamesf,newnames,nnOption,
-inputdir,outputdir,format,
-s1,s2,s3,image,new1,new2},
-
-(* Checking input form *)
-	images=Flatten[{input}];
-	Which[
-	AllTrue[images,ImageQ],
-		type="image",
-	AllTrue[images,FileExistsQ],
-		type="string",	
-	True,Message[TagImages::images];Abort[]
-	];
-	
-	L=Length@images;
-
-	(* Check format of tags *)
-	If[Not[Dimensions[tags]=={L,2}],
-	Message[TagImages::tags];Abort[]];
-
-	If[!AllTrue[Flatten@tags,StringQ],
-	Message[TagImages::tagstrings];Abort[]];
-
-	(* Check image output format *)
-	format=ToLowerCase@OptionValue["ImageFormat"];
-	format=StringReplace[format,"jpeg"->"jpg"];
-	If[!MemberQ[{"jpg","png"},format],
-	Message[TagImages::format,format];Abort[]];
-
-(* Preparing *)
-	tagsLB=tags[[All,1]];
-	tagsRB=tags[[All,2]];
-	progress=0;
-	i=1;
-
-	firstimage=Which[
-	type=="string",Import@First@images,
-	type=="image",First@images];
-	dim=ImageDimensions@firstimage;
-
-	Lspace=Round[0.015*First@dim];
-	Rspace=Round[0.985*First@dim];
-	Bspace=Round[0.03*Last@dim];
-
-(* Dynamic status *)
-	PrintTemporary[
-	Row[
-	{Text[Style["Image conversion progress:",FontFamily->"Avenir Next",16]],
-	Spacer[20],
-	Dynamic@ProgressIndicator[progress/L],
-	Spacer[20],
-	Dynamic[Text[Style["Converted: "<>ToString[progress]<>" of "<>ToString@L,FontFamily->"Avenir Next",12]]]
-	},
-	Alignment->Center
-	]];
-
-(* New names *)
-	newnamesf[old_]:=old<>"_"<>
-	IntegerString[#,10,StringLength@ToString@L]&/@Range@L;
-	nnOption=OptionValue["NewName"];
-
-	Which[
-	type=="string",
-	Which[
-	(* File name input, use numeric names *)
-	TrueQ@nnOption,
-	oldbasename=First@StringCases[StringTake
-	[FileNameTake@First@images,{1,-5}],__~~LetterCharacter];
-	newnames=newnamesf@oldbasename,
-
-	!TrueQ@nnOption,
-	(* File name input, keep old names *)
-	newnames=FileBaseName/@FileNameTake/@images,
-
-	StringQ@nnOption,
-	(* File name input, custom base name *)
-	newnames=newnamesf@nnOption
-	],
-
-	type=="image",
-	Which[
-	StringQ@nnOption,
-	(* Image intput, custom base name *)
-	newnames=newnamesf@nnOption,
-
-	(* Image input, defualt 'Output' name *)
-	True,
-	newnames=newnamesf["Output"]
-	]
-	];
-
-(* Export directory *)
-	Which[
-	DirectoryQ@OptionValue["ExportTo"],
-	(* Option: Custom output directory *)
-	outputdir=OptionValue["ExportTo"],
-
-	type=="image",
-	(* If images, export to desktop *)
-	outputdir=FileNameJoin[{
-	$HomeDirectory,"Desktop","Output"}],
-
-	type=="string",
-	(* Use input directory *)
-	inputdir=DirectoryName@First@images;
-	outputdir=FileNameJoin[{inputdir,"Output"}]
-	];
-	Quiet@CreateDirectory@outputdir;
-
-(*---* Procedure *---*)
-	Label["StartProcedure"];
-
-	(* Marking *)
-	{s1,s2,s3}=OptionValue["Style"];
-
-	Do[
-	image=Which[
-	type=="string",
-		Import@images[[i]],
-	type=="image",
-		images[[i]]
-	];
-
-	new1=ImageCompose[
-	image,
-	Graphics[
-	Text[
-	Style[tagsLB[[i]],s1,FontFamily->s2,s3],
-	{0,0},{Left,Center}]],{Lspace,Bspace}];
-
-	new2=ImageCompose[
-	new1,
-	Graphics[
-	Text[
-	Style[tagsRB[[i]],s1,FontFamily->s2,s3],
-	{0,0},{Right,Center}]],{Rspace,Bspace}];
-
-	(* Export *)
-	Export[FileNameJoin[{outputdir,
-	newnames[[i]]<>"."<>format}],
-	new2];
-	
-	progress++,
-	{i,L}];
-
-Print[
-ToString[progress]<>" "<>
-If[L==1,"image","images"]<>
-" were exported to \[LeftGuillemet]"<>
-ToString[outputdir]<>"\[RightGuillemet]."
-]
-]
-
-
-(* ::Input::Initialization:: *)
-End[];
-
-
-(* ::Input::Initialization:: *)
-(* Messages, options, attributes and syntax information *)
-
-
-(* ::Input::Initialization:: *)
-ExtractUsage::mode="\[LeftGuillemet]`1`\[RightGuillemet] is not a recognised mode.";
-ExtractUsage::link="The function name \[LeftGuillemet]`1`\[RightGuillemet] needs to be a hyperlink.";
-
-Options@ExtractUsage={
-"Mode"->"Normal"
-};
-
-SetAttributes[ExtractUsage,Listable]
-
-
-(* ::Input::Initialization:: *)
-Begin["`Private`"];
-
-
-(* ::Input::Initialization:: *)
-ExtractUsage[notebook_String,OptionsPattern@ExtractUsage]:=Module[
-{nb,packageName,functionName=FileBaseName@notebook,check,data,
-L,starts,intervals,usages,span,
-specialStart,specialEnd,wrap,messages,s,arg,info,startSpace,line,
-temp},
-
-(* Get main usage cell from (undeployed) documentation notebook *)
-nb=Check[NotebookOpen[notebook,Visible->False],Abort[]];
-SetSelectedNotebook@nb;
-check=False;
-While[check===False,
-SelectionMove[nb,Next,Cell];
-data=NotebookRead[nb];
-check=Quiet[(data[[2]]==="Usage")]
-];
-NotebookClose[nb];
-
-(* Find intervals with usage information *)
-temp=data[[1,1]];
-L=Length@temp;
-starts=starts=1+Position[temp,"ModInfo",Infinity][[All,1]];
-If[MatchQ[starts,{_Integer}],
-intervals={{starts[[1]],L}},
-intervals=Table[{starts[[i]],starts[[i+1]]-2},{i,Length@starts-1}];
-intervals=Join[intervals,{{intervals[[-1,2]]+2,L}}]
-];
-
-span=Span[#[[1]],#[[2]]]&/@intervals;
-usages=Part[temp,#]&/@span;
-
-(* Extraction *)
-specialStart="\!\(\*";
-specialEnd="\)";
-wrap[input_]:=Module[{x=ToString@input},
-If[StringContainsQ[x,"Box"],x,"\""<>x<>"\""]];
-
-messages={};
-Do[
-s=usages[[l]]/.x_ButtonBox:>First@x;
-s=ToExpression@StringDelete[ToString@FullForm@s,{"\\[LineSeparator]","\\n"}];
-
-Which[
-Cases[s,"[",Infinity]==={},(* Function name only *)
-arg=functionName,
-
-MatchQ[s[[1,1,1,1]],{functionName,"[","]"}],(* Void function *)
-arg=ToString@RowBox[{"\""<>functionName<>"\"","\""<>"[]"<>"\""}],
-
-True,
-arg=s[[1,1,1,1,3;;-2]];
-If[Depth@arg<5,
-arg=RowBox[{functionName,"[",First@arg,"]"}],
-arg=Insert[arg,{functionName,"["},{1,1,1}];
-arg=Insert[arg,"]",{1,1,-1}];
-arg=FlattenAt[First@arg,{1,1}]];
-arg=wrap//@arg
-];
-
-info=s[[2;;]]/.s_String:>"\""<>s<>"\"";
-info=info/.s_String:>StringDelete[s,{"\[LineSeparator]","\n"}];
-startSpace=If[StringTake[info[[1]],{2}]===" ",""," "];
-info=ToString@RowBox@info;
-
-line=specialStart<>arg<>specialEnd<>startSpace<>specialStart<>info<>specialEnd;
-
-AppendTo[messages,line],
-{l,Length@intervals}];
-
-(* Optional: Include package- and function name *)
-If[OptionValue["Mode"]==="Full",
-packageName=First@StringCases[
-notebook,name:Except["/"]..~~"/Documentation":>name];
-messages={packageName,functionName,messages}];
-
-(* Returning information *)
-messages
-]
-
-
-(* ::Input::Initialization:: *)
-End[];
-
-
-(* ::Input::Initialization:: *)
-(* Messages, options, attributes and syntax information *)
-
-
-(* ::Input::Initialization:: *)
-NeatUsage::error="The usage is neither a string nor a list of strings.";
-NeatUsage::dir="\[LeftGuillemet]`1`\[RightGuillemet] is not a valid directory.";
-
-Options@NeatUsage={
-"DocumentationHyperlink"->False,
-"Mode"->"Normal",
-"OverwriteAutomatically"->True,
-"WriteTo"->False
-};
-
-
-(* ::Input::Initialization:: *)
-Begin["`Private`"];
-
-
-(* ::Input::Initialization:: *)
-NeatUsage[{application_String,symbol_Symbol},usage_,OptionsPattern@NeatUsage]:=
-Module[
-{mode,L,usagelist,messagelist,
-cleared1,cleared2,cleared3,cleared4,
-arguments,rules,message,nogap,complete,f,
-outputfile,old,windowtext,decision,case},
-
-(** Analysing input **)
-	
-	(* Message may already be formatted *)
-		mode=OptionValue["Mode"];
-		If[StringContainsQ[
-		ToString[usage,StandardForm],
-		"StyleBox"|"SubscriptBox"],
-			mode="Formatted"];
-		
-		If[mode=="Formatted",
-		If[ListQ@usage,
-		messagelist=usage,
-		messagelist={usage}];
-		Goto["FormattingDone"]];
-
-	(* Input form *)
-	Which[
-	ToString[Head@usage]=="String",
-		L=1;
-		usagelist={usage},
-	ToString[Head@usage]=="List",
-		If[!AllTrue[usage,StringQ],
-		Message[NeatUsage::error];Abort[]];
-		L=Length@usage;
-		usagelist=usage,
-	True,Message[NeatUsage::error];Abort[]];
-
-
-(** Formatting one or several messages **)
-	messagelist={};
-	Do[
-
-(* Formatting usage message *)
-	(* In case function name contains '$' *)
-	cleared1=StringCases[usagelist[[i]],"$"~~LetterCharacter..~~_];
-	cleared2=StringTrim@DeleteCases[cleared1,x_/;StringTake[x,-1]=="$"];
-	cleared3=StringReplace[cleared2,"$"->"\[Section]"];
-	cleared4=StringReplace[usagelist[[i]],Thread[cleared2->cleared3]];
-	
-	arguments=StringCases[cleared4,Shortest["$"~~__~~"$"]];
-
-	rules=Table[
-	arguments[[i]]->"\!\(\*\nStyleBox[\""<>arguments[[i]]<>"\", \"TI\"]\)",
-	{i,Length@arguments}];
-
-	message=StringReplace[cleared4,rules];
-	message=StringDelete[message,"$"];
-	message=StringReplace[message,"\[Section]"->"$"];
-
-(* Processing subscripts *)
-	nogap=WordCharacter..|Except[" ",Except[" "]..~~", "~~Except[" "]..]..;
-
-	message=StringReplace[message,
-	pre:nogap~~"_"~~sub:nogap:>"\!\(\*SubscriptBox[\("<>pre<>"\), \("<>sub<>"\)]\)"];
-
-(* Correcting ellipses *)
-	message=StringReplace[message,"..."->"\[Ellipsis]"];
-
-(* Correcting spaces between arguments *)
-	message=StringReplace[message,
-	{"\"TI\"]\),\!\(\*\nStyleBox["->"\"TI\"], \*\nStyleBox[",
-	"\"TI\"]\),{\!\(\*\nStyleBox["->"\"TI\"]\), {\!\(\*\nStyleBox[",
-	"\"TI\"]\)},\!\(\*\nStyleBox["->"\"TI\"]\)}, \!\(\*\nStyleBox["}];
-
-	AppendTo[messagelist,message],
-	{i,L}];
-
-
-(** Preparing the usage layout **)
-	Label["FormattingDone"];
-	complete=Riffle[messagelist,"\n"];
-
-(* Appending hyperlink to the documentation *)
-f=ToString@symbol;
-If[TrueQ@OptionValue["DocumentationHyperlink"],
-	complete[[-1]]=
-	ToString[Row[
-	{
-	complete[[-1]],
-	"   ",
-	Hyperlink["\[RightSkeleton]","paclet:"<>application<>"/ref/"<>f,
-	ActiveStyle->None]
-	}
-	],StandardForm]
-];
-
-(* Setting the usage *)
-	outputfile=ToString@OptionValue["WriteTo"];
-	message=StringJoin@complete;
-
-	If[DirectoryName[outputfile]==""||!DirectoryQ@DirectoryName@outputfile,
-	symbol::usage=message;
-	Return@Information[symbol,LongForm->False]
-	];
-
-
-(** Option: Store usage messages **)
-
-(* Check if output file already exists *)
-	If[!FileExistsQ@outputfile,
-	Check[Export[outputfile,""],Abort[]];
-	old="",
-	old=Check[ReadString@outputfile,Abort[]]
-	];
-
-(* Check if file already contains the symbol *)
-	If[StringContainsQ[old,StartOfLine~~f<>"::usage="],
-	If[!OptionValue["OverwriteAutomatically"],
-	windowtext=StringJoin[
-	{"A usage message for \[LeftGuillemet]",
-	f,
-	"\[RightGuillemet] already exists in \[LeftGuillemet]",
-	FileNameTake@outputfile,
-	"\[RightGuillemet].\nWould you like to overwrite the old message?"}];
-
-	decision=ChoiceDialog[windowtext,
-	{"No"->False,"Yes"->True},
-	WindowTitle->"Overwrite usage message",
-	WindowFloating->True];
-		
-	If[!decision,Abort[]]
-	];
-
-	(* Replacing old message *)
-		case=StringReplace[old,
-		Shortest[f<>"::usage="~~__~~";"]->
-		f<>"::usage="<>ToString@FullForm@StringJoin@message<>";"];
-		
-		Return@Export[outputfile,case]
-		];
-
-
-(* Append new usage *)
-	WriteString[outputfile,
-	old,
-	f<>"::usage="<>ToString@FullForm@StringJoin@message,
-	";\n\n\n"];
-
-	Close@outputfile
-]
-
-
-(* ::Input::Initialization:: *)
-NeatUsage[notebook_String,output_String,OptionsPattern@NeatUsage]:=
-Module[{info},
-(* Extract information from notebook *)
-	info=ExtractUsage[notebook,"Mode"->"Full"];
-
-(* Check output directory *)
-	If[DirectoryName[output]==""||!DirectoryQ@DirectoryName@output,
-	Message[NeatUsage::dir,DirectoryName@output];Abort[]];
-
-(* Write information to output file *)
-	NeatUsage[{info[[1]],ToExpression@info[[2]]},info[[3]],
-	"Mode"->"Formatted",
-	"WriteTo"->output]
-]
-
-
-(* ::Input::Initialization:: *)
-End[];
-
-
-(* ::Input::Initialization:: *)
-(* Messages, options, attributes and syntax information *)
-
-
-(* ::Input::Initialization:: *)
-CopyDefinitionCodeToDocumentation::missingFile="Cannot find the file for \[LeftGuillemet]`1`\[RightGuillemet].";
-CopyDefinitionCodeToDocumentation::nbEditor="\[LeftGuillemet]`1`\[RightGuillemet] does not appear to be open. Recall that this function has to be run in the 'Notebook Editor' front end.";
-CopyDefinitionCodeToDocumentation::missingDocTools="Missing \[LeftGuillemet]DocumentationTools\[RightGuillemet] from Applications.";
-
-Options@CopyDefinitionCodeToDocumentation={
-"DocumentationSymbolsDir"->"/Users/Stian/Jottacloud/UiS/Mathematica project/GitHub/MaXrd/Documentation/English/ReferencePages/Symbols",
-"DefinitionFile"->"/Users/Stian/Jottacloud/UiS/Mathematica project/GitHub/MaXrd/Core/Definitions.nb",
-"ShowNotebooks"->False,
-"TestRun"->False,
-"OpenedWindowsMode"->False
-};
-
-
-(* ::Input::Initialization:: *)
-Begin["`Private`"];
-
-
-(* ::Input::Initialization:: *)
-CopyDefinitionCodeToDocumentation[symbol_String,OptionsPattern@CopyDefinitionCodeToDocumentation]:=
-Module[
-{symbolsDocDir,definitionsFile,targetFile,
-showQ,testRunQ,windowModeQ,
-nb,check,data,cells,
-temp},
-
-(*---* File and directory setup *---*)
-symbolsDocDir=OptionValue["DocumentationSymbolsDir"];
-definitionsFile=OptionValue["DefinitionFile"];
-Check[targetFile=First@FileNames[symbol<>".nb",symbolsDocDir],
-Message[CopyDefinitionCodeToDocumentation::missingFile,symbol];
-Abort[]];
-showQ=OptionValue["ShowNotebooks"];
-testRunQ=OptionValue["TestRun"];
-windowModeQ=OptionValue["OpenedWindowsMode"];
-
-(*---* Copy cell(s) from source *---*)
-nb=NotebookOpen[definitionsFile,Visible->False];
-SetSelectedNotebook@nb;
-check=False;
-While[check===False,
-NotebookFind[definitionsFile,symbol];
-SelectionMove[nb,Next,Cell];
-data=NotebookRead[nb];
-check=(data[[1]]===symbol&&data[[2]]==="Subchapter")
-];
-SelectionMove[nb,Next,CellGroup];
-cells=NotebookRead[nb];
-NotebookClose[nb];
-temp=Flatten[Position[cells,Background->#,Infinity]&/@{RGBColor[0.87, 0.94, 1],RGBColor[1, 0.9, 0.8]},1];
-temp=Join[{{1,1,1}},temp[[All,;;3]]];
-cells=Delete[cells,temp[[All,;;3]]];
-cells=Replace[cells,(InitializationCell->True)->InitializationCell -> False,Infinity];
-
-(*---* Copy to target (documentation notebook) *---*)
-If[windowModeQ,
-(* a. 'OpenedWindows' mode: execute copying on window opened in notebook editior *)
-nb=Check[SetSelectedNotebook@@Notebooks@symbol,
-Message[CopyDefinitionCodeToDocumentation::nbEditor,symbol];Abort[]],
-
-(* b. Assume notebook editor front-end is running and open notebook *)
-(* Check if 'DocumentationTools' are present *)
-If[!FileExistsQ@FileNameJoin[{
-$UserBaseDirectory,"Applications","DocumentationTools",
-"Kernel","init.m"}],
-Message[CopyDefinitionCodeToDocumentation::missingDocTools];
-Abort[]];
-
-nb=NotebookOpen[
-FileNameJoin[{symbolsDocDir,symbol<>".nb"}],Visible->showQ];
-];
-
-(* Common copying procedure *)
-SelectionMove[nb,After,Notebook];
-NotebookFind[nb,"Mathematica code",Previous];
-While[
-True,
-SelectionMove[nb,Next,Cell];
-check=NotebookRead[nb];
-If[check==={},Break[]];
-NotebookDelete[nb]
-];
-NotebookFind[nb,"Mathematica code",Previous];
-SelectionMove[nb,Next,Cell];
-NotebookWrite[nb,cells];
-If[!testRunQ,NotebookSave@nb];
-If[!testRunQ,NotebookClose@nb];
-
-Label["End"];
-]
-
-
-(* ::Input::Initialization:: *)
-CopyDefinitionCodeToDocumentation[OptionsPattern@CopyDefinitionCodeToDocumentation]:=
-Module[{symbolsDocDir,definitionsFile,functionNames,options},
-
-(*---* Find all symbols automatically *---*)
-symbolsDocDir=OptionValue["DocumentationSymbolsDir"];
-definitionsFile=OptionValue["DefinitionFile"];
-functionNames=NotebookImport[definitionsFile,"Subchapter"];
-
-(* Options *)
-options=Keys@Options@CopyDefinitionCodeToDocumentation;
-options=#->OptionValue[#]&/@options;
-
-Do[
-CopyDefinitionCodeToDocumentation[
-functionNames[[i]],options/.List->Sequence],
-{i,Length@functionNames}];
 ]
 
 
@@ -1243,6 +899,390 @@ Print[
 "Replacements in definitions file: "<>ToString@L<>"\n"
 <>"Documentation pages considered:"];
 Print[FileBaseName/@contained];
+]
+
+
+(* ::Input::Initialization:: *)
+End[];
+
+
+(* ::Input::Initialization:: *)
+(* Messages, options, attributes and syntax information *)
+
+
+(* ::Input::Initialization:: *)
+SyncSpellings::one="Input consists of only one dictionary.";
+SyncSpellings::missing="File \[LeftGuillemet]`1`\[RightGuillemet] was not found.";
+SyncSpellings::done="Update`1` completed.";
+SyncSpellings::inv="Invalid input format.";
+
+Options[SyncSpellings]={"Remove"->{}};
+
+
+(* ::Input::Initialization:: *)
+Begin["`Private`"];
+
+
+(* ::Input::Initialization:: *)
+SyncSpellings[input__String,OptionsPattern[SyncSpellings]]:=Module[{checked,new,remove,afterfilter},
+(* Checking input *)
+	If[checked,Goto["checked"]];
+	If[Length[{input}]==1,Message[SyncSpellings::one];Abort[]];
+	If[!FileExistsQ[#],Message[SyncSpellings::missing,#];Abort[]]&/@{input};
+
+(* Merging dictionaries *)
+	Label["checked"];
+	new=Sort@DeleteDuplicates@Flatten[StringSplit@Import[#,"Text"]&/@{input}];
+
+(* Optional: Remove word(s) from the dictionary *)
+	If[Depth[#]==1,remove={#},remove=#]&@OptionValue["Remove"];
+	afterfilter=DeleteCases[new,x_/;MemberQ[remove,x]];
+
+(* Rewriting the old files with the new version *)
+	Export[#,afterfilter,"Text"]&/@{input};
+
+Message[SyncSpellings::done,""]
+]
+
+
+(* ::Input::Initialization:: *)
+SyncSpellings[input__List]:=Module[{all,depthcheck,checked},
+(* Checking input *)
+	all={input};
+	depthcheck=DeleteCases[all,"Remove"->_List,{2}];
+	If[Depth[depthcheck]!=3,Message[SyncSpellings::inv];Abort[]];
+	If[!FileExistsQ[#],Message[SyncSpellings::missing,#];Abort[]]&/@Flatten@depthcheck;
+
+(* Processing each dictionary batch *)
+	Off[SyncSpellings::done];
+	checked=True;
+	Do[SyncSpellings@@all[[i]],{i,Length@all}];
+	On[SyncSpellings::done];
+
+Message[SyncSpellings::done,"s"]
+]
+
+
+(* ::Input::Initialization:: *)
+End[];
+
+
+(* ::Input::Initialization:: *)
+(* Messages, options, attributes and syntax information *)
+
+
+(* ::Input::Initialization:: *)
+SyncTexitEasy::done="TexitEasy configuration files were copied successfully from `1` to `2`.";
+SyncTexitEasy::uptodate="Nothing to update.";
+
+Options@SyncTexitEasy={
+"LocalPaths"-><|
+"MacOSX"->"/Users/Stian/Library/Mobile Documents/com~apple~CloudDocs/Stians iCloud"|>,
+"ShowDialogue"->True,
+"ForceCopyFrom"->False
+};
+
+
+(* ::Input::Initialization:: *)
+Begin["`Private`"];
+
+
+(* ::Input::Initialization:: *)
+SyncTexitEasy[OptionsPattern@SyncTexitEasy]:=Module[{
+cloudDir,dialogueQ,
+configDirSystem,libraryDirSystem,configDirCloud,libraryDirCloud,
+dirs,configDir,libraryDir,
+forceOpt,files,top,newest,newestSource,copyFrom,
+buttonRow,
+temp
+},
+(* Check local paths *)
+cloudDir=OptionValue["LocalPaths"][$OperatingSystem];
+dialogueQ=OptionValue["ShowDialogue"];
+
+(* Directories *)
+configDirSystem="/Users/Stian/.config/texiteasy.com";
+libraryDirSystem="/Users/Stian/Library/Application Support/TexitEasy/TexitEasy";
+configDirCloud=FileNameJoin[{
+cloudDir,"Prosjekter/Programoppsett/TexitEasy-oppsett"}];
+libraryDirCloud=FileNameJoin[{
+cloudDir,"Prosjekter/Programoppsett/TexitEasy-oppsett/Bibliotek-mappe"}];
+
+dirs={
+configDirSystem,libraryDirSystem,
+configDirCloud,libraryDirCloud
+};
+
+configDir=FileNameJoin[{configDirCloud,"Config-mappe"}];
+libraryDir=FileNameJoin[{configDirCloud,"Bibliotek-mappe"}];
+
+	(* Option: Force copy *)
+	forceOpt=OptionValue["ForceCopyFrom"];
+	Which[
+	forceOpt==="System",copyFrom="System";Goto["Copy"],
+	forceOpt==="Cloud",copyFrom="Cloud";Goto["Copy"]];
+
+	(* Any directories missing? *)
+	If[!AllTrue[dirs[[{1,2}]],DirectoryQ],
+	copyFrom="Cloud";
+	If[dialogueQ,Goto["Dialogue"],Goto["Copy"]]];
+	If[!AllTrue[dirs[[{3,4}]],DirectoryQ],
+	copyFrom="System";
+	If[dialogueQ,Goto["Dialogue"],Goto["Copy"]]];
+
+(* Find newest; 'push' to cloud or 'pull' from cloud *)
+files=FileNames["*",{#},Infinity]&/@dirs;
+	(*files=DeleteCases[files,x_/;StringTake[#,1]==="."&,Infinity];*)
+top=Check[
+	Flatten[TakeLargestBy[#,(FileDate[#,"Modification"]&),1]&/@files],
+	Abort[]];
+	(* Nothing new? *)
+	If[!dialogueQ&&Abs[Subtract@@(
+UnixTime@FileDate[top[[#]],"Modification"]&/@{2,4}
+)]<30,
+	Message[SyncTexitEasy::uptodate];Goto["End"]];
+newest=First@TakeLargestBy[top,(FileDate[#,"Modification"]&),1];
+newestSource=Select[dirs,StringContainsQ[DirectoryName@newest,#]&];
+copyFrom=If[SubsetQ[{configDirSystem,libraryDirSystem},newestSource],"System","Cloud"];
+
+(* Dialogue *)
+Label["Dialogue"];
+temp=If[copyFrom==="System",{"System","Cloud"},{"Cloud","System"}];
+
+buttonRow={Spacer[200],
+DefaultButton[#1,DialogReturn[#1]],
+Spacer[5],
+Button[#2,DialogReturn[#2]]}&@@temp;
+
+copyFrom=DialogInput[
+Column[{Style[
+"Choose where to copy from.\nMost recently modified: "<>copyFrom,13],
+Spacer[20],
+Row[buttonRow]
+}],
+WindowTitle->"Sync TexitEasy settings"];
+
+If[copyFrom===$Failed,Abort[]];
+
+(* Delete and copy *)
+Label["Copy"];
+If[
+copyFrom==="System",
+(* 'System' --> 'Cloud' *)
+DeleteDirectory[configDirCloud,DeleteContents->True];
+CreateDirectory[configDirCloud];
+CopyDirectory[configDirSystem,configDir];
+CopyDirectory[libraryDirSystem,libraryDir],
+
+(* 'Cloud' --> 'System' *)
+DeleteDirectory[configDirSystem,DeleteContents->True];
+CopyDirectory[configDir,configDirSystem];
+DeleteDirectory[libraryDirSystem,DeleteContents->True];
+CopyDirectory[libraryDir,libraryDirSystem]
+];
+
+(* Report *)
+temp={"system","cloud"};
+If[copyFrom==="Cloud",temp=Reverse@temp];
+
+Message[SyncTexitEasy::done,temp[[1]],temp[[2]]];
+
+Label["End"];
+]
+
+
+(* ::Input::Initialization:: *)
+End[];
+
+
+(* ::Input::Initialization:: *)
+(* Messages, options, attributes and syntax information *)
+
+
+(* ::Input::Initialization:: *)
+TagImages::images="Some of the images or file paths were invalid.";
+TagImages::tags="Invalid dimensions of tag list.";
+TagImages::tagstrings="Some of the tags are not strings.";
+TagImages::format="\[LeftGuillemet]`1`\[RightGuillemet] is not a valid output format.";
+TagImages::EdgeSpacingOutOfRange="The edge spacing factor should be between 0 and 1.";
+
+Options@TagImages={
+"EdgeSpacingFactor"->0.015,
+"ExportTo"->"InputDirectory",
+"LeftOffset"->0,
+"RightOffset"->0,
+"Style"->{White,"Inconsolata",54},
+"ImageFormat"->"png",
+"NewName"->False
+};
+
+
+(* ::Input::Initialization:: *)
+Begin["`Private`"];
+
+
+(* ::Input::Initialization:: *)
+TagImages[input_,tags_List,OptionsPattern@TagImages]:=
+Module[{
+images,type,L,
+styleInput,edgeMarginsFactor,leftOffset,rightOffset,
+tagsLB,tagsRB,progress,i,firstimage,dim,
+Lspace,Rspace,Bspace,
+oldbasename,newnamesf,newnames,nnOption,
+inputdir,outputdir,format,
+s1,s2,s3,image,new1,new2},
+
+(* Checking input form *)
+images=Flatten[{input}];
+Which[
+AllTrue[images,ImageQ],
+	type="image",
+AllTrue[images,FileExistsQ],
+	type="string",	
+True,Message[TagImages::images];Abort[]
+];
+	
+L=Length@images;
+
+(* Check format of tags *)
+If[Not[Dimensions[tags]=={L,2}],
+Message[TagImages::tags];Abort[]];
+
+If[!AllTrue[Flatten@tags,StringQ],
+Message[TagImages::tagstrings];Abort[]];
+
+(* Check image output format *)
+format=ToLowerCase@OptionValue["ImageFormat"];
+format=StringReplace[format,"jpeg"->"jpg"];
+If[!MemberQ[{"jpg","png"},format],
+Message[TagImages::format,format];Abort[]];
+
+(* Check options *)
+edgeMarginsFactor=OptionValue["EdgeSpacingFactor"];
+If[Not[0.0<=edgeMarginsFactor<=1.0],
+Message[TagImages::EdgeSpacingOutOfRange];Abort[]];
+
+leftOffset=OptionValue["LeftOffset"];
+rightOffset=OptionValue["RightOffset"];
+
+styleInput=OptionValue["Style"];
+(* TODO: Checks *)
+
+(* Preparing *)
+	tagsLB=tags[[All,1]];
+	tagsRB=tags[[All,2]];
+	progress=0;
+	i=1;
+
+	firstimage=Which[
+	type=="string",Import@First@images,
+	type=="image",First@images];
+	dim=ImageDimensions@firstimage;
+
+	Lspace=Round[edgeMarginsFactor*dim[[1]]]+leftOffset;
+	Rspace=Round[(1-edgeMarginsFactor)*dim[[1]]]-rightOffset;
+	Bspace=Round[0.03*dim[[2]]];
+
+(* Dynamic status *)
+	PrintTemporary[
+	Row[
+	{Text[Style["Image conversion progress:",FontFamily->"Avenir Next",16]],
+	Spacer[20],
+	Dynamic@ProgressIndicator[progress/L],
+	Spacer[20],
+	Dynamic[Text[Style["Converted: "<>ToString[progress]<>" of "<>ToString@L,FontFamily->"Avenir Next",12]]]
+	},
+	Alignment->Center
+	]];
+
+(* New names *)
+	newnamesf[old_]:=old<>"_"<>
+	IntegerString[#,10,StringLength@ToString@L]&/@Range@L;
+	nnOption=OptionValue["NewName"];
+
+	Which[
+	type=="string",
+	Which[
+	(* File name input, use numeric names *)
+	TrueQ@nnOption,
+	oldbasename=First@StringCases[StringTake
+	[FileNameTake@First@images,{1,-5}],__~~LetterCharacter];
+	newnames=newnamesf@oldbasename,
+
+	!TrueQ@nnOption,
+	(* File name input, keep old names *)
+	newnames=FileBaseName/@FileNameTake/@images,
+
+	StringQ@nnOption,
+	(* File name input, custom base name *)
+	newnames=newnamesf@nnOption
+	],
+
+	type=="image",
+	Which[
+	StringQ@nnOption,
+	(* Image intput, custom base name *)
+	newnames=newnamesf@nnOption,
+
+	(* Image input, defualt 'Output' name *)
+	True,
+	newnames=newnamesf["Output"]
+	]
+	];
+
+(* Export directory *)
+	Which[
+	DirectoryQ@OptionValue["ExportTo"],
+	(* Option: Custom output directory *)
+	outputdir=OptionValue["ExportTo"],
+
+	type=="image",
+	(* If images, export to desktop *)
+	outputdir=FileNameJoin[{
+	$HomeDirectory,"Desktop","Output"}],
+
+	type=="string",
+	(* Use input directory *)
+	inputdir=DirectoryName@First@images;
+	outputdir=FileNameJoin[{inputdir,"Output"}]
+	];
+	Quiet@CreateDirectory@outputdir;
+
+(*---* Procedure *---*)
+	Label["StartProcedure"];
+
+	(* Marking *)
+	{s1,s2,s3}=styleInput;
+
+	Do[
+	image=Which[
+	type=="string",
+		Import@images[[i]],
+	type=="image",
+		images[[i]]
+	];
+
+new1=ImageCompose[image,Graphics[Text[Style[tagsLB[[i]],
+s1,FontFamily->s2,s3]]],{Lspace,Bspace}];
+
+	new2=ImageCompose[new1,Graphics[Text[Style[tagsRB[[i]],
+s1,FontFamily->s2,s3,TextAlignment->Right],
+	{0,0},{Right,Center}]],{Rspace,Bspace}];
+
+	(* Export *)
+	Export[FileNameJoin[{outputdir,
+	newnames[[i]]<>"."<>format}],
+	new2];
+	
+	progress++,
+	{i,L}];
+
+Print[
+ToString[progress]<>" "<>
+If[L==1,"image","images"]<>
+" were exported to \[LeftGuillemet]"<>
+ToString[outputdir]<>"\[RightGuillemet]."
+]
 ]
 
 
@@ -1762,8 +1802,8 @@ GradeCalculation[input_]:=Module[{L,Letter,Number,sum,averagegrade},
 
 (* Average grade of an exam *)
 	Which[
-	L==5,sum=input.(Number/@{"A","B","C","D","E"}),
-	L==6,sum=input.(Number/@{"A","B","C","D","E","F"})];
+	L==5,sum=input . (Number/@{"A","B","C","D","E"}),
+	L==6,sum=input . (Number/@{"A","B","C","D","E","F"})];
 	
 averagegrade=Letter[sum/Total@input]
 ]
@@ -1792,7 +1832,7 @@ GradeCalculation[input_?MatrixQ]:=Module[{Letter,Number,grades,weights,gpa},
 (* Grade point average *)
 	grades=Number/@input[[All,1]];
 	weights=input[[All,2]];
-	gpa=(grades.weights)/Total[weights];
+	gpa=(grades . weights)/Total[weights];
 
 {NumberForm[N[gpa],3],Letter@gpa}
 ]
@@ -2109,153 +2149,6 @@ End[];
 
 
 (* ::Input::Initialization:: *)
-(* Messages and options *)
-
-
-(* ::Input::Initialization:: *)
-Options@ExportCrystalData={
-"IncludeSymmetryOperations"->True
-};
-
-
-(* ::Input::Initialization:: *)
-Begin["`Private`"];
-
-
-(* ::Input::Initialization:: *)
-ExportCrystalData[crystal_String,output_String,OptionsPattern@ExportCrystalData]:=Module[{
-data,compound,c,ltc,sg,csmatrix,
-cell,atoms,siteM,type,flag,X,
-$f0,sccoeff,asf,fp,fpp,write,end,endTab,
-temp},
-
-(* Input check *)
-InputCheck[crystal,"CrystalQ"];
-
-(*---* Preparing data *---*)
-	(* Input *)
-	data=$CrystalData[crystal];
-
-	(* Compounds *)
-	compound=crystal;
-
-	(* Centring vectors *)
-	c=SymmetryData[crystal,"Centring"];
-	ltc=Which[
-	c=="P",{{0,0,0}},
-	c=="A",{{0,0,0},{0,1/2,1/2}},
-	c=="B",{{0,0,0},{1/2,0,1/2}},
-	c=="C",{{0,0,0},{1/2,1/2,0}},
-	c=="I",{{0,0,0},{1/2,1/2,1/2}},
-	c=="F",{{0,0,0},{1/2,1/2,0},
-				{0,1/2,1/2},{1/2,0,1/2}},
-	c=="R",{{0,0,0},{2/3,1/3,1/3},{1/3,2/3,2/3}}
-	];
-
-	(* Space group *)
-	sg=SymmetryData[crystal,"HermannMauguinShort"];
-
-	(* Symmetry operations *)
-	If[OptionValue["IncludeSymmetryOperations"],
-	csmatrix=SymmetryOperations[crystal];
-	csmatrix=ToString[#,InputForm]&/@csmatrix,
-
-	csmatrix={{{{1,0,0},{0,1,0},{0,0,1}},{0,0,0}}}
-	];
-
-	(* Lattice parameters *)
-	cell=N@LatticeParameters[crystal,"Units"->False];
-
-	(* Atom data *)
-	atoms=Table[data["AtomData"][[i,#]]&/@
-	{"Element","OccupationFactor","FractionalCoordinates",
-	"DisplacementParameters"},
-	{i,Length@$CrystalData[crystal,"AtomData"]}];
-
-	Do[atoms[[i,-1]]=Flatten[{atoms[[i,-1]]}],{i,Length@atoms}];
-
-	atoms[[All,1]]=StringDelete[
-	atoms[[All,1]],{DigitCharacter,"+","-"}];	
-
-	(* Multiplicity *)
-	r=atoms[[All,3]];
-	siteM=Table[N@Length@
-	SymmetryEquivalentPositions[
-	crystal,r[[a]]],{a,Length@r}]
-	/Length@SymmetryOperations@crystal;
-
-	atoms[[All,2]]=atoms[[All,2]]*siteM;
-
-	(* ToString *)
-	atoms=atoms/.x_String:>"\""<>x<>"\"";
-	atoms=atoms/.x_?NumericQ:>ToString[x,InputForm];
-
-	(* Flag (ADP type) *)
-	type=data[["AtomData",1,"Type"]];
-	flag=If[type=="Biso",{"B","B"},{"U","U"}];
-
-	(* Scattering coefficients *)
-	X=DeleteDuplicates@data[["AtomData",All,"Element"]];
-	X=StringDelete[X,{DigitCharacter,"+","-"}];
-	$f0=Import@FileNameJoin[{
-	$XrayPath,"Core","Data",
-	"AtomicScatteringFactor","WaasmaierKirfel.m"}];
-	temp=Flatten[{$f0/@X}];
-	temp=Values@temp[[All,
-{"a1","a2","a3","a4","a5",
-"b1","b2","b3","b4","b5",
-"c"}]];
-	sccoeff=Append[Partition[#,5],Last@#]&/@temp;
-	Do[PrependTo[sccoeff[[i]],X[[i]]],{i,Length@X}];
-
-	sccoeff=sccoeff/.x_String:>"\""<>x<>"\"";
-
-	(* Anomalous corrections *)
-	asf=
-<|"H"->"{0.,0.}","He"->"{0.,0.}","Li"->"{0.,0.}","Be"->"{fpBe[Global`lambda],fppBe[Global`lambda]}","B"->"{fpB[Global`lambda],fppB[Global`lambda]}","C"->"{fpC[Global`lambda],fppC[Global`lambda]}","N"->"{fpN[Global`lambda],fppN[Global`lambda]}","O"->"{fpO[Global`lambda],fppO[Global`lambda]}","F"->"{fpF[Global`lambda],fppF[Global`lambda]}","Ne"->"{fpNe[Global`lambda],fppNe[Global`lambda]}","Na"->"{fpNa[Global`lambda],fppNa[Global`lambda]}","Mg"->"{fpMg[Global`lambda],fppMg[Global`lambda]}","Al"->"{fpAl[Global`lambda],fppAl[Global`lambda]}","Si"->"{fpSi[Global`lambda],fppSi[Global`lambda]}","P"->"{fpP[Global`lambda],fppP[Global`lambda]}","S"->"{fpS[Global`lambda],fppS[Global`lambda]}","Cl"->"{fpCl[Global`lambda],fppCl[Global`lambda]}","Ar"->"{fpAr[Global`lambda],fppAr[Global`lambda]}","K"->"{fpK[Global`lambda],fppK[Global`lambda]}","Ca"->"{fpCa[Global`lambda],fppCa[Global`lambda]}","Sc"->"{fpSc[Global`lambda],fppSc[Global`lambda]}","Ti"->"{fpTi[Global`lambda],fppTi[Global`lambda]}","V"->"{fpV[Global`lambda],fppV[Global`lambda]}","Cr"->"{fpCr[Global`lambda],fppCr[Global`lambda]}","Mn"->"\nIf[Global`lambda<=1.895,{fpMn1[Global`lambda],fppMn1[Global`lambda]},\n                   {fpMn2[Global`lambda],fppMn2[Global`lambda]}]","Fe"->"\nIf[Global`lambda<=1.743,{fpFe1[Global`lambda],fppFe1[Global`lambda]},\n                   {fpFe2[Global`lambda],fppFe2[Global`lambda]}]","Co"->"\nIf[Global`lambda<=1.608,{fpCo1[Global`lambda],fppCo1[Global`lambda]},\n                   {fpCo2[Global`lambda],fppCo2[Global`lambda]}]","Ni"->"\nIf[Global`lambda<=1.487,{fpNi1[Global`lambda],fppNi1[Global`lambda]},\n                   {fpNi2[Global`lambda],fppNi2[Global`lambda]}]","Cu"->"\nIf[Global`lambda<=1.380,{fpCu1[Global`lambda],fppCu1[Global`lambda]},\n                   {fpCu2[Global`lambda],fppCu2[Global`lambda]}]","Zn"->"\nIf[Global`lambda<=1.283,{fpZn1[Global`lambda],fppZn1[Global`lambda]},\n                   {fpZn2[Global`lambda],fppZn2[Global`lambda]}]","Ga"->"\nIf[Global`lambda<=1.195,{fpGa1[Global`lambda],fppGa1[Global`lambda]},\n                   {fpGa2[Global`lambda],fppGa2[Global`lambda]}]","Ge"->"\nIf[Global`lambda<=1.11659,{fpGe1[Global`lambda],fppGe1[Global`lambda]},\n                          {fpGe2[Global`lambda],fppGe2[Global`lambda]}]","As"->"\nIf[Global`lambda<=1.044,{fpAs1[Global`lambda],fppAs1[Global`lambda]},\n                   {fpAs2[Global`lambda],fppAs2[Global`lambda]}]","Se"->"\nIf[Global`lambda<=0.979,{fpSe1[Global`lambda],fppSe1[Global`lambda]},\n                   {fpSe2[Global`lambda],fppSe2[Global`lambda]}]","Br"->"\nIf[Global`lambda<=0.920,{fpBr1[Global`lambda],fppBr1[Global`lambda]},\n                   {fpBr2[Global`lambda],fppBr2[Global`lambda]}]","Kr"->"\nIf[Global`lambda<=0.865,{fpKr1[Global`lambda],fppKr1[Global`lambda]},\n                   {fpKr2[Global`lambda],fppKr2[Global`lambda]}]","Rb"->"\nIf[Global`lambda<=0.815,{fpRb1[Global`lambda],fppRb1[Global`lambda]},\n                   {fpRb2[Global`lambda],fppRb2[Global`lambda]}]","Sr"->"\nIf[Global`lambda<=0.769,{fpSr1[Global`lambda],fppSr1[Global`lambda]},\n                   {fpSr2[Global`lambda],fppSr2[Global`lambda]}]","Y"->"\nIf[Global`lambda<=0.727,{fpY1[Global`lambda],fppY1[Global`lambda]},\n                   {fpY2[Global`lambda],fppY2[Global`lambda]}]","Zr"->"\nIf[Global`lambda<=0.688,{fpZr1[Global`lambda],fppZr1[Global`lambda]},\n                   {fpZr2[Global`lambda],fppZr2[Global`lambda]}]","Nb"->"\nIf[Global`lambda<=0.653,{fpNb1[Global`lambda],fppNb1[Global`lambda]},\n                   {fpNb2[Global`lambda],fppNb2[Global`lambda]}]","Mo"->"\nIf[Global`lambda<=0.619,{fpMo1[Global`lambda],fppMo1[Global`lambda]},\n                   {fpMo2[Global`lambda],fppMo2[Global`lambda]}]","Tc"->"\nIf[Global`lambda<=0.589,{fpTc1[Global`lambda],fppTc1[Global`lambda]},\n                   {fpTc2[Global`lambda],fppTc2[Global`lambda]}]","Ru"->"\nIf[Global`lambda<=0.560,{fpRu1[Global`lambda],fppRu1[Global`lambda]},\n                   {fpRu2[Global`lambda],fppRu2[Global`lambda]}]","Rh"->"\nIf[Global`lambda<=0.533,{fpRh1[Global`lambda],fppRh1[Global`lambda]},\n                   {fpRh2[Global`lambda],fppRh2[Global`lambda]}]","Pd"->"\nIf[Global`lambda<=0.509,{fpPd1[Global`lambda],fppPd1[Global`lambda]},\n                   {fpPd2[Global`lambda],fppPd2[Global`lambda]}]","Ag"->"\nIf[Global`lambda<=0.485,{fpAg1[Global`lambda],fppAg1[Global`lambda]},\n                   {fpAg2[Global`lambda],fppAg2[Global`lambda]}]","Cd"->"\nIf[Global`lambda<=0.464,{fpCd1[Global`lambda],fppCd1[Global`lambda]},\n                   {fpCd2[Global`lambda],fppCd2[Global`lambda]}]","In"->"\nIf[Global`lambda<=0.443,{fpIn1[Global`lambda],fppIn1[Global`lambda]},\n                   {fpIn2[Global`lambda],fppIn2[Global`lambda]}]","Sn"->"\nIf[Global`lambda<=0.424,{fpSn1[Global`lambda],fppSn1[Global`lambda]},\n                   {fpSn2[Global`lambda],fppSn2[Global`lambda]}]","Sb"->"\nIf[Global`lambda<=0.406,{fpSb1[Global`lambda],fppSb1[Global`lambda]},\n                   {fpSb2[Global`lambda],fppSb2[Global`lambda]}]","Te"->"\nIf[Global`lambda<=0.389,{fpTe1[Global`lambda],fppTe1[Global`lambda]},\n                   {fpTe2[Global`lambda],fppTe2[Global`lambda]}]","I"->"\nIf[Global`lambda<=0.373,{fpI1[Global`lambda],fppI1[Global`lambda]},\n                   {fpI2[Global`lambda],fppI2[Global`lambda]}]","Xe"->"\nIf[Global`lambda<=0.358,{fpXe1[Global`lambda],fppXe1[Global`lambda]},\n                   {fpXe2[Global`lambda],fppXe2[Global`lambda]}]","Cs"->"\nIf[Global`lambda<=0.344,{fpCs1[Global`lambda],fppCs1[Global`lambda]},\n                   {fpCs2[Global`lambda],fppCs2[Global`lambda]}]","Ba"->"\nIf[Global`lambda<=0.331,{fpBa1[Global`lambda],fppBa1[Global`lambda]},\n                   {fpBa2[Global`lambda],fppBa2[Global`lambda]}]","La"->"\nLahich[Global`lambda<=0.318,{fpLa1[Global`lambda],fppLa1[Global`lambda]},\n      0.319<=Global`lambda<=1.978,{fpLa2[Global`lambda],fppLa2[Global`lambda]},\n      Global`lambda>=1.979,{fpLa3[Global`lambda],fppLa3[Global`lambda]}]","Ce"->"\nCehich[Global`lambda<=0.306,{fpCe1[Global`lambda],fppCe1[Global`lambda]},\n      0.307<=Global`lambda<=1.893,{fpCe2[Global`lambda],fppCe2[Global`lambda]},\n      Global`lambda>=1.894,{fpCe3[Global`lambda],fppCe3[Global`lambda]}]","Pr"->"\nPrhich[Global`lambda<=0.295,{fpPr1[Global`lambda],fppPr1[Global`lambda]},\n      0.296<=Global`lambda<=1.813,{fpPr2[Global`lambda],fppPr2[Global`lambda]},\n      1.814<=Global`lambda<=1.924,{fpPr3[Global`lambda],fppPr3[Global`lambda]},\n      Global`lambda>=1.925,{fpPr4[Global`lambda],fppPr4[Global`lambda]}]","Nd"->"\nNdhich[Global`lambda<=0.284,{fpNd1[Global`lambda],fppNd1[Global`lambda]},\n      0.285<=Global`lambda<=1.739,{fpNd2[Global`lambda],fppNd2[Global`lambda]},\n      1.740<=Global`lambda<=1.844,{fpNd3[Global`lambda],fppNd3[Global`lambda]},\n      1.845<=Global`lambda<=1.997,{fpNd4[Global`lambda],fppNd4[Global`lambda]},\n      Global`lambda>=1.998,{fpNd5[Global`lambda],fppNd5[Global`lambda]}]","Sm"->"\nSmhich[Global`lambda<=0.264,{fpSm1[Global`lambda],fppSm1[Global`lambda]},\n      0.265<=Global`lambda<=1.602,{fpSm2[Global`lambda],fppSm2[Global`lambda]},\n      1.603<=Global`lambda<=1.695,{fpSm3[Global`lambda],fppSm3[Global`lambda]},\n      1.696<=Global`lambda<=1.845,{fpSm4[Global`lambda],fppSm4[Global`lambda]},\n      Global`lambda>=1.846,{fpSm5[Global`lambda],fppSm5[Global`lambda]}]","Eu"->"\nEuhich[Global`lambda<=0.255,{fpEu1[Global`lambda],fppEu1[Global`lambda]},\n      0.256<=Global`lambda<=1.539,{fpEu2[Global`lambda],fppEu2[Global`lambda]},\n      1.540<=Global`lambda<=1.627,{fpEu3[Global`lambda],fppEu3[Global`lambda]},\n      1.628<=Global`lambda<=1.776,{fpEu4[Global`lambda],fppEu4[Global`lambda]},\n      Global`lambda>=1.777,{fpEu5[Global`lambda],fppEu5[Global`lambda]}]","Gd"->"\nGdhich[Global`lambda<=0.246,{fpGd1[Global`lambda],fppGd1[Global`lambda]},\n      0.247<=Global`lambda<=1.480,{fpGd2[Global`lambda],fppGd2[Global`lambda]},\n      1.481<=Global`lambda<=1.563,{fpGd3[Global`lambda],fppGd3[Global`lambda]},\n      1.564<=Global`lambda<=1.711,{fpGd4[Global`lambda],fppGd4[Global`lambda]},\n      Global`lambda>=1.712,{fpGd5[Global`lambda],fppGd5[Global`lambda]}]","Tb"->"\nTbhich[Global`lambda<=0.238,{fpTb1[Global`lambda],fppTb1[Global`lambda]},\n      0.239<=Global`lambda<=1.423,{fpTb2[Global`lambda],fppTb2[Global`lambda]},\n      1.424<=Global`lambda<=1.502,{fpTb3[Global`lambda],fppTb3[Global`lambda]},\n      1.503<=Global`lambda<=1.649,{fpTb4[Global`lambda],fppTb4[Global`lambda]},\n      Global`lambda>=1.650,{fpTb5[Global`lambda],fppTb5[Global`lambda]}]","Yb"->"\nYbhich[Global`lambda<=0.202,{fpYb1[Global`lambda],fppYb1[Global`lambda]},\n      0.203<=Global`lambda<=1.182,{fpYb2[Global`lambda],fppYb2[Global`lambda]},\n      1.183<=Global`lambda<=1.242,{fpYb3[Global`lambda],fppYb3[Global`lambda]},\n      1.243<=Global`lambda<=1.386,{fpYb4[Global`lambda],fppYb4[Global`lambda]},\n      Global`lambda>=1.387,{fpYb5[Global`lambda],fppYb5[Global`lambda]}]","Lu"->"\nLuhich[Global`lambda<=0.195,{fpLu1[Global`lambda],fppLu1[Global`lambda]},\n      0.196<=Global`lambda<=1.140,{fpLu2[Global`lambda],fppLu2[Global`lambda]},\n      1.141<=Global`lambda<=1.198,{fpLu3[Global`lambda],fppLu3[Global`lambda]},\n      1.199<=Global`lambda<=1.341,{fpLu4[Global`lambda],fppLu4[Global`lambda]},\n      Global`lambda>=1.342,{fpLu5[Global`lambda],fppLu5[Global`lambda]}]","Hf"->"\nHfhich[Global`lambda<=0.189,{fpHf1[Global`lambda],fppHf1[Global`lambda]},\n      0.190<=Global`lambda<=1.099,{fpHf2[Global`lambda],fppHf2[Global`lambda]},\n      1.100<=Global`lambda<=1.154,{fpHf3[Global`lambda],fppHf3[Global`lambda]},\n      1.155<=Global`lambda<=1.296,{fpHf4[Global`lambda],fppHf4[Global`lambda]},\n      Global`lambda>=1.297,{fpHf5[Global`lambda],fppHf5[Global`lambda]}]","Ta"->"\nTahich[Global`lambda<=0.183,{fpTa1[Global`lambda],fppTa1[Global`lambda]},\n      0.184<=Global`lambda<=1.061,{fpTa2[Global`lambda],fppTa2[Global`lambda]},\n      1.062<=Global`lambda<=1.113,{fpTa3[Global`lambda],fppTa3[Global`lambda]},\n      1.114<=Global`lambda<=1.254,{fpTa4[Global`lambda],fppTa4[Global`lambda]},\n      Global`lambda>=1.255,{fpTa5[Global`lambda],fppTa5[Global`lambda]}]","W"->"\nWhich[Global`lambda<=0.178,{fpW1[Global`lambda],fppW1[Global`lambda]},\n      0.179<=Global`lambda<=1.024,{fpW2[Global`lambda],fppW2[Global`lambda]},\n      1.025<=Global`lambda<=1.073,{fpW3[Global`lambda],fppW3[Global`lambda]},\n      1.074<=Global`lambda<=1.214,{fpW4[Global`lambda],fppW4[Global`lambda]},\n      Global`lambda>=1.215,{fpW5[Global`lambda],fppW5[Global`lambda]}]","Re"->"\nRehich[Global`lambda<=0.172,{fpRe1[Global`lambda],fppRe1[Global`lambda]},\n      0.173<=Global`lambda<=0.989,{fpRe2[Global`lambda],fppRe2[Global`lambda]},\n      0.990<=Global`lambda<=1.036,{fpRe3[Global`lambda],fppRe3[Global`lambda]},\n      1.037<=Global`lambda<=1.176,{fpRe4[Global`lambda],fppRe4[Global`lambda]},\n      Global`lambda>=1.177,{fpRe5[Global`lambda],fppRe5[Global`lambda]}]","Os"->"\nOshich[Global`lambda<=0.167,{fpOs1[Global`lambda],fppOs1[Global`lambda]},\n      0.168<=Global`lambda<=0.956,{fpOs2[Global`lambda],fppOs2[Global`lambda]},\n      0.957<=Global`lambda<=1.001,{fpOs3[Global`lambda],fppOs3[Global`lambda]},\n      1.002<=Global`lambda<=1.140,{fpOs4[Global`lambda],fppOs4[Global`lambda]},\n      Global`lambda>=1.141,{fpOs5[Global`lambda],fppOs5[Global`lambda]}]","Ir"->"\nIrhich[Global`lambda<=0.162,{fpIr1[Global`lambda],fppIr1[Global`lambda]},\n      0.163<=Global`lambda<=0.923,{fpIr2[Global`lambda],fppIr2[Global`lambda]},\n      0.924<=Global`lambda<=0.966,{fpIr3[Global`lambda],fppIr3[Global`lambda]},\n      0.967<=Global`lambda<=1.105,{fpIr4[Global`lambda],fppIr4[Global`lambda]},\n      Global`lambda>=1.106,{fpIr5[Global`lambda],fppIr5[Global`lambda]}]","Pt"->"\nPthich[Global`lambda<=0.158,{fpPt1[Global`lambda],fppPt1[Global`lambda]},\n      0.159<=Global`lambda<=0.893,{fpPt2[Global`lambda],fppPt2[Global`lambda]},\n      0.894<=Global`lambda<=0.934,{fpPt3[Global`lambda],fppPt3[Global`lambda]},\n      0.935<=Global`lambda<=1.072,{fpPt4[Global`lambda],fppPt4[Global`lambda]},\n      Global`lambda>=1.073,{fpPt5[Global`lambda],fppPt5[Global`lambda]}]","Au"->"\nAuhich[Global`lambda<=0.153,{-0.9007,fppAu1[Global`lambda]},\n      0.154<=Global`lambda<=0.863,{fpAu2[Global`lambda],fppAu2[Global`lambda]},\n      0.864<=Global`lambda<=0.902,{fpAu3[Global`lambda],fppAu3[Global`lambda]},\n      0.903<=Global`lambda<=1.040,{fpAu4[Global`lambda],fppAu4[Global`lambda]},\n      Global`lambda>=1.041,{fpAu5[Global`lambda],fppAu5[Global`lambda]}]","Hg"->"\nHghich[Global`lambda<=0.149,{-0.9287,fppHg1[Global`lambda]},\n      0.150<=Global`lambda<=0.835,{fpHg2[Global`lambda],fppHg2[Global`lambda]},\n      0.836<=Global`lambda<=0.872,{fpHg3[Global`lambda],fppHg3[Global`lambda]},\n      0.873<=Global`lambda<=1.009,{fpHg4[Global`lambda],fppHg4[Global`lambda]},\n      Global`lambda>=1.010,{fpHg5[Global`lambda],fppHg5[Global`lambda]}]","Tl"->"\nTlhich[Global`lambda<=0.144,{-0.9566,fppTl1[Global`lambda]},\n      0.145<=Global`lambda<=0.807,{fpTl2[Global`lambda],fppTl2[Global`lambda]},\n      0.808<=Global`lambda<=0.843,{fpTl3[Global`lambda],fppTl3[Global`lambda]},\n      0.844<=Global`lambda<=0.979,{fpTl4[Global`lambda],fppTl4[Global`lambda]},\n      Global`lambda>=0.980,{fpTl5[Global`lambda],fppTl5[Global`lambda]}]","Pb"->"\nPbhich[Global`lambda<=0.140,{-0.9856,fppPb1[Global`lambda]},\n      0.141<=Global`lambda<=0.781,{fpPb2[Global`lambda],fppPb2[Global`lambda]},\n      0.782<=Global`lambda<=0.815,{fpPb3[Global`lambda],fppPb3[Global`lambda]},\n      0.816<=Global`lambda<=0.951,{fpPb4[Global`lambda],fppPb4[Global`lambda]},\n      Global`lambda>=0.952,{fpPb5[Global`lambda],fppPb5[Global`lambda]}]","Bi"->"\nBihich[Global`lambda<=0.136,{-1.015,fppBi1[Global`lambda]},\n      0.137<=Global`lambda<=0.756,{fpBi2[Global`lambda],fppBi2[Global`lambda]},\n      0.757<=Global`lambda<=0.789,{fpBi3[Global`lambda],fppBi3[Global`lambda]},\n      0.790<=Global`lambda<=0.923,{fpBi4[Global`lambda],fppBi4[Global`lambda]},\n      Global`lambda>=0.924,{fpBi5[Global`lambda],fppBi5[Global`lambda]}]","Po"->"\nPohich[Global`lambda<=0.133,{-1.045,fppPo1[Global`lambda]},\n      0.134<=Global`lambda<=0.731,{fpPo2[Global`lambda],fppPo2[Global`lambda]},\n      0.732<=Global`lambda<=0.763,{fpPo3[Global`lambda],fppPo3[Global`lambda]},\n      0.764<=Global`lambda<=0.897,{fpPo4[Global`lambda],fppPo4[Global`lambda]},\n      Global`lambda>=0.898,{fpPo5[Global`lambda],fppPo5[Global`lambda]}]","At"->"\nAthich[Global`lambda<=0.129,{-1.076,fppAt1[Global`lambda]},\n      0.130<=Global`lambda<=0.708,{fpAt2[Global`lambda],fppAt2[Global`lambda]},\n      0.709<=Global`lambda<=0.738,{fpAt3[Global`lambda],fppAt3[Global`lambda]},\n      0.739<=Global`lambda<=0.872,{fpAt4[Global`lambda],fppAt4[Global`lambda]},\n      Global`lambda>=0.873,{fpAt5[Global`lambda],fppAt5[Global`lambda]}]","Rn"->"\nRnhich[Global`lambda<=0.125,{-1.107,fppRn1[Global`lambda]},\n      0.126<=Global`lambda<=0.686,{fpRn2[Global`lambda],fppRn2[Global`lambda]},\n      0.687<=Global`lambda<=0.715,{fpRn3[Global`lambda],fppRn3[Global`lambda]},\n      0.716<=Global`lambda<=0.848,{fpRn4[Global`lambda],fppRn4[Global`lambda]},\n      Global`lambda>=0.849,{fpRn5[Global`lambda],fppRn5[Global`lambda]}]","Fr"->"\nFrhich[Global`lambda<=0.122,{-1.138,fppFr1[Global`lambda]},\n      0.123<=Global`lambda<=0.665,{fpFr2[Global`lambda],fppFr2[Global`lambda]},\n      0.666<=Global`lambda<=0.692,{fpFr3[Global`lambda],fppFr3[Global`lambda]},\n      0.693<=Global`lambda<=0.824,{fpFr4[Global`lambda],fppFr4[Global`lambda]},\n      Global`lambda>=0.825,{fpFr5[Global`lambda],fppFr5[Global`lambda]}]","Ra"->"\nRahich[Global`lambda<=0.119,{-1.170,fppRa1[Global`lambda]},\n      0.120<=Global`lambda<=0.644,{fpRa2[Global`lambda],fppRa2[Global`lambda]},\n      0.645<=Global`lambda<=0.670,{fpRa3[Global`lambda],fppRa3[Global`lambda]},\n      0.671<=Global`lambda<=0.802,{fpRa4[Global`lambda],fppRa4[Global`lambda]},\n      Global`lambda>=0.803,{fpRa5[Global`lambda],fppRa5[Global`lambda]}]","Ac"->"\nAchich[Global`lambda<=0.116,{-1.203,fppAc1[Global`lambda]},\n      0.117<=Global`lambda<=0.624,{fpAc2[Global`lambda],fppAc2[Global`lambda]},\n      0.625<=Global`lambda<=0.649,{fpAc3[Global`lambda],fppAc3[Global`lambda]},\n      0.650<=Global`lambda<=0.781,{fpAc4[Global`lambda],fppAc4[Global`lambda]},\n      Global`lambda>=0.782,{fpAc5[Global`lambda],fppAc5[Global`lambda]}]","Th"->"\nThhich[Global`lambda<=0.113,{-1.237,fppTh1[Global`lambda]},\n      0.114<=Global`lambda<=0.605,{fpTh2[Global`lambda],fppTh2[Global`lambda]},\n      0.606<=Global`lambda<=0.629,{fpTh3[Global`lambda],fppTh3[Global`lambda]},\n      0.630<=Global`lambda<=0.760,{fpTh4[Global`lambda],fppTh4[Global`lambda]},\n      Global`lambda>=0.761,{fpTh5[Global`lambda],fppTh5[Global`lambda]}]","Pa"->"\nPahich[Global`lambda<=0.110,{-1.271,fppPa1[Global`lambda]},\n      0.111<=Global`lambda<=0.587,{fpPa2[Global`lambda],fppPa2[Global`lambda]},\n      0.588<=Global`lambda<=0.610,{fpPa3[Global`lambda],fppPa3[Global`lambda]},\n      0.611<=Global`lambda<=0.740,{fpPa4[Global`lambda],fppPa4[Global`lambda]},\n      Global`lambda>=0.741,{fpPa5[Global`lambda],fppPa5[Global`lambda]}]","U"->"\nUhich[Global`lambda<=0.107,{-1.305,fppU1[Global`lambda]},\n      0.108<=Global`lambda<=0.569,{fpU2[Global`lambda],fppU2[Global`lambda]},\n      0.570<=Global`lambda<=0.591,{fpU3[Global`lambda],fppU3[Global`lambda]},\n      0.592<=Global`lambda<=0.722,{fpU4[Global`lambda],fppU4[Global`lambda]},\n      Global`lambda>=0.723,{fpU5[Global`lambda],fppU5[Global`lambda]}]","Np"->"\nNphich[Global`lambda<=0.104,{-1.341,fppNp1[Global`lambda]},\n      0.105<=Global`lambda<=0.552,{fpNp2[Global`lambda],fppNp2[Global`lambda]},\n      0.553<=Global`lambda<=0.573,{fpNp3[Global`lambda],fppNp3[Global`lambda]},\n      0.574<=Global`lambda<=0.704,{fpNp4[Global`lambda],fppNp4[Global`lambda]},\n      Global`lambda>=0.705,{fpNp5[Global`lambda],fppNp5[Global`lambda]}]","Pu"->"\nPuhich[Global`lambda<=0.101,{-1.377,fppPu1[Global`lambda]},\n      0.102<=Global`lambda<=0.539,{fpPu2[Global`lambda],fppPu2[Global`lambda]},\n      0.540<=Global`lambda<=0.559,{fpPu3[Global`lambda],fppPu3[Global`lambda]},\n      0.560<=Global`lambda<=0.692,{fpPu4[Global`lambda],fppPu4[Global`lambda]},\n      Global`lambda>=0.693,{fpPu5[Global`lambda],fppPu5[Global`lambda]}]","Am"->"\nAmhich[Global`lambda<=0.099,{-1.414,fppAm1[Global`lambda]},\n      0.100<=Global`lambda<=0.521,{fpAm2[Global`lambda],fppAm2[Global`lambda]},\n      0.522<=Global`lambda<=0.540,{fpAm3[Global`lambda],fppAm3[Global`lambda]},\n      0.541<=Global`lambda<=0.669,{fpAm4[Global`lambda],fppAm4[Global`lambda]},\n      Global`lambda>=0.670,{fpAm5[Global`lambda],fppAm5[Global`lambda]}]","Cm"->"\nCmhich[Global`lambda<=0.096,{-1.451,fppCm1[Global`lambda]},\n      0.097<=Global`lambda<=0.506,{fpCm2[Global`lambda],fppCm2[Global`lambda]},\n      0.507<=Global`lambda<=0.521,{fpCm3[Global`lambda],fppCm3[Global`lambda]},\n      0.522<=Global`lambda<=0.654,{fpCm4[Global`lambda],fppCm4[Global`lambda]},\n      0.655<=Global`lambda<=1.971,{fpCm5[Global`lambda],fppCm5[Global`lambda]},      \n      Global`lambda>=1.972,{fpCm6[Global`lambda],fppCm6[Global`lambda]}]","Bk"->"\nBkhich[Global`lambda<=0.094,{-1.489,fppBk1[Global`lambda]},\n      0.095<=Global`lambda<=0.490,{fpBk2[Global`lambda],fppBk2[Global`lambda]},\n      0.491<=Global`lambda<=0.508,{fpBk3[Global`lambda],fppBk3[Global`lambda]},\n      0.509<=Global`lambda<=0.637,{fpBk4[Global`lambda],fppBk4[Global`lambda]},\n      0.638<=Global`lambda<=1.891,{fpBk5[Global`lambda],fppBk5[Global`lambda]}      \n      Global`lambda>=1.892,{fpBk6[Global`lambda],fppBk6[Global`lambda]}]","Cf"->"\nCfhich[Global`lambda<=0.091,{-1.528,fppCf1[Global`lambda]},\n      0.092<=Global`lambda<=0.478,{fpCf2[Global`lambda],fppCf2[Global`lambda]},\n      0.479<=Global`lambda<=0.495,{fpCf3[Global`lambda],fppCf3[Global`lambda]},\n      0.496<=Global`lambda<=0.627,{fpCf4[Global`lambda],fppCf4[Global`lambda]},\n      0.628<=Global`lambda<=1.859,{fpCf5[Global`lambda],fppCf5[Global`lambda]},\n      1.860<=Global`lambda<=1.978,{fpCf6[Global`lambda],fppCf6[Global`lambda]},      \n      Global`lambda>=1.979,{fpCf7[Global`lambda],fppCf7[Global`lambda]}]"|>;
-
-	fp=StringTrim/@Transpose[{"\""<>#<>"\""&/@X,asf[#]&/@X}];
-	fp[[All,2]]=StringReplace[fp[[All,2]],
-	Shortest[f:("f"~~__)~~c_~~"["]:>
-	f<>If[!NumericQ@ToExpression@c,c<>"1",c]<>"["];
-	fp[[All,2]]=StringDelete[fp[[All,2]],"\n"];
-
-	fpp="Get[\"inpol-"<>#<>
-".dat\",Path->\"D:\\\\X-Ray-Diffraction\\\\Anomal\\\\Data\"];"&/@X;
-
-
-(* Prepare file *)
-end[x_]:=ToString[x,InputForm]<>";\n";
-endTab[x_]:="{"<>(
-Riffle[
-ToString/@Riffle[x,"\n\t",{1,-1,2}],
-",",{3,-3,3}]
-)<>"};\n";
-
-write=Flatten@{
-"compound = \""<>crystal<>"\";\n",
-"spacegroup = \""<>sg<>"\";\n",
-"ltc="<>end@ltc,
-"csmatrix="<>If[Length@csmatrix===1,
-end@csmatrix,endTab@csmatrix],
-"cell="<>end@cell,
-"atoms="<>endTab@atoms,
-"flag="<>end@flag,
-"sccoeff="<>endTab@sccoeff,
-"fp="<>endTab[DeleteDuplicates@fp]<>"\n",
-DeleteDuplicates@fpp
-};
-
-(* Write file *)
-Export[output,write,"Text"]
-]
-
-
-(* ::Input::Initialization:: *)
-End[];
-
-
-(* ::Input::Initialization:: *)
 (* Messages, options, attributes and syntax information *)
 
 
@@ -2310,215 +2203,6 @@ ExportReflectionFile[output_String,hkl_List]:=Module[{dir,list,spacing,input,tem
 	];
 
 	Export[output,list,"Table"]
-]
-
-
-(* ::Input::Initialization:: *)
-End[];
-
-
-(* ::Input::Initialization:: *)
-(* Messages, options, attributes and syntax information *)
-
-
-(* ::Input::Initialization:: *)
-FindPixelClusters::method="The method \[LeftGuillemet]`1`\[RightGuillemet] was not recognised.";
-FindPixelClusters::pixels="Pixels in the binarised image: `1`.";
-FindPixelClusters::files="All images must be file paths.";
-FindPixelClusters::dir="Invalid directory.";
-
-Options@FindPixelClusters={
-Method->"Auto",
-"ReturnBinaryImage"->False,
-"ClusterRange"->3,
-"ClearStatus"->False};
-
-
-(* ::Input::Initialization:: *)
-Begin["`Private`"];
-
-
-(* ::Input::Initialization:: *)
-FindPixelClusters[image_Image,OptionsPattern@FindPixelClusters]:=
-Module[{
-bin,data,L,method,fraction,check,
-P,update,start,near,r,progress,status,total,p,i,j,neighbours,new,n,new2,
-clusters,k},
-
-(*---* Preparing image *---*)
-
-	(* Otsu's cluster variance maximization method *)
-	bin=Binarize@image;
-	data=PixelValuePositions[bin,1];
-	L=Length@data;
-
-	(* Option: Choose method *)
-	method=OptionValue[Method];
-	Which[
-	method=="Auto",method="Median",
-	method=="Median",L=50000,
-	method=="Mean",L=50000,
-	method=="Cluster",L=50000,
-	method=="HighestFraction",L=50001,
-	method=="BinariseOnly",Goto["BinarisationDone"],
-	True,Message[FindPixelClusters::method,method];Abort[]];
-
-	(* Check if further refinement is necessary *)
-	Which[
-	L<=20000,Null,
-	L<=50000,bin=DeleteSmallComponents[bin,Method->method],
-	True,
-	(* Special procedure for very noisy images *)
-		fraction=1.00;
-		check=True;
-
-		While[check,
-		fraction=fraction-0.005;
-		bin=Binarize[image,Method->{"BlackFraction", fraction}];
-		check=PixelValuePositions[bin,1]=={}];
-
-		bin=DeleteSmallComponents[bin,Method->"Mean"]
-	];
-
-	data=PixelValuePositions[bin,1];
-	
-	(* Option: Return binary image and data length for inspection *)
-		Label["BinarisationDone"];
-		If[OptionValue["ReturnBinaryImage"],
-		Message[FindPixelClusters::pixels,
-		ToString@NumberForm[Length@data,DigitBlock->3]];
-		Return@bin];
-
-
-(*---* Cluster determination *---*)
-
-	(* List of all pixels *)
-	P={};
-	update=N@data;
-	start=First@update;
-	r=N@OptionValue["ClusterRange"];
-	near=N@DeleteCases[
-	Flatten[Table[{i,j},{i,-r,r},{j,-r,r}],1],
-	{0,0}];
-	total=Length@data;
-	progress=total;
-
-	(* Dynamic status *)
-	status=PrintTemporary[
-	Row[
-	{Text[Style["Determining pixel clusters:",FontFamily->"Avenir Next",14]],
-	Spacer[20],
-	Dynamic@ProgressIndicator[1-progress/total]
-	},
-	Alignment->Center
-	]];
-
-(* Single pixel *)
-P=Reap@While[update!={},
-
-(* First iteration *)
-p={};
-
-neighbours=start+#&/@near;
-new=Intersection[update,neighbours];
-
-	(* Avoid looping over the same single pixel *)
-	If[new=={},update=Rest@update];
-
-p=Join[p,new];
-update=Complement[update,p];
-
-	(* The next iterations *)
-	While[new!={},
-	
-	(* Current and rest *)
-	n=First@new;
-	new=Rest@new;
-
-		neighbours=n+#&/@near;
-	
-	(* Actual new elements *)
-	new2=Intersection[update,neighbours];
-	p=Join[p,new2];
-
-	update=Complement[update,p];
-	new=Join[new,new2];
-	];
-
-	(* One pixel done *)
-	Sow[p];
-	progress=Length@update;
-	If[update!={},start=First@update]
-];
-	If[OptionValue["ClearStatus"],NotebookDelete@status];
-	P=P[[2,1]];
-	clusters=DeleteCases[P,{}];
-
-
-(*---* Merge pixel clusters *---*)
-	P=Reap@Do[
-	k=Round[
-	{
-	Total@clusters[[i,All,1]],
-	Total@clusters[[i,All,2]]
-	}
-	/Length@clusters[[i]]
-	];
-	Sow[k],
-	{i,Length@clusters}
-	];
-	
-	P[[2,1]]
-]
-
-
-(* ::Input::Initialization:: *)
-FindPixelClusters[images_List,output_String,OptionsPattern@FindPixelClusters]:=Module[{progress,L,outputfile,step1,step2},
-
-(* Check and prepare input *)
-	If[AnyTrue[images,!FileExistsQ[#]&],
-	Message[FindPixelClusters::files];Abort[]];
-	If[!DirectoryQ@DirectoryName@output,
-	Message[FindPixelClusters::dir];Abort[]];
-	
-	progress=0;
-	L=Length@images;
-
-(* Clear current $PixelData *)
-	$PixelData=<||>;
-
-(* Dynamic status *)
-	PrintTemporary[
-	Row[
-	{Text[Style["Progress:",FontFamily->"Avenir Next",16]],
-	Spacer[20],
-	Dynamic@ProgressIndicator[progress/L],
-	Spacer[20],
-	Dynamic[Text[Style["Images done: "<>ToString[progress]<>" of "<>ToString@L,FontFamily->"Avenir Next",12]]]
-	},
-	Alignment->Center
-	]];
-
-(* Preparing output file *)
-	outputfile=output;
-	Quiet@Close@outputfile;
-	WriteString[outputfile,"<|"];
-
-(* Loop *)
-	Do[
-	step1=IntegerString[FileHash[images[[i]],"MD5"],16,32];
-	step2=FindPixelClusters[Import@images[[i]],
-	Method->OptionValue[Method],
-	"ClearStatus"->True];
-	WriteString[outputfile,"\""<>step1<>"\""->step2];
-	If[i!=Length@images,WriteString[outputfile,","]];
-	progress++,
-	{i,Length@images}];
-
-(* End *)
-	WriteString[outputfile,"|>"];
-	Close@outputfile;
-	AbsoluteFileName@outputfile
 ]
 
 
@@ -3031,7 +2715,7 @@ f[X[[All,i]],p/.List->Sequence],
 S=Total[R^2];
 
 (* New parameters *)
-p=p-Inverse[Transpose[J].J].Transpose[J].R;
+p=p-Inverse[Transpose[J] . J] . Transpose[J] . R;
 
 \[CapitalDelta]=Abs[S0-S];
 
@@ -3118,9 +2802,9 @@ Return[{{a,\[Delta]a},{b,\[Delta]b},{r,s2y}}];
 	w=1/\[Delta]y^2;
 
 	(* Sum of weighted lists and weighted means *)
-	{sumx,sumy,sumw}={w.x,w.y,Total[w]};
+	{sumx,sumy,sumw}={w . x,w . y,Total[w]};
 	{X,Y}={sumx,sumy}/sumw;
-	{sumx2,sumy2,sumxy}={w.x^2,w.y^2,Total[w*x*y]};
+	{sumx2,sumy2,sumxy}={w . x^2,w . y^2,Total[w*x*y]};
 	\[CapitalDelta]=sumw*sumx2-sumx^2;
 
 	(* Coefficients *)
@@ -3532,8 +3216,8 @@ SD,grids},
 	\[CapitalGamma]=Inverse[\[CapitalLambda]];
 
 	(* Conversion functions *)
-	\[Xi][x_,y_]:=\[CapitalGamma].{x-tx,y-ty};
-	\[Chi][h_,k_]:=\[CapitalLambda].{h,k}+{tx,ty};
+	\[Xi][x_,y_]:=\[CapitalGamma] . {x-tx,y-ty};
+	\[Chi][h_,k_]:=\[CapitalLambda] . {h,k}+{tx,ty};
 
 
 (** Conversion functions **)
@@ -3541,7 +3225,7 @@ SD,grids},
 	(* Pixel to node *)
 	\[Xi][{x_,y_}]:=(
 	(* Calculation and discrepancy check *)
-	convert=\[CapitalGamma].{x-tx,y-ty};
+	convert=\[CapitalGamma] . {x-tx,y-ty};
 	residue=Abs/@FractionalPart/@N[convert];
 
 	(* Decide whether to round to integer *)
@@ -3564,7 +3248,7 @@ SD,grids},
 	(* Node to pixel *)
 	\[Chi][H_,round_:OptionValue["RoundPixels"]]:=(
 	(* Calculation *)
-	convert=\[CapitalLambda].H+adjust;
+	convert=\[CapitalLambda] . H+adjust;
 	
 	(* Decide whether to round to integer *)
 	If[round,Round@convert,convert]);
@@ -3580,7 +3264,7 @@ SD,grids},
 
 	(* Lattice setup *)
 	V[x0_,y0_]:=(
-	t=\[CapitalLambda].{x0,y0}+adjust;
+	t=\[CapitalLambda] . {x0,y0}+adjust;
 	tt={t,t};
 	If[x0==y0==0,
 	(* Origin arrows *)
@@ -4841,7 +4525,7 @@ temp},
 	\[Delta]=Min[6,StringLength@ToString@N[(end-start)/(steps-1)]-2];
 
 (* Check if vectors are linearly independent *)
-	If[Det[{{L1.L1,L1.L2},{L2.L1,L2.L2}}]==0,
+	If[Det[{{L1 . L1,L1 . L2},{L2 . L1,L2 . L2}}]==0,
 	Message[UnwarpLayerList::dep];Abort[]];
 
 (*---* Making the origin vectors *---*)
@@ -4963,7 +4647,7 @@ w,sumw,sumxw,wx,sumxn,\[Sigma]i,\[Sigma]e},
 	{x,\[Sigma]}=N@Transpose@data;
 	w=1/\[Sigma]^2;
 	sumw=Total[w];
-	sumxw=x.w;
+	sumxw=x . w;
 
 	wx=sumxw/sumw;
 
@@ -4972,7 +4656,7 @@ w,sumw,sumxw,wx,sumxn,\[Sigma]i,\[Sigma]e},
 
 	(* Standard deviation (external) *)
 	d=x-wx;
-	sumxn=w.d^2;
+	sumxn=w . d^2;
 	\[Sigma]e=Sqrt[sumxn/((n-1)*sumw)];
 
 	Return[{wx,\[Sigma]i,\[Sigma]e}];

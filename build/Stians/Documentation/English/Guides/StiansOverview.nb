@@ -1,0 +1,635 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     20055,        626]
+NotebookOptionsPosition[     14278,        509]
+NotebookOutlinePosition[     15862,        549]
+CellTagsIndexPosition[     15819,        546]
+WindowTitle->Stian's Mathematica package
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["STIANS GUIDE", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Functions",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Functions", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"AlignUB\"\>":>Documentation`HelpLookup[
+       "paclet:Stians/ref/AlignUB"], "\<\"ErrorPropagation\"\>":>
+       Documentation`HelpLookup[
+       "paclet:Stians/ref/ErrorPropagation"], "\<\"ExportReflectionFile\"\>":>
+       Documentation`HelpLookup[
+       "paclet:Stians/ref/ExportReflectionFile"], "\<\"ImgScript\"\>":>
+       Documentation`HelpLookup[
+       "paclet:Stians/ref/ImgScript"], "\<\"ImportReflectionFile\"\>":>
+       Documentation`HelpLookup[
+       "paclet:Stians/ref/ImportReflectionFile"], "\<\"IntensityTable\"\>":>
+       Documentation`HelpLookup[
+       "paclet:Stians/ref/IntensityTable"], "\<\"LeastSquaresFit\"\>":>
+       Documentation`HelpLookup[
+       "paclet:Stians/ref/LeastSquaresFit"], "\<\"MergeLogs\"\>":>
+       Documentation`HelpLookup[
+       "paclet:Stians/ref/MergeLogs"], "\<\"MonitorIni\"\>":>
+       Documentation`HelpLookup[
+       "paclet:Stians/ref/MonitorIni"], "\<\"PeakTableInspection\"\>":>
+       Documentation`HelpLookup[
+       "paclet:Stians/ref/PeakTableInspection"], \
+"\<\"ReciprocalImageCheck\"\>":>Documentation`HelpLookup[
+       "paclet:Stians/ref/ReciprocalImageCheck"], \
+"\<\"ReciprocalSpaceTool\"\>":>Documentation`HelpLookup[
+       "paclet:Stians/ref/ReciprocalSpaceTool"], "\<\"RefinedValues\"\>":>
+       Documentation`HelpLookup[
+       "paclet:Stians/ref/RefinedValues"], "\<\"UnwarpLayerList\"\>":>
+       Documentation`HelpLookup[
+       "paclet:Stians/ref/UnwarpLayerList"], "\<\"WeightedMean\"\>":>
+       Documentation`HelpLookup["paclet:Stians/ref/WeightedMean"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"GuideFunction"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"Stians/guide/Overview\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["Stians/guide/Overview"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/Stians/guide/Overview.\
+html"], StandardForm]], "Input", TextClipboardType -> "PlainText"]}, Visible -> 
+            False]]; SelectionMove[
+         DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$6845], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "Stians/guide/Overview", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell["Stian's Mathematica package", "GuideTitle",
+ CellID->942062912],
+
+Cell["\<\
+Miscellaneous tools and functions that have been useful at some point in time.\
+\>", "GuideAbstract",
+ CellID->2001916300]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "CrysAlis"
+}], "GuideFunctionsSection",
+ CellID->1804729571],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[CellGroupData[{
+
+Cell["Unwarping", "GuideFunctionsSubsection",
+ CellID->1030869569],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["AlignUB"]], "paclet:Stians/ref/AlignUB"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " ",
+ "Derives the ",
+ StyleBox["CrysAlis",
+  FontSlant->"Italic"],
+ " code needed to transform UB matrices."
+}], "GuideText",
+ CellID->877039966],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["UnwarpLayerList"]], "paclet:Stians/ref/UnwarpLayerList"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " ",
+ "Produces a list of unwarping commands that can be imported into ",
+ StyleBox["CrysAlis",
+  FontSlant->"Italic"],
+ "."
+}], "GuideText",
+ CellID->82955554],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["ImgScript"]], "paclet:Stians/ref/ImgScript"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Generates a script file that converts the ",
+ StyleBox[".img", "InlineCode"],
+ " format to ",
+ StyleBox[".bmp", "InlineCode"],
+ " or ",
+ StyleBox[".jpg", "InlineCode"],
+ " when loaded in ",
+ StyleBox["CrysAlis",
+  FontSlant->"Italic"],
+ "."
+}], "GuideText",
+ CellID->517109175]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Post-analysis", "GuideFunctionsSubsection",
+ CellID->232008716],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["MergeLogs"]], "paclet:Stians/ref/MergeLogs"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " ",
+ "Merges multiple log files from the same project."
+}], "GuideText",
+ CellID->310846431],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["RefinedValues"]], "paclet:Stians/ref/RefinedValues"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " ",
+ "Extracts the refined model values from log files."
+}], "GuideText",
+ CellID->2083830287],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["IntensityTable"]], "paclet:Stians/ref/IntensityTable"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Produces a table over intensities and more from ",
+ StyleBox[".hkl", "InlineCode"],
+ " files."
+}], "GuideText",
+ CellID->2074265834]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Other tools", "GuideFunctionsSubsection",
+ CellID->328063418],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["PeakTableInspection"]], 
+    "paclet:Stians/ref/PeakTableInspection"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " ",
+ "Given the peak table, this function produces a list of which duplicates to \
+delete."
+}], "GuideText",
+ CellID->1772318333],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["MonitorIni"]], "paclet:Stians/ref/MonitorIni"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " ",
+ "Auxiliary tool for the ",
+ StyleBox["xx\[ThickSpace]monitorinifromrunlist", "InlineCode"],
+ " command. "
+}], "GuideText",
+ CellID->804032890]
+}, Open  ]],
+
+Cell["", "SectionFooterSpacer"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Simulation and post-analysis"
+}], "GuideFunctionsSection",
+ CellID->139367843],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["ReciprocalImageCheck"]], 
+    "paclet:Stians/ref/ReciprocalImageCheck"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Shows which nodes fulfill given reflection conditions in an image of the \
+reciprocal space."
+}], "GuideText",
+ CellID->1812372750],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["GeneratePixelData"]], "paclet:Stians/ref/GeneratePixelData"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["FindPixelClusters"]], "paclet:Stians/ref/FindPixelClusters"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$PixelData"]], "paclet:Stians/ref/$PixelData"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"]
+}], "InlineGuideFunctionListing",
+ CellID->646066909],
+
+Cell[CellGroupData[{
+
+Cell["\t", "GuideDelimiter",
+ CellID->120055092],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["ReciprocalSpaceSimulation"]], 
+    "paclet:Stians/ref/ReciprocalSpaceSimulation"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " ",
+ "Displays an simulated section of reciprocal space."
+}], "GuideText",
+ CellID->596295587],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["ReciprocalSpaceTool"]], 
+    "paclet:Stians/ref/ReciprocalSpaceTool"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Combines ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["ReciprocalImageCheck"]], 
+    "paclet:Stians/ref/ReciprocalImageCheck"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " and ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["ReciprocalSpaceSimulation"]], 
+    "paclet:Stians/ref/ReciprocalSpaceSimulation"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ "."
+}], "GuideText",
+ CellID->1179238402]
+}, Open  ]],
+
+Cell["", "SectionFooterSpacer"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Miscellaneous tools"
+}], "GuideFunctionsSection",
+ CellID->1016162081],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["ImportReflectionFile"]], 
+    "paclet:Stians/ref/ImportReflectionFile"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["ExportReflectionFile"]], 
+    "paclet:Stians/ref/ExportReflectionFile"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"]
+}], "InlineGuideFunctionListing",
+ CellID->1585729090],
+
+Cell[CellGroupData[{
+
+Cell["Development tools", "GuideFunctionsSubsection",
+ CellID->820715179],
+
+Cell[TextData[Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["InputCheck"]], "paclet:Stians/ref/InputCheck"},
+  "RefLink",
+  BaseStyle->
+   "InlineFunctionSans"]], "InlineFunctionSans"]], \
+"InlineGuideFunctionListing",
+ CellID->1996744162]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Statistical tools", "GuideFunctionsSubsection",
+ CellID->1207293509],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["ErrorPropagation"]], "paclet:Stians/ref/ErrorPropagation"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["LeastSquaresFit"]], "paclet:Stians/ref/LeastSquaresFit"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["RoundSignificants"]], "paclet:Stians/ref/RoundSignificants"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["WeightedMean"]], "paclet:Stians/ref/WeightedMean"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"]
+}], "InlineGuideFunctionListing",
+ CellID->1000663927]
+}, Open  ]]
+}, Closed]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"Stian's Mathematica package",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "GuideColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "Wolfram Language", ButtonData -> "paclet:guide/WolframRoot", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "ExampleCounter" -> 1, "NeedPlatMsgIn" -> None, "RootCaptions" -> 
+  "", "Metadata" -> {
+   "built" -> "{2021, 4, 28, 13, 39, 19.311204}", 
+    "history" -> {"0.0", "", "", ""}, "context" -> "Stians`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Stians Guide", "language" -> "en", "paclet" -> "Stians", "status" -> 
+    "None", "summary" -> 
+    "Miscellaneous tools and functions that have been useful at some point in \
+time.", "synonyms" -> {}, "tabletags" -> 
+    DocumentationBuild`Make`Private`tabletaggingrules$6750, "title" -> 
+    "Stian's Mathematica package", "titlemodifier" -> "", "windowtitle" -> 
+    "Stian's Mathematica package", "type" -> "Guide", "uri" -> 
+    "Stians/guide/Overview"}},
+FrontEndVersion->"12.1 for Mac OS X x86 (64-bit) (June 19, 2020)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Reference.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[599, 21, 4466, 101, 70, "AnchorBarGrid",ExpressionUUID->"03c4696a-f1b1-436a-9de7-af39ec072d44",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[5090, 126, 69, 1, 70, "GuideTitle",ExpressionUUID->"136be215-3f63-4967-932d-64f1fc961754",
+ CellID->942062912],
+Cell[5162, 129, 132, 3, 70, "GuideAbstract",ExpressionUUID->"0cb43957-0441-41fe-8139-731a481716a9",
+ CellID->2001916300]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5331, 137, 128, 6, 70, "GuideFunctionsSection",ExpressionUUID->"5999385b-da35-4aca-b3d1-91aad6900a97",
+ CellID->1804729571],
+Cell[5462, 145, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"223d8aa9-066b-4a3c-831e-20df92cf26b8"],
+Cell[CellGroupData[{
+Cell[5518, 149, 66, 1, 70, "GuideFunctionsSubsection",ExpressionUUID->"776d65f7-4b41-46f9-a84e-b7090a3d4367",
+ CellID->1030869569],
+Cell[5587, 152, 383, 15, 70, "GuideText",ExpressionUUID->"18fbf38f-7c0d-4e7b-9642-e8e1193dc1ae",
+ CellID->877039966],
+Cell[5973, 169, 413, 15, 70, "GuideText",ExpressionUUID->"f29f1b41-63ab-4a50-b03e-d6a99850a012",
+ CellID->82955554],
+Cell[6389, 186, 520, 20, 70, "GuideText",ExpressionUUID->"14489a95-4b75-4fcc-a241-05c61bc0539f",
+ CellID->517109175]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6946, 211, 69, 1, 70, "GuideFunctionsSubsection",ExpressionUUID->"3e601102-70ea-4fc7-9057-7b44e3204eaa",
+ CellID->232008716],
+Cell[7018, 214, 334, 12, 70, "GuideText",ExpressionUUID->"10efd620-c6eb-4f22-86c9-15613f4d8f3f",
+ CellID->310846431],
+Cell[7355, 228, 344, 12, 70, "GuideText",ExpressionUUID->"391cf144-0446-4808-8c80-825d76623742",
+ CellID->2083830287],
+Cell[7702, 242, 385, 13, 70, "GuideText",ExpressionUUID->"89f760fd-5c9f-4ea1-931b-c245fc6ba604",
+ CellID->2074265834]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8124, 260, 67, 1, 70, "GuideFunctionsSubsection",ExpressionUUID->"a744cb6e-7787-4749-8d96-1021d4d921f8",
+ CellID->328063418],
+Cell[8194, 263, 396, 14, 70, "GuideText",ExpressionUUID->"d01614e7-a42e-414d-9ea1-e5565751334a",
+ CellID->1772318333],
+Cell[8593, 279, 391, 14, 70, "GuideText",ExpressionUUID->"b98c3890-23ce-40c7-ad69-170c34fee187",
+ CellID->804032890]
+}, Open  ]],
+Cell[8999, 296, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"977666b9-ffd3-4dbd-a5a7-b9a183a9f866"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[9067, 301, 147, 6, 70, "GuideFunctionsSection",ExpressionUUID->"19505c61-e0be-4fed-86f6-e1f8301a9007",
+ CellID->139367843],
+Cell[9217, 309, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"d1956020-7a86-4330-8f82-dcb76cd5225c"],
+Cell[9251, 311, 401, 13, 70, "GuideText",ExpressionUUID->"1566468a-6073-4726-94d5-c686bf9984a7",
+ CellID->1812372750],
+Cell[9655, 326, 871, 28, 70, "InlineGuideFunctionListing",ExpressionUUID->"be8f4fe3-4290-4b77-8bd0-f8a3627299fa",
+ CellID->646066909],
+Cell[CellGroupData[{
+Cell[10551, 358, 48, 1, 70, "GuideDelimiter",ExpressionUUID->"09d5f7e0-ea3e-440f-8624-a05ed82b4ea2",
+ CellID->120055092],
+Cell[10602, 361, 373, 13, 70, "GuideText",ExpressionUUID->"be906048-a6a5-48a4-8028-52ebe8b1826c",
+ CellID->596295587],
+Cell[10978, 376, 750, 28, 70, "GuideText",ExpressionUUID->"17133c04-437c-4bf4-8856-509f07e41dad",
+ CellID->1179238402]
+}, Open  ]],
+Cell[11743, 407, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"17ac549a-d488-4ea0-bd7e-d916350ea63d"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[11811, 412, 139, 6, 70, "GuideFunctionsSection",ExpressionUUID->"de64de3b-e810-4f50-bc08-daef11e71e53",
+ CellID->1016162081],
+Cell[11953, 420, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"9dd2915a-265f-4d0e-bf9a-9df38705768e"],
+Cell[11987, 422, 596, 20, 70, "InlineGuideFunctionListing",ExpressionUUID->"43985ce8-2529-4736-9f0d-faee7754a766",
+ CellID->1585729090],
+Cell[CellGroupData[{
+Cell[12608, 446, 73, 1, 70, "GuideFunctionsSubsection",ExpressionUUID->"85c58dd5-d330-498c-8a48-29d674cf25a6",
+ CellID->820715179],
+Cell[12684, 449, 244, 8, 70, "InlineGuideFunctionListing",ExpressionUUID->"e633e04a-825a-4d0d-a21c-414dfa540145",
+ CellID->1996744162]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12965, 462, 74, 1, 70, "GuideFunctionsSubsection",ExpressionUUID->"e939426c-3318-473e-9409-661f62681b3f",
+ CellID->1207293509],
+Cell[13042, 465, 1182, 38, 70, "InlineGuideFunctionListing",ExpressionUUID->"4bb7bd2a-1dbc-41a0-8e53-59b5f1b98387",
+ CellID->1000663927]
+}, Open  ]]
+}, Closed]],
+Cell[14251, 507, 23, 0, 70, "FooterCell",ExpressionUUID->"cebcbda4-3b32-45fc-9ec7-2a3cd3f4d312"]
+}
+]
+*)
+
+(* End of internal cache information *)

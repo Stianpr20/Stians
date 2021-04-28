@@ -3,17 +3,17 @@
 (*** Wolfram Notebook File ***)
 (* http://www.wolfram.com/nb *)
 
-(* CreatedBy='Mathematica 11.3' *)
+(* CreatedBy='Mathematica 12.1' *)
 
 (*CacheID: 234*)
 (* Internal cache information:
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      8294,        241]
-NotebookOptionsPosition[      5630,        178]
-NotebookOutlinePosition[      7486,        228]
-CellTagsIndexPosition[      7443,        225]
+NotebookDataLength[      8231,        240]
+NotebookOptionsPosition[      5601,        179]
+NotebookOutlinePosition[      7423,        227]
+CellTagsIndexPosition[      7380,        224]
 WindowTitle->PolygonArea
 WindowFrame->Normal*)
 
@@ -59,7 +59,7 @@ html"], StandardForm]], "Input", TextClipboardType -> "PlainText"]}, Visible ->
           URL[
            StringJoin[
             If[
-             TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$19743], 
+             TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$26492], 
              "http://reference.wolfram.com/system-modeler/", 
              "http://reference.wolfram.com/language/"], 
             "Stians/ref/PolygonArea", ".html"]], None}]}]},
@@ -86,8 +86,9 @@ Cell[BoxData[GridBox[{
    {"", Cell[TextData[{
      Cell[BoxData[
       RowBox[{
-       TemplateBox[{Cell[
-          TextData["PolygonArea"]],"paclet:Stians/ref/PolygonArea"},
+       TemplateBox[{
+         Cell[
+          TextData["PolygonArea"]], "paclet:Stians/ref/PolygonArea"},
         "RefLink",
         BaseStyle->{"InlineFormula"}], "[", 
        RowBox[{"{", 
@@ -123,9 +124,7 @@ Cell[BoxData[GridBox[{
     }]]}
   }]], "Usage",
  GridBoxOptions->{
- GridBoxBackground->{
-  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
-   "RowsIndexed" -> {}}},
+ GridBoxBackground->{"Columns" -> {{None}}, "Rows" -> {{None}}}},
  CellID->982511436],
 
 Cell[CellGroupData[{
@@ -158,14 +157,16 @@ Cell["The polygon must not intersect itself.", "Notes",
 
 Cell[TextData[{
  Cell[BoxData[
-  TemplateBox[{Cell[
-     TextData["PolygonArea"]],"paclet:Stians/ref/PolygonArea"},
+  TemplateBox[{
+    Cell[
+     TextData["PolygonArea"]], "paclet:Stians/ref/PolygonArea"},
    "RefLink",
    BaseStyle->{"InlineFormula"}]], "InlineFormula"],
  " applies the method descrbed on ",
  Cell[BoxData[
-  TemplateBox[{Cell[
-     TextData["this web page"]],
+  TemplateBox[{
+    Cell[
+     TextData["this web page"]], 
     "http://www.mathopenref.com/coordpolygonarea.html"},
    "WebLink",
    BaseStyle->{"Notes"}]]],
@@ -191,7 +192,7 @@ TaggingRules->{
     Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
   None, "RootCaptions" -> "", 
   "Metadata" -> {
-   "built" -> "{2019, 3, 16, 9, 28, 49.813460}", 
+   "built" -> "{2021, 4, 28, 13, 39, 46.178190}", 
     "history" -> {"0.0", "", "", ""}, "context" -> "Stians`", 
     "keywords" -> {}, "specialkeywords" -> {}, 
     "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
@@ -202,8 +203,7 @@ with vertices at {xi, yi}.", "synonyms" -> {}, "tabletags" -> {}, "title" ->
     "PolygonArea", "titlemodifier" -> "", "windowtitle" -> "PolygonArea", 
     "type" -> "Symbol", "uri" -> "Stians/ref/PolygonArea"}},
 CellContext->"Global`",
-FrontEndVersion->"11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
-2018)",
+FrontEndVersion->"12.1 for Mac OS X x86 (64-bit) (June 19, 2020)",
 StyleDefinitions->Notebook[{
    Cell[
     StyleData[
@@ -212,8 +212,7 @@ StyleDefinitions->Notebook[{
     StyleData["Input"], CellContext -> "Global`"], 
    Cell[
     StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
-  FrontEndVersion -> 
-  "11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, 2018)", 
+  FrontEndVersion -> "12.1 for Mac OS X x86 (64-bit) (June 19, 2020)", 
   StyleDefinitions -> "Default.nb"]
 ]
 (* End of Notebook Content *)
@@ -227,22 +226,22 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[583, 21, 2273, 53, 70, "AnchorBarGrid",ExpressionUUID->"3433e0ea-ef33-4dcb-a6d7-2a619e2b1dc2",
+Cell[583, 21, 2273, 53, 70, "AnchorBarGrid",ExpressionUUID->"714314d1-c040-4f46-8f25-c4284d2e7ef2",
  CellID->1],
-Cell[2859, 76, 168, 6, 70, "ObjectNameGrid",ExpressionUUID->"08cd1e10-4156-49c2-beca-b393067c965e"],
-Cell[3030, 84, 1371, 44, 70, "Usage",ExpressionUUID->"21857006-6aa3-4ebc-820c-4589af461e4d",
+Cell[2859, 76, 168, 6, 70, "ObjectNameGrid",ExpressionUUID->"cd2784c3-1ded-4801-a245-e3067ddb8e09"],
+Cell[3030, 84, 1330, 43, 70, "Usage",ExpressionUUID->"eb6d305e-7726-4c77-b904-de83ce673620",
  CellID->982511436],
 Cell[CellGroupData[{
-Cell[4426, 132, 621, 19, 70, "NotesSection",ExpressionUUID->"331fc685-f681-40dc-b1fd-fe9d06c243cc",
+Cell[4385, 131, 621, 19, 70, "NotesSection",ExpressionUUID->"144d1d6f-6ab1-4141-85e0-e78d64c05a5a",
  CellGroupingRules->{"SectionGrouping", 50},
  CellID->1],
-Cell[5050, 153, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"05971857-8fa0-43d7-bb17-ab0f32f8cf81"],
-Cell[5084, 155, 76, 1, 70, "Notes",ExpressionUUID->"b3e4eef8-4d0a-460b-886d-4091fda8ff33",
+Cell[5009, 152, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"92119dab-a3e2-450b-b5e3-d87575e46f54"],
+Cell[5043, 154, 76, 1, 70, "Notes",ExpressionUUID->"b9fd71e7-34c6-488c-8bae-04c704649c16",
  CellID->1067943069],
-Cell[5163, 158, 425, 15, 70, "Notes",ExpressionUUID->"1ac1ded3-335d-4dfd-822c-24472b5537e5",
+Cell[5122, 157, 437, 17, 70, "Notes",ExpressionUUID->"65aa48bb-f882-47ca-bab4-9746e5c1e6ad",
  CellID->109671551]
 }, Closed]],
-Cell[5603, 176, 23, 0, 70, "FooterCell",ExpressionUUID->"3af1832a-036f-4f12-a2c9-382b5f0ede2a"]
+Cell[5574, 177, 23, 0, 70, "FooterCell",ExpressionUUID->"f18aecbe-a206-429e-adfe-57f76144af0f"]
 }
 ]
 *)

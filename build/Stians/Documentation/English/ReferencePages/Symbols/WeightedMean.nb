@@ -3,70 +3,91 @@
 (*** Wolfram Notebook File ***)
 (* http://www.wolfram.com/nb *)
 
-(* CreatedBy='Mathematica 11.3' *)
+(* CreatedBy='Mathematica 12.1' *)
 
 (*CacheID: 234*)
 (* Internal cache information:
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     25045,        751]
-NotebookOptionsPosition[     18780,        610]
-NotebookOutlinePosition[     21115,        669]
-CellTagsIndexPosition[     21030,        664]
+NotebookDataLength[     26581,        801]
+NotebookOptionsPosition[     19721,        651]
+NotebookOutlinePosition[     22056,        710]
+CellTagsIndexPosition[     21971,        705]
 WindowTitle->WeightedMean
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
 Cell[BoxData[GridBox[{
-   {Cell["XRAY SYMBOL", "PacletNameCell"], Cell[TextData[Cell[BoxData[
-     ActionMenuBox[
-      FrameBox[
-       InterpretationBox[Cell[TextData[{
-         "URL",
-         StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
-          StripOnInput->False]
-        }]],
-        TextCell[
-         Row[{"URL", 
-           Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
-       StripOnInput->False], {"\<\"Xray/ref/WeightedMean\"\>":>
-      None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
-      Module[{DocumentationSearch`Private`nb$}, 
-       DocumentationSearch`Private`nb$ = NotebookPut[
-          Notebook[{
-            Cell["Xray/ref/WeightedMean"]}, Visible -> False]]; 
-       SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
-       FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
-       NotebookClose[DocumentationSearch`Private`nb$]; Null], 
-      Delimiter, "\<\"Copy web URL\"\>":>
-      Module[{DocumentationSearch`Private`nb$}, 
-       DocumentationSearch`Private`nb$ = NotebookPut[
-          Notebook[{
-            Cell[
-             BoxData[
-              MakeBoxes[
-               Hyperlink[
-               "http://reference.wolfram.com/language/Xray/ref/WeightedMean.\
-html"], StandardForm]], "Input", TextClipboardType -> "PlainText"]}, Visible -> 
-           False]]; SelectionMove[
-        DocumentationSearch`Private`nb$, All, Notebook]; 
-       FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
-       NotebookClose[DocumentationSearch`Private`nb$]; 
-       Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
-        NotebookLocate[{
-          URL[
-           StringJoin[
-            If[
-             TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$25336], 
-             "http://reference.wolfram.com/system-modeler/", 
-             "http://reference.wolfram.com/language/"], 
-            "Xray/ref/WeightedMean", ".html"]], None}]}]},
-      Appearance->None,
-      MenuAppearance->Automatic,
-      MenuStyle->"URLMenu"]],
-     LineSpacing->{1.4, 0}]], "AnchorBar"]}
+   {Cell["STIANS SYMBOL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"Stian's Mathematica package\"\>":>
+       Documentation`HelpLookup["paclet:Stians/guide/StiansOverview"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"Stians/ref/WeightedMean\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["Stians/ref/WeightedMean"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/Stians/ref/\
+WeightedMean.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$34201], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "Stians/ref/WeightedMean", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
   }]], "AnchorBarGrid",
  GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
      Scaled[0.65], {
@@ -88,8 +109,9 @@ Cell[BoxData[GridBox[{
    {"", Cell[TextData[{
      Cell[BoxData[
       RowBox[{
-       TemplateBox[{Cell[
-          TextData["WeightedMean"]],"paclet:Xray/ref/WeightedMean"},
+       TemplateBox[{
+         Cell[
+          TextData["WeightedMean"]], "paclet:Stians/ref/WeightedMean"},
         "RefLink",
         BaseStyle->{"InlineFormula"}], "[", 
        RowBox[{"{", 
@@ -110,8 +132,9 @@ standard deviation of the mean."
    {"", Cell[TextData[{
      Cell[BoxData[
       RowBox[{
-       TemplateBox[{Cell[
-          TextData["WeightedMean"]],"paclet:Xray/ref/WeightedMean"},
+       TemplateBox[{
+         Cell[
+          TextData["WeightedMean"]], "paclet:Stians/ref/WeightedMean"},
         "RefLink",
         BaseStyle->{"InlineFormula"}], "[", 
        RowBox[{"{", 
@@ -146,9 +169,7 @@ standard deviations."
     }]]}
   }]], "Usage",
  GridBoxOptions->{
- GridBoxBackground->{
-  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {None, {None}}, 
-   "RowsIndexed" -> {}}},
+ GridBoxBackground->{"Columns" -> {{None}}, "Rows" -> {None, {None}}}},
  CellID->982511436]
 }, Open  ]],
 
@@ -173,7 +194,7 @@ Cell[TextData[Cell[BoxData[
   Method->"Preemptive"]]]], "NotesSection",
  WholeCellGroupOpener->True,
  CellGroupingRules->{"SectionGrouping", 50},
- CellID->2081255503],
+ CellID->525713251],
 
 Cell["", "SectionHeaderSpacer"],
 
@@ -183,8 +204,9 @@ Cell["All input data need to be numeric.", "Notes",
 Cell[TextData[{
  Cell[BoxData[
   RowBox[{
-   TemplateBox[{Cell[
-      TextData["WeightedMean"]],"paclet:Xray/ref/WeightedMean"},
+   TemplateBox[{
+     Cell[
+      TextData["WeightedMean"]], "paclet:Stians/ref/WeightedMean"},
     "RefLink",
     BaseStyle->{"InlineFormula"}], "[", 
    RowBox[{"{", 
@@ -194,12 +216,14 @@ Cell[TextData[{
   RowBox[{"{", 
    RowBox[{
     StyleBox["x", "TI"], ",", 
-    TemplateBox[{Cell[
-       TextData["Indeterminate"]],"paclet:ref/Indeterminate"},
+    TemplateBox[{
+      Cell[
+       TextData["Indeterminate"]], "paclet:ref/Indeterminate"},
      "RefLink",
      BaseStyle->{"InlineFormula"}], ",", 
-    TemplateBox[{Cell[
-       TextData["Indeterminate"]],"paclet:ref/Indeterminate"},
+    TemplateBox[{
+      Cell[
+       TextData["Indeterminate"]], "paclet:ref/Indeterminate"},
      "RefLink",
      BaseStyle->{"InlineFormula"}]}], "}"}]], "InlineFormula"],
  "."
@@ -209,8 +233,9 @@ Cell[TextData[{
 Cell[TextData[{
  Cell[BoxData[
   RowBox[{
-   TemplateBox[{Cell[
-      TextData["WeightedMean"]],"paclet:Xray/ref/WeightedMean"},
+   TemplateBox[{
+     Cell[
+      TextData["WeightedMean"]], "paclet:Stians/ref/WeightedMean"},
     "RefLink",
     BaseStyle->{"InlineFormula"}], "[", 
    RowBox[{"{", 
@@ -223,14 +248,17 @@ Cell[TextData[{
   RowBox[{"{", 
    RowBox[{
     StyleBox["x", "TI"], ",", 
-    TemplateBox[{Cell[
-       TextData["Indeterminate"]],"paclet:ref/Indeterminate"},
+    TemplateBox[{
+      Cell[
+       TextData["Indeterminate"]], "paclet:ref/Indeterminate"},
      "RefLink",
      BaseStyle->{"InlineFormula"}], ",", 
     StyleBox["\[Sigma]", "TR"]}], "}"}]], "InlineFormula"],
  "."
 }], "Notes",
- CellID->1500189465]
+ CellID->1500189465],
+
+Cell["", "SectionFooterSpacer"]
 }, Closed]],
 
 Cell[CellGroupData[{
@@ -245,7 +273,7 @@ Cell[TextData[{
 }], "PrimaryExamplesSection",
  WholeCellGroupOpener->True,
  CellTags->"PrimaryExamplesSection",
- CellID->1447596585],
+ CellID->914885799],
 
 Cell[CellGroupData[{
 
@@ -255,7 +283,7 @@ Cell[TextData[{
  Cell["(2)", "ExampleCount"]
 }], "ExampleSection", "ExampleSection",
  WholeCellGroupOpener->True,
- CellID->913567232],
+ CellID->502711273],
 
 Cell["Generate hundred random numbers between 29 and 64:", "ExampleText",
  CellID->1659510262],
@@ -283,9 +311,6 @@ Cell[BoxData[
   RowBox[{
   "45.11308577719206`", ",", "10.679860130811866`", ",", 
    "1.0679860130811867`"}], "}"}]], "Output",
- ImageSize->{190, 16},
- ImageMargins->{{0, 0}, {0, 0}},
- ImageRegion->{{0, 1}, {0, 1}},
  CellLabel->"Out[2]=",
  CellID->1547884977]
 }, Open  ]],
@@ -336,9 +361,6 @@ Cell[BoxData[
   RowBox[{
   "26.576814256503656`", ",", "0.10672823008694853`", ",", 
    "0.1733233537161556`"}], "}"}]], "Output",
- ImageSize->{206, 16},
- ImageMargins->{{0, 0}, {0, 0}},
- ImageRegion->{{0, 1}, {0, 1}},
  CellLabel->"Out[2]=",
  CellID->223174938]
 }, Open  ]]
@@ -374,9 +396,6 @@ Cell[BoxData[
  CellID->382020475],
 
 Cell[BoxData["$Aborted"], "Output",
- ImageSize->{62, 16},
- ImageMargins->{{0, 0}, {0, 0}},
- ImageRegion->{{0, 1}, {0, 1}},
  CellLabel->"Out[1]=",
  CellID->1789502442]
 }, Open  ]],
@@ -412,9 +431,6 @@ Cell[BoxData[
  CellID->185629647],
 
 Cell[BoxData["$Aborted"], "Output",
- ImageSize->{62, 16},
- ImageMargins->{{0, 0}, {0, 0}},
- ImageRegion->{{0, 1}, {0, 1}},
  CellLabel->"Out[1]=",
  CellID->1731221685]
 }, Open  ]]
@@ -603,7 +619,32 @@ Cell[BoxData[
  Background->RGBColor[0.94, 0.91, 0.88],
  CellLabel->"In[2]:=",
  CellID->1459437745]
-}, Closed]]
+}, Closed]],
+
+Cell["", "SectionFooterSpacer"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["Stian's Mathematica package"]], 
+   "paclet:Stians/guide/StiansOverview"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->867698013]
 }, Open  ]],
 
 Cell[" ", "FooterCell"]
@@ -618,26 +659,27 @@ TaggingRules->{
   GridBox[{{
       RowBox[{
         ButtonBox[
-        "Wolfram Language", ButtonData -> "paclet:guide/WolframRoot", 
+        "Mathematica", ButtonData -> "paclet:Stians/guide/Stians", 
          BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
-    Left], "ExampleCounter" -> 1, "NeedPlatMsgIn" -> None, "RootCaptions" -> 
-  "", "Metadata" -> {
-   "built" -> "{2019, 3, 16, 9, 29, 15.333502}", 
-    "history" -> {"0.7", "", "", ""}, "context" -> "Xray`", "keywords" -> {}, 
-    "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> True,
-     "label" -> "Xray Symbol", "language" -> "en", "paclet" -> "Xray", 
-    "status" -> "None", "summary" -> 
+    Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2021, 4, 28, 13, 40, 0.936602}", 
+    "history" -> {"0.7", "", "", ""}, "context" -> "Stians`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Stians Symbol", "language" -> "en", "paclet" -> "Stians", "status" -> 
+    "None", "summary" -> 
     "WeightedMean[{x1, x2, ..., xn}] returns the mean, the standard deviation \
 and the standard deviation of the mean. WeightedMean[{{x1, \\[Sigma]1}, {x2, \
 \\[Sigma]2}, ..., {xn, \\ \\[Sigma]n}}] returns the weighted mean and the \
 internal and external standard deviations.", "synonyms" -> {}, 
     "tabletags" -> {}, "title" -> "WeightedMean", "titlemodifier" -> "", 
     "windowtitle" -> "WeightedMean", "type" -> "Symbol", "uri" -> 
-    "Xray/ref/WeightedMean", "WorkflowDockedCell" -> ""}, 
+    "Stians/ref/WeightedMean", "WorkflowDockedCell" -> ""}, 
   "SearchTextTranslated" -> "", "NewStyles" -> False},
 CellContext->"Global`",
-FrontEndVersion->"11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
-2018)",
+FrontEndVersion->"12.1 for Mac OS X x86 (64-bit) (June 19, 2020)",
 StyleDefinitions->Notebook[{
    Cell[
     StyleData[
@@ -646,8 +688,7 @@ StyleDefinitions->Notebook[{
     StyleData["Input"], CellContext -> "Global`"], 
    Cell[
     StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
-  FrontEndVersion -> 
-  "11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, 2018)", 
+  FrontEndVersion -> "12.1 for Mac OS X x86 (64-bit) (June 19, 2020)", 
   StyleDefinitions -> "Default.nb"]
 ]
 (* End of Notebook Content *)
@@ -656,103 +697,112 @@ StyleDefinitions->Notebook[{
 (*CellTagsOutline
 CellTagsIndex->{
  "PrimaryExamplesSection"->{
-  Cell[7379, 237, 268, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"11096b9b-e998-4461-a6f6-2f0136ae2b3b",
+  Cell[8207, 265, 267, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"ff654e4f-9eab-4ab8-aff8-aadf534dd00b",
    CellTags->"PrimaryExamplesSection",
-   CellID->1447596585]}
+   CellID->914885799]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"PrimaryExamplesSection", 20831, 657}
+ {"PrimaryExamplesSection", 21773, 698}
  }
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[584, 21, 2267, 53, 70, "AnchorBarGrid",ExpressionUUID->"fe34cccf-1e31-4a98-8e5a-fe7cdb3f4475",
+Cell[584, 21, 3046, 74, 70, "AnchorBarGrid",ExpressionUUID->"c6660dd8-13c0-4626-9756-30533db82cbc",
  CellID->1],
 Cell[CellGroupData[{
-Cell[2876, 78, 169, 6, 70, "ObjectNameGrid",ExpressionUUID->"0aeaaf3e-0542-47d3-b4bf-9a3d8e50e487"],
-Cell[3048, 86, 2136, 65, 70, "Usage",ExpressionUUID->"724130c0-5853-4088-be5b-eef7733ede0e",
+Cell[3655, 99, 169, 6, 70, "ObjectNameGrid",ExpressionUUID->"db59a009-ed61-4d9d-a53d-2c35aa4b620c"],
+Cell[3827, 107, 2110, 65, 70, "Usage",ExpressionUUID->"e0f7e4eb-6f0d-4c27-99ae-fbda7c32dcdb",
  CellID->982511436]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5221, 156, 630, 19, 70, "NotesSection",ExpressionUUID->"2c0fce52-bab8-49b1-ab73-e1928d92b991",
+Cell[5974, 177, 629, 19, 70, "NotesSection",ExpressionUUID->"a5b853ff-3f27-43a7-9f73-0c5f005b0e09",
  CellGroupingRules->{"SectionGrouping", 50},
- CellID->2081255503],
-Cell[5854, 177, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"00e55300-55ce-4618-a3c6-357615482b92"],
-Cell[5888, 179, 72, 1, 70, "Notes",ExpressionUUID->"07ca7ee3-2dff-4f42-84a7-839c2e6de15f",
+ CellID->525713251],
+Cell[6606, 198, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"8b9cff5f-ffcc-493f-b3c8-93a27e8e766d"],
+Cell[6640, 200, 72, 1, 70, "Notes",ExpressionUUID->"4bdbf5ae-fb1e-44ee-9ee6-cfc01b6d9a66",
  CellID->1067943069],
-Cell[5963, 182, 699, 24, 70, "Notes",ExpressionUUID->"4f112ec2-028d-4744-9963-022fab219a4e",
+Cell[6715, 203, 724, 27, 70, "Notes",ExpressionUUID->"160de23d-d65e-47c2-b1a9-54f993d737a7",
  CellID->494748628],
-Cell[6665, 208, 677, 24, 70, "Notes",ExpressionUUID->"f0c97ae8-2609-4c23-aaa6-62e1d48ec1db",
- CellID->1500189465]
+Cell[7442, 232, 694, 26, 70, "Notes",ExpressionUUID->"40276fb0-b950-4354-96cb-0be6e0be79a1",
+ CellID->1500189465],
+Cell[8139, 260, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"6813bca6-0d4e-4bb4-9056-b076848c4c8a"]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[7379, 237, 268, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"11096b9b-e998-4461-a6f6-2f0136ae2b3b",
+Cell[8207, 265, 267, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"ff654e4f-9eab-4ab8-aff8-aadf534dd00b",
  CellTags->"PrimaryExamplesSection",
- CellID->1447596585],
+ CellID->914885799],
 Cell[CellGroupData[{
-Cell[7672, 251, 195, 6, 70, "ExampleSection",ExpressionUUID->"0191f148-c31a-4e65-a85e-fba3cc7f9f4f",
- CellID->913567232],
-Cell[7870, 259, 94, 1, 70, "ExampleText",ExpressionUUID->"c0c34d10-b0d5-4b49-a488-b7d8cdb7e077",
+Cell[8499, 279, 195, 6, 70, "ExampleSection",ExpressionUUID->"f326c38a-e126-4180-99f1-3e66a8745fbe",
+ CellID->502711273],
+Cell[8697, 287, 94, 1, 70, "ExampleText",ExpressionUUID->"5fff9877-77c4-42e9-be1d-dbd2151a84ed",
  CellID->1659510262],
-Cell[7967, 262, 235, 9, 70, "Input",ExpressionUUID->"f9a6dc2c-a022-408c-913d-0cbc0ddb14c8",
+Cell[8794, 290, 235, 9, 70, "Input",ExpressionUUID->"3d599629-026b-4f65-9dfb-6a43cb68712f",
  CellID->520135536],
 Cell[CellGroupData[{
-Cell[8227, 275, 105, 3, 70, "Input",ExpressionUUID->"88a0f5fd-f49d-4e64-a177-979b9e80c817",
+Cell[9054, 303, 105, 3, 70, "Input",ExpressionUUID->"9f7837ca-0723-4388-9b41-56b40ae9e821",
  CellID->84087151],
-Cell[8335, 280, 275, 9, 70, "Output",ExpressionUUID->"a3cd79ec-a39b-48f9-8cd3-6f34ef258206",
+Cell[9162, 308, 187, 6, 70, "Output",ExpressionUUID->"b85f8fff-0c29-4d67-83da-42b04d990784",
  CellID->1547884977]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[8647, 294, 125, 3, 70, "ExampleDelimiter",ExpressionUUID->"b53a3d61-0f74-49be-bf0e-e00a7b2a4ec2",
+Cell[9386, 319, 125, 3, 70, "ExampleDelimiter",ExpressionUUID->"a82a1d45-f3d0-41e1-aaa9-ab6eb062b335",
  CellID->685908681],
-Cell[8775, 299, 196, 5, 70, "ExampleText",ExpressionUUID->"b594ac01-2286-4064-acb1-54c13f782283",
+Cell[9514, 324, 196, 5, 70, "ExampleText",ExpressionUUID->"9e1dbddf-0a93-4c59-8836-5a4ae45ff17a",
  CellID->1646983799],
-Cell[8974, 306, 543, 18, 70, "Input",ExpressionUUID->"bce606a2-2c7b-4332-94be-bd92d97bdf71",
+Cell[9713, 331, 543, 18, 70, "Input",ExpressionUUID->"936fbe3f-956a-45ff-9175-aeb3f09c2ce8",
  CellID->374984471],
 Cell[CellGroupData[{
-Cell[9542, 328, 108, 3, 70, "Input",ExpressionUUID->"a3bbdd48-30aa-47db-a60d-35a580d929c9",
+Cell[10281, 353, 108, 3, 70, "Input",ExpressionUUID->"ff255150-1b31-4f76-aa1d-6bdbcc4107b2",
  CellID->1521905130],
-Cell[9653, 333, 276, 9, 70, "Output",ExpressionUUID->"6f63bc31-500e-4757-81af-366920d72b9f",
+Cell[10392, 358, 188, 6, 70, "Output",ExpressionUUID->"cee5627f-1707-4a49-942c-5416ca899171",
  CellID->223174938]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[9990, 349, 197, 6, 70, "ExampleSection",ExpressionUUID->"d676fdf6-1116-49ff-925c-ad10ef5731f3",
+Cell[10641, 371, 197, 6, 70, "ExampleSection",ExpressionUUID->"ce29bc14-b8f7-42d7-a734-a780f151bf31",
  CellID->1305812373],
 Cell[CellGroupData[{
-Cell[10212, 359, 208, 6, 70, "Input",ExpressionUUID->"276ab43d-706f-4540-bd7f-5b7f31734688",
+Cell[10863, 381, 208, 6, 70, "Input",ExpressionUUID->"df8e54ae-d846-4528-b970-76a52ba0a672",
  CellID->1394735304],
-Cell[10423, 367, 226, 6, 70, "Message",ExpressionUUID->"e97f4625-d564-4121-a74c-b4d2c886be3d",
+Cell[11074, 389, 226, 6, 70, "Message",ExpressionUUID->"898edf37-2b70-44b0-b03d-1f9746066af8",
  CellID->382020475],
-Cell[10652, 375, 166, 5, 70, "Output",ExpressionUUID->"dba0d7ec-43d1-4e9b-96e1-9808633b9269",
+Cell[11303, 397, 79, 2, 70, "Output",ExpressionUUID->"504b20af-15b4-4684-b6bf-9677fd522360",
  CellID->1789502442]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[10855, 385, 125, 3, 70, "ExampleDelimiter",ExpressionUUID->"a1656452-9b21-47e1-949d-d96255aa330d",
+Cell[11419, 404, 125, 3, 70, "ExampleDelimiter",ExpressionUUID->"09ad188e-ef44-4b00-b1bc-27de41c5b94c",
  CellID->659066459],
 Cell[CellGroupData[{
-Cell[11005, 392, 348, 11, 70, "Input",ExpressionUUID->"58763ca0-9784-4fea-ade3-0c34f7f2c174",
+Cell[11569, 411, 348, 11, 70, "Input",ExpressionUUID->"a2935df6-3d02-4273-9bd6-320bd776b78d",
  CellID->209325187],
-Cell[11356, 405, 226, 6, 70, "Message",ExpressionUUID->"5ee9549b-07b0-4d65-b357-2fb99eb4766a",
+Cell[11920, 424, 226, 6, 70, "Message",ExpressionUUID->"781a6237-8bed-444b-87a7-c14d33b788e2",
  CellID->185629647],
-Cell[11585, 413, 166, 5, 70, "Output",ExpressionUUID->"946e9f69-c644-45d3-bc29-6794bf50bc84",
+Cell[12149, 432, 79, 2, 70, "Output",ExpressionUUID->"25265d8a-d8f4-4197-8b52-109acef012c3",
  CellID->1731221685]
 }, Open  ]]
 }, Open  ]]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[11812, 425, 235, 8, 70, "ExampleSection",ExpressionUUID->"86a3fc31-7376-43dd-83f3-d55ef646fd9e",
+Cell[12289, 441, 235, 8, 70, "ExampleSection",ExpressionUUID->"57e3920f-b7ae-4822-a8a8-6557e69c9407",
  CellID->208507131],
-Cell[12050, 435, 354, 11, 70, "Input",ExpressionUUID->"89186a81-ac4c-4101-81ce-a6d4ef30f23d",
+Cell[12527, 451, 354, 11, 70, "Input",ExpressionUUID->"08d3fe4b-8b65-4649-8b7e-7682fe467bc1",
  CellID->211964181],
-Cell[12407, 448, 6319, 156, 70, "Input",ExpressionUUID->"9b255258-8d23-426b-8fa0-259c88052d95",
+Cell[12884, 464, 6319, 156, 70, "Input",ExpressionUUID->"05561b6d-ae0f-4b70-a4bf-c3ae5d6f29a4",
  CellID->1459437745]
-}, Closed]]
+}, Closed]],
+Cell[19218, 623, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"83e601ba-f7ee-4942-a604-f747d88360d1"]
 }, Open  ]],
-Cell[18753, 608, 23, 0, 70, "FooterCell",ExpressionUUID->"de2163ee-41f3-426a-9120-836cea4dea6c"]
+Cell[CellGroupData[{
+Cell[19286, 628, 156, 7, 70, "MoreAboutSection",ExpressionUUID->"517ac2b8-514a-4a19-a776-4282023d8ac4",
+ CellID->38303248],
+Cell[19445, 637, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"2aff08b5-5434-46fc-9f2b-bc5adcd8c866"],
+Cell[19479, 639, 200, 7, 70, "MoreAbout",ExpressionUUID->"6c3faf9d-5496-45e4-9d1d-210ea02cf954",
+ CellID->867698013]
+}, Open  ]],
+Cell[19694, 649, 23, 0, 70, "FooterCell",ExpressionUUID->"1a57c17e-3876-4dee-bde8-6e05b4e56032"]
 }
 ]
 *)
